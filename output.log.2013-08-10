@@ -1,0 +1,100 @@
+2013-08-10 17:17:25,528 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : false
+2013-08-10 17:17:25,534 INFO  [main] TargetThread      (TargetThread.java:20)     - flag changed true
+2013-08-10 17:17:25,535 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : true
+2013-08-10 17:17:25,535 INFO  [main] TargetThread      (TargetThread.java:17)     - flag changed false
+2013-08-10 17:17:25,536 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : false
+2013-08-10 17:17:25,536 INFO  [main] TargetThread      (TargetThread.java:20)     - flag changed true
+2013-08-10 17:17:25,537 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : true
+2013-08-10 17:17:25,537 INFO  [main] TargetThread      (TargetThread.java:17)     - flag changed false
+2013-08-10 17:17:25,538 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : false
+2013-08-10 17:17:25,538 INFO  [main] TargetThread      (TargetThread.java:20)     - flag changed true
+2013-08-10 17:17:25,539 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : true
+2013-08-10 17:17:25,539 INFO  [main] TargetThread      (TargetThread.java:17)     - flag changed false
+2013-08-10 17:17:25,540 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : false
+2013-08-10 17:17:25,540 INFO  [main] TargetThread      (TargetThread.java:20)     - flag changed true
+2013-08-10 17:17:25,541 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : true
+2013-08-10 17:17:25,541 INFO  [main] TargetThread      (TargetThread.java:17)     - flag changed false
+2013-08-10 17:17:25,541 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : false
+2013-08-10 17:17:25,542 INFO  [main] TargetThread      (TargetThread.java:20)     - flag changed true
+2013-08-10 17:17:25,542 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : true
+2013-08-10 17:17:25,543 INFO  [main] TargetThread      (TargetThread.java:17)     - flag changed false
+2013-08-10 17:18:21,997 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : false
+2013-08-10 17:18:22,002 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : true
+2013-08-10 17:18:22,002 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : false
+2013-08-10 17:18:22,003 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : true
+2013-08-10 17:18:22,003 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : false
+2013-08-10 17:18:22,004 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : true
+2013-08-10 17:18:22,004 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : false
+2013-08-10 17:18:22,005 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : true
+2013-08-10 17:18:22,005 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : false
+2013-08-10 17:18:22,005 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : true
+2013-08-10 17:19:20,459 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : false
+2013-08-10 17:19:20,462 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : true
+2013-08-10 17:19:20,463 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : false
+2013-08-10 17:19:20,463 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : true
+2013-08-10 17:19:20,463 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : false
+2013-08-10 17:19:20,464 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : true
+2013-08-10 17:19:20,464 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : false
+2013-08-10 17:19:20,465 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : true
+2013-08-10 17:19:20,465 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : false
+2013-08-10 17:19:20,466 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : true
+2013-08-10 17:19:38,473 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : false
+2013-08-10 17:19:38,476 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : true
+2013-08-10 17:19:38,477 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : false
+2013-08-10 17:19:38,477 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : true
+2013-08-10 17:19:38,478 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : false
+2013-08-10 17:19:38,478 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : true
+2013-08-10 17:19:38,479 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : false
+2013-08-10 17:19:38,479 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : true
+2013-08-10 17:19:38,480 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : false
+2013-08-10 17:19:38,480 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : true
+2013-08-10 17:19:38,481 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : false
+2013-08-10 17:19:38,481 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : true
+2013-08-10 17:19:38,481 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : false
+2013-08-10 17:19:38,482 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : true
+2013-08-10 17:19:38,482 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : false
+2013-08-10 17:19:38,483 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : true
+2013-08-10 17:19:38,483 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : false
+2013-08-10 17:19:38,483 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : true
+2013-08-10 17:19:38,484 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : false
+2013-08-10 17:19:38,484 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : true
+2013-08-10 17:19:38,485 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : false
+2013-08-10 17:19:38,485 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : true
+2013-08-10 17:19:38,485 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : false
+2013-08-10 17:19:38,486 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : true
+2013-08-10 17:19:38,486 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : false
+2013-08-10 17:19:38,487 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : true
+2013-08-10 17:19:38,487 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : false
+2013-08-10 17:19:38,487 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : true
+2013-08-10 17:19:38,488 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : false
+2013-08-10 17:19:38,488 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : true
+2013-08-10 18:00:25,394 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : false
+2013-08-10 18:00:25,398 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : true
+2013-08-10 18:00:25,398 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : false
+2013-08-10 18:00:25,399 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : true
+2013-08-10 18:00:25,399 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : false
+2013-08-10 18:00:25,399 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : true
+2013-08-10 18:00:25,400 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : false
+2013-08-10 18:00:25,400 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : true
+2013-08-10 18:00:25,401 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : false
+2013-08-10 18:00:25,401 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : true
+2013-08-10 18:00:25,402 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : false
+2013-08-10 18:00:25,402 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : true
+2013-08-10 18:00:25,403 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : false
+2013-08-10 18:00:25,403 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : true
+2013-08-10 18:00:25,403 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : false
+2013-08-10 18:00:25,404 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : true
+2013-08-10 18:00:25,404 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : false
+2013-08-10 18:00:25,405 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : true
+2013-08-10 18:00:25,405 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : false
+2013-08-10 18:00:25,405 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : true
+2013-08-10 18:00:25,406 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : false
+2013-08-10 18:00:25,406 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : true
+2013-08-10 18:00:25,407 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : false
+2013-08-10 18:00:25,407 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : true
+2013-08-10 18:00:25,407 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : false
+2013-08-10 18:00:25,408 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : true
+2013-08-10 18:00:25,408 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : false
+2013-08-10 18:00:25,409 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : true
+2013-08-10 18:00:25,409 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : false
+2013-08-10 18:00:25,410 INFO  [main] TargetThread      (TargetThread.java:14)     - current status : true

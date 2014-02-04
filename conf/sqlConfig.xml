@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE	configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="oracle.jdbc.driver.OracleDriver" />
+				<property name="url" value="jdbc:oracle:thin:@180.100.100.47:1521:smartcrm" />
+				<property name="username" value="SCRM_DEV" />
+				<property name="password" value="SCRM_DEV" />
+			</dataSource>
+		</environment>
+	</environments>
+	<mappers>
+		<mapper resource="test/mybatis/SqlDummy.xml" />
+	</mappers>
+</configuration>

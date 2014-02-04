@@ -1,0 +1,2452 @@
+SELECT
+CSTID,
+CSTNAME,
+TELNO,
+EMAIL,
+(SELECT CONAME FROM TB_CM_CORP WHERE COID = A1.COID) AS CONAME,
+REGDATE,
+EDTDATE,
+(SELECT LOGON_DTM FROM TB_DK_CUST WHERE WEBUSERID  = A1.WEBUSERID AND ROWNUM=1) AS LOGON_DTM,
+RESULT
+FROM
+(
+SELECT 
+    A.CSTID,
+    (SELECT CSTNAME FROM TB_CM_CUST WHERE CSTID = A.CSTID AND ROWNUM=1) AS CSTNAME,
+    (SELECT TELNO FROM TB_CM_CUST WHERE CSTID = A.CSTID AND ROWNUM=1) AS TELNO,  
+    (SELECT EMAIL FROM TB_CM_CUST WHERE CSTID = A.CSTID AND ROWNUM=1) AS EMAIL,     
+    (SELECT COID FROM TB_CM_CUST WHERE CSTID = A.CSTID) AS COID,
+    (SELECT REGDATE FROM TB_CM_CUST WHERE CSTID = A.CSTID) AS REGDATE,
+    (SELECT EDTDATE FROM TB_CM_CUST WHERE CSTID = A.CSTID) AS EDTDATE,
+    (SELECT WEBUSERID FROM TB_CM_CUST WHERE CSTID = A.CSTID) AS WEBUSERID,
+    A.RESULT
+FROM 
+    TB_IM_RESULT1 A) A1
+
+
+
+라벨코드 LGUPLUSSEARCH LGU+주문번호 검색 (신규생성)
+
+신청번호 APPLNO
+주문번호 ORDERNO (신규생성)
+
+javascript:goReadEX01LinePage("EX0200000355")
+
+SELECT B.EXID, 
+            E.CODENAME, 
+            B.EXNAME, 
+            B.EXPTOTENTRYFEE,  
+            B.PBTHENTRYAPPLFEE, 
+            A.APPLNO, 
+            C.COID, 
+            D.CONAME
+FROM 
+TB_EX_LINE A,
+TB_EX_PLAN B,
+TB_CO_ORD_HEADER C,
+TB_CM_CORP D,
+TB_SM_COMMCODE E
+WHERE  A.EXID = B.EXID
+AND A.APPLNO = C.APPLNO
+AND C.COID = D.COID
+AND B.EXGBNCD = E.CODE
+AND E.CODETYPE = 'EX001'     
+AND E.LANGUAGE = 'ko'  
+AND A.APPLNO = 'EX0200003210'    
+
+
+EX01A01L02.jsp
+EX01A01L02_include.jsp
+EX01A01.xml(jsp)
+EX01A01.xml(oracle)
+EX01A01BIZ.java
+를 수정하여 운영서버에 적용함
+
+
+javascript:goDetail("CP201206190009","[KOTRA 글로벌연수원] 해외전시마케팅 과정 안내","SENDCNT","20") - 없는거
+javascript:goDetail("CP201206190007","[KOTRA 글로벌연수원] 베트남 비즈니스 계약협상실무 안내","SENDCNT","20") - 없는거
+
+javascript:goDetail("CP201206190006","[KOTRA 글로벌연수원] 인도투자진출리스크관리과정 안내","SENDCNT","20") - 있는거
+
+
+D:\KERIS(이태경부장님한테 바로 받은것)\CDPE\SYSTEMiER_HOME\SERVER_ROOT\common\lib\antlr-2.7.5H3.jar
+D:\KERIS(이태경부장님한테 바로 받은것)\CDPE\SYSTEMiER_HOME\SERVER_ROOT\common\lib\aopalliance-1.0.jar
+D:\KERIS(이태경부장님한테 바로 받은것)\CDPE\SYSTEMiER_HOME\SERVER_ROOT\common\lib\apache-xml-1.4.2.jar
+D:\KERIS(이태경부장님한테 바로 받은것)\CDPE\SYSTEMiER_HOME\SERVER_ROOT\common\lib\aspectjrt-1.5.3.jar
+D:\KERIS(이태경부장님한테 바로 받은것)\CDPE\SYSTEMiER_HOME\SERVER_ROOT\common\lib\aspectjweaver-1.5.3.jar
+D:\KERIS(이태경부장님한테 바로 받은것)\CDPE\SYSTEMiER_HOME\SERVER_ROOT\common\lib\avalon-framework-4.0.jar
+D:\KERIS(이태경부장님한테 바로 받은것)\CDPE\SYSTEMiER_HOME\SERVER_ROOT\common\lib\cglib-nodep-2.1.3.jar
+D:\KERIS(이태경부장님한테 바로 받은것)\CDPE\SYSTEMiER_HOME\SERVER_ROOT\common\lib\commons-beanutils-1.7.0.jar
+D:\KERIS(이태경부장님한테 바로 받은것)\CDPE\SYSTEMiER_HOME\SERVER_ROOT\common\lib\dom4j-1.4.jar
+D:\KERIS(이태경부장님한테 바로 받은것)\CDPE\SYSTEMiER_HOME\SERVER_ROOT\common\lib\ehcache-1.2.3.jar
+D:\KERIS(이태경부장님한테 바로 받은것)\CDPE\SYSTEMiER_HOME\SERVER_ROOT\common\lib\hibernate-3.1.jar
+D:\KERIS(이태경부장님한테 바로 받은것)\CDPE\SYSTEMiER_HOME\SERVER_ROOT\common\lib\hsqldb-1.8.0.4.jar
+D:\KERIS(이태경부장님한테 바로 받은것)\CDPE\SYSTEMiER_HOME\SERVER_ROOT\common\lib\joda-time-1.1.jar
+D:\KERIS(이태경부장님한테 바로 받은것)\CDPE\SYSTEMiER_HOME\SERVER_ROOT\common\lib\jsofa-0.2.1.jar
+D:\KERIS(이태경부장님한테 바로 받은것)\CDPE\SYSTEMiER_HOME\SERVER_ROOT\common\lib\jsp-api-2.0.jar
+D:\KERIS(이태경부장님한테 바로 받은것)\CDPE\SYSTEMiER_HOME\SERVER_ROOT\common\lib\jta-1.1.jar
+D:\KERIS(이태경부장님한테 바로 받은것)\CDPE\SYSTEMiER_HOME\SERVER_ROOT\common\lib\mx4j-3.0.1.jar
+D:\KERIS(이태경부장님한테 바로 받은것)\CDPE\SYSTEMiER_HOME\SERVER_ROOT\common\lib\oscache-2.4.jar
+D:\KERIS(이태경부장님한테 바로 받은것)\CDPE\SYSTEMiER_HOME\SERVER_ROOT\common\lib\servlet-api-2.4.jar
+D:\KERIS(이태경부장님한테 바로 받은것)\CDPE\SYSTEMiER_HOME\SERVER_ROOT\common\lib\spring-aop-2.0.2.jar
+D:\KERIS(이태경부장님한테 바로 받은것)\CDPE\SYSTEMiER_HOME\SERVER_ROOT\common\lib\spring-dao-2.0.2.jar
+D:\KERIS(이태경부장님한테 바로 받은것)\CDPE\SYSTEMiER_HOME\SERVER_ROOT\common\lib\spring-hibernate3-2.0.2.jar
+D:\KERIS(이태경부장님한테 바로 받은것)\CDPE\SYSTEMiER_HOME\SERVER_ROOT\common\lib\spring-jdbc-2.0.2.jar
+D:\KERIS(이태경부장님한테 바로 받은것)\CDPE\SYSTEMiER_HOME\SERVER_ROOT\common\lib\spring-jmx-2.0.2.jar
+D:\KERIS(이태경부장님한테 바로 받은것)\CDPE\SYSTEMiER_HOME\SERVER_ROOT\common\lib\spring-mock-2.0.2.jar
+D:\KERIS(이태경부장님한테 바로 받은것)\CDPE\SYSTEMiER_HOME\SERVER_ROOT\common\lib\spring-remoting-2.0.2.jar
+D:\KERIS(이태경부장님한테 바로 받은것)\CDPE\SYSTEMiER_HOME\SERVER_ROOT\common\lib\spring-support-2.0.2.jar
+D:\KERIS(이태경부장님한테 바로 받은것)\CDPE\SYSTEMiER_HOME\SERVER_ROOT\common\lib\systemier-svc-adaptormanager-api-1.0.0.jar
+D:\KERIS(이태경부장님한테 바로 받은것)\CDPE\SYSTEMiER_HOME\SERVER_ROOT\common\lib\systemier-svc-cache-api-1.0.0.jar
+D:\KERIS(이태경부장님한테 바로 받은것)\CDPE\SYSTEMiER_HOME\SERVER_ROOT\common\lib\systemier-svc-common-1.0.0.jar
+D:\KERIS(이태경부장님한테 바로 받은것)\CDPE\SYSTEMiER_HOME\SERVER_ROOT\common\lib\systemier-svc-hibernate-api-1.0.0.jar
+D:\KERIS(이태경부장님한테 바로 받은것)\CDPE\SYSTEMiER_HOME\SERVER_ROOT\common\lib\systemier-svc-process-api-1.0.0.jar
+D:\KERIS(이태경부장님한테 바로 받은것)\CDPE\SYSTEMiER_HOME\SERVER_ROOT\common\lib\systemier-svc-queryservice-api-1.0.0.jar
+D:\KERIS(이태경부장님한테 바로 받은것)\CDPE\SYSTEMiER_HOME\SERVER_ROOT\common\lib\systemier-svc-utilities-api-1.0.0.jar
+D:\KERIS(이태경부장님한테 바로 받은것)\CDPE\SYSTEMiER_HOME\SERVER_ROOT\common\lib\tools-3.0.2.jar
+
+
+AND LANGUAGE = nvl('@@ss_language_code', 'ko')
+ex.EX03B01.getEXItemInfo
+
+n.ComFile.ComFileI */ INSERT INTO TB_SM_FILEINFO (
+	FILEID
+	, FKSRCTYPE
+	, FKID
+	, FKID2
+	, FKID3
+	, FILEFORM
+	, FILESIZE
+	, FILENAME
+	, REALFILENAME
+	, ATCHPATH
+	, REGUSER
+	, REGDATE
+) VALUES (
+	?				--파일ID
+	, ? --외래키출처 : 공통코드(CO011)에 정의
+	, ? --외래키1
+	, ? --외래키2
+	, ? --외래키3
+	, ? --파일형식
+	, ? --파일크기
+	, ? --파일이름
+	, ? --실제파일명
+	, ? --파일경로
+	, nvl(?, '100000') --등록자
+	, SYSDATE --등록일
+)
+[isStatic]
+[params]
+	FILEID/54483/litaral
+	FKSRCTYPE/RA010/litaral
+	FKID//litaral
+	FKID2//litaral
+	FKID3//litaral
+	FILEFORM/java~/litaral
+	FILE_size/3093/litaral
+	FILE_name/CipherStreamTest_1340782230790.java~/litaral
+	FILE_name/CipherStreamTest_1340782230790.java~/litaral
+	ATCHPATH/C:/kydbm/20120627/RA010/litaral
+	ss_user_id/2445838/litaral
+
+IS_AS
+
+해외시장조사 바이어찾기 
+
+javascript:goDetail("CP201206270009","[KOTRA] 일본, 거의 모든 것의 키워드 "和" (下)","SENDCNT","10")
+
+javascript:goDetail("CP201206260006","[有즐해] 일본, 거의 모든 것의 키워드 "和" (中)","SENDCNT","10")
+
+javascript:goDetail("CP201206220005","[有즐해] 해외전시회 특허침해, 어떻게 대응할 것인가?","SENDCNT","10")
+
+javascript:goDetail("CP201206200012","[有즐해] 칠레 역사를 알아야 현지 비즈니스가 보인다 (下)","SENDCNT","10")
+
+javascript:goDetail("CP201206180034","[有즐해] 미국 LA IP-DESK 주요 상담 사례","SENDCNT","10")
+
+javascript:goDetail("CP201206150017","[有즐해] 파나마에선 "발보아" 없이 못산다?","SENDCNT","10")
+
+
+SELECT CSTID FROM TB_CM_CUST WHERE WEBUSERID=? AND MEMBSTATE='01' AND ROWNUM =1;
+
+SELECT COUNT(CSTID) FROM TB_CO_ORD_HEADER WHERE CSTID = ?;
+
+=2012-06-28현재까지 RLTCODE가 30인 이메일들=
+'CP201206270009',
+'CP201206260006',
+'CP201206220005',
+'CP201206200012',
+'CP201206180034',
+'CP201206150017'
+
+캠페인 발송직후 RLTCODE는 30으로 지정됨
+그 이후에 RLTCODE를 35로 지정하는것으로 보임
+스케줄러에서 ComSendMediaBiz.sendCampaignEmail()메소드를 실행시켜 RLTCODE를 35로 변경함
+
+javascript:goDetail("CP201206270005","[KOTRA 신규보고서] 한미 FTA 100일, 中企 수혜품목과 성공사례","SENDCNT","10")
+
+BS0100001813
+=아래 sql을 실행하다가 에러가 발생한것으로 보임=
+-- EMAIL발송 캠페인
+	INSERT INTO IM_DMAIL_INFO_10(
+                 seqidx
+            ,    subject
+            ,    sql
+            ,    reject_slist_idx
+            ,    block_group_idx
+            ,    mailfrom
+            ,    mailto
+            ,    replyto
+            ,    ERRORSTO
+            ,    html
+            ,    encoding
+            ,    charset
+            ,    sdate
+            ,    tdate
+            ,    duration_set
+            ,    click_set
+            ,    site_set
+            ,    atc_set
+            ,    gubun
+            ,    rname
+            ,    mtype
+            ,    u_idx
+            ,	g_idx
+            ,	msgflag
+            ,	content 
+            )         
+    SELECT
+              @@SEQIDX AS SEQ  -- IM_DMAIL_SEQ_10.NEXTVAL	 AS	SEQ	--발송 메일의 고유 번호입니다.
+            , REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(A.SENDTITLE
+	        , '${COID}', '[$MF_COID$]')
+	        , '${CONAME}', '[$MF_CONAME$]')
+	        , '${CSTID}', '[$MF_CSTID$]')
+	        , '${CSTNAME}', '[$MF_CSTNAME$]')        
+	        , '${TELNO}', '[$MF_TELNO$]')
+	        , '${MOBILE}', '[$MOBILE$]')
+	        , '${CO_TELNO}', '[$CO_TELNO$]')
+	        , '${BIZNAME}', '[$BIZNAME$]')
+	        , '${IMPLDEPT}', '[$IMPLDEPT$]')
+	        , '${SURVEYID}', '[$SVYID$]')
+	        , '${CMPGNCSTID}', '[$CPCSTID$]') AS 	SUBJECT         --  발송 메일의 제목입니다.
+        ,	'SQL: SELECT
+        		  DECODE(''@@TEST_RECEIVER_EMAIL'',NULL,T.TOEMAIL,''@@TEST_RECEIVER_EMAIL'') AS TOEMAIL 
+	            , A.CONO            AS MF_COID   
+	            , TO_CHAR(A.CONAME) AS MF_CONAME 
+	            , A.CSTNO           AS MF_CSTID  
+	            , TO_CHAR(A.CSTNAME) AS MF_CSTNAME
+	            , A.TELNO           AS MF_TELNO  
+	            , A.MOBILENO        AS MOBILE 
+	            , A.CO_TELNO        AS CO_TELNO
+	            , TO_CHAR(A.BIZNAME)  AS BIZNAME
+	            , BIZ.SURVEYID		AS SVYID
+	            , A.CMPGNCSTID		AS CPCSTID
+	            , REPLACE(''@@URL'', ''${EMAILLOGID}'', T.EMAILLOGID)	AS URL	                  
+	            , T.FROMEMAIL
+	            , T.FROMNAME	            
+	            , C.CMPGNID 		AS PK1
+	            , T.EMAILLOGID 		AS PK2
+	        FROM  TB_CP_CAMPAIGNCST A
+	            , TB_CP_CAMPAIGN  C 
+	            , TB_CP_EMAILLOG  T 
+	            , TB_CP_CAMPAIGNBIZ BIZ
+	        WHERE A.CMPGNID   = C.CMPGNID
+	        AND   A.CMPGNID   = T.CMPGNID
+	        AND   A.CMPGNCSTID  = T.CMPGNCSTID
+	        AND   A.CMPGNID = BIZ.CMPGNID(+)
+	        AND   A.SRVCCD = BIZ.SRVCCD(+)
+	        AND   T.RLTCODE = ''35''
+	        AND   T.TOEMAIL NOT IN (SELECT EMAIL FROM IM_REJECT_13)
+	        AND   C.CMPGNID = ''@@CMPGNID''         
+	        
+	        ' 	AS	SSQL	        --발송대상이 되는 email 명단추출을 위한 입력입니다.
+        ,	0	                                    AS	reject_slist_idx--발송 거부 그룹 IDX
+        ,	0	                                    AS	block_group_idx	--block grou IDX
+        ,	'"[$FROMNAME$]"<[$FROMEMAIL$]>'			AS	mailfrom	    --보내는 사람에 해당하는 필드입니다 
+        ,	'"[$MF_CSTNAME$]"<[$TOEMAIL$]>'	    	AS	mailto	        --받는 사람에 해당하는 필드입니다.
+        ,	'"[$FROMNAME$]"<[$FROMEMAIL$]>'			AS	replyto	        --회신에 해당하는 필드입니다.
+        ,	'"[$FROMNAME$]"<[$FROMEMAIL$]>'			AS	errosto	        --에러났을 때 회신주소입니다.
+        ,	1	                                    AS	html	        --메일의 text/html을 지원하는 
+        ,	0	                                    AS	encoding	    --메일의 text/base64를 지원하는 필드입니다.
+        ,	'UTF-8'	                            AS	charset	        --해당 메일의 Charater Set을 지정하는 필드입니다.
+        ,	TO_CHAR(SYSDATE, 'YYYYMMDDhh24mmss')	AS	sdate	        --메일의 발송 날짜를 나타내는필드입니다.
+        ,	TO_CHAR(SYSDATE+10, 'YYYYMMDDhh24mmss')	AS	tdate	        --메일의 수신 확인 종료시각을 나타내는 필드입니다.
+        ,	2	                                    AS	duration_set
+        ,	1	                                    AS	click_set		--0:no 1이상:set
+        ,	0	                                    AS	site_set	    --0:no 1:set
+        ,	0	                                    AS	atc_set	        --첨부파일 개수
+        ,	'C'			                            AS	gubun	        --구분 값:ex>회원ID
+        ,	'TOEMAIL,MF_COID,MF_CONAME,MF_CSTID,MF_CSTNAME,MF_TELNO,MOBILE,CO_TELNO,BIZNAME,SVYID,CPCSTID,URL,FROMEMAIL,FROMNAME,PK1,PK2'
+                                                	AS	rname 	        --참조명에 해당합니다.
+        ,	0	                                    AS	mtype	        --0: 일반메일
+        ,	2618	                                AS	u_idx	        --User 고유 번호	2618
+        ,	10012	                                AS	g_idx	        --Group 고유 번호	10012
+        ,	0	                                    AS	msgflag	        --0:처리전
+        ,   ' '                                     AS content          --메일 내용 (200K 까지 제한)
+        /*
+        -- 본문은 위 getCampaignList 에서 꺼내온다.2011.10.31
+        , REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(TO_CHAR(A.SENDCONT)
+	        , '${COID}', '[$MF_COID$]')
+	        , '${CONAME}', '[$MF_CONAME$]')
+	        , '${CSTID}', '[$MF_CSTID$]')
+	        , '${CSTNAME}', '[$MF_CSTNAME$]')        
+	        , '${TELNO}', '[$MF_TELNO$]')
+	        , '${MOBILE}', '[$MOBILE$]')
+	        , '${CO_TELNO}', '[$CO_TELNO$]')
+	        , '${BIZNAME}', '[$BIZNAME$]')
+	        , '${SURVEYID}', '[$SVYID$]')
+	        , '${CMPGNCSTID}', '[$CPCSTID$]')
+	        , '${REJECT_URL}', '[$URL$]')
+	        , '${EMAILLOGID}', '[$PK2$]')
+	        									 AS content         --메일 내용 (200K 까지 제한)
+	     */   									 
+    FROM TB_CP_CAMPAIGN A
+    WHERE CMPGNID='@@CMPGNID'
+
+javascript:goDetail("RA0200009561", "9602", "RA010")
+
+javascript:goRead("VO021985")
+javascript:goRead("VO021947")
+==================================================================================================================================
+<kydbmUI:label name=''/>
+,(CASE nvl('@@ss_language_code', 'ko') WHEN 'ko' THEN C.CONAME WHEN 'en' THEN nvl(TRIM(C.CONAME_EN),C.CONAME) END) AS CONAME -- 기업명       
+<해외시장조사 - 검토결과회신(무역관)>
+/KOTRA_PROJ/crm/ra.RA04A01/listRARevwRstPage
+-RA04A01L01.jsp
+-RA04A01.xml getRARevwRstList
+(
+	수정소스
+	RA04A01.xml(oracle)
+	RA04A01.xml(jsp)
+	RA04A01L01_include.jsp
+	RA04A01L01.jsp
+)
+
+javascript:goDetail("1078055")
+/KOTRA_PROJ/crm/ra.RA04A01/readRARevwRstPage
+-RA04A01V01.jsp
+-RA04A01.xml getRARevwRstInfo
+-RA04A01.xml getRARevwRstTGList
+-RA04A01.xml getRACmntRegInfo
+(
+	수정소스
+	RA04A01V01.jsp
+)
+
+/KOTRA_PROJ/crm/ra.RA04A01/updateRARevwRstPage
+-RA04A01E02.jsp
+-RA04A01.xml getRARevwRstInfo
+-RA04A01.xml getRARevwRstTGList
+(
+	수정소스
+	RA04A01E02ㅎ.jsp
+)
+	   
+<해외시장조사 - 조사결과보고(무역관)>
+/KOTRA_PROJ/crm/ra.RA09A01/listRARptRegPage
+-RA09A01L01.jsp
+-RA09A01.xml getRARptRegList
+
+(
+	수정소스
+	RA09A01.xml(oracle)
+	RA09A01L01.jsp
+	RA09A01L01_include.jsp
+)
+
+/KOTRA_PROJ/crm/ra.RA09A01/readRALine04Page
+-RA09A01V01.jsp
+-RA09A01.xml getRARptRegInfo
+-RA09A01.xml getRARptRegTGList
+
+(
+	수정소스
+	RA09A01.xml(oracle)
+	RA09A01V01.jsp
+)
+
+
+<해외출장지원 - 검토결과회신(무역관)>
+/KOTRA_PROJ/crm/bs.BS02A01/listBSRevwRstPage
+-BS02A01L01.jsp
+-BS02A01.xml getBSRevwRstList
+(
+	수정소스
+	BS02A01L01_include.jsp
+	BS02A01L01.jsp
+	BS02A01.xml(jsp)
+	BS02A01.xml(oracle)
+)
+
+/KOTRA_PROJ/crm/bs.BS02A01/readBSRevwRstPage
+-BS02A01V01.jsp
+-BS02A01.xml getBSRevwRstTrdInfo
+-BS02A01.xml getBSRevwRstTrdItemList
+-BS02A01.xml getBSRevwRstTrdList	   	
+-BS02A01.xml getBSRevwRstAtndList
+(
+	수정소스
+	BS02A01V01.jsp
+	BS02A01.xml(oracle)
+)
+	   
+/KOTRA_PROJ/crm/bs.BS02A01/updateBSRevwRstPage
+-BS02A01E01.jsp
+-BS02A01.xml getBSRevwRstTrdInfo
+-BS02A01.xml getBSRevwRstTrdItemList
+-BS02A01.xml getBSRevwRstTrdList	   	
+-BS02A01.xml getBSRevwRstAtndList
+
+(
+	수정소스
+	BS02A01E01.jsp
+	BS02A01.xml(oracle)
+)
+
+<해외출장지원 - 상담일정송부(무역관)>
+/KOTRA_PROJ/crm/bs.BS07A01/listBSCnslSchdPage
+-BS07A01L01.jsp
+-BS07A01.xml getBSCnslSchdList
+(
+	수정소스
+	BS07A01L01.jsp
+	BS07A01L01_include.jsp
+	BS02A01.xml(oracle)
+	BS02A01.xml(jsp)
+)
+
+/KOTRA_PROJ/crm/bs.BS07A01/readBSCnslSchdPage
+-BS07A01V01.jsp
+-BS07A01.xml getBSCnslSchdTrdInfo
+-BS07A01.xml getBSCnslSchdTrdItemList
+-BS07A01.xml getBSCnslSchdTrdList
+-BS07A01.xml getBSCnslSchdAtndList
+(
+	수정소스
+	BS07A01V01.jsp
+	BS02A01.xml(oracle)
+)
+
+/KOTRA_PROJ/crm/bs.BS07A01/updateBSCnslSchdPage
+-BS07A01E01.jsp
+-BS07A01.xml getBSCnslSchdTrdInfo
+-BS07A01.xml getBSCnslSchdTrdItemList
+-BS07A01.xml getBSCnslSchdTrdList
+-BS07A01.xml getBSCnslSchdAtndList
+(
+	수정소스
+	BS07A01E01.jsp
+BS02A01.xml(oracle)
+)
+
+<해외출장지원 - 실적결과입력(무역관)>
+/KOTRA_PROJ/crm/bs.BS08A01/listBSResultPage
+-BS08A01L01.jsp
+-BS08A01.xml getBSResultList
+(
+	수정소스
+	BS08A01L01.jsp
+	BS08A01.xml(jsp)
+	BS08A01.xml(oracle)
+	BS08A01L01_include.jsp
+)
+
+/KOTRA_PROJ/crm/bs.BS08A01/readBSResultPage
+-BS08A01V01.jsp
+-BS08A01.xml getBSResultTrdInfo
+-BS08A01.xml getBSResultTrdItemList
+-BS08A01.xml getBSResultTrdList
+-BS08A01.xml getBSResultAtndList
+-BS08A01.xml getBSResultRegList
+(
+	수정소스
+	BS08A01V01.jsp
+	BS08A01.xml(oracle)
+)
+
+/KOTRA_PROJ/crm/bs.BS08A01/updateBSResultPage
+-BS08A01E01.jsp
+-BS08A01.xml getBSResultTrdInfo
+-BS08A01.xml getBSResultTrdItemList
+-BS08A01.xml getBSResultTrdList
+-BS08A01.xml getBSResultAtndList
+-BS08A01.xml getBSResultRegList
+(
+	수정소스
+	BS08A01E01.jsp
+)
+
+<지사화 - 검토결과회신(무역관)>
+/KOTRA_PROJ/crm/br.BR03A01/listBr01Page
+-BR03A01L01.jsp
+-BR03A01.xml getNoticeList
+(
+	수정소스
+	BR03A01L01.jsp
+	BR03A01.xml(oracle)
+	BR03A01.xml(jsp)
+	BR03A01L01_include.jsp
+)
+
+/KOTRA_PROJ/crm/br.BR03A01/readBRLinePage
+-BR03A01V01.jsp
+-BR03A01.xml getBRLineInfo
+-BR03A01.xml getBRCmntRegInfo
+-BR03A01.xml getBRItemInfo
+-BR03A01.xml getBRFILEInfo
+(
+	수정소스
+	BR03A01V01.jsp
+	BR03A01.xml
+	BR02A01.xml
+)
+
+/KOTRA_PROJ/crm/br.BR03A01/updateBRLinePage
+-BR03A01E01.jsp
+-BR03A01.xml getBRLineInfo
+-BR03A01.xml getBRCmntRegInfo
+-BR03A01.xml getBRItemInfo
+-BR03A01.xml getBRFILEInfo
+(
+	수정소스
+	BR03A01E01.jsp
+	BR03A01.xml
+)
+<지사화 - 협약서작성및발송(무역관)>
+/KOTRA_PROJ/crm/br.BR07A01/listBr01Page
+-BR07A01L01.jsp
+-BR07A01.xml getNoticeList
+(
+	수정소스
+	BR07A01L01.jsp
+	BR07A01L01_include.jsp
+	BR07A01.xml(jsp)
+	BR07A01.xml(oracle)
+)
+
+/KOTRA_PROJ/crm/br.BR07A01/readBRLinePage
+-BR07A01V01.jsp
+-BR07A01.xml getBRLineInfo
+-BR07A01.xml getBRCmntRegInfo
+-BR07A01.xml getBRItemInfo
+-BR07A01.xml getBRFILEInfo
+(
+	수정소스
+	BR07A01V01.jsp
+	BR07A01.xml(oracle)
+)
+
+/KOTRA_PROJ/crm/br.BR07A01/updateBRPage
+-BR07A01E02.jsp
+-BR07A01.xml getBRLineInfo
+-BR07A01.xml getBRCmntRegInfo
+-BR07A01.xml getBRItemInfo
+-BR07A01.xml getBRFILEInfo
+(
+	수정소스
+	BR07A01E02.jsp
+	BR07A01.xml(oracle)
+)
+
+
+<지사화 - 지원및 실적입력(무역관)>
+/KOTRA_PROJ/crm/br.BR09A01/listBr01Page
+-BR09A01L01.jsp
+-BR09A01.xml getNoticeList
+(
+	수정소스
+	BR09A01L01.jsp
+	BR09A01L01_include.jsp
+	BR09A01.xml(oracle)
+	BR09A01.xml(jsp)
+)
+CASE nvl('@@ss_language_code', 'ko') WHEN 'ko' THEN B.LVL2_NM_KO WHEN 'en' THEN nvl(TRIM(B.LVL2_NM_EN),B.LVL2_NM_KO) END)
+<kydbmUI:label name='HOME'/>
+/KOTRA_PROJ/crm/br.BR09A01/readBRLinePage
+-BR09A01V01.jsp
+-BR09A01.xml getBRLineInfo
+-BR09A01.xml getBRCmntRegInfo
+-BR09A01.xml getBRAsCmntRegInfo 
+-BR09A01.xml getBRResultRegList
+-BR09A01.xml getBRItemInfo
+-BR09A01.xml getBRFILEInfo
+-BR09A01.xml getBRRstinfo
+-BR09A01.xml getBRRstCnslInfo
+-BR09A01.xml getBRRstCnslList
+
+(
+	수정소스
+	BR09A01V01.jsp
+	BR09A01.xml(oracle)
+)
+
+/KOTRA_PROJ/crm/br.BR09A01/updateBRLinePage
+-BR09A01E02.jsp
+-BR09A01.xml getBRLineInfo
+-BR09A01.xml getBRCmntRegInfo
+-BR09A01.xml getBRAsCmntRegInfo 
+-BR09A01.xml getBRFILEInfo
+(
+	수정소스
+	BR09A01E02.jsp
+	BR09A01.xml(oracle)
+)
+/KOTRA_PROJ/crm/br.BR09A01/ViewWAPage
+-BR09A01V03.jsp
+-BR09A01.xml getViewWaPage
+(
+	수정소스
+	BR09A01V03.jsp
+	BR09A01.xml(oracle)
+)
+javascript:goDetail("CP201207120002","[KOTRA] 5대 해외시장 수출유망 품목 설명회 및 수출애로 타개 상담회 개최 안내","SENDCNT","10")
+<단체참가해외 공동전시회 - 참가업체관리>
+/KOTRA_PROJ/crm/ex.EX01A01/insertExPage
+(
+	수정소스
+	EX01A01E02.jsp
+	OS01A01E01.jsp
+	OS_ITEM.jsp
+)
+
+/KOTRA_PROJ/crm/ex.EX01B01/listEx01LinePage
+-EX01B01L01.jsp
+-EX01B01.xml getExList
+-EX01B01.xml getEx01LineList
+(
+	수정소스
+	EX01B01.xml(oracle)
+	EX01B01.xml(jsp)
+	EX01B01L01.jsp
+	EX01B01L02.jsp
+)
+
+/KOTRA_PROJ/crm/ex.EX01B01/readEX01LinePage
+-EX01B01V01.jsp
+-EX01B01.xml getEntryCoInfo
+-EX01B01.xml getEntryCstInfo
+-EX01B01.xml getEntryCstInfo
+-EX01B01.xml getEXItemInfo
+(
+	수정소스
+	EX01B01.xml(oracle)
+	EX01B01V01.jsp
+)
+/KOTRA_PROJ/crm/ex.EX01B01/deputyApplication
+-OS01A01E01.jsp
+(
+	수정소스
+	OS01A01E01.jsp
+)
+
+
+/KOTRA_PROJ/crm/ex.EX01B01/insertEX01EstPage
+-EX01B01E04.jsp
+-EX01B01.xml getEntryCoInfo
+-EX01B01.xml getEx01EstInfo
+-EX01B01.xml getEx01EstInfoForGep
+-EX01B01.xml getEXItemInfo
+(
+	수정소스
+	EX01B01E03.jsp
+	EX01B01E04.jsp
+)
+
+/KOTRA_PROJ/crm/ex.EX01B01/insertEx01CounselRstPage
+-EX01B01E05.jsp
+-EX01B01.xml getEntryCoInfo
+-EX01B01.xml getEx01CounselRstInfo
+-EX01B01.xml getEXItemInfo
+(
+	수정소스
+	EX01B01E05.jsp
+)
+
+<서울국제식품전 - 참가업체관리>
+/KOTRA_PROJ/crm/ex.EX03B01/listEx03Page
+-EX03B01L01.jsp
+-EX03B01.xml getExList
+(
+	수정소스
+	EX03B01L01.jsp
+	EX03B01L01_include.jsp
+	EX03B01.xml(oracle)
+	EX03B01.xml(jsp)
+)
+
+/KOTRA_PROJ/crm/ex.EX03B01/listEX03LinePage
+-EX03B01L02.jsp
+-EX03B01.xml getEX03LineList
+(
+	수정소스
+	EX03B01L02.jsp
+	EX03B01.xml(oracle)
+)
+
+javascript:goCoInfoDetail("1046970")
+
+/KOTRA_PROJ/crm/ex.EX03B01/readEX03LinePage
+-EX03B01V01.jsp
+-EX03B01.xml getEntryCoInfo
+-EX03B01.xml getEntryCstInfo
+-EX03B01.xml getEXItemInfo
+(
+	수정소스
+	EX03B01V01.jsp
+	EX03B01.xml(oracle)
+)
+
+/KOTRA_PROJ/crm/ex.EX03B01/insertEX03CounselRstPage
+-EX03B01E05.jsp
+-EX03B01.xml getEntryCoInfo
+-EX03B01.xml getEX03CounselRstInfo
+-EX03B01.xml getEXItemInfo
+(
+	수정소스
+	EX03B01E05.jsp
+	EX03B01.xml(oracle)
+)
+
+/KOTRA_PROJ/crm/ex.EX03B01/insertEX03EstPage
+-EX03B01E04.jsp
+-EX03B01.xml getEntryCoInfo
+-EX03B01.xml getEX03EstInfo
+-EX03B01.xml getEXItemInf
+(
+	수정소스
+	EX03B01E04.jsp
+	EX03B01.xml(oracle)
+)
+
+
+<무역사절단 - 참가업체관리>
+/KOTRA_PROJ/crm/tm.TM02A01/listTMPage
+-TM02A01L01.jsp
+-TM02A01.xml getTMList
+(
+	수정소스
+	TM02A01L01.jsp
+	TM02A01L01_include.jsp
+	TM02A01.xml(oracle)
+	TM02A01.xml(jsp)
+)
+
+
+/KOTRA_PROJ/crm/tm.TM02A01/listTMLinePage
+-TM02A01L02.jsp
+-TM02A01.xml getTMLineList
+(
+	수정소스
+	TM02A01L02.jsp
+	TM02A01L02_include.jsp
+	TM02A01.xml(oracle)
+)
+
+/KOTRA_PROJ/crm/tm.TM02A01/readTMLinePage
+-TM02A01V01.jsp
+-TM02A01.xml getEntrypi20CoInfo
+-TM02A01.xml getEntryCstInfo 
+-TM02A01.xml getReqNoteInfo
+-TM02A01.xml getTMItemInfo
+-TM02A01.xml getRstInputTf
+-TM02A01.xml getCounselRstInfoV
+(
+	수정소스
+	TM02A01V01.jsp
+	TM02A01.xml(oracle)
+)
+
+/KOTRA_PROJ/crm/tm.TM02A01/insertTMEstPage
+-TM02A01E04.jsp
+-TM02A01.xml getEntryCoInfo
+-TM02A01.xml getTMItemInfo
+-TM02A01.xml getTMEstInfo
+(
+	수정소스
+	TM02A01E04.jsp
+	TM02A01.xml(oracle)
+	TM02A01E06.jsp
+)
+
+/KOTRA_PROJ/crm/tm.TM02A01/insertTMCounselRstPage
+-TM02A01E05.jsp
+-TM02A01.xml getEntryCoInfo
+-TM02A01.xml getTMItemInfo
+-TM02A01.xml getCounselRstInfo
+(
+	수정소스
+	TM02A01E05.jsp
+	TM02A01.xml(oracle)
+)
+
+<수출상담회 - 바이어관리>
+/KOTRA_PROJ/crm/ef.EF02A01/listEf01Page
+-EF02A01L01.jsp
+-EF02A01.xml getEfList
+(
+	수정소스
+	EF02A01L01.jsp
+	EF02A01L01_include.jsp
+	EF02A01.xml(oracle)
+	EF02A01.xml(jsp)
+)
+
+/KOTRA_PROJ/crm/ef.EF02A01/listEf02Page
+-EF02A01L02.jsp
+-EF02A01.xml getEfbuyerList
+(
+	수정소스
+	EF02A01L02.jsp
+	EF02A01.xml(oracle)
+)
+
+/KOTRA_PROJ/crm/ef.EF02A01/insertEfPage
+-EF02A01E01.jsp
+(
+	수정소스
+	EF02A01E01.jsp
+)
+
+/KOTRA_PROJ/crm/ef.EF02A01/readEfbuyerPage
+-EF02A01V01.jsp
+-EF02A01.xml getEfbuyerList
+-EF02A01.xml getEfRstcorpList
+(
+	수정소스
+	EF02A01V01.jsp)
+	EF02A01.xml(oracle)
+)
+
+<수출상담회 - 업체관리>
+/KOTRA_PROJ/crm/ef.EF03A01/listEf01Page
+-EF03A01L01.jsp
+-EF03A01.xml getEfList
+(
+	수정소스
+	EF03A01L01.jsp
+	EF03A01L01_include.jsp
+	EF03A01.xml(oracle)
+	EF03A01.xml(jsp)
+)
+
+/KOTRA_PROJ/crm/ef.EF03A01/listEf02Page
+-EF03A01L02.jsp
+-EF03A01.xml getEfCORPList
+(
+	수정소스
+	EF03A01L02.jsp
+	EF03A01.xml(oracle)
+)
+/KOTRA_PROJ/crm/ef.EF03A01/readEfPage
+-EF03A01V01.jsp
+-EF03A01.xml getEfInfo
+-EF03A01.xml getRSTEfInfo
+-EF03A01.xml getEFResultRegList
+-EF03A01.xml getATNDInfo
+(
+	수정소스
+	EF03A01V01.jsp
+	EF03A01.xml(oracle)
+)
+
+/KOTRA_PROJ/crm/ef.EF03A01/updateEfPage
+-EF03A01E02.jsp
+-EF03A01.xml getEfInfo
+-EF03A01.xml getRSTEfInfo
+(
+	수정소스
+	EF03A01E02.jsp
+	EF03A01.xml(oracle)
+)
+
+
+========================================================================================================
+===영문화 신청 관련 SQL===
+-- Create table
+create table TB_CM_REQUEST
+(
+  REQNO        VARCHAR2(8) not null,
+  TITLE        VARCHAR2(200) not null,
+  CONT         VARCHAR2(4000),
+  REGDATE      DATE,
+  COMPLETEDATE DATE,
+  IS_COMPLETE  VARCHAR2(2),
+  REGUSERID    VARCHAR2(10)
+)
+tablespace TS_SCRM_01
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+-- Add comments to the columns 
+comment on column TB_CM_REQUEST.REQNO
+  is '영문화작업 신청번호';
+comment on column TB_CM_REQUEST.TITLE
+  is '신청제목';
+comment on column TB_CM_REQUEST.CONT
+  is '신청내용';
+comment on column TB_CM_REQUEST.REGDATE
+  is '등록일자';
+comment on column TB_CM_REQUEST.COMPLETEDATE
+  is '완료일자';
+comment on column TB_CM_REQUEST.IS_COMPLETE
+  is '완료여부(0: 미완료 1:완료)';
+comment on column TB_CM_REQUEST.REGUSERID
+  is '등록자ID';
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table TB_CM_REQUEST
+  add constraint REQNO primary key (REQNO)
+  using index 
+  tablespace TS_SCRM_01
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+
+-- Create sequence 
+create sequence TB_CM_REQSEQ
+minvalue 1
+maxvalue 9999999999999999999999999999
+start with 61
+increment by 1
+cache 20;
+
+===========================================================================================================
+
+==영문화신청 추가로 처리해야 할 부분==
+해외출장지원 - 결과입력 상담일자Consultation Date 부분의 오전,오후 부분 영문처리(보류 FrameWork를 수정해야 함)
+
+지사화 검토결과 회신 수정화면 타이틀 강조 안함(수정함)
+
+지사화 협약서 작성및 발송 화면에서 비지니스유형항목이 한글로 표시됨(영문항목이 존재하지 않음)
+
+지사화 실적입력 화면에서 비지니스유형항목이 한글로 표시됨(영문항목이 존재하지 않음)
+
+전시회 참가업체관리 수정화면 상단 en-전시회 상담결과등록 항목 수정필요(수정함)
+(서울국제식품전 수정화면과 동일하게 적용)
+
+HSCODE,Ecatallog선택시 영문일경우 영문항목이 표시되도록 수정필요
+
+무역사절단 대리신청 신청기업정보 코드화 필요(수정함)
+(출장자 notice,신청자 출장자 동일 notice코드화도 같이 필요)
+
+바이어 정보검색 화면 width 늘일필요가 있음(수정함)
+
+수출상담회 업체관리 등록화면 코드작업 필요(수정함)
+
+수출상담회 업체관리 조회화면 신청자 출장자 동일 notice 코드화(수정함)
+
+String ss_language_code = SessionUtil.getSessionVar(request, "ss_language_code").toString();
+	ss_language_code = (ss_language_code == null) ? "ko" : ss_language_code;
+
+<%-- 팝업에서 호출하여 ecatalog 세팅 --%>
+			function setECatalog_<%=DIV_ITEM_ID%>(jObj){
+				var language = '<%=ss_language_code%>';
+				$setECatalogObj_<%=DIV_ITEM_ID%>.val(jObj.EACODE);
+				
+				if(language == "ko") {
+					$setECatalogDescObj_<%=DIV_ITEM_ID%>.val(jObj.LVL2_NM_KO);
+				}else if(language == "en") {
+					$setECatalogDescObj_<%=DIV_ITEM_ID%>.val(jObj.LVL2_NM_EN);
+				}
+			}
+			<%-- 팝업에서 호출하여 hs 세팅 --%>
+			function setHSCode_<%=DIV_ITEM_ID%>(jObj){
+				var language = '<%=ss_language_code%>';
+				$setHSCodeObj_<%=DIV_ITEM_ID%>.val(jObj.HSCODE);
+				
+				if(language == "ko") {
+					$setHSCodeDescObj_<%=DIV_ITEM_ID%>.val(jObj.NM_KO);
+				}else if(language == "en") {
+					$setHSCodeDescObj_<%=DIV_ITEM_ID%>.val(jObj.NM_EN);
+				}
+			}
+
+<kydbmUI:label name='ADDR_DETAIL'/>
+
+style="text-align:left;"
+
+첨부파일list에서 아래 조건에 맞는 고객들을 회원아이디,이름,집전화,휴대번호,이메일,나이,주소,지역 항목 추출바랍니다.
+
+조건:1.주민등록 번호가 있어야함
+2.이메일 수신동의가 되어있어야함
+3.코트라직원이 아니어야함
+4.첨부list ID나열된 순서대로 재추출되어야함
+
+AS/F-UP 
+
+javascript:goDetail("BR0100003195", "BR", "9101")
+
+javascript:goDetail("RA0200011791", "9513", "RA030", "03")
+
+ID:M2S2010
+PW:bbb3131
+
+"HOME|BIZMANMIZ|RAREVWRSTREG|CURSTATE|DOCNO - jsp용
+
+SVCCNSL|SRVCNAME|PROCSTEP|DOCNO - sql용
+
+<kydbmUI:label name='CANCEL'/>
+
+SELECT  BSTYPECD, (CASE nvl('@@ss_language_code', 'ko') WHEN 'ko' THEN BSTYPENAME WHEN 'en' THEN nvl(BSTYPENAME_EN,BSTYPENAME) END) AS BSTYPENAME
+  FROM  TB_IP_BSTYPE
+WHERE  BSGUBUN ='1'
+ ORDER BY SORTORD ASC
+
+
+mini_tab_total
+
+--지사화 통합검색 View
+function goDetail(no,ccd,ftrdctr,procstep){
+				var url = "";
+				//var prm = "?APPLNO="+no+"&SRVCCD="+ccd+"&FTRDCTR="+ftrdctr+"&PROCSTEP="+procstep;
+				var prm = "?APPLNO="+no+"&SRVCCD="+ccd+"&FTRDCTR="+ftrdctr+"&PROCSTEP="+procstep+"&returnpage=<%=returnpage%>";
+								
+					if(procstep=="01"){
+						url = "crm/br.BR02A01/readBRLinePage";	
+					}else if(procstep=="02"){
+						url = "crm/br.BR03A01/readBRLinePage";	
+					}else if(procstep=="03"){
+						url = "crm/br.BR04A01/readBRLinePage";	
+					}else if(procstep=="04"){
+						url = "crm/br.BR05A01/readBRLinePage";	
+					}else if(procstep=="05"){
+						url = "crm/br.BR07A01/readBRLinePage";	
+					}else if(procstep=="06"){
+						url = "crm/br.BR08A01/readBRLinePage";	
+					}else if(procstep=="07"){
+						url = "crm/br.BR09A01/readBRLinePage";	
+					}else if(procstep=="08"){
+						url = "crm/br.BR08A01/readBRLinePage";	
+					}else if(procstep=="09"){
+						url = "crm/br.BR09A01/readBRLinePage";	
+					}else if(procstep=="10"){
+						url = "crm/br.BR04A01/readBRLinePage";	
+					}else if(procstep=="11"){
+						url = "crm/br.BR04A01/readBRLinePage";	
+					}else{
+						alert('진행상태가 없거나 잘못 되어 있습니다. \n\n진행상태를  확인 하십시오.');
+						url = "crm/br.BR10A01/listBr01Page";						
+					}
+					frm.action = url+prm;
+					frm.submit();
+			}
+
+--해외시장조사 통합검색 View
+	
+				var url = "";
+				
+				if(srvc=="RA040"){				// 한국무역보험공사 상세
+					url = "readRALine04SumPage";
+				}else if(srvc=="RA050"){			// 바이어연락처 상세
+					url = "readRALine05SumPage";
+				}else{
+					url = "readRALineSumPage";		// 바이어찾기, 맞춤형 시장조사, 원부자재공급선 상세
+				}
+				
+				//url = "crm/ra.RA11A01/readRALineSumPage";
+				
+				var prm = "?appl="+appl+"&ftrd="+ftrd+"&srvc="+srvc+"&proc="+proc;
+				
+				frm.action = "crm/ra.RA11A01/"+url+prm;
+				frm.submit();
+			}
+
+--해외출장지원 통합검색 View(바이어것과 동일)
+function goDetailSum(no, ftrd, docno, step){
+				
+				frm.action = "crm/bs.BS09A01/readBSLineSumPage?APPLNO="+no+"&FTRDCTRCD="+ftrd+"&DOCNO="+docno+"&PROCSTEP="+step;	//결과입력 상세
+				frm.submit();
+			}
+
+-- 전시회(나머지) 통합검색 View(바이어것과 동일)
+
+function goDetail(exId){
+				frm.action = "crm/ex.EX01C01/readExPage?EXID="+exId;
+				frm.submit();
+			}
+
+-- 국내전시회 통합검색 View(바이어 실적에 잡히지 않음)
+			function goDetail(exId){
+				frm.action = "crm/ex.EX07C01/readExPage?EXID="+exId;
+				frm.submit();
+			}
+-- 국내공동주관전시회 통합검색 View(바이어것과 동일)
+			function goDetail(exId){
+				frm.action = "crm/ex.EX02C01/readEX02IntegrationPage?EXID="+exId;
+				frm.submit();
+			}
+
+
+-- 무역사절단 통합검색 View(바이어것과 동일)
+function goDetail(tmId){
+				frm.action = "crm/tm.TM03A01/readTMPage?TMID="+tmId;
+				frm.submit();
+			}
+
+-- 설명회 통합검색 View (바이어 것과 동일)
+function GoReadPT(ptid) {
+		document.frm.action = "crm/pt.PT01A03/readPTPage?PTID="+ptid;
+		document.frm.submit();
+	}
+
+-- 수출상담회 통합검색 View(바이어것과 동일)
+function goDetail(efId){				
+				frm.action = "crm/ef.EF04A01/readEfPage?EFID="+efId;
+				frm.pageSize.value = <%=pageSize%>;
+				frm.pageNo.value = <%=pageNo%>;
+				frm.submit();
+			}
+
+-- 기타사업 통합검색 View
+function GoReadOB(obno){
+        	document.frm.action = "crm/ob.OB01A02/ReadOBPage?OBNO="+obno;
+		    document.frm.submit();
+		}     
+
+--
+
+
+javascript:goDetail2("CP201208060004")
+
+104166035
+
+EC065972
+
+TB_CM_CUST
+TB_CM_MGRCUST
+TMP_HISTYRCNT
+VW_CM_NCCUST
+TB_CM_CUST_REL_20111023
+VW_RA_DOCNO
+VW_CM_NCCORP
+TB_CM_CUST_REL
+VW_SS_TRGLIST
+VW_BS_DOCNO
+TB_CM_PCSICST
+TB_CC_CNSL
+VW_CM_NCINFO
+TMP_CORP_MIL
+TB_CM_CORP_SPC
+TB_CM_MLG_ACCUHIS_20120201
+TB_CM_MLG_USEHIS
+TB_VC_VOC
+TB_CM_CORP_MLG_20120201
+VW_BR_DOCNO_TEMP
+TB_CM_PCSIHIST
+TB_CM_CORP_ITEM
+TB_CM_PCSIHIST_TEMP
+TB_OB_BIZRST
+VW_CM_BUYER_SEARCH
+VW_BR_DOCNO
+TB_CM_MLG_EXPRHIS
+VW_CM_CORP_BSC
+VW_CM_CCCUST
+TB_CO_ORD_HEADER
+TB_CM_MLG_ACCUHIS
+VW_CM_CUST_SEARCH
+TB_CM_CORP
+TB_CM_CORP_REL
+TB_CO_ASLINE
+
+redblock
+red9022
+
+BS0200002221 관리번호
+javascript:goDetail('BS0100002330', '9116', 'BS0200002221', '01', '04')
+
+KBC
+
+SELECT DEPTCD, DEPTNAME||'('||CODENAME||')' AS DEPTNAME
+FROM TB_CO_DEPT A, TB_SM_COMMCODE B
+WHERE CURDEPT_TF ='Y'
+AND DEPTCD BETWEEN '9000' AND '9800'
+AND UPRDEPTCD NOT IN('Z016')
+AND A.COUNTRYCD = B.CAL1(+)
+AND B.LANGUAGE(+) = NVL('@@ss_language_code','ko')
+AND A.DEPTCD <> '9321'
+ORDER BY DEPTNAME ASC, UPRDEPTCD ASC
+
+4105
+
+ㅇ HS Code 2824100000에 해당하는 품목의 국내 수출 업체 리스트, 업체별 수출실적 (금액, 물량)  
+ㅇ 검색기간 : 2009년~2012년 6월 
+ㅇ 검색품목 : Litharge / 일산화 납 / PbO / HS Code : 2824100000     
+* 이수영(내선 : 7593) 
+
+전산실 김현우입니다.
+
+S-138 SmartCRM 서버의 /oracle 디렉토리 용량이 아래와 같이 부족한 상태입니다.
+-----
+/dev/vg00/lvol4    35454976 33591156 1803592   95% /oracle
+-----
+
+일전에 박일과장님께서 로그 삭제를 요청하셔서 삭제하는 스크립트가 돌고는 있는 상황이나,
+계속해서 용량이 증가하고 있습니다.
+현재 스크립트 내용은 아래와 같습니다.
+-----
+1. /oracle/admin/smartcrm/adump : 5일 이후 삭제(매일)
+2. /oradata1/arch : 30일 이후 삭제(매일)
+3. /oracle/diag/rdbms/smartcrm/smartcrm/trace : 1일 이후 삭제(매일)
+4. /oracle/diag/tnslsnr/crmdb/listener/trace/listener.log : 초기화(매주) 
+-----
+
+해당 파일시스템 용량 문제에 대해 확인 부탁드립니다.
+
+[CSR 50002]  핵심네트워크 실적 추출 요청 데이터
+
+RA0200009113001
+RA0200009110001
+RA0200008819001  
+
+ 
+안녕하세요.
+
+PCSI 데이터 추출기능이 생겼습니다만, 자체 추출시 맞지 않는 데이터가 생기기도 하고.. 완벽하게 자체추출을 하기까지는 조금 더 시간이 필요할 것 같습니다.
+
+PCSI 고객리스트 추출을 아래와 같이 요청드리니 협조 부탁드립니다.
+
+ㅇ 추출대상 : 지사화 / 전시회(P1) / 사절단
+ㅇ 추출기간 
+  - 20110701~20120630 (지사화)
+  - 20110801~20120630 (전시회/사절단)
+
+* 지사화 : 중도해지, 미승인건 등 제외
+* 전시회 : P1 전시회 추출, 미선정건 등 제외 
+
+javascript:goDetail("CP201208130005","\
+
+REPLACE(A.CMPGNNAME,CHR(34),CHR(39))        AS TITLE        -- 캠페인명
+
+SELECT 
+		  Z.TMID,
+		  MAX(Z.TMNAME) AS TMNAME,
+		  MAX(LGVNNAME) AS LGVNNAME,
+      MAX(FTRDCTR1) AS FTRDCTR,
+		  MAX(EACODE_DESC) AS EACODE_DESC,
+      MAX(DISPMONTH) AS DISPMONTH,
+      MAX(RID) AS DISPMONTH1,
+		  MAX(DECODE(Z.RID, 1, Z.DEPTNAME)) KBC1,
+		  MAX(DECODE(Z.RID, 2, Z.DEPTNAME)) KBC2,
+		  MAX(DECODE(Z.RID, 3, Z.DEPTNAME)) KBC3
+    FROM(
+    SELECT 
+              A.TMID                --무역사절단ID
+              , A.TMNAME            --무역사절단명            √
+              , A.DISPTERMFROM    --파견기간FROM
+              , A.DISPTERMTO        --파견기간TO
+              , A.LGVNID            --지자체ID
+              , A.AUTHSETUPUSERID    --권한설정사용자ID
+              , A.SCALE             --규모
+              , A.AREA              --분야
+              , A.RMRK              --비고
+              , B.STATE            --진행상태                    √
+              , A.APPLDATE        --신청일                  √
+              , B.FTRDCTR         --해외무역관코드          √
+              , TO_CHAR(TO_DATE(B.DISPTERMYYMM, 'YYYYMM'), 'YYYY-MM') DISPMONTH    --파견기간년월            √
+              , B.CNSLDATEFROM      --상담일FROM
+              , B.CNSLDATETO        --상담일TO
+              , C.USERID            --사용자ID(지자체ID)
+              , C.USERNAME LGVNNAME    --사용자명(지자체명)
+              , PG_CRYPTO.decrypt(C.USERPWD) AS USERPWD      --사용자비밀번호
+              , C.POS                --직위(지자체담당자_직책) 
+              , C.CHRGBIZ  CHMNNAME  --담당업무(지자체담당자)      √
+              , C.EMAIL            --EMAIL(지자체담당자_EMAIL)  √
+              , C.TELNO            --전화번호(지자체담당자_TEL)  √
+              --, D.DEPTNAME APPLKBC     --해외무역관명
+              , ROW_NUMBER() OVER (PARTITION BY A.TMID ORDER BY D.DEPTNAME) RID
+              , D.DEPTNAME
+              ,(SELECT DEPTNAME FROM TB_CO_DEPT WHERE DEPTCD = FTRDCTR) AS FTRDCTR1
+		          ,(SELECT X.LVL1_NM_KO FROM TB_CO_ECATALOG X WHERE X.EACODE = A.AREA) AS EACODE_DESC
+          FROM TB_TM_YRPLAN A           --T_무역사절단년간계획
+                , TB_TM_YRPLAN_TRD B    --T_무역사절단년간계획_파견지역
+                , TB_CO_USER C
+                , TB_CO_DEPT D          --'T_부서'
+         WHERE A.TMID       = B.TMID         
+           AND A.LGVNID     = C.USERID
+           AND B.FTRDCTR    = D.DEPTCD
+           AND A.CANCEL_TF  = '0'   --취소여부
+           AND B.STATE      IN ( '03','04', '05') 
+           AND C.USERGBN    = '03'  --지자체
+           AND C.STATECD    = '1'  --사용 ('3':미사용) 
+        ORDER BY A.TMID, B.FTRDCTR, A.DISPTERMFROM) Z
+        GROUP BY Z.TMID
+
+
+
+    
+==기존 SQL==
+SELECT 
+			    A.TMID	            	--무역사절단ID
+			    , A.TMNAME	        	--무역사절단명            √
+			    , A.DISPTERMFROM		--파견기간FROM
+			    , A.DISPTERMTO	    	--파견기간TO
+			    , A.LGVNID          	--지자체ID
+			    , A.AUTHSETUPUSERID		--권한설정사용자ID
+			    , A.SCALE           	--규모
+			    , A.AREA            	--분야
+			    , A.RMRK            	--비고
+			    , B.STATE	        	--진행상태                    √
+			    , A.APPLDATE	    	--신청일                  √
+			    , B.FTRDCTR 	    	--해외무역관코드          √
+			    , TO_CHAR(TO_DATE(B.DISPTERMYYMM, 'YYYYMM'), 'YYYY-MM') DISPMONTH		--파견기간년월            √
+			    , B.CNSLDATEFROM    	--상담일FROM
+			    , B.CNSLDATETO      	--상담일TO
+			    , C.USERID	        	--사용자ID(지자체ID)
+			    , C.USERNAME LGVNNAME  	--사용자명(지자체명)
+			    , PG_CRYPTO.decrypt(C.USERPWD) AS USERPWD	    --사용자비밀번호
+			    , C.POS	            	--직위(지자체담당자_직책) 
+			    , C.CHRGBIZ	CHMNNAME	--담당업무(지자체담당자)      √
+			    , C.EMAIL	        	--EMAIL(지자체담당자_EMAIL)  √
+			    , C.TELNO	        	--전화번호(지자체담당자_TEL)  √
+			    , D.DEPTNAME APPLKBC   	--해외무역관명
+		  FROM TB_TM_YRPLAN A           --T_무역사절단년간계획
+		        , TB_TM_YRPLAN_TRD B    --T_무역사절단년간계획_파견지역
+		        , TB_CO_USER C
+		        , TB_CO_DEPT D          --'T_부서'
+		 WHERE A.TMID       = B.TMID         
+		   AND A.LGVNID     = C.USERID
+		   AND B.FTRDCTR    = D.DEPTCD
+		   AND A.CANCEL_TF  = '0'   --취소여부
+		   AND B.STATE      IN ( '03','04', '05') 
+		   AND C.USERGBN    = '03'  --지자체
+		   AND C.STATECD  	= '1'	--사용 ('3':미사용) 
+		  [AND B.STATE      = '@@SEARCH_STATE'] 
+		  [AND A.TMNAME  LIKE '%'||'@@SEARCH_TMNAME'||'%']
+	  	  [AND B.DISPTERMYYMM  BETWEEN '@@SEARCH_DISPYEAR_year'||'@@SEARCH_DISPTERMFROM' 
+	  	  						   AND '@@SEARCH_DISPYEAR_year'||'@@SEARCH_DISPTERMTO'] 
+		ORDER BY A.TMID, B.FTRDCTR, A.DISPTERMFROM
+
+
+
+공영DBM jsp,sql xml의 최상단에 경고발생시 태그를 밑의 것으로 교체한다.
+
+==sql.xml==
+<query xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.00db.co.kr/xml/sql.xsd">
+
+==jsp.xml==
+<service xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.00db.co.kr/xml/service-jsp.xsd">
+
+/oracle/diag/rdbms/smartcrm/smartcrm/trace/ 여기 있는 trace파일이 용량을 많이 잡아먹음 매일 삭제할것
+
+1. /oracle/admin/smartcrm/adump : 5일 이후 삭제(매일)
+2. /oradata1/arch : 30일 이후 삭제(매일)
+3. /oracle/diag/rdbms/smartcrm/smartcrm/trace : 1일 이후 삭제(매일)
+4. /oracle/diag/tnslsnr/crmdb/listener/trace/listener.log : 초기화(매주) 
+
+
+cd /was/jeus/jeus6/logs/crmwas/crmwas_container1
+
+50174 CRM 캠패인 관련 문의
+안녕하십니까 고객미래전략실의 김효승입니다.
+현재 저희 부서에서 중소기업을 대상으로 설문을 진행중에있고, 8월 13일 CRM을 통해 고객님들께 
+설문요청메일을 발송했습니다. 
+
+실패한 건에 대해서 해당 설문을 재발송하고자하는데 CRM에서는 명단은 뜨나 엑셀파일은 따로 없어,
+"KOTRA 중소기업수출활동실태조사 '설문도 하고 선물도 받으세요!'" 캠패인의 발송실패 고객 명단 엑셀파일을 요청하고자합니다. 감사합니다. 
+
+
+"DK로그인시 화면이 표시가 되지 않음
+
+ID:redblock
+PW:red9022"
+
+crm/os.OS01A02/insertAppEX03BPage
+
+javascript:goEX03LinePage("7660000432","2012 서울국제식품전")
+
+http://localhost:8080/KOTRA_PROJ/crm/os.OS01A02/insertAppEX03BPage?EXID=7660000432
+
+<input type="checkbox" name="PENTRYYR" value="2012" /> 2012
+					<input type="checkbox" name="PENTRYYR" value="2011" /> 2011
+					<input type="checkbox" name="PENTRYYR" value="2010" /> 2010
+					<input type="checkbox" name="PENTRYYR" value="2009" /> 2009
+					<input type="checkbox" name="PENTRYYR" value="2008" /> 2008
+					<input type="checkbox" name="PENTRYYR" value="2007" /> 2007
+
+javascript:goDetail("BR0100003938", "BR", "9426", "02")
+
+SCRM 관련 확인사항 입니다.
+
+1. CSR 50026번 RM 요청사항 입니다.
+   - 추가 필요한 용량이 어느정도인지?
+   - 그리고 캠페인의 용량이 어느정도인지? 파악하고 
+   - 동건에 대한 대안을 제시해주기 바람
+
+   캠페인 발송결과 확인 데이터의 사이즈가 크다고 하는데요.
+   캠페인 발송결과 확인 데이터의 전체 사이즈를 확인 바랍니다.
+   (사이즈 확인 후 전체 데이터를 보관할지, 최근 3개월만 보관할지 의사결정 예정)
+
+2. SCRM 백업현황 파악
+   - 백업을 잘 받고 있는지 확인이 필요 합니다.
+   - 백업대상 / 백업주기 / 백업시간(시작시간) / 소요시간 등
+   - 백업파일로 리스토어 가능여부 확인
+
+위 사항 정리하여 권차장님 수신/ 저 참조로 메일 회신바랍니다. 
+
+
+요청사항에 대해서 조사한 결과는 다음과 같습니다.
+
+1.CSR 50026번 요청사항에 대한 확인결과
+  1-1.trace,log파일을 삭제하고 남아있는 용량을 확인한 결과는 다음과 같습니다.
+  /oracle(오라클 실행부분) : 74% 남음
+  /oradata1/smartcrm(SMARTCRM 데이터 저장 부분) :14% 남음
+  
+  위와 같이 /oracle은 trace,log만 주기적으로 삭제를 하면 용량증설이 필요가 없을것으로 생각되나 
+  /oradata1/smartcrm부분은 용량증설을 하거나 캠페인관련 데이터의 삭제가 필요할것으로 생각되며 증설용량에 대해서는
+  인프라팀과의 협의가 필요합니다.  
+
+  1-2.캠페인 관련 테이블의 용량을 확인한 결과는 다음과 같습니다.
+  TB_CP_EMAILLOG    : 47.8 GB
+  TB_CP_CAMPAIGNCST : 37.5 GB
+  IM_RESULT_COMMON  : 10 GB 
+   
+  10개월동안 저장된 캠페인 관련 데이터 용량이 90GB가 넘어가는 관계로 전체데이터를 보관하는것은 어려울것으로 생각되며
+  스케줄러를 작성하거나 수동으로 위에 언급한 테이블의 3개월치 데이터만 남겨야 할것으로 생각됩니다.
+   
+2.백업요청사항 확인결과
+  2-1.백업확인 
+    인프라팀과의 협의를 통해 매일 백업을 받고 있는것을 확인하였습니다.
+
+  2-2.백업대상 : SCRM WAS/DB
+      백업주기 : 매주 월~금
+      백업시작 시간 : SCRM WAS(02:00), DB(02:00)
+      백업을 받는데 소요되는 시간 : SCRM WAS(18시간 18분), DB(19시간 17분)
+
+  2-3.백업파일로 리스토어 가능여부확인
+  실제 리스토어를 하지 않은 관계로 도상훈련을 하여 검증할 필요가 있으며 도상훈련일정은 
+  추후 협의를 통해 결정해야 할것으로 생각됩니다.   
+
+
+="update tb_sm_commcode set cal1='"&J2&"' where codetype='CO010' and language='en' and code='"&C2&"';" 
+
+SCRM_DEV에 COID에 index를 걸고 COID에 null대신 임의의값을 집어넣고 cm.CM02A01.getCustList로 테스트한 결과
+
+coid index+coid null없앰 : 0.063 sec
+기존 : 0.067sec
+
+로 거의 차이가 없었음   
+
+javascript:GoReadPT("PT0100000846","PT0200011269")
+javascript:GoReadPT("PT0100000846","PT0200011264")
+javascript:GoReadPT("PT0100000846","PT0200011256")
+javascript:GoReadPT("PT0100000846","PT0200011256")
+
+
+F9E056A2015EBBDD
+
+[2012-08-21 00:00:03,833] [ERROR] [com.kydbm.db.ContainerController (ContainerController.java:829)] [time: 40668491] - Insert 수행중 SQL쪽에 문제가 생겼습니다. 에러확인
+
+1.exeInsert 를 호출하는 로직을 확인할것
+확인결과 resources.jsp.co 관련로직이 테이블이 존재하지 않는것으로 확인됨 UIPageSearch
+
+javascript:goDetail2("CP201208200003")
+
+ComSendMediaBz.sendCampaignEMAIL() called
+
+고객관리>국내고객수(본사)에서 주관부서를 선택할경우 엑셀다운로드 완료일 기간을 1년으로 설정할수 있는지 체크
+
+고충처리 고객선택 팝업에서 insc로 검색하고 기업명을 클릭하여 고충처리고객등록화면으로 이동시 이동이 되지 않는 경우가 있음 확인요망
+
+캠페인 예약발송후 스케줄러에서  common.CampaignEmail getCampaignList를 실행하여 메일발송정보를 저장할때 메일정보를 가져오지 못하는 경우가 있다. 확인요망
+ex)javascript:goDetail2("CP201208200003")
+
+정확히 SYSDATE와 예약발송시간을 맞춰버리면 경우에 따라서 제외되는 데이터가 생기기 때문에 1분간의 여유를 두어 문제를 해결함
+
+============================================================================================================
+무통장입금시 사용하는 서블릿
+
+/crm/ifc.RFC/rcptConfirmPage(무통장입금 화면표시)
+/crm/ifc.RFC/getRcptConfirmList(SAP-ERP와 연동하여 데이터를 가져오는 function)
+
+Z_SCRM_FI_CASHIN Function을 사용함 
+
+===================================================================================================
+
+핵심네트워크실적 등록일 항목 추가해서 다시 보낼것
+
+(CASE WHEN TRIM(A.COID) IS NULL THEN '개인회원' ELSE TO_CHAR(B.CONAME) END) CONAME
+
+
+개인회원 검색시 상단의 전체회원건수때문에 속도가 많이 느려짐
+
+SCRM xml no grammer constraints 에러원인 파악 필요
+
+
+ // SAP수입처 전송
+            function goSAPCOSEND(){
+            	var COID = frm.VIEW_COID.value;
+            	var NEWKO = frm.NEWKO[0].value;
+           	    if(COID==""){
+           	    	alert("SCRM의 기업ID가 존재하지 않습니다.");
+           	    	return;
+           	    }        	
+	            var v_url = "jsp/crm/ifc.RFC/sendCustToERP$ajax";
+	            var datas = "COID_ONE=" + COID;
+	            datas  = cf_SetUserParam(datas);
+	        	$.ajax({
+				    url: v_url,
+				    type: 'POST',
+				    async:false,
+				    dataType: 'xml',
+				    data: datas,
+				    error: function(){
+				        alert('Error loading HTML document');
+				    },
+				    success: function(xml){
+				    	$(xml).find('dataset').each(function(){
+	    					$(this).find('list').each(function(){
+	    						var $item_text = $(this);
+	    						frm.NEWKO[0].value = $item_text.find('SAPBPNO').text(); // SAPBP번호
+	    						alert("SAPERP 수입처로 전송되었습니다.");
+						 	});
+	         			});
+				    }
+				});	
+            }
+
+SAPERPCustomer 
+
+<kydbmUI:text name='IS_BTNPRESS' valueType='hidden' size='5' value='false'/><%-- SAP전송버튼을 눌렀는지 여부 최초 로드시에는 false로 설정 --%>
+    <kydbmUI:text name='SAPRESULT'   valueType='hidden' size='5' value='' /><%-- SAP전송결과 --%>
+
+   and (bizname like 'FTA Premium%' or bizname like 'Global Green%' or bizname like '중국 신재생에너지%' or bizname like '일본 그린파트너링%')
+==========================================================================================
+
+==DK Portal - SCRM 간 PW다른 정보 추출==
+select 
+  a.webuserid "ID",
+  PG_CRYPTO.decrypt(a.webuserpwd) "SCRM패스워드",
+  b.pw "DK Portal 패스워드"
+from
+  tb_cm_cust a,
+  test b
+where
+       a.webuserid = b.id
+and    a.membstate = '01'
+and    trim(PG_CRYPTO.decrypt(a.webuserpwd)) != trim(b.pw)
+
+
+==DK Portal - Rainbow 간 PW다른 정보 추출==
+select 
+  a.logn_id "ID",
+  --PASSWORD.ENCRYPT(a.pswd,'crm') "Rainbow 패스워드",
+  a.pswd,
+  b.pw "DK Portal 패스워드"
+from 
+  tb_xx_cust a,
+  test b
+where
+       a.logn_id = b.id
+and    a.memb_st='01'
+and    a.pswd != PASSWORD.ENCRYPT(b.pw,'crm');
+
+===========================================================================================
+
+
+==VOC상담관리 담당부서에서 담당자가 부서변경시 담당부서가 같이 변경되는 문제== 
+TB_VC_VOC 상담관리의 경우 TB_CC_CNSL테이블에 데이터가 들어가는게 아니라 TB_CO_USER의 DEPTCD를 가지고 관련부서를 추출함
+등록자 부서변경과 상관없이 처리하려고 하면 TB_CC_CNSL테이블에 부서정보가 들어가야함
+이를 해결하려면 TB_CC_CNSL에 부서명 컬럼을 생성하고 CC01A01.xml insertCounsel에 부서명을 입력해야 함
+
+==URL이용시 nio를 이용하는 방법==
+URL url = new URL("http://www.anotherhost.com?filename=excel.xls");
+            InputStream in = url.openConnection().getInputStream();
+
+            ReadableByteChannel readChannel = Channels.newChannel(in);
+            ByteBuffer buffer = ByteBuffer.allocate(2048);
+
+            WritableByteChannel writeChannel = Channels.newChannel(response.getOutputStream());
+            while (readChannel.read(buffer) != -1 && writeChannel.isOpen())
+            {
+                buffer.flip();
+                writeChannel.write(buffer);
+            }
+
+
+javascript:goDetail("")
+http://localhost:8080/KOTRA_PROJ/crm/os.OS01A02/insertAppEX03APage?EXID=EX0100000315
+
+http://localhost:8080/KOTRA_PROJ/crm/os.OS01A02/insertAppEX03BPage?EXID=EX0100000314
+
+===============================================================================================================================================
+아직 종료처리되지 않은 해외시장조사 데이터 
+5번은 아직 진행중일 가능성이 있음
+
+1	201006	E0019	03	 	 	7100121312(취소일과 취소자명이 있는것으로 보아 취소된것으로 보임 PROCSTEP이 E0019로 되어있음)
+2	201011	E0019	03	 	 	7100127714(취소일과 취소자명이 있는것으로 보아 취소된것으로 보임 PROCSTEP이 E0019로 되어있음)
+3	201103	E0019	03	 	 	7100132786(취소일과 취소자명이 있는것으로 보아 취소된것으로 보임 PROCSTEP이 E0019로 되어있음)
+4	201104	E0019	03	 	 	7100133834(취소일과 취소자명이 있는것으로 보아 취소된것으로 보임 PROCSTEP이 E0019로 되어있음)
+5	201111	E0001	03	 	 	7100142075(취소일/취소자명은 없으며 PROCSTEP이 E0001로 되어 있음)
+
+PROCSTEP이 E로 시작하는건이 853건임
+===============================================================================================================================================
+
+
+WITH T AS 
+			( 
+			SELECT NVL(APPLDATE, RSLT_YM ) APPLDATE
+			 , APPCNT
+			 , REJECT
+			 , CANCEL
+			 , FINISH
+ , PROGRS
+ FROM (
+ SELECT TO_CHAR(SYSDATE, 'YYYY')-2 || LPAD(ROWNUM, 2, '0') RSLT_YM
+ FROM DUAL CONNECT BY LEVEL <=12 UNION ALL
+ SELECT TO_CHAR(SYSDATE, 'YYYY')-1 || LPAD(ROWNUM, 2, '0') RSLT_YM
+ FROM DUAL CONNECT BY LEVEL <=12 UNION ALL
+ SELECT TO_CHAR(SYSDATE, 'YYYY') || LPAD(ROWNUM, 2, '0') RSLT_YM
+ FROM DUAL CONNECT BY LEVEL <=12
+ ) M , (
+			SELECT APPLDATE
+			 , APPCNT
+			 , REJECT
+			 , CANCEL
+			 , FINISH
+			 , APPCNT-REJECT-CANCEL-FINISH PROGRS
+			FROM (
+			SELECT APPLDATE 
+			 , COUNT(APPLDATE) APPCNT
+			 , SUM(CASE WHEN PROCSTEP = '10' AND REVWRST_POSB_TF = '03' THEN 1 ELSE 0 END) REJECT
+			 , SUM(CASE WHEN PROCSTEP = '10' AND REVWRST_POSB_TF != '03' THEN 1 ELSE 0 END) CANCEL
+			 , SUM(CASE WHEN PROCSTEP = '09' THEN 1 ELSE 0 END) FINISH
+			 FROM (
+			 SELECT REPLACE(SUBSTR(A.APPLDATE, 0, 7), '-', '') APPLDATE --신청일자
+			 , B.PROCSTEP 							--진행상태
+			 		, B.MKTAREVWRST_POSB_TF REVWRST_POSB_TF 	--검토결과_가능여부
+			 		, B.MKTAREVWRST_IMPSWHYCD REVWRST_IMPSWHY 	--검토결과_불가능사유
+			 		, B.CANCELWHYCD 							--취소사유코드
+			 		 FROM TB_CO_ORD_HEADER A
+			 		, TB_RA_LINE B
+			 WHERE A.APPLNO = B.APPLNO
+			 AND A.APPLDATE BETWEEN ?||'-'||'01'||'-01' AND ?||'-'||'12'||'-31'
+			 ) 
+			 GROUP BY APPLDATE
+			 ORDER BY APPLDATE
+			)
+			) A
+ WHERE M.RSLT_YM = A.APPLDATE(+) 
+			) 
+			SELECT DECODE(HF, 1, '상반기(월)', 2, '하반기(월)') HF 
+					, DECODE(1, GRP, '총계', GID, '거절/취소율', NVL(MM, '소계')) MM 
+					, MIN(DECODE(YY, ?, APP)) APP_2 
+					, MIN(DECODE(YY, ?, REJ)) REJ_2 
+					, MIN(DECODE(YY, ?, FIN)) FIN_2
+					, MIN(DECODE(YY, ?, PRO)) PRO_2
+					, MIN(DECODE(YY, ?, APP)) APP_1 
+					, MIN(DECODE(YY, ?, REJ)) REJ_1 
+					, MIN(DECODE(YY, ?, FIN)) FIN_1
+					, MIN(DECODE(YY, ?, PRO)) PRO_1
+					, MIN(DECODE(YY, ?, APP)) APP_0 
+					, MIN(DECODE(YY, ?, REJ)) REJ_0 
+					, MIN(DECODE(YY, ?, FIN)) FIN_0 
+					, MIN(DECODE(YY, ?, PRO)) PRO_0
+			FROM ( 
+					SELECT YY, HF, MM 
+							, GROUPING(HF) GRP 
+							, GROUP_ID() GID 
+							, DECODE(GROUP_ID(), 0, SUM(APP)) APP 
+							, DECODE(GROUP_ID(), 0, SUM(REJ), ROUND(SUM(REJ) / SUM(APP) * 100, 1)) REJ 
+							, DECODE(GROUP_ID(), 0, SUM(FIN)) FIN 
+							, DECODE(GROUP_ID(), 0, SUM(PRO)) PRO 
+					FROM ( 
+							SELECT SUBSTR(APPLDATE, 1, 4) YY 
+									, CEIL(SUBSTR(APPLDATE, 5) / 6) HF 
+									, SUBSTR(APPLDATE, 5) MM 
+									, APPCNT APP 
+									, REJECT + CANCEL REJ 
+									, FINISH FIN 
+									, PROGRS PRO 
+							FROM T
+					) 
+					GROUP BY YY, ROLLUP(HF, HF, MM) 
+			) 
+			GROUP BY HF, GRP, GID, MM 
+			ORDER BY HF, GRP, GID, MM
+[isStatic]
+[params]
+	YEARBEFORE/2010/litaral
+	YEAR/2012/litaral
+	YEARBEFORE/2010/litaral
+	YEARBEFORE/2010/litaral
+	YEARBEFORE/2010/litaral
+	YEARBEFORE/2010/litaral
+	LASTYEAR/2011/litaral
+	LASTYEAR/2011/litaral
+	LASTYEAR/2011/litaral
+	LASTYEAR/2011/litaral
+	YEAR/2012/litaral
+	YEAR/2012/litaral
+	YEAR/2012/litaral
+	YEAR/2012/litaral
+###	 QueryItem End		###
+
+
+==추후 수정사항==
+1.TB_CM_CUST에 포탈명,최종로그인시간 컬럼추가후 각 포탈에 이정보를 알림
+
+2.campaign 용량확인후 용량증설 요청
+
+3.콜센터와 유사한 방식(부서정보를 Table에 저장안하고 사원정보를 이용하여 join하는 방식으로 부서정보를 가져옴)으로 처리되는곳이 있는지 확인
+-콜센터 상담관리
+-캠페인 발송 결과확인
+-캠페인 발송(임시저장건)
+-캠페인 자주 사용하는 서식등록
+위 4개가 콜센터 상담관리와 동일한 방식으로 작동함
+
+==부서코드 update SQL==
+update tb_cc_cnsl set cnsldeptcd=(select deptcd from tb_co_user where userid = cnslrid) where trim(cnsldeptcd) is null;
+
+tb_co_user에 없는 사용자의 경우 update가 되지 않으므로 그건에 대해서는 따로 처리를 해야 함
+
+CC02A01.xml(sql) - cnsldeptcd를 입력하고 그후에 운영서버에 적용해야 함
+CC01A01.xml(sql) - 바로 운영서버에 적용
+
+
+4.CSR에서 자주 요청되는 사항을 기능으로 구현
+
+5.핵심네트워크/상담고객관리 조회화면 엑셀다운로드 항목에 등록일항목추가 - 수정함
+
+6.PCSI고객 다운로드 항목을 PCSI추출과 같게 변경 - CM10A04.xml을 수정함
+
+7.국내외 고객수 주관부서/수행부서선택시 기간을 1년으로 설정할수 있도록 수정- 수정함
+
+
+==캠페인 첨부파일관련=====================================================================================
+파일가져오는 Query
+Hashtable fileParam = new Hashtable();
+                    	fileParam.put("FKID", CMPGNID);
+                    	fileParam.put("FKSRCTYPE", "CP010");
+                    	fileQueryGroup = qi.getQueryGroup("common.ComFile", "UIPageSearch",fileParam);
+
+
+ComSendMediaBz sendCampaignEmail 에서 getAttachedFilesLink를 호출하여 링크를 생성함
+============================================================================================================
+===VOC 처리완료 VC01A01VO1.jsp====
+
+<%if(!"30".equals(PROCSTATE) ){//처리완료가 아니면 수정 할 수 있다..%>	
+			<tr>
+				<td colspan="4">
+					<%-- <kydbmUI:button name='INIT' script='click=javascript:addVOCProc()' styleCode='class="btn_s01"'/> 미사용 --%>
+					<%-- <kydbmUI:button name='PROC_COMPLETE' script='click=javascript:saveVOCProc()' styleCode='class="btn_s01"'/> --%>
+					<%if(("100").equals(TAKECHANEL) ||
+							("220").equals(TAKECHANEL) ||
+							("221").equals(TAKECHANEL) ||
+							("300").equals(TAKECHANEL) ||
+							("500").equals(TAKECHANEL) ||
+							("600").equals(TAKECHANEL)
+					){ 
+					 //수집경로가 이하일경우만 처리완료버튼이 보임
+					 //[고객담당관:100,콜센터(거래지원팀):220,콜센터(해외투자상담팀):221,KCSI:300,오프라인(해외):500,오프라인(본사):600]
+					%>
+						<kydbmUI:button name='PROC_COMPLETE' script='click=javascript:procComplete()' styleCode='class="btn_s01"|width:60px'/>
+				   <%} %>
+				</td>
+			</tr>
+======================================================================================================================================================================
+
+/oracle/diag/rdbms/smartcrm/smartcrm/trace 에 있는 내용을 주기적으로 삭제할것
+
+cm.CM03A01.getBiList을 이용하여 바이어 실적을 추출할것
+
+ INSERT INTO SC_TRAN(
+         TR_NUM 
+    	,TR_SENDDATE 
+    	,TR_SENDSTAT 
+    	,TR_MSGTYPE 
+    	,TR_PHONE 
+    	,TR_CALLBACK 
+    	,TR_MSG
+    )
+   SELECT
+          SC_TRAN_SEQ.NEXTVAL                AS TR_NUM	    -- 메시지 고유 아이디(Primary Key, Unique한 20자리)
+        , SYSDATE							AS TR_SENDDATE  -- 작성시간
+        , '0'								AS TR_SENDSTAT  -- 발송상태        
+        , '0' 								AS TR_MSGTYPE	-- 문자전송 형태 0 : 일반메시지	1 : 콜백 URL 메시지
+        , REPLACE('@@RCV_PHN_ID','-','')    AS TR_PHONE    	-- *받는 사람 휴대폰 번호(공백, _,- 없이)
+        , REPLACE('@@CALLBACK','-','')      AS TR_CALLBACK  -- *회신번호 (공백없이 '*','#','번호' 만 가능)
+        , '@@SND_MSG'                       AS TR_MSG       -- *메시지 내용        
+    FROM DUAL
+
+javascript:goReadEX01LinePage("EX0200004334")
+
+==해외출장지원 대륙별 수행현황 - 문서검색상의 건수가 맞지 않는 문제
+<2012년도 신청번호>
+BS0100000933 - 실적결과 입력일/입력자가 존재하지 않음
+
+<2011년도 신청번호>
+7300006404
+7300006765
+7300006908
+7300007033
+7300007005
+7300007068
+7300007045
+7300007149
+7300007163
+7300007035
+7300007229
+7300006862
+7300006955
+7300006885
+7300006874
+7300006887
+7300007073
+7300007021
+7300006977
+7300007069
+7300007016
+7300006285
+7300007140
+7300007313
+7300006943
+7300006944
+7300007044
+7300007056
+7300007166
+7300007264
+7300006699
+7300006254
+7300007282
+7300007101
+7300007066
+7300007009
+7300007167
+7300006561
+7300007240
+7300007238
+7300006888
+7300007098
+7300007052
+7300006932
+7300007051
+7300007049
+7300007186
+7300006872
+7300006864
+7300006913
+7300006873
+7300006666
+7300006641
+7300006868
+7300006695
+7300006701
+7300006895
+7300006948
+7300006878
+7300006980
+7300006956
+7300007076
+7300006988
+7300006972
+7300006905
+7300006960
+7300006983
+7300007003
+7300007107
+7300006979
+7300007102
+7300006946
+7300007013
+7300007199
+7300007188
+7300007227
+7300007026
+7300006952
+7300006959
+7300007260
+7300006899
+7300006917
+7300006883
+7300007037
+7300007084
+7300007053
+7300006925
+7300007071
+7300007065
+7300006866
+7300006890
+7300006935
+7300006945
+7300006976
+7300007185
+7300006879
+7300007055
+7300007050
+7300007092
+7300006981
+7300007000
+7300007046
+7300006901
+7300006923
+7300007111
+7300007117
+7300007004
+7300006947
+7300006990
+7300006838
+7300007118
+7300006865
+7300007064
+7300007023
+7300006919
+7300007116
+7300007043
+7300007136
+7300007070
+7300007203
+7300006778
+7300007133
+7300007085
+7300007147
+7300006902
+7300007075
+7300007109
+7300007014
+7300007089
+7300007032
+7300007114
+7300007038
+7300007137
+7300007154
+7300006327
+7300007142
+7300006982
+7300007042
+7300007215
+7300006855
+7300006845
+7300006171
+7300006805
+7300006552
+7300006867
+7300006824
+7300007010
+7300007048
+7300006984
+7300006970
+7300007002
+7300007080
+7300007025
+7300007135
+7300007241
+7300007288
+7300007219
+7300007100
+7300007124
+7300006933
+7300007212
+7300007221
+7300006939
+7300006245
+7300006831
+7300006833
+7300007164
+
+amitie30
+vina0697
+
+=SocketChannel=
+ex)
+String con = new FileUtil().readFile("d:/dk-scrm backup.csv");
+		
+SocketChannel sc = SocketChannel.open();
+sc.connect(new InetSocketAddress("127.0.0.1",1234));
+sc.write(ByteBufferUtil.str_to_bb(con));
+sc.close();
+
+SocketChannel의 life cycle은 SocketChannel sc.open() ~ sc.close();이다 만약 위의 코드에서 sc.close();를 하지 않으면 read size가 0인 상황이 잠시 지속되다가
+"java.io.IOException: 현재 연결은 원격 호스트에 의해 강제로 끊겼습니다" 예외가 발생한다.
+
+
+고객관리 통합검색의 기업유형에서 지사화업체를 지정하여 
+검색하면 데이타가 정상적으로 나오지 않는것 같으니 확인요망
+지사화업체로 셋팅되는것은 고객이 지사화업체에 가입시 마스터에 기간이 업데이트 되도록 설계되어 있음 
+->TB_CM_CORP_SPC에서 spccorpgbncd='040' and expiryfrom <= sysdate and expiryto >= sysdate 조건으로 검색한결과 통합검색에서 검색한 건수(91건)과 동일하였음
+
+외국기업 고충처리 취소문서 조회시 삭제버튼을 추가하고 해당 고충처리건을 삭제하도록 설정
+고충처리를 취소하면 완료처리가 되기 때문에 통합검색에서만 검색이가능함
+
+무역사절단 연간파견계획 - 지자체에서 등록함
+지자체/유관기관 로그인 URL : http://scrm.kotra.or.kr/plan
+
+==NIO Selector 서버/클라이언트 작성시 쟁점=======================================================================================================================
+
+1.1개의 SocketChannel을 생성하여 생성한 SocketChannel을 클라이언트 종료시까지 사용할 경우
+	1-1.클라이언트가 SocketChannel을 생성하고 종료시까지 생성한 SocketChannel을 유지해야 함
+		1-1-1.이경우 Server측 Selector에서는 클라이언트 SocketChannel을 유지하는 한 계속 Readable,Writeable조건을 충족하게 됨
+		      -> 실제로 Data를 주고받기 전까지는 계속 continue 처리를 해야 함(Selector select()가 자원을 덜 소모한다고는 하나 이게 맞는방법인지는 모르겠음) 
+		      -> 실제로 Data를 주고받는 상태인지를 확인하는 Flag값 / Flag관리 로직이 필요
+		      -> Data 송수신 종료시 종료 Flag를 주고 받아야 하며 이를 보장해야 함
+
+		1-1-2.클라이언트의 Socket을 close안한 상태로 클라이언트가 종료될경우 "java.io.IOException: 현재 연결은 원격 호스트에 의해 강제로 끊겼습니다" 
+		      예외가 발생함
+		      -> 해당 예외 발생시 클라이언트가 종료한것으로 봐야 하는지 아니면 사용자의 접속이 예기치 않게 끊긴것으로 봐야하는지 파악필요
+	
+	1-2.클라이언트에서 Data전송때마다 SocketChannel을 새로 생성하여 Data를 송수신하는경우
+		1-2-1.SocketChanel을 새로 생성하여 전송할때마다 Server쪽에서 새로운 접속으로 판단하는지 여부 확인
+		      ->Server Selector에서 새로 송수신 할때마다 Acceptable으로 판단하는지 확인 만약 그렇다면 이방식으로 쓰면 안됨
+		        : 확인결과 새로운 Acceptable로 생성됨 전송시마다 새로 SocketChannel을 생성하는건 안됨
+
+		1-2-2.SocketChanel을 여러번 새로 만들때 문제가 없는지 확인
+
+
+2.테스트 진행현황
+	2-1. 1-1관계에서 Client-Server 데이터 전송
+	     : 성공
+	
+	2-2. 1-다 관계에서 Client-Server 데이터 전송
+	     : 데이터 전송은 성공하였으나, 다 사용한 Thread가 계속 사용중인것으로 판단(Thread number가 계속 늘어남)
+	       Thread Pooling을 사용할 필요가 있음
+
+====================================================================================================================================================================
+
+==외국기업고충처리 보고서 완료일문제 조사===
+고충처리등록시 보고서형태(중간,최종)를 선택한 상태에서 등록시 완료일이 접수일과 동일하게 설정됨.
+
+고충처리 보고서의 완료일 : 상신버튼을 누른 일시가 완료일이 됨 이게 맞는건지는 확인이 필요함
+
+TB_CP_CAMPAIGNCST에 입력시 중복제거 기능이 들어가는것으로 보임
+
+ss.SS02A01.insertSurvey 만족도 조사 고객추출
+자세한건 봐야 하겠지만 추출후 발송리스트로 넘어갈때 삭제기능을 수행함
+
+l
+[parsedSql]
+/* ss.SS02A01.insertSurvey */ INSERT INTO TB_CP_CAMPAIGNCST(
+		 CMPGNCSTID -- 캠페인대상ID*
+		,CMPGNID -- 캠페인번호*
+		,SRVCCD -- 서비스코드*
+		,SATI_FKSRCTYPE -- 만족도외래키출처
+		,SATI_FKID -- 만족도외래키1
+		,SATI_FKID2 -- 만족도외래키2
+		,CSTGBN -- 고객구분*
+		,CSTNO -- 고객번호*
+		,CSTNAME -- 고객명*
+		,CONO -- 기업번호*
+		,CONAME -- 기업명*
+		,DEPT -- 부서*
+		,DUTY -- 직책*
+		,MOBILENO -- 핸드폰번호*
+		,TELNO -- 전화번호*
+		,EMAIL -- EMAIL*
+		,CO_TELNO -- 기업_전화번호
+		,BIZNAME -- 신청사업명칭
+		,ORGDEPTCD -- 주관부서코드
+		,ORGDEPT -- 주관부서명
+		,IMPLDEPTCD -- 수행부서코드
+		,IMPLDEPT -- 수행부서명
+		,SENDDATE -- 발송일자
+		,READDATE -- 수신일자
+		,SEND_TF -- 발송 여부*
+		,RES_TF -- 반응 여부*
+		,PRJRESULT -- 반응결과코드*
+		,RLTDETAIL -- 반응결과상세코드
+		,RLTDATE -- 반응결과일자
+		,SATIEXAMSCR -- 만족도조사점수
+		,REGUSER -- 등록자*
+		,REGDATE -- 등록일시*
+		,EDTUSER -- 수정자*
+		,EDTDATE -- 수정일시* 
+ ) 
+ SELECT
+ SQ_CP_CAMPAIGNCST_CMPGNCSTID.NEXTVAL AS CMPGNCSTID -- 캠페인대상번호
+ ,? AS CMPGNID -- 캠페인번호
+ ,S.SRVCCD AS SRVCCD -- 서비스코드
+		 ,S.SATI_FKSRCTYPE AS SATI_FKSRCTYPE -- 만족도외래키출처
+		 ,S.SATI_FKID AS SATI_FKID -- 만족도외래키1
+		 ,S.SATI_FKID2 AS SATI_FKID2 -- 만족도외래키2
+		 ,S.CSTGBN AS CSTGBN -- 고객구분*
+ ,S.CSTID AS CSTNO -- 고객번호*
+ ,S.CSTNAME AS CSTNAME -- 고객명*
+ ,S.COID AS CONO -- 기업번호*
+ ,S.CONAME AS CONAME -- 기업명*
+ ,S.DEPT AS DEPT -- 부서*
+ ,S.DUTY AS DUTY -- 직책*
+ ,S.MOBILENO AS MOBILENO -- 핸드폰번호*
+ ,S.TELNO AS TELNO -- 전화번호*
+ ,S.EMAIL AS EMAIL -- EMAIL*
+ ,S.CO_TELNO AS CO_TELNO -- 기업_전화번호
+ ,S.BIZNAME AS BIZNAME -- 신청사업명칭
+ ,S.ORGDEPTCD AS ORGDEPTCD -- 주관부서코드
+ ,S.ORGDEPT AS ORGDEPT -- 주관부서명
+ ,S.IMPLDEPTCD AS IMPLDEPTCD -- 수행부서코드
+ ,S.IMPLDEPT AS IMPLDEPT -- 수행부서명 
+		 ,NULL AS SENDDATE -- 발송일자
+		 ,NULL AS READDATE -- 수신일자
+		 ,0 AS SEND_TF -- 발송 여부*
+		 ,0 AS RES_TF -- 반응 여부*
+		 ,NULL AS PRJRESULT -- 반응결과코드*
+		 ,NULL AS RLTDETAIL -- 반응결과상세코드
+		 ,NULL AS RLTDATE -- 반응결과일자
+		 ,0 AS SATIEXAMSCR -- 만족도조사점수
+		 ,? AS REGUSER -- 등록자*
+		 ,SYSDATE AS REGDATE -- 등록일시*
+		 ,? AS EDTUSER -- 수정자*
+		 ,SYSDATE AS EDTDATE -- 수정일시* 
+ FROM VW_SS_TRGLIST S
+ 	,TB_CM_CUST C
+ WHERE S.CSTID = C.CSTID(+) 
+ AND REPLACE(S.EMAIL,' ','')IS NOT NULL AND C.EMAILRCPT_TF(+) = 1 -- EMAIL오류/수신거부 제외
+ AND C.MEMBSTATE(+)='01' -- 회원상태=회원 2011.11.02
+ AND NOT EXISTS (SELECT 'X' FROM TB_CP_CAMPAIGNCST T
+ WHERE S.SATI_FKSRCTYPE = T.SATI_FKSRCTYPE 
+ AND S.SATI_FKID = T.SATI_FKID AND NVL(S.SATI_FKID2,'_NOFKID2')= NVL(T.SATI_FKID2,'_NOFKID2')) -- 기추출대상 제외
+ AND S.BIZCD = ?
+[isOptional]
+[params]
+	CMPGNID/CP201209100006/litaral
+	SS_USER_ID/100000/litaral
+	SS_USER_ID/100000/litaral
+	SEARCH_SRVCCD/EF/litaral
+###	 QueryItem End		###
+
+[DEBUG] 18:00:41 [PoolController.java:2203] [time: 1343319] - 1587 rows affected
+[DEBUG] 18:00:41 [PoolController.java:2202] [time: 1343332] - ###	 QueryItem Start	###	id=ss.SS02A01.insertSurvey
+type=sql
+[parsedSql]
+/* ss.SS02A01.insertSurvey */ MERGE INTO TB_CP_CAMPAIGNBIZ TRG
+	USING ( 
+		SELECT ? CMPGNID, SRVCCD, COUNT(*) TOTCSTCNT, COUNT(*) INPUTCSTCNT
+		FROM TB_CP_CAMPAIGNCST A
+		WHERE CMPGNID=? 
+		GROUP BY SRVCCD
+	 ) SRC
+		ON (TRG.CMPGNID = SRC.CMPGNID AND TRG.SRVCCD = SRC.SRVCCD )
+	WHEN MATCHED THEN
+		UPDATE SET 
+			TRG.TOTCSTCNT = TRG.TOTCSTCNT, TRG.INPUTCSTCNT = TRG.INPUTCSTCNT
+	WHEN NOT MATCHED THEN
+		INSERT (TRG.CMPGNID, TRG.SRVCCD, TRG.TOTCSTCNT, TRG.INPUTCSTCNT, TRG.SURVEYID)
+	 	VALUES (SRC.CMPGNID, SRC.SRVCCD, SRC.TOTCSTCNT, SRC.INPUTCSTCNT, NULL )
+[isStatic]
+[params]
+	CMPGNID/CP201209100006/litaral
+	CMPGNID/CP201209100006/litaral
+###	 QueryItem End		###/
+
+[DEBUG] 18:00:41 [PoolController.java:2203] [time: 1343333] - 1 rows affected
+[DEBUG] 18:00:41 [PoolController.java:2202] [time: 1343335] - ###	 QueryItem Start	###	id=ss.SS02A01.insertSurvey
+type=sql
+[parsedSql]
+/* ss.SS02A01.insertSurvey */ DELETE FROM TB_CP_CAMPAIGNBIZ TRG
+	WHERE TRG.CMPGNID=?
+	AND NOT EXISTS (SELECT 'X' FROM TB_CP_CAMPAIGNCST SRC
+	 WHERE TRG.CMPGNID = SRC.CMPGNID AND TRG.SRVCCD = SRC.SRVCCD)
+[isStatic]
+[params]
+	CMPGNID/CP201209100006/litaral
+###	 QueryItem End		###
+
+[DEBUG] 18:00:41 [PoolController.java:2203] [time: 1343336] - 0 rows affected
+[DEBUG] 18:00:41 [PoolController.java:2202] [time: 1343339] - ###	 QueryItem Start	###	id=ss.SS02A01.insertSurvey
+type=sql
+[parsedSql]
+/* ss.SS02A01.insertSurvey */ UPDATE TB_CP_CAMPAIGNBIZ T SET T.SURVEYID =
+ (	
+	 SELECT SURVEYID
+	 FROM(
+		 SELECT A.CMPGNID, B.SRVCCD
+		 , (SELECT SURVEYID FROM TB_CP_SRV S
+		 WHERE 1 = CASE C.BIZSRVCGBN
+ WHEN 'B' THEN -- 사업
+ CASE WHEN BIZCD = C.SRVCCD THEN 1 ELSE 0 END
+ WHEN 'S' THEN -- 서비스
+ CASE WHEN BIZCD = C.BIZCD AND SRVCCD=C.BIZDTLCD THEN 1 ELSE 0 END
+ ELSE 0
+ END
+		 AND USEYR = TO_CHAR(A.STARTDATE, 'YYYY') AND ROWNUM=1) SURVEYID
+			FROM TB_CP_CAMPAIGN A -- 캠페인
+			 ,TB_CP_CAMPAIGNBIZ B -- 캠페인대상사업
+			 ,VW_CO_BIZCODE C -- 사업코드
+			WHERE A.CMPGNID=B.CMPGNID AND B.SRVCCD = C.SRVCCD
+			AND A.CMPGNID=?
+		) S
+		WHERE T.CMPGNID = S.CMPGNID AND T.SRVCCD = S.SRVCCD
+	)
+	WHERE EXISTS(	 	
+	 SELECT SURVEYID
+	 FROM(
+		 SELECT A.CMPGNID, B.SRVCCD
+		 , (SELECT SURVEYID FROM TB_CP_SRV S 
+		 WHERE 1 = CASE C.BIZSRVCGBN
+ WHEN 'B' THEN -- 사업
+ CASE WHEN BIZCD = C.SRVCCD THEN 1 ELSE 0 END
+ WHEN 'S' THEN -- 서비스
+ CASE WHEN BIZCD = C.BIZCD AND SRVCCD=C.BIZDTLCD THEN 1 ELSE 0 END
+ ELSE 0
+ END 
+		 AND USEYR = TO_CHAR(A.STARTDATE, 'YYYY') AND ROWNUM=1) SURVEYID
+			FROM TB_CP_CAMPAIGN A -- 캠페인
+			 ,TB_CP_CAMPAIGNBIZ B -- 캠페인대상사업
+			 ,VW_CO_BIZCODE C -- 사업코드
+			WHERE A.CMPGNID=B.CMPGNID AND B.SRVCCD = C.SRVCCD
+			AND A.CMPGNID=?
+		) S2
+		WHERE T.CMPGNID = S2.CMPGNID AND T.SRVCCD = S2.SRVCCD	
+ )
+[isStatic]
+[params]
+	CMPGNID/CP201209100006/litaral
+	CMPGNID/CP201209100006/litaral
+###	 QueryItem End		###
+
+[DEBUG] 18:00:41 [PoolController.java:2203] [time: 1343340] - 1 rows affected
+[DEBUG] 18:00:41 [PoolController.java:2202] [time: 1343348] - ###	 QueryItem Start	###	id=ss.SS02A01.insertSurvey
+type=sql
+[parsedSql]
+/* ss.SS02A01.insertSurvey */ UPDATE 
+ ( 
+ SELECT A.CMPGNID, A.SRVCCD ,A.SURVEYID
+ ,C.SUBJECT AS SRC_SENDTITLE, C.BODY AS SRC_SENDCONT
+ ,A.SENDTITLE, A.SENDCONT
+ FROM TB_CP_CAMPAIGNBIZ A -- 캠페인대상사업
+ ,TB_CP_SRV B -- 설문
+ ,TB_CP_TEMPLATE C -- 서식
+ WHERE A.SURVEYID = B.SURVEYID
+ AND B.CRSID_BODY = C.CRSID
+ AND A.CMPGNID=?
+ ) A SET
+ SENDTITLE = SRC_SENDTITLE
+ ,SENDCONT = SRC_SENDCONT
+[isStatic]
+[params]
+	CMPGNID/CP201209100006/litaral
+###	 QueryItem End		###
+
+[DEBUG] 18:00:41 [PoolController.java:2203] [time: 1343350] - 0 rows affected
+[DEBUG] 18:00:41 [PoolController.java:2202] [time: 1343353] - ###	 QueryItem Start	###	id=ss.SS02A01.insertSurvey
+type=sql
+[parsedSql]
+/* ss.SS02A01.insertSurvey */ UPDATE TB_CP_CAMPAIGN
+ SET TOTCSTCNT = (SELECT COUNT(*) FROM TB_CP_CAMPAIGNCST WHERE CMPGNID = ?) -- 총고객수
+ ,INPUTCSTCNT = (SELECT COUNT(*) FROM TB_CP_CAMPAIGNCST WHERE CMPGNID = ?) -- 투입고객수
+ WHERE CMPGNID = ?
+[isStatic]
+[params]
+	CMPGNID/CP201209100006/litaral
+	CMPGNID/CP201209100006/litaral
+	CMPGNID/CP201209100006/litaral
+###	 QueryItem End		###
+
+[DEBUG] 18:00:41 [PoolController.java:2203] [time: 1343353] - 1 rows affected
+[DEBUG] 18:00:41 [ConnectionPoolingManager.java:226] [time: 1343357] - ** Commit를 수행하였습니다. **
+[DEBUG] 18:00:41 [ConnectionPoolingManager.java:235] [time: 1343357] - ***** Return Pool.....(base-pool Pool에 반환) *****
+[DEBUG] 18:00:41 [ConnectionPool.java:235] [time: 1343357] - ** DB Connection을 닫았습니다. **
+[DEBUG] 18:00:41 [JSPService.java:404] [time: 1343361] - ***** JSP Service를 종료합니다. *****
+
+
+    TB_CP_EMAILLOG    : 47.8 GB - 삭제해도 별 문제 없음 (CAMPAIGN에서 type이 'SS'인건은 제외)
+
+    TB_CP_CAMPAIGNCST : 37.5 GB - 삭제해도 별 문제 없음 (CAMPAIGN에서 type이 'SS'인건은 제외)
+
+    IM_RESULT_COMMON  : 10 GB - 삭제해도 별 문제 없음(CAMPAIGN에서 type이 'SS'인건은 제외)
+
+
+해외시장조사 보고서 등록시 내용이 없는건이 존재하며 이건이 개별메일발송 스케줄러 실행시 NULL로 ("SCRM_AC"."IM_DMAIL_INFO_2"."CONTENT")을 갱신할 수 없습니다
+에러를 발생시키는것으로 의심됨
+
+
+jeim@sudo.co.kr
+
+개별 메일 발송시 common.IndividualEmail", "getIndividualEmailSendList 처리시 loop를 도는 현상이 발생함 이를 수정할 필요가 있음
+
+개별 메일 발송시 제목이 ''인 경우에는 IM_DMAIL_INFO_2에 안들어감('        '인경우는 상관없음)
+
+개별 메일 발송시 IM_DMAIL_INFO_2에 값이 들어가지 않을경우 TB_CM_EMAILLOG의 RLTCODE에 특정한 값을 넣도록 처리할 필요가 있음(UPDATE 처리)
+
+
+EMAILLOGID=84208
+
+84208
+
+캠페인 재발송
+
+
+javascript:clkGrid("BIZ_DTL_GBN_NAME", "CP201206290004", "EX040", "72")
+
+javascript:goDetail("CP201209120002","","SENDCNT","10")
+
+
+
+<tr>
+				<th width="15%">
+					<kydbmUI:label required='false' name='FILE'/>
+				</th>
+				<td width="85%" colspan='7' align="left">		
+					<div id="contentWrap">
+						<div>
+						<jsp:include flush='true' page='/ui/common/ComFileT.jsp'>
+							<jsp:param name='FKSRCTYPE' value='CM010'/>
+							<jsp:param name='FKID' value='<%=COID %>'/>
+							<jsp:param name='ADD_disable' value='true'/>
+							<jsp:param name='DELETE_disable' value='true'/>
+							<jsp:param name='DIV_FILE_ID' value='div_file_alpha'/>
+							<jsp:param name='LIMIT_NUM' value='0'/>
+						</jsp:include>
+						</div>
+					</div>
+				</td>
+			</tr>
+
+
+
+
+="insert into tb_cm_corp_spc values('"&A1&"','040','"&B1&"','"&C1&"');"
+
+="update tb_cm_corp_spc set EXPIRYFROM='"&C2&"',EXPIRYTO='"&D2&"' where coid='"&B2&"' and SPCCORPGBNCD='040';"
+
+javascript:GoRead("OM0100001299")
+
+만족도 조사 발송내용 관련
+확인해 보니까 캠페인에 발송내용이 저장이 되네요 바꾼 내용을 적용하려면 수정하고 그후에 등록된 만족도조사부터 적용이 됩니다.
+
+
+CP201209140001
+
+CP201209140002
+
+성약지원활동(프랑크푸르트무역관)
+
+javascript:cf_PopupPaybackSlip("BR0100004304,9302,N");
+
+개별메일발송 스케줄러에서 IM_DMAIL_INFO_2에 넣는게 실패시 rltcode를 39로 변경함
+<코드정의서 참조>
+
+캠페인 관련 테이블 삭제 SQL
+
+select cmpgnid from tb_cp_campaign where cmpgntype='CP' and regdate < sysdate -90 order by regdate asc;
+
+
+delete from tb_cp_emaillog where exists(select cmpgnid from tb_cp_campaign where cmpgntype='CP' and regdate < sysdate -90);
+
+delete from tb_cp_campaigncst where exists(select cmpgnid from tb_cp_campaign where cmpgntype='CP' and regdate < sysdate -90);
+
+delete from im_result_common where exists(select cmpgnid from tb_cp_campaign where cmpgntype='CP' and regdate < sysdate -90);
+
+ALTER TABLE tb_cp_emaillog ENABLE ROW MOVEMENT;
+ALTER TABLE tb_cp_emaillog SHRINK SPACE;
+ALTER TABLE tb_cp_emaillog SHRINK SPACE CASCADE;
+ALTER TABLE tb_cp_emaillog DISABLE ROW MOVEMENT;
+
+
+delete from tb_cp_emaillog where cmpgnid in(         'CP201112160002',
+'CP201112160003',
+'CP201112160004',
+'CP201112160005',
+'CP201112160006',
+'CP201112160007',
+'CP201112160008',
+'CP201112160009',
+'CP201112160010'                 );
+
+delete from tb_cp_campaigncst where cmpgnid in(                  'CP201112160002',
+'CP201112160003',
+'CP201112160004',
+'CP201112160005',
+'CP201112160006',
+'CP201112160007',
+'CP201112160008',
+'CP201112160009',
+'CP201112160010'          );
+
+delete from im_result_common where pk1 in (                'CP201112160002',
+'CP201112160003',
+'CP201112160004',
+'CP201112160005',
+'CP201112160006',
+'CP201112160007',
+'CP201112160008',
+'CP201112160009',
+'CP201112160010'             );
+
+commit;
+
+
+db데이터삭제시 /ORADATA/ARCH 용량에 주의할것
+
+안녕하십니까. 프로젝트총괄팀 이선빈입니다.
+
+SCRM 설명회 중 '글로벌 프로젝트 플라자 2012' 신청자 목록의 엑셀파일 추출을 아래와 같이 요청합니다.
+
+
+- 아 래 -
+
+대상: 글로벌 프로젝트 플라자 2012 신청자 목록 (총 610명)
+
+목록에 포함될 내용: 기업명, 참석자명, 직위, 전화번호, 핸드폰, 이메일
+(현재 직위는 따로 나와있지 않은 관계로, 리스트에 직위 항목을 추가해 주십시오.)
+
+
+
+긴급히 요청받은 사항이라 빠른 시간 내에 처리해주셨으면 합니다. 오늘 5시까지 해주십사 요청드립니다.
+
+감사합니다.
+
+
+
+exec dbms_utility.analyze_schema('SCRM','COMPUTE');
+
+analyze table tb_cp_emaillog compute statistics;
+analyze table tb_cp_campaigncst compute statistics;
+analyze table im_result_common compute statistics;
+
+CNCTPURPOSESUBCD 500(투자유치일 경우에만 처리)
+BSTYPE
+BSSUBTYPE BSTYPE_MAKE/BSTYPE_NOTMAKE
+IVCNSLTYPE
+
+
+ㅇ 2012-7-10 발송분 : javascript:goDetail("CP201207100001","","FAILCNT","10") Kotra Biz daily Vol.01_일본 컨슈머마켓 플라자
+ㅇ 2012-8-10 발송분 : javascript:goDetail("CP201208100002","","FAILCNT","10") Kotra Biz daily Vol.19_ 『2012 인도 전문인력 유치단』 파견 [2012.8.10]
+ㅇ 2012-9-10 발송분 : javascript:goDetail("CP201209100001","","FAILCNT","10") Kotra Biz daily Vol.37_ 중화권 컨슈머마켓 플라자 Ⅱ[2012.9.10]
+
+
+ORA-12519, TNS:no appropriate service handler found
+
+
+ 핵심네트워크 등록시 아래 대표이메일 입력후 유효하지 않은 이메일 주소라고 뜹니다.
+
+info@micronic-mydata.com
+그리고 이전 입력시에도 이메일 입력형태로 인해 저장이 안된다는 정보화지원실 박일 과장의 의견(원격지원을
+통해 확인)이 있었는데  그당시 이메일 주소는 adrian.leufven@enea.com로 
+여기서는 firstname.lastname@회사명 형태가 일반적으로서 이러한 형태로 인해 저장이 안된다고 하면
+이메일 정보를 입력할 수 없습니다.  그런데 상반기에는 입력시 전혀 문제가 없었는데 갑자기 이런 저장오류
+현상이 9월중순이후 부터 나오고 있습니다. 
+그리고 간혹 이메일주소상의 하이픈(-)이나 _ under bar형태도 들어가는바 이러한 형태의 이메일 입력시
+오류가 나지 않도록 조치바랍니다.
+
+그리고 회사명 (바이어명, 투자가명, 유관기관명 등) 입력시 글자수 제한을 좀 늘려 주었으면 합니다.
+긴 유관기관명을 입력시 글자수 초과로 인해 입력이 곤란했던 적이 몇 번 있었습니다.  
+
+ *
+ * Buffer구조
+ * byte - flag(0:최초 , 1:진행중, 2:완료)
+ * byte - type(0:메시지, 1:파일)
+ * long - total_size(message or file의 총용량)
+ * long - read_size(수신측에서 읽어들인 용량)
+ * long - write_size(송신측에서 보낸 용량) 현재는 예비로 돌림
+ */
+
+-김찬열 데이터-
+두개다 인도-인도네시아포럼(설명회)쪽에 데이터가 들어가 있음
+PT0200003538
+PT0200003532
+
+END END END
+
+kjshin123
+s871205

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="SqlDummy">
+	<insert id="insertEximHist" parameterType="hashmap">
+		<![CDATA[
+			INSERT INTO TB_CM_EXIMHIST
+				(
+				 BSNO
+				, EXIMDATE
+				, HSCD
+				, COUNTRYCD
+				, CONAME
+				, CONAME_EN
+				, EXIMGBN
+				, EXIMAMT
+				, CUR
+				, REPNAME
+				, ZIPID
+				, ADDRESS
+				, TELNO
+				, EMAIL
+				, MTICD
+				, INTRITEM
+				, EDTDATE
+				)
+			VALUES
+			(
+				#{BSNO},
+				#{EXIMDATE},
+				#{HSCD},
+				#{COUNTRYCD},
+				#{CONAME},
+				#{CONAME_EN},
+				#{EXIMGBN},
+				#{EXIMAMT},
+				#{CUR},
+				#{REPNAME},
+				#{ZIPID},
+				#{ADDRESS},
+				#{TELNO},
+				#{EMAIL},
+				(
+					SELECT
+						MTICODE
+					FROM
+						TB_CO_HS2MTICODE
+					WHERE
+						HSCODE LIKE '%' || #{HSCD}
+					AND ROWNUM=1
+					GROUP BY HSCODE, MTICODE
+				),
+				#{INTRITEM},
+				SYSDATE
+			)
+		]]>
+	</insert>
+
+	<insert id="insertEximHistMulti" parameterType="hashmap">
+		<![CDATA[
+			INSERT INTO TB_CM_EXIMHIST
+				(
+				 BSNO
+				, EXIMDATE
+				, HSCD
+				, COUNTRYCD
+				, CONAME_EN
+				, CONAME
+				, EXIMGBN
+				, EXIMAMT
+				, CUR
+				, REPNAME
+				, ZIPID
+				, ADDRESS
+				, TELNO
+				, EMAIL
+				, MTICD
+				, INTRITEM
+				, EDTDATE
+				)
+			VALUES
+			<foreach collection="paramList" item="p" separator="|">
+			(
+				#{p.BSNO},
+				#{p.EXIMDATE},
+				#{p.HSCD},
+				#{p.COUNTRYCD},
+				#{p.CONAME_EN},
+				#{p.CONAME},
+				#{p.EXIMGBN},
+				#{p.EXIMAMT},
+				#{p.CUR},
+				#{p.REPNAME},
+				#{p.ZIPID},
+				#{p.ADDRESS},
+				#{p.TELNO},
+				#{p.EMAIL},
+				(
+					SELECT 
+						MTICODE
+					FROM 
+						TB_CO_HS2MTICODE
+					WHERE
+						HSCODE LIKE %#{p.HSCD}
+					AND ROWNUM=1
+					GROUP BY HSCODE, MTICODE
+				)AS MTICODE
+				,
+				#{p.INTRITEM},
+				SYSDATE
+			)
+			</foreach>
+			
+		]]>
+	</insert>
+
+	<update id="updateKCSI" parameterType="hashmap">
+		<![CDATA[ 
+			UPDATE TB_CP_CAMPAIGNCST
+      SET   --SATIREPLYDATE = SYSDATE,
+        SATIEXAMSCR = NVL((SELECT ROUND(SUM(SCR*weightAM1 + SCR*weightAM2 + SCR*weightMC), 1) MNGDEPT --주관부서
+                FROM (
+                    SELECT C.SCR          
+                                                                                                                    --주관부서
+                        , CASE WHEN A.SATIESTMTYPE ='A' AND B.ITEMUSAGECD='110' THEN 3.571 ELSE 0.00 END weightAM1  --#만족도평가유형 A 주관/수행 별도 , 문항용도코드 110 주관부서 항목
+                        , CASE WHEN A.SATIESTMTYPE ='A' AND B.ITEMUSAGECD='120' THEN 1.429 ELSE 0.00 END weightAM2  --#만족도평가유형 A 주관/수행 별도 , 문항용도코드 120 수행부서 항목
+                                                                                                                    -- 수행부서
+                        , CASE WHEN A.SATIESTMTYPE ='A' AND B.ITEMUSAGECD='120' THEN 2.857 ELSE 0.00 END weightAC1  --#만족도평가유형 A 주관/수행 별도 , 문항용도코드 120 수행부서 항목        
+                                                                                                                    --주관부서, 수행부서 동일
+                        , CASE WHEN A.SATIESTMTYPE ='B' THEN 2.041 ELSE 0 END weightMC  --#만족도평가유형 A 주관/수행 별도 , 문항용도코드 120 수행부서 항목                              
+                    FROM TB_CP_SRV A
+                        JOIN TB_CP_SRV_ITEM B       ON A.SURVEYID=B.SURVEYID AND SVYITEMTYPE IN('1','2') -- 주관식문항은 제외
+                        JOIN TB_CP_SRV_ITEMDTL C    ON B.SURVEYID=C.SURVEYID AND B.SURVEYNUM=C.SURVEYNUM 
+                        JOIN TB_CP_SRV_RST D        ON C.SURVEYID=D.SURVEYID AND C.SURVEYNUM=D.SURVEYNUM AND C.SURVEYNUMVIEW=D.REPLYCONTENTS AND FN_ISNUMBER(D.REPLYCONTENTS)=1 -- 주관식문항은 제외
+                    WHERE D.SURVEYID=#{SURVEYID}  
+                        AND D.CMPGNID=#{CMPGNID}  
+                        AND D.CMPGNCSTID=#{CMPGNCSTID}  
+                        AND B.ITEMUSAGECD IN ('110', '120', '130') --문항용도코드 110 주관부서 항목 / 120 수행부서 항목 / 130 주관/수행 동일시 항목
+                    ) A 
+                ), 0)
+      , SATIEXAMSCR2 = NVL((SELECT ROUND(SUM(SCR*weightAC1                 + SCR*weightMC), 1) ACTDEPT --수행부서
+                FROM (
+                    SELECT C.SCR            
+                                                                                                                    --주관부서
+                        , CASE WHEN A.SATIESTMTYPE ='A' AND B.ITEMUSAGECD='110' THEN 3.571 ELSE 0.00 END weightAM1  --#만족도평가유형 A 주관/수행 별도 , 문항용도코드 110 주관부서 항목
+                        , CASE WHEN A.SATIESTMTYPE ='A' AND B.ITEMUSAGECD='120' THEN 1.429 ELSE 0.00 END weightAM2  --#만족도평가유형 A 주관/수행 별도 , 문항용도코드 120 수행부서 항목
+                                                                                                                    -- 수행부서
+                        , CASE WHEN A.SATIESTMTYPE ='A' AND B.ITEMUSAGECD='120' THEN 2.857 ELSE 0.00 END weightAC1  --#만족도평가유형 A 주관/수행 별도 , 문항용도코드 120 수행부서 항목        
+                                                                                                                    --주관부서, 수행부서 동일
+                        , CASE WHEN A.SATIESTMTYPE ='B' THEN 2.041 ELSE 0 END weightMC  --#만족도평가유형 A 주관/수행 별도 , 문항용도코드 120 수행부서 항목                              
+                    FROM TB_CP_SRV A
+                        JOIN TB_CP_SRV_ITEM B       ON A.SURVEYID=B.SURVEYID AND SVYITEMTYPE IN('1','2') -- 주관식문항은 제외
+                        JOIN TB_CP_SRV_ITEMDTL C    ON B.SURVEYID=C.SURVEYID AND B.SURVEYNUM=C.SURVEYNUM 
+                        JOIN TB_CP_SRV_RST D        ON C.SURVEYID=D.SURVEYID AND C.SURVEYNUM=D.SURVEYNUM AND C.SURVEYNUMVIEW=D.REPLYCONTENTS AND FN_ISNUMBER(D.REPLYCONTENTS)=1 -- 주관식문항은 제외
+                    WHERE D.SURVEYID=#{SURVEYID}  
+                        AND D.CMPGNID=#{CMPGNID}  
+                        AND D.CMPGNCSTID=#{CMPGNCSTID}  
+                        AND B.ITEMUSAGECD IN ('110', '120', '130') --문항용도코드 110 주관부서 항목 / 120 수행부서 항목 / 130 주관/수행 동일시 항목
+                    ) A 
+                ), 0)      
+      , EDTUSER = 'SYSTEM' 
+      --, EDTDATE = SYSDATE
+      WHERE CMPGNCSTID=#{CMPGNCSTID}  
+		]]>
+	</update>
+</mapper>

@@ -1,0 +1,15 @@
+2013-07-22 09:26:17,234 INFO  [main] Outer             (   Outer.java:26)     - true
+2013-07-22 09:26:17,238 INFO  [main] Outer             (   Outer.java:27)     - true
+2013-07-22 09:26:17,238 INFO  [main] Outer             (   Outer.java:28)     - false
+2013-07-22 09:26:17,238 INFO  [main] Outer             (   Outer.java:29)     - false
+2013-07-22 09:29:38,106 INFO  [main] Outer             (   Outer.java:26)     - org.inner == outs.inner : true
+2013-07-22 09:29:38,109 INFO  [main] Outer             (   Outer.java:27)     - org.inner.equals(outs.inner) : true
+2013-07-22 09:29:38,109 INFO  [main] Outer             (   Outer.java:28)     - org.inner == outd.inner : false
+2013-07-22 09:29:38,109 INFO  [main] Outer             (   Outer.java:29)     - org.inner.equals(outd.inner) : false
+2013-07-22 09:44:43,971 INFO  [main] copy.Outer        (   Outer.java:36)     - 최초값 : Test
+2013-07-22 09:44:43,974 INFO  [main] copy.Outer        (   Outer.java:38)     - 변경테스트
+2013-07-22 09:44:43,974 INFO  [main] copy.Outer        (   Outer.java:39)     - 변경테스트
+2013-07-22 09:45:03,946 INFO  [main] copy.Outer        (   Outer.java:36)     - 최초값 : Test
+2013-07-22 09:45:03,949 INFO  [main] copy.Outer        (   Outer.java:38)     - 변경테스트
+2013-07-22 09:45:03,949 INFO  [main] copy.Outer        (   Outer.java:39)     - 변경테스트
+2013-07-22 09:45:03,949 INFO  [main] copy.Outer        (   Outer.java:40)     - Test

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+	<!-- Java Timer Task를 이용한 예제 -->
+	<!-- 1. 일정시간 마다 수행할 업무로직을 갖고있는 클래스 지정 (TimerTask를 상속받아야 함) -->
+	<bean id="orgtasktimer" class="test.spring.timer.OrgTaskTimer" />
+	<!-- 2. 1번객체의 실행주기와 최초 지연시간 설정 delay - 실행간 지연시간(ms) period - 실행주기(ms) -->
+	<bean id="orgtimerTask" class="org.springframework.scheduling.timer.ScheduledTimerTask">
+		<property name="timerTask" ref="orgtasktimer" />
+		<property name="delay" value="1000" />
+		<property name="period" value="10000" />
+	</bean>
+	<!-- 3. 1,2번에서 설정한 JOB을 실행시키기 위한 Bean 설정 -->
+	<bean class="org.springframework.scheduling.timer.TimerFactoryBean">
+		<property name="scheduledTimerTasks">
+			<list>
+				<ref local="orgtimerTask" />
+			</list>
+		</property>
+	</bean>
+</beans>

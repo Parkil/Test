@@ -1,0 +1,5 @@
+2013-06-12 11:11:04,781 WARN  [main] monitor.EtmMonitor (Log4jAdapter.java:64)     - Warning - Performance Monitoring currently disabled. If you did not start the current EtmMonitor on purpose, you may ignore this warning. Otherwhise ensure to call EtmMonitor.start() at some point in your application.
+2013-06-12 11:12:07,893 INFO  [main] monitor.EtmMonitor (Log4jAdapter.java:60)     - JETM 1.2.3 started.
+2013-06-12 11:12:08,901 INFO  [main] monitor.EtmMonitor (Log4jAdapter.java:60)     - Shutting down JETM.
+2013-06-12 11:12:31,657 INFO  [main] monitor.EtmMonitor (Log4jAdapter.java:60)     - JETM 1.2.3 started.
+2013-06-12 11:12:32,692 INFO  [main] monitor.EtmMonitor (Log4jAdapter.java:60)     - Shutting down JETM.
