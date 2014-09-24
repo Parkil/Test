@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<step0 name="root">
+	<step1 name="실황감시">
+		<step2 name="합성">
+			<step3 name="실시간(일기현상)" path="/DATA/OUTPUT/BIN/ZSQP/{yyyymm}/{dd}/RDR_CSQCZ_CP15M_{년월일시분}.bin.gz" type="BIN" thumpath="comp_realtime_zoom.gif"/>
+			<step3 name="240km">
+				<step4 name="CAPPI">
+					<step5 name="No QC" path="/DATA/OUTPUT/BIN/ZNQC/{yyyymm}/{dd}/RDR_CNQCZ_CP15M_{년월일시분}.bin.gz" type="BIN" thumpath="comp_240km_zoom_cappi_noqc.gif"/>
+					<step5 name="ORPG QC" path="/DATA/OUTPUT/BIN/ZOQC/{yyyymm}/{dd}/RDR_COQCZ_CP15M_{년월일시분}.bin.gz" type="BIN" thumpath="comp_240km_zoom_cappi_oqc.gif"/>
+					<step5 name="Fuzzy QC" path="/DATA/OUTPUT/BIN/ZFQC/{yyyymm}/{dd}/RDR_CFQCZ_CP15M_{년월일시분}.bin.gz" type="BIN" thumpath="comp_240km_zoom_cappi_fqc.gif"/>
+					<step5 name="Chaff QC" path="/DATA/OUTPUT/BIN/ZCQC/{yyyymm}/{dd}/RDR_CCQCZ_CP15M_{년월일시분}.bin.gz" type="BIN" thumpath="comp_240km_zoom_cappi_cqc.gif"/>
+				</step4>
+				<step4 name="PPI">
+					<step5 name="No QC" path="/DATA/OUTPUT/BIN/ZNQP/{yyyymm}/{dd}/RDR_CNQCZ_PP00M_{년월일시분}.bin.gz" type="BIN" thumpath="comp_240km_zoom_ppi_noqc.gif"/>
+					<step5 name="ORPG QC" path="/DATA/OUTPUT/BIN/ZOQP/{yyyymm}/{dd}/RDR_COQCZ_PP00M_{년월일시분}.bin.gz" type="BIN" thumpath="comp_240km_zoom_ppi_oqc.gif"/>
+					<step5 name="Fuzzy QC" path="/DATA/OUTPUT/BIN/ZFQP/{yyyymm}/{dd}/RDR_CFQCZ_PP00M_{년월일시분}.bin.gz" type="BIN" thumpath="comp_240km_zoom_ppi_fqc.gif"/>
+					<step5 name="Chaff QC" path="/DATA/OUTPUT/BIN/ZCQP/{yyyymm}/{dd}/RDR_CCQCZ_PP00M_{년월일시분}.bin.gz" type="BIN" thumpath="comp_240km_zoom_ppi_cqc.gif"/>
+				</step4>
+				<step4 name="CMAX">
+					<step5 name="No QC" path="/DATA/OUTPUT/BIN/ZNQM/{yyyymm}/{dd}/RDR_CNQCZ_MXM_{년월일시분}.bin.gz" type="BIN" thumpath="comp_cmax_zoom_cmax_noqc.png"/>
+					<step5 name="ORPG QC" path="/DATA/OUTPUT/BIN/ZOQM/{yyyymm}/{dd}/RDR_COQCZ_MXM_{년월일시분}.bin.gz" type="BIN" thumpath="comp_cmax_zoom_cmax_oqc.png"/>
+					<step5 name="Fuzzy QC" path="/DATA/OUTPUT/BIN/ZFQM/{yyyymm}/{dd}/RDR_CFQCZ_MXM_{년월일시분}.bin.gz" type="BIN" thumpath="comp_cmax_zoom_cmax_fqc.png"/>
+					<step5 name="Chaff QC" path="/DATA/OUTPUT/BIN/ZCQM/{yyyymm}/{dd}/RDR_CCQCZ_MXM_{년월일시분}.bin.gz" type="BIN" thumpath="comp_cmax_zoom_cmax_cqc.png"/>
+				</step4>
+				<step4 name="BASE">
+					<step5 name="No QC" path="/DATA/OUTPUT/BIN/ZNQB/{yyyymm}/{dd}/RDR_CNQCZ_BAM_{년월일시분}.bin.gz" type="BIN" thumpath="comp_base_zoom_base_noqc.png"/>
+					<step5 name="ORPG QC" path="/DATA/OUTPUT/BIN/ZOQB/{yyyymm}/{dd}/RDR_COQCZ_BAM_{년월일시분}.bin.gz" type="BIN" thumpath="comp_base_zoom_base_oqc.png"/>
+					<step5 name="Fuzzy QC" path="/DATA/OUTPUT/BIN/ZFQB/{yyyymm}/{dd}/RDR_CFQCZ_BAM_{년월일시분}.bin.gz" type="BIN" thumpath="comp_base_zoom_base_fqc.png"/>
+					<step5 name="Chaff QC" path="/DATA/OUTPUT/BIN/ZCQB/{yyyymm}/{dd}/RDR_CCQCZ_BAM_{년월일시분}.bin.gz" type="BIN" thumpath="comp_base_zoom_base_cqc.png"/>
+				</step4>
+				<step4 name="VIL">
+					<step5 name="No QC" path="/DATA/OUTPUT/BIN/ZNQV/{yyyymm}/{dd}/RDR_CNQCZ_VLM_{년월일시분}.bin.gz" type="BIN" thumpath="comp_vil_zoom_noqc.png"/>
+					<step5 name="ORPG QC" path="/DATA/OUTPUT/BIN/ZOQV/{yyyymm}/{dd}/RDR_COQCZ_VLM_{년월일시분}.bin.gz" type="BIN" thumpath="comp_vil_zoom_oqc.png"/>
+					<step5 name="Fuzzy QC" path="/DATA/OUTPUT/BIN/ZFQV/{yyyymm}/{dd}/RDR_CFQCZ_VLM_{년월일시분}.bin.gz" type="BIN" thumpath="comp_vil_zoom_fqc.png"/>
+					<step5 name="Chaff QC" path="/DATA/OUTPUT/BIN/ZCQV/{yyyymm}/{dd}/RDR_CCQCZ_VLM_{년월일시분}.bin.gz" type="BIN" thumpath="comp_vil_zoom_cqc.png"/>
+				</step4>
+				<step4 name="ECHO TOP">
+					<step5 name="No QC" path="/DATA/OUTPUT/BIN/ZNQT/{yyyymm}/{dd}/RDR_CNQCZ_ETM_{년월일시분}.bin.gz" type="BIN" thumpath="comp_etop_zoom_noqc.png"/>
+					<step5 name="ORPG QC" path="/DATA/OUTPUT/BIN/ZOQT/{yyyymm}/{dd}/RDR_COQCZ_ETM_{년월일시분}.bin.gz" type="BIN" thumpath="comp_etop_zoom_oqc.png"/>
+					<step5 name="Fuzzy QC" path="/DATA/OUTPUT/BIN/ZFQT/{yyyymm}/{dd}/RDR_CFQCZ_ETM_{년월일시분}.bin.gz" type="BIN" thumpath="comp_etop_zoom_fqc.png"/>
+					<step5 name="Chaff QC" path="/DATA/OUTPUT/BIN/ZCQT/{yyyymm}/{dd}/RDR_CCQCZ_ETM_{년월일시분}.bin.gz" type="BIN" thumpath="comp_etop_zoom_cqc.png"/>
+				</step4>
+			</step3>
+			<step3 name="480km" path="/DATA/OUTPUT/BIN/CLNG/{yyyymm}/{dd}/RDR_CNQCZ_PP48_{년월일시분}.bin.gz" type="BIN" thumpath="comp_480km_img.png"></step3>
+			<step3 name="통합영상(유관기관)">
+				<step4 name="CAPPI">
+					<step5 name="No QC" path="/DATA/OUTPUT/BIN/ZTNC/{yyyymm}/{dd}/RDR_CTNCZ_CP15M_{년월일시분}.bin.gz" type="BIN" thumpath="comp_240km_zoom_c_cappi_noqc.gif"/>
+					<step5 name="ORPG QC" path="/DATA/OUTPUT/BIN/ZTOC/{yyyymm}/{dd}/RDR_CTOCZ_CP15M_{년월일시분}.bin.gz" type="BIN" thumpath="comp_240km_zoom_c_cappi_oqc.gif"/>
+				</step4>
+				<step4 name="PPI">
+					<step5 name="No QC" path="/DATA/OUTPUT/BIN/ZTNP/{yyyymm}/{dd}/RDR_CTNCZ_PP00M_{년월일시분}.bin.gz" type="BIN" thumpath="comp_240km_zoom_c_ppi_noqc.gif"/>
+					<step5 name="ORPG QC" path="/DATA/OUTPUT/BIN/ZTOP/{yyyymm}/{dd}/RDR_CTOCZ_PP00M_{년월일시분}.bin.gz" type="BIN" thumpath="comp_240km_zoom_c_ppi_oqc.gif"/>
+				</step4>
+				<step4 name="CMAX">
+					<step5 name="No QC" path="/DATA/OUTPUT/BIN/ZTNM/{yyyymm}/{dd}/RDR_CTNCZ_MXM_{년월일시분}.bin.gz" type="BIN" thumpath="comp_cmax_zoom_c_cmax_noqc.png"/>
+					<step5 name="ORPG QC" path="/DATA/OUTPUT/BIN/ZTOM/{yyyymm}/{dd}/RDR_CTOCZ_MXM_{년월일시분}.bin.gz" type="BIN" thumpath="comp_cmax_zoom_c_cmax_oqc.png"/>
+				</step4>
+				<step4 name="BASE">
+					<step5 name="No QC" path="/DATA/OUTPUT/BIN/ZTNB/{yyyymm}/{dd}/RDR_CTNCZ_BAM_{년월일시분}.bin.gz" type="BIN" thumpath="comp_base_zoom_c_base_noqc.png"/>
+					<step5 name="ORPG QC" path="/DATA/OUTPUT/BIN/ZTOB/{yyyymm}/{dd}/RDR_CTOCZ_BAM_{년월일시분}.bin.gz" type="BIN" thumpath="comp_base_zoom_c_base_oqc.png"/>
+				</step4>
+				<step4 name="VIL">
+					<step5 name="No QC" path="/DATA/OUTPUT/BIN/ZTNT/{yyyymm}/{dd}/RDR_CTNCZ_ETM_{년월일시분}.bin.gz" type="BIN" thumpath="comp_vil_zoom_c_vil_noqc.png"/>
+					<step5 name="ORPG QC" path="/DATA/OUTPUT/BIN/ZTOT/{yyyymm}/{dd}/RDR_CTOCZ_ETM_{년월일시분}.bin.gz" type="BIN" thumpath="comp_vil_zoom_c_vil_oqc.png"/>
+				</step4>
+				<step4 name="ECHO TOP">
+					<step5 name="No QC" path="/DATA/OUTPUT/BIN/ZTNV/{yyyymm}/{dd}/RDR_CTNCZ_VLM_{년월일시분}.bin.gz" type="BIN" thumpath="comp_etop_zoom_c_etop_noqc.png"/>
+					<step5 name="ORPG QC" path="/DATA/OUTPUT/BIN/ZTOV/{yyyymm}/{dd}/RDR_CTOCZ_VLM_{년월일시분}.bin.gz" type="BIN" thumpath="comp_etop_zoom_c_etop_oqc.png"/>
+				</step4>
+			</step3>
+		</step2>
+		<step2 name="사이트">
+			<step3 name="기상청">
+				<step4 name="백령도">
+					<step5 name="No QC" site="BRI" path="/DATA/INPUT/UFV/{yyyymm}/{dd}/RDR_BRI_{년월일시분}.uf" type="UF" thumpath="site_bri_noqc.png"/>
+					<step5 name="ORPG QC" site="BRI" path="/DATA/INPUT/UFQ/{yyyymm}/{dd}/RDR_BRI_QCD_{년월일시분}.uf" type="UF" thumpath="site_bri_oqc.png"/>
+					<step5 name="Fuzzy QC" site="BRI" path="/DATA/INPUT/UFF/{yyyymm}/{dd}/RDR_BRI_FQC_{년월일시분}.uf" type="UF" thumpath="site_bri_fqc.png"/>
+					<step5 name="Chaff QC" site="BRI" path="/DATA/INPUT/UFC/{yyyymm}/{dd}/RDR_BRI_CQC_{년월일시분}.uf" type="UF" thumpath="site_bri_cqc.png"/>
+				</step4>
+				<step4 name="관악산">
+					<step5 name="No QC" site="KWK" path="/DATA/INPUT/UFV/{yyyymm}/{dd}/RDR_KWK_{년월일시분}.uf" type="UF" thumpath="site_kwk_noqc.png"/>
+					<step5 name="ORPG QC" site="KWK" path="/DATA/INPUT/UFQ/{yyyymm}/{dd}/RDR_KWK_QCD_{년월일시분}.uf" type="UF" thumpath="site_kwk_oqc.png"/>
+					<step5 name="Fuzzy QC" site="KWK" path="/DATA/INPUT/UFF/{yyyymm}/{dd}/RDR_KWK_FQC_{년월일시분}.uf" type="UF" thumpath="site_kwk_fqc.png"/>
+					<step5 name="Chaff QC" site="KWK" path="/DATA/INPUT/UFC/{yyyymm}/{dd}/RDR_KWK_CQC_{년월일시분}.uf" type="UF" thumpath="site_kwk_cqc.png"/>
+				</step4>
+				<step4 name="광덕산">
+					<step5 name="No QC" site="GDK" path="/DATA/INPUT/UFV/{yyyymm}/{dd}/RDR_GDK_{년월일시분}.uf" type="UF" thumpath="site_gdk_noqc.png"/>
+					<step5 name="ORPG QC" site="GDK" path="/DATA/INPUT/UFQ/{yyyymm}/{dd}/RDR_GDK_QCD_{년월일시분}.uf" type="UF" thumpath="site_gdk_oqc.png"/>
+					<step5 name="Fuzzy QC" site="GDK" path="/DATA/INPUT/UFF/{yyyymm}/{dd}/RDR_GDK_FQC_{년월일시분}.uf" type="UF" thumpath="site_gdk_fqc.png"/>
+					<step5 name="Chaff QC" site="GDK" path="/DATA/INPUT/UFC/{yyyymm}/{dd}/RDR_GDK_CQC_{년월일시분}.uf" type="UF"/>
+				</step4>
+				<step4 name="구덕산">
+					<step5 name="No QC" site="PSN" path="/DATA/INPUT/UFV/{yyyymm}/{dd}/RDR_PSN_{년월일시분}.uf" type="UF" thumpath="site_psn_noqc.png"/>
+					<step5 name="ORPG QC" site="PSN" path="/DATA/INPUT/UFQ/{yyyymm}/{dd}/RDR_PSN_QCD_{년월일시분}.uf" type="UF" thumpath="site_psn_oqc.png"/>
+					<step5 name="Fuzzy QC" site="PSN" path="/DATA/INPUT/UFF/{yyyymm}/{dd}/RDR_PSN_FQC_{년월일시분}.uf" type="UF" thumpath="site_psn_fqc.png"/>
+					<step5 name="Chaff QC" site="PSN" path="/DATA/INPUT/UFC/{yyyymm}/{dd}/RDR_PSN_CQC_{년월일시분}.uf" type="UF" thumpath="site_psn_cqc.png"/>
+				</step4>
+				<step4 name="오성산">
+					<step5 name="No QC" site="KSN" path="/DATA/INPUT/UFV/{yyyymm}/{dd}/RDR_KSN_{년월일시분}.uf" type="UF" thumpath="site_ksn_noqc.png"/>
+					<step5 name="ORPG QC" site="KSN" path="/DATA/INPUT/UFQ/{yyyymm}/{dd}/RDR_KSN_QCD_{년월일시분}.uf" type="UF" thumpath="site_ksn_oqc.png"/>
+					<step5 name="Fuzzy QC" site="KSN" path="/DATA/INPUT/UFF/{yyyymm}/{dd}/RDR_KSN_FQC_{년월일시분}.uf" type="UF" thumpath="site_ksn_fqc.png"/>
+					<step5 name="Chaff QC" site="KSN" path="/DATA/INPUT/UFC/{yyyymm}/{dd}/RDR_KSN_CQC_{년월일시분}.uf" type="UF"/>
+				</step4>
+				<step4 name="면봉산">
+					<step5 name="No QC" site="MYN" path="/DATA/INPUT/UFV/{yyyymm}/{dd}/RDR_MYN_{년월일시분}.uf" type="UF" thumpath="site_myn_noqc.png"/>
+					<step5 name="ORPG QC" site="MYN" path="/DATA/INPUT/UFQ/{yyyymm}/{dd}/RDR_MYN_QCD_{년월일시분}.uf" type="UF" thumpath="site_myn_oqc.png"/>
+					<step5 name="Fuzzy QC" site="MYN" path="/DATA/INPUT/UFF/{yyyymm}/{dd}/RDR_MYN_FQC_{년월일시분}.uf" type="UF" thumpath="site_myn_fqc.png"/>
+					<step5 name="Chaff QC" site="MYN" path="/DATA/INPUT/UFC/{yyyymm}/{dd}/RDR_MYN_CQC_{년월일시분}.uf" type="UF" thumpath="site_myn_cqc.png"/>
+				</step4>
+				<step4 name="고산">
+					<step5 name="No QC" site="GSN" path="/DATA/INPUT/UFV/{yyyymm}/{dd}/RDR_GSN_{년월일시분}.uf" type="UF" thumpath="site_gsn_noqc.png"/>
+					<step5 name="ORPG QC" site="GSN" path="/DATA/INPUT/UFQ/{yyyymm}/{dd}/RDR_GSN_QCD_{년월일시분}.uf" type="UF" thumpath="site_gsn_oqc.png"/>
+					<step5 name="Fuzzy QC" site="GSN" path="/DATA/INPUT/UFF/{yyyymm}/{dd}/RDR_GSN_FQC_{년월일시분}.uf" type="UF" thumpath="site_gsn_fqc.png"/>
+					<step5 name="Chaff QC" site="GSN" path="/DATA/INPUT/UFC/{yyyymm}/{dd}/RDR_GSN_CQC_{년월일시분}.uf" type="UF" thumpath="site_gsn_cqc.png"/>
+				</step4>
+				<step4 name="성산">
+					<step5 name="No QC" site="SSP" path="/DATA/INPUT/UFV/{yyyymm}/{dd}/RDR_SSP_{년월일시분}.uf" type="UF" thumpath="site_ssp_noqc.png"/>
+					<step5 name="ORPG QC" site="SSP" path="/DATA/INPUT/UFQ/{yyyymm}/{dd}/RDR_SSP_QCD_{년월일시분}.uf" type="UF" thumpath="site_ssp_noqc.png"/>
+					<step5 name="Fuzzy QC" site="SSP" path="/DATA/INPUT/UFF/{yyyymm}/{dd}/RDR_SSP_FQC_{년월일시분}.uf" type="UF" thumpath="site_ssp_noqc.png"/>
+					<step5 name="Chaff QC" site="SSP" path="/DATA/INPUT/UFC/{yyyymm}/{dd}/RDR_SSP_CQC_{년월일시분}.uf" type="UF"/>
+				</step4>
+				<step4 name="진도">
+					<step5 name="No QC" site="JNI" path="/DATA/INPUT/UFV/{yyyymm}/{dd}/RDR_JNI_{년월일시분}.uf" type="UF" thumpath="site_jni_noqc.png"/>
+					<step5 name="ORPG QC" site="JNI" path="/DATA/INPUT/UFQ/{yyyymm}/{dd}/RDR_JNI_QCD_{년월일시분}.uf" type="UF" thumpath="site_jni_noqc.png"/>
+					<step5 name="Fuzzy QC" site="JNI" path="/DATA/INPUT/UFF/{yyyymm}/{dd}/RDR_JNI_FQC_{년월일시분}.uf" type="UF" thumpath="site_jni_noqc.png"/>
+					<step5 name="Chaff QC" site="JNI" path="/DATA/INPUT/UFC/{yyyymm}/{dd}/RDR_JNI_CQC_{년월일시분}.uf" type="UF"/>
+				</step4>
+				<step4 name="강릉">
+					<step5 name="No QC" site="GNG" path="/DATA/INPUT/UFV/{yyyymm}/{dd}/RDR_GNG_{년월일시분}.uf" type="UF" thumpath="site_gng_noqc.png"/>
+					<step5 name="ORPG QC" site="GNG" path="/DATA/INPUT/UFQ/{yyyymm}/{dd}/RDR_GNG_QCD_{년월일시분}.uf" type="UF" thumpath="site_gng_oqc.png"/>
+					<step5 name="Fuzzy QC" site="GNG" path="/DATA/INPUT/UFF/{yyyymm}/{dd}/RDR_JNI_FQC_{년월일시분}.uf" type="UF" thumpath="site_gng_fqc.png"/>
+					<step5 name="Chaff QC" site="GNG" path="/DATA/INPUT/UFC/{yyyymm}/{dd}/RDR_GNG_CQC_{년월일시분}.uf" type="UF" thumpath="site_gng_cqc.png"/>
+				</step4>
+				<step4 name="인천공항">
+					<step5 name="No QC" site="IIA" path="/DATA/INPUT/UFV/{yyyymm}/{dd}/RDR_IIA_{년월일시분}.uf" type="UF" thumpath="site_iia_noqc.png"/>
+					<step5 name="ORPG QC" site="IIA" path="/DATA/INPUT/UFQ/{yyyymm}/{dd}/RDR_IIA_QCD_{년월일시분}.uf" type="UF" thumpath="site_iia_noqc.png"/>
+					<step5 name="Fuzzy QC" site="IIA" path="/DATA/INPUT/UFF/{yyyymm}/{dd}/RDR_IIA_FQC_{년월일시분}.uf" type="UF" thumpath="site_iia_noqc.png"/>
+					<step5 name="Chaff QC" site="IIA" path="/DATA/INPUT/UFC/{yyyymm}/{dd}/RDR_IIA_CQC_{년월일시분}.uf" type="UF" thumpath="site_iia_noqc.png"/>
+				</step4>
+			</step3>
+			<step3 name="국토해양부">
+				<step4 name="비슬산">
+					<step5 name="No QC" site="BSL" path="/DATA/INPUT/UFV/{yyyymm}/{dd}/RDR_BSL_{년월일시분}.uf" type="UF" thumpath="site_bsl_noqc.png"/>
+					<step5 name="ORPG QC" site="BSL" path="/DATA/INPUT/UFQ/{yyyymm}/{dd}/RDR_BSL_QCD_{년월일시분}.uf" type="UF"/>
+					<step5 name="Fuzzy QC" site="BSL" path="/DATA/INPUT/UFF/{yyyymm}/{dd}/RDR_BSL_FQC_{년월일시분}.uf" type="UF"/>
+					<step5 name="Chaff QC" site="BSL" path="/DATA/INPUT/UFC/{yyyymm}/{dd}/RDR_BSL_CQC_{년월일시분}.uf" type="UF"/>
+				</step4>
+				<step4 name="임진강">
+					<step5 name="No QC" site="IMJ" path="/DATA/INPUT/UFV/{yyyymm}/{dd}/RDR_IMJ_{년월일시분}.uf" type="UF" thumpath="site_imj_noqc.png"/>
+					<step5 name="ORPG QC" site="IMJ" path="/DATA/INPUT/UFQ/{yyyymm}/{dd}/RDR_IMJ_QCD_{년월일시분}.uf" type="UF"/>
+					<step5 name="Fuzzy QC" site="IMJ" path="/DATA/INPUT/UFF/{yyyymm}/{dd}/RDR_IMJ_FQC_{년월일시분}.uf" type="UF"/>
+					<step5 name="Chaff QC" site="IMJ" path="/DATA/INPUT/UFC/{yyyymm}/{dd}/RDR_IMJ_CQC_{년월일시분}.uf" type="UF"/>
+				</step4>
+				<step4 name="소백산">
+					<step5 name="No QC" site="SBS" path="/DATA/INPUT/UFV/{yyyymm}/{dd}/RDR_SBS_{년월일시분}.uf" type="UF"/>
+					<step5 name="ORPG QC" site="SBS" path="/DATA/INPUT/UFQ/{yyyymm}/{dd}/RDR_SBS_QCD_{년월일시분}.uf" type="UF"/>
+					<step5 name="Fuzzy QC" site="SBS" path="/DATA/INPUT/UFF/{yyyymm}/{dd}/RDR_SBS_FQC_{년월일시분}.uf" type="UF"/>
+					<step5 name="Chaff QC" site="SBS" path="/DATA/INPUT/UFC/{yyyymm}/{dd}/RDR_SBS_CQC_{년월일시분}.uf" type="UF"/>
+				</step4>
+			</step3>
+			<step3 name="공군">
+				<step4 name="원주">
+					<step5 name="No QC" site="WNJ" path="/DATA/INPUT/UFV/{yyyymm}/{dd}/RDR_WNJ_{년월일시분}.uf" type="UF" thumpath="site_wnj_noqc.png"/>
+					<step5 name="ORPG QC" site="WNJ" path="/DATA/INPUT/UFQ/{yyyymm}/{dd}/RDR_WNJ_QCD_{년월일시분}.uf" type="UF"/>
+					<step5 name="Fuzzy QC" site="WNJ" path="/DATA/INPUT/UFF/{yyyymm}/{dd}/RDR_WNJ_FQC_{년월일시분}.uf" type="UF"/>
+					<step5 name="Chaff QC" site="WNJ" path="/DATA/INPUT/UFC/{yyyymm}/{dd}/RDR_WNJ_CQC_{년월일시분}.uf" type="UF"/>
+				</step4>
+				<step4 name="예천">
+					<step5 name="No QC" site="YCN" path="/DATA/INPUT/UFV/{yyyymm}/{dd}/RDR_YCN_{년월일시분}.uf" type="UF" thumpath="site_ycn_noqc.png"/>
+					<step5 name="ORPG QC" site="YCN" path="/DATA/INPUT/UFQ/{yyyymm}/{dd}/RDR_YCN_QCD_{년월일시분}.uf" type="UF"/>
+					<step5 name="Fuzzy QC" site="YCN" path="/DATA/INPUT/UFF/{yyyymm}/{dd}/RDR_YCN_FQC_{년월일시분}.uf" type="UF"/>
+					<step5 name="Chaff QC" site="YCN" path="/DATA/INPUT/UFC/{yyyymm}/{dd}/RDR_YCN_CQC_{년월일시분}.uf" type="UF"/>
+				</step4>
+				<step4 name="광주">
+					<step5 name="No QC" site="KWJ" path="/DATA/INPUT/UFV/{yyyymm}/{dd}/RDR_KWJ_{년월일시분}.uf" type="UF" thumpath="site_kwj_noqc.png"/>
+					<step5 name="ORPG QC" site="KWJ" path="/DATA/INPUT/UFQ/{yyyymm}/{dd}/RDR_KWJ_QCD_{년월일시분}.uf" type="UF"/>
+					<step5 name="Fuzzy QC" site="KWJ" path="/DATA/INPUT/UFF/{yyyymm}/{dd}/RDR_KWJ_FQC_{년월일시분}.uf" type="UF"/>
+					<step5 name="Chaff QC" site="KWJ" path="/DATA/INPUT/UFC/{yyyymm}/{dd}/RDR_KWJ_CQC_{년월일시분}.uf" type="UF"/>
+				</step4>
+				<step4 name="대구">
+					<step5 name="No QC" site="TAG" path="/DATA/INPUT/UFV/{yyyymm}/{dd}/RDR_TAG_{년월일시분}.uf" type="UF" thumpath="site_tag_noqc.png"/>
+					<step5 name="ORPG QC" site="TAG" path="/DATA/INPUT/UFQ/{yyyymm}/{dd}/RDR_TAG_QCD_{년월일시분}.uf" type="UF"/>
+					<step5 name="Fuzzy QC" site="TAG" path="/DATA/INPUT/UFF/{yyyymm}/{dd}/RDR_TAG_FQC_{년월일시분}.uf" type="UF"/>
+					<step5 name="Chaff QC" site="TAG" path="/DATA/INPUT/UFC/{yyyymm}/{dd}/RDR_TAG_CQC_{년월일시분}.uf" type="UF"/>
+				</step4>
+				<step4 name="사천">
+					<step5 name="No QC" site="SCN" path="/DATA/INPUT/UFV/{yyyymm}/{dd}/RDR_SCN_{년월일시분}.uf" type="UF" thumpath="site_scn_noqc.png"/>
+					<step5 name="ORPG QC" site="SCN" path="/DATA/INPUT/UFQ/{yyyymm}/{dd}/RDR_SCN_QCD_{년월일시분}.uf" type="UF"/>
+					<step5 name="Fuzzy QC" site="SCN" path="/DATA/INPUT/UFF/{yyyymm}/{dd}/RDR_SCN_FQC_{년월일시분}.uf" type="UF"/>
+					<step5 name="Chaff QC" site="SCN" path="/DATA/INPUT/UFC/{yyyymm}/{dd}/RDR_SCN_CQC_{년월일시분}.uf" type="UF"/>
+				</step4>
+				<step4 name="서산">
+					<step5 name="No QC" site="SAN" path="/DATA/INPUT/UFV/{yyyymm}/{dd}/RDR_SAN_{년월일시분}.uf" type="UF" thumpath="site_san_noqc.png"/>
+					<step5 name="ORPG QC" site="SAN" path="/DATA/INPUT/UFQ/{yyyymm}/{dd}/RDR_SAN_QCD_{년월일시분}.uf" type="UF"/>
+					<step5 name="Fuzzy QC" site="SAN" path="/DATA/INPUT/UFF/{yyyymm}/{dd}/RDR_SAN_FQC_{년월일시분}.uf" type="UF"/>
+					<step5 name="Chaff QC" site="SAN" path="/DATA/INPUT/UFC/{yyyymm}/{dd}/RDR_SAN_CQC_{년월일시분}.uf" type="UF"/>
+				</step4>
+				<step4 name="수원">
+					<step5 name="No QC" site="SWN" path="/DATA/INPUT/UFV/{yyyymm}/{dd}/RDR_SWN_{년월일시분}.uf" type="UF" thumpath="site_swn_noqc.png"/>
+					<step5 name="ORPG QC" site="SWN" path="/DATA/INPUT/UFQ/{yyyymm}/{dd}/RDR_SWN_QCD_{년월일시분}.uf" type="UF"/>
+					<step5 name="Fuzzy QC" site="SWN" path="/DATA/INPUT/UFF/{yyyymm}/{dd}/RDR_SWN_FQC_{년월일시분}.uf" type="UF"/>
+					<step5 name="Chaff QC" site="SWN" path="/DATA/INPUT/UFC/{yyyymm}/{dd}/RDR_SWN_CQC_{년월일시분}.uf" type="UF"/>
+				</step4>
+				<step4 name="중원">
+					<step5 name="No QC" site="JWN" path="/DATA/INPUT/UFV/{yyyymm}/{dd}/RDR_JWN_{년월일시분}.uf" type="UF" thumpath="site_jwn_noqc.png"/>
+					<step5 name="ORPG QC" site="JWN" path="/DATA/INPUT/UFQ/{yyyymm}/{dd}/RDR_JWN_QCD_{년월일시분}.uf" type="UF"/>
+					<step5 name="Fuzzy QC" site="JWN" path="/DATA/INPUT/UFF/{yyyymm}/{dd}/RDR_JWN_FQC_{년월일시분}.uf" type="UF"/>
+					<step5 name="Chaff QC" site="JWN" path="/DATA/INPUT/UFC/{yyyymm}/{dd}/RDR_JWN_CQC_{년월일시분}.uf" type="UF"/>
+				</step4>
+				<step4 name="강릉A">
+					<step5 name="No QC" site="KAN" path="/DATA/INPUT/UFV/{yyyymm}/{dd}/RDR_KAN_{년월일시분}.uf" type="UF" thumpath="site_kan_noqc.png"/>
+					<step5 name="ORPG QC" site="KAN" path="/DATA/INPUT/UFQ/{yyyymm}/{dd}/RDR_KAN_QCD_{년월일시분}.uf" type="UF"/>
+					<step5 name="Fuzzy QC" site="KAN" path="/DATA/INPUT/UFF/{yyyymm}/{dd}/RDR_KAN_FQC_{년월일시분}.uf" type="UF"/>
+					<step5 name="Chaff QC" site="KAN" path="/DATA/INPUT/UFC/{yyyymm}/{dd}/RDR_KAN_CQC_{년월일시분}.uf" type="UF"/>
+				</step4>
+			</step3>
+			<step3 name="미공군">
+				<step4 name="용인">
+					<step5 name="No QC" site="RKSG" path="/DATA/INPUT/UFV/{yyyymm}/{dd}/RDR_RKSG_{년월일시분}.uf" type="UF"/>
+					<step5 name="ORPG QC" site="RKSG" path="/DATA/INPUT/UFQ/{yyyymm}/{dd}/RDR_RKSG_QCD_{년월일시분}.uf" type="UF"/>
+					<step5 name="Fuzzy QC" site="RKSG" path="/DATA/INPUT/UFF/{yyyymm}/{dd}/RDR_RKSG_FQC_{년월일시분}.uf" type="UF"/>
+					<step5 name="Chaff QC" site="RKSG" path="/DATA/INPUT/UFC/{yyyymm}/{dd}/RDR_RKSG_CQC_{년월일시분}.uf" type="UF"/>
+				</step4>
+				<step4 name="군산">
+					<step5 name="No QC" site="RKJK" path="/DATA/INPUT/UFV/{yyyymm}/{dd}/RDR_RKJK_{년월일시분}.uf" type="UF"/>
+					<step5 name="ORPG QC" site="RKJK" path="/DATA/INPUT/UFQ/{yyyymm}/{dd}/RDR_RKJK_QCD_{년월일시분}.uf" type="UF"/>
+					<step5 name="Fuzzy QC" site="RKJK" path="/DATA/INPUT/UFF/{yyyymm}/{dd}/RDR_RKJK_FQC_{년월일시분}.uf" type="UF"/>
+					<step5 name="Chaff QC" site="RKJK" path="/DATA/INPUT/UFC/{yyyymm}/{dd}/RDR_RKJK_CQC_{년월일시분}.uf" type="UF"/>
+				</step4>
+			</step3>
+		</step2>
+	</step1>
+	<step1 name="강수량 추정">
+		
+			<step2 name="합성RAR" path="/DATA/OUTPUT/BIN/RCCP/{yyyymm}/{dd}/RDR_ROQCZ_CP15AA_{년월일시분}.bin.gz" type="BIN" thumpath="comp_area_acc_zoom.png"/>
+			<step2 name="사이트RAR">
+				<step3 name="백령도" site="BRI" path="/DATA/OUTPUT/BIN/RSIT/{yyyymm}/{dd}/RDR_ROQCZ_CP15Z_BRI_{년월일시분}.bin.gz" type="BIN" thumpath="site_rar_img_bri.png"/>
+				<step3 name="관악산" site="KWK" path="/DATA/OUTPUT/BIN/RSIT/{yyyymm}/{dd}/RDR_ROQCZ_CP15Z_KWK_{년월일시분}.bin.gz" type="BIN" thumpath="site_rar_img_kwk.png"/>
+				<step3 name="광덕산" site="GDK" path="/DATA/OUTPUT/BIN/RSIT/{yyyymm}/{dd}/RDR_ROQCZ_CP15Z_GDK_{년월일시분}.bin.gz" type="BIN" thumpath="site_rar_img_gdk.png"/>
+				<step3 name="구덕산" site="PSN" path="/DATA/OUTPUT/BIN/RSIT/{yyyymm}/{dd}/RDR_ROQCZ_CP15Z_PSN_{년월일시분}.bin.gz" type="BIN" thumpath="site_rar_img_psn.png"/>
+				<step3 name="오성산" site="KSN" path="/DATA/OUTPUT/BIN/RSIT/{yyyymm}/{dd}/RDR_ROQCZ_CP15Z_KSN_{년월일시분}.bin.gz" type="BIN" thumpath="site_rar_img_ksn.png"/>
+				<step3 name="면봉산" site="MYN" path="/DATA/OUTPUT/BIN/RSIT/{yyyymm}/{dd}/RDR_ROQCZ_CP15Z_MYN_{년월일시분}.bin.gz" type="BIN" thumpath="site_rar_img_myn.png"/>
+				<step3 name="고산" site="GSN" path="/DATA/OUTPUT/BIN/RSIT/{yyyymm}/{dd}/RDR_ROQCZ_CP15Z_GSN_{년월일시분}.bin.gz" type="BIN" thumpath="site_rar_img_gsn.png"/>
+				<step3 name="성산" site="SSP" path="/DATA/OUTPUT/BIN/RSIT/{yyyymm}/{dd}/RDR_ROQCZ_CP15Z_SSP_{년월일시분}.bin.gz" type="BIN" thumpath="site_rar_img_ssp.png"/>
+				<step3 name="진도" site="JNI" path="/DATA/OUTPUT/BIN/RSIT/{yyyymm}/{dd}/RDR_ROQCZ_CP15Z_JNI_{년월일시분}.bin.gz" type="BIN" thumpath="site_rar_img_jni.png"/>
+				<step3 name="강릉" site="GNG" path="/DATA/OUTPUT/BIN/RSIT/{yyyymm}/{dd}/RDR_ROQCZ_CP15Z_GNG_{년월일시분}.bin.gz" type="BIN" thumpath="site_rar_img_gng.png"/>
+				<step3 name="인천공항" site="IIA" path="/DATA/OUTPUT/BIN/RSIT/{yyyymm}/{dd}/RDR_ROQCZ_CP15Z_IIA_{년월일시분}.bin.gz" type="BIN" thumpath="site_rar_img_iia.png"/>
+			</step2>
+		
+		<!-- 
+		<step2 name="선택형 Z-R">
+			<step3 name="CAPPI">
+				<step4 name="No QC"></step4>
+				<step4 name="ORPG QC"></step4>
+				<step4 name="Fuzzy QC"></step4>
+				<step4 name="Chaff QC"></step4>
+			</step3>
+			<step3 name="PPI">
+				<step4 name="No QC"></step4>
+				<step4 name="ORPG QC"></step4>
+				<step4 name="Fuzzy QC"></step4>
+				<step4 name="Chaff QC"></step4>
+			</step3>
+		</step2>
+		 -->
+		<step2 name="면적 강우량">
+			<step3 name="합성">
+				<step4 name="합성">
+					<step5 name="도" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_CNQSM_CMP_P_{년월일시분}.bin.gz" type="BIN"/>
+					<step5 name="시,구" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_CNQSM_CMP_Q_{년월일시분}.bin.gz" type="BIN"/>
+					<step5 name="대권역" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_CNQSM_CMP_R_{년월일시분}.bin.gz" type="BIN"/>
+					<step5 name="중권역" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_CNQSM_CMP_S_{년월일시분}.bin.gz" type="BIN"/>
+					<step5 name="표준유역" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_CNQSM_CMP_T_{년월일시분}.bin.gz" type="BIN"/>
+				</step4>
+				<step4 name="RAR">
+					<step5 name="도" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_COQSM_RAR_P_{년월일시분}.bin.gz" type="BIN"/>
+					<step5 name="시,구" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_COQSM_RAR_Q_{년월일시분}.bin.gz" type="BIN"/>
+					<step5 name="대권역" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_COQSM_RAR_R_{년월일시분}.bin.gz" type="BIN"/>
+					<step5 name="중권역" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_COQSM_RAR_S_{년월일시분}.bin.gz" type="BIN"/>
+					<step5 name="표준유역" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_COQSM_RAR_T_{년월일시분}.bin.gz" type="BIN"/>
+				</step4>
+				<step4 name="MAPLE">
+					<step5 name="도" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_COQSM_MAP_P_{년월일시분}.bin.gz" type="BIN"/>
+					<step5 name="시,구" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_COQSM_MAP_Q_{년월일시분}.bin.gz" type="BIN"/>
+					<step5 name="대권역" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_COQSM_MAP_R_{년월일시분}.bin.gz" type="BIN"/>
+					<step5 name="중권역" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_COQSM_MAP_S_{년월일시분}.bin.gz" type="BIN"/>
+					<step5 name="표준유역" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_COQSM_MAP_T_{년월일시분}.bin.gz" type="BIN"/>
+				</step4>
+			</step3>
+			<step3 name="사이트">
+				<step4 name="백령도">
+					<step5 name="도" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_SNQSM_P_BRI_{년월일시분}.bin.gz" type="BIN"/>
+					<step5 name="시,구" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_SNQSM_Q_BRI_{년월일시분}.bin.gz" type="BIN"/>
+					<step5 name="대권역" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_SNQSM_R_BRI_{년월일시분}.bin.gz" type="BIN"/>
+					<step5 name="중권역" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_SNQSM_S_BRI_{년월일시분}.bin.gz" type="BIN"/>
+					<step5 name="표준유역" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_SNQSM_T_BRI_{년월일시분}.bin.gz" type="BIN"/>
+				</step4>
+				<step4 name="관악산">
+					<step5 name="도" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_SNQSM_P_KWK_{년월일시분}.bin.gz" type="BIN"/>
+					<step5 name="시,구" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_SNQSM_Q_KWK_{년월일시분}.bin.gz" type="BIN"/>
+					<step5 name="대권역" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_SNQSM_R_KWK_{년월일시분}.bin.gz" type="BIN"/>
+					<step5 name="중권역" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_SNQSM_S_KWK_{년월일시분}.bin.gz" type="BIN"/>
+					<step5 name="표준유역" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_SNQSM_T_KWK_{년월일시분}.bin.gz" type="BIN"/>
+				</step4>
+				<step4 name="광덕산">
+					<step5 name="도" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_SNQSM_P_GDK_{년월일시분}.bin.gz" type="BIN"/>
+					<step5 name="시,구" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_SNQSM_Q_GDK_{년월일시분}.bin.gz" type="BIN"/>
+					<step5 name="대권역" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_SNQSM_R_GDK_{년월일시분}.bin.gz" type="BIN"/>
+					<step5 name="중권역" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_SNQSM_S_GDK_{년월일시분}.bin.gz" type="BIN"/>
+					<step5 name="표준유역" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_SNQSM_T_GDK_{년월일시분}.bin.gz" type="BIN"/>
+				</step4>
+				<step4 name="구덕산">
+					<step5 name="도" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_SNQSM_P_PSN_{년월일시분}.bin.gz" type="BIN"/>
+					<step5 name="시,구" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_SNQSM_Q_PSN_{년월일시분}.bin.gz" type="BIN"/>
+					<step5 name="대권역" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_SNQSM_R_PSN_{년월일시분}.bin.gz" type="BIN"/>
+					<step5 name="중권역" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_SNQSM_S_PSN_{년월일시분}.bin.gz" type="BIN"/>
+					<step5 name="표준유역" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_SNQSM_T_PSN_{년월일시분}.bin.gz" type="BIN"/>
+				</step4>
+				<step4 name="오성산">
+					<step5 name="도" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_SNQSM_P_KSN_{년월일시분}.bin.gz" type="BIN"/>
+					<step5 name="시,구" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_SNQSM_Q_KSN_{년월일시분}.bin.gz" type="BIN"/>
+					<step5 name="대권역" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_SNQSM_R_KSN_{년월일시분}.bin.gz" type="BIN"/>
+					<step5 name="중권역" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_SNQSM_S_KSN_{년월일시분}.bin.gz" type="BIN"/>
+					<step5 name="표준유역" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_SNQSM_T_KSN_{년월일시분}.bin.gz" type="BIN"/>
+				</step4>
+				<step4 name="면봉산">
+					<step5 name="도" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_SNQSM_P_MYN_{년월일시분}.bin.gz" type="BIN"/>
+					<step5 name="시,구" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_SNQSM_Q_MYN_{년월일시분}.bin.gz" type="BIN"/>
+					<step5 name="대권역" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_SNQSM_R_MYN_{년월일시분}.bin.gz" type="BIN"/>
+					<step5 name="중권역" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_SNQSM_S_MYN_{년월일시분}.bin.gz" type="BIN"/>
+					<step5 name="표준유역" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_SNQSM_T_MYN_{년월일시분}.bin.gz" type="BIN"/>
+				</step4>
+				<step4 name="고산">
+					<step5 name="도" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_SNQSM_P_GSN_{년월일시분}.bin.gz" type="BIN"/>
+					<step5 name="시,구" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_SNQSM_Q_GSN_{년월일시분}.bin.gz" type="BIN"/>
+					<step5 name="대권역" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_SNQSM_R_GSN_{년월일시분}.bin.gz" type="BIN"/>
+					<step5 name="중권역" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_SNQSM_S_GSN_{년월일시분}.bin.gz" type="BIN"/>
+					<step5 name="표준유역" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_SNQSM_T_GSN_{년월일시분}.bin.gz" type="BIN"/>
+				</step4>
+				<step4 name="성산">
+					<step5 name="도" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_SNQSM_P_SSP_{년월일시분}.bin.gz" type="BIN"/>
+					<step5 name="시,구" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_SNQSM_Q_SSP_{년월일시분}.bin.gz" type="BIN"/>
+					<step5 name="대권역" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_SNQSM_R_SSP_{년월일시분}.bin.gz" type="BIN"/>
+					<step5 name="중권역" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_SNQSM_S_SSP_{년월일시분}.bin.gz" type="BIN"/>
+					<step5 name="표준유역" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_SNQSM_T_SSP_{년월일시분}.bin.gz" type="BIN"/>
+				</step4>
+				<step4 name="진도">
+					<step5 name="도" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_SNQSM_P_JNI_{년월일시분}.bin.gz" type="BIN"/>
+					<step5 name="시,구" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_SNQSM_Q_JNI_{년월일시분}.bin.gz" type="BIN"/>
+					<step5 name="대권역" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_SNQSM_R_JNI_{년월일시분}.bin.gz" type="BIN"/>
+					<step5 name="중권역" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_SNQSM_S_JNI_{년월일시분}.bin.gz" type="BIN"/>
+					<step5 name="표준유역" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_SNQSM_T_JNI_{년월일시분}.bin.gz" type="BIN"/>
+				</step4>
+				<step4 name="강릉">
+					<step5 name="도" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_SNQSM_P_GNG_{년월일시분}.bin.gz" type="BIN"/>
+					<step5 name="시,구" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_SNQSM_Q_GNG_{년월일시분}.bin.gz" type="BIN"/>
+					<step5 name="대권역" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_SNQSM_R_GNG_{년월일시분}.bin.gz" type="BIN"/>
+					<step5 name="중권역" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_SNQSM_S_GNG_{년월일시분}.bin.gz" type="BIN"/>
+					<step5 name="표준유역" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_SNQSM_T_GNG_{년월일시분}.bin.gz" type="BIN"/>
+				</step4>
+				<step4 name="인천공항">
+					<step5 name="도" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_SNQSM_P_IIA_{년월일시분}.bin.gz" type="BIN"/>
+					<step5 name="시,구" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_SNQSM_Q_IIA_{년월일시분}.bin.gz" type="BIN"/>
+					<step5 name="대권역" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_SNQSM_R_IIA_{년월일시분}.bin.gz" type="BIN"/>
+					<step5 name="중권역" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_SNQSM_S_IIA_{년월일시분}.bin.gz" type="BIN"/>
+					<step5 name="표준유역" path="/DATA/OUTPUT/TXT/ASIT/{yyyymm}/{dd}/RDR_SNQSM_T_IIA_{년월일시분}.bin.gz" type="BIN"/>
+				</step4>
+			</step3>
+		</step2>
+	</step1>
+	<step1 name="강수량 예측">
+		<step2 name="VSRF" path="/DATA/OUTPUT/BIN/QVSR/{yyyymm}/{dd}/RDR_COQCZ_M10B_{년월일시분}.bin.gz" type="BIN" thumpath="comp_vsrf_zoom.gif"></step2>
+		<step2 name="MAPLE" path="/DATA/OUTPUT/BIN/QMAP/{yyyymm}/{dd}/RDR_MAPLE_CAPPI20_RAIN_{년월일시분}.bin.gz" type="BIN" thumpath="comp_maple_zoom.gif"></step2>
+		<step2 name="KONOS" path="/DATA/OUTPUT/BIN/QKON/{yyyymm}/{dd}/RDR_KONOS_RAIN_{년월일시분}.bin.gz" type="BIN" thumpath="comp_konos_zoom.gif"></step2>
+	</step1>
+	<step1 name="바람장">
+		<step2 name="합성 바람장">
+			<step3 name="No QC" path="/DATA/OUTPUT/BIN/3DNQ/{yyyymm}/{dd}/RDR_CNQCZ_3D40_{년월일시분}.bin.gz" type="BIN" thumpath="comp_dualwind_zoom_noqc.png"></step3>
+			<step3 name="ORPG QC" path="/DATA/OUTPUT/BIN/3DOQ/{yyyymm}/{dd}/RDR_COQCZ_3D40_{년월일시분}.bin.gz" type="BIN" thumpath="comp_dualwind_zoom_oqc.png"></step3>
+		</step2>
+		<step2 name="사이트">
+			<step3 name="연직시계열 바람">
+				<step4 name="백령도" site="BRI" path="/DATA/OUTPUT/IMG/SVAD/{yyyymm}/{dd}/VAD_BRI_H_{년월일시분}.gif" type="IMG"></step4>
+				<step4 name="관악산" site="KWK" path="/DATA/OUTPUT/IMG/SVAD/{yyyymm}/{dd}/VAD_KWK_H_{년월일시분}.gif" type="IMG" thumpath="VAD_KWK_H_201210311310.gif"></step4>
+				<step4 name="광덕산" site="GDK" path="/DATA/OUTPUT/IMG/SVAD/{yyyymm}/{dd}/VAD_GDK_H_{년월일시분}.gif" type="IMG" thumpath="VAD_GDK_H_201210311310.gif"></step4>
+				<step4 name="구덕산" site="PSN" path="/DATA/OUTPUT/IMG/SVAD/{yyyymm}/{dd}/VAD_PSN_H_{년월일시분}.gif" type="IMG" thumpath="VAD_PSN_H_201210311310.gif"></step4>
+				<step4 name="오성산" site="KSN" path="/DATA/OUTPUT/IMG/SVAD/{yyyymm}/{dd}/VAD_KSN_H_{년월일시분}.gif" type="IMG" thumpath="VAD_KSN_H_201210311310.gif"></step4>
+				<step4 name="면봉산" site="MYN" path="/DATA/OUTPUT/IMG/SVAD/{yyyymm}/{dd}/VAD_MYN_H_{년월일시분}.gif" type="IMG" thumpath="VAD_MYN_H_201210311310.gif"></step4>
+				<step4 name="고산" site="GSN" path="/DATA/OUTPUT/IMG/SVAD/{yyyymm}/{dd}/VAD_GSN_H_{년월일시분}.gif" type="IMG" thumpath="VAD_GSN_H_201210311310.gif"></step4>
+				<step4 name="성산" site="SSP" path="/DATA/OUTPUT/IMG/SVAD/{yyyymm}/{dd}/VAD_SSP_H_{년월일시분}.gif" type="IMG" thumpath="VAD_SSP_H_201210311310.gif"></step4>
+				<step4 name="진도" site="JNI" path="/DATA/OUTPUT/IMG/SVAD/{yyyymm}/{dd}/VAD_JNI_H_{년월일시분}.gif" type="IMG" thumpath="VAD_JNI_H_201210311310.gif"></step4>
+				<step4 name="강릉" site="GNG" path="/DATA/OUTPUT/IMG/SVAD/{yyyymm}/{dd}/VAD_GNG_H_{년월일시분}.gif" type="IMG"></step4>
+				<step4 name="인천공항" site="IIA" path="/DATA/OUTPUT/IMG/SVAD/{yyyymm}/{dd}/VAD_IIA_H_{년월일시분}.gif" type="IMG"></step4>
+			</step3>
+			<!-- 
+			<step3 name="수평바람">
+				<step4 name="백령도" site="">
+					<step5 name="No QC">
+						<step6 name="PPI" site="BRI"></step6>
+						<step6 name="CAPPI" site="BRI"></step6>
+					</step5>
+					<step5 name="QRPG QC">
+						<step6 name="PPI" site="BRI"></step6>
+						<step6 name="CAPPI" site="BRI"></step6>
+					</step5>
+				</step4>
+				<step4 name="관악산" site="">
+					<step5 name="No QC">
+						<step6 name="PPI" site="BRI"></step6>
+						<step6 name="CAPPI" site="BRI"></step6>
+					</step5>
+					<step5 name="QRPG QC">
+						<step6 name="PPI" site="BRI"></step6>
+						<step6 name="CAPPI" site="BRI"></step6>
+					</step5>
+				</step4>
+				<step4 name="광덕산" site="">
+					<step5 name="No QC">
+						<step6 name="PPI" site="BRI"></step6>
+						<step6 name="CAPPI" site="BRI"></step6>
+					</step5>
+					<step5 name="QRPG QC">
+						<step6 name="PPI" site="BRI"></step6>
+						<step6 name="CAPPI" site="BRI"></step6>
+					</step5>
+				</step4>
+				<step4 name="구덕산" site="">
+					<step5 name="No QC">
+						<step6 name="PPI" site="BRI"></step6>
+						<step6 name="CAPPI" site="BRI"></step6>
+					</step5>
+					<step5 name="QRPG QC">
+						<step6 name="PPI" site="BRI"></step6>
+						<step6 name="CAPPI" site="BRI"></step6>
+					</step5>
+				</step4>
+				<step4 name="오성산" site="">
+					<step5 name="No QC">
+						<step6 name="PPI" site="BRI"></step6>
+						<step6 name="CAPPI" site="BRI"></step6>
+					</step5>
+					<step5 name="QRPG QC">
+						<step6 name="PPI" site="BRI"></step6>
+						<step6 name="CAPPI" site="BRI"></step6>
+					</step5>
+				</step4>
+				<step4 name="면봉산" site="">
+					<step5 name="No QC">
+						<step6 name="PPI" site="BRI"></step6>
+						<step6 name="CAPPI" site="BRI"></step6>
+					</step5>
+					<step5 name="QRPG QC">
+						<step6 name="PPI" site="BRI"></step6>
+						<step6 name="CAPPI" site="BRI"></step6>
+					</step5>
+				</step4>
+				<step4 name="고산" site="">
+					<step5 name="No QC">
+						<step6 name="PPI" site="BRI"></step6>
+						<step6 name="CAPPI" site="BRI"></step6>
+					</step5>
+					<step5 name="QRPG QC">
+						<step6 name="PPI" site="BRI"></step6>
+						<step6 name="CAPPI" site="BRI"></step6>
+					</step5>
+				</step4>
+				<step4 name="성산" site="">
+					<step5 name="No QC">
+						<step6 name="PPI" site="BRI"></step6>
+						<step6 name="CAPPI" site="BRI"></step6>
+					</step5>
+					<step5 name="QRPG QC">
+						<step6 name="PPI" site="BRI"></step6>
+						<step6 name="CAPPI" site="BRI"></step6>
+					</step5>
+				</step4>
+				<step4 name="진도" site="">
+					<step5 name="No QC">
+						<step6 name="PPI" site="BRI"></step6>
+						<step6 name="CAPPI" site="BRI"></step6>
+					</step5>
+					<step5 name="QRPG QC">
+						<step6 name="PPI" site="BRI"></step6>
+						<step6 name="CAPPI" site="BRI"></step6>
+					</step5>
+				</step4>
+				<step4 name="강릉" site="">
+					<step5 name="No QC">
+						<step6 name="PPI" site="BRI"></step6>
+						<step6 name="CAPPI" site="BRI"></step6>
+					</step5>
+					<step5 name="QRPG QC">
+						<step6 name="PPI" site="BRI"></step6>
+						<step6 name="CAPPI" site="BRI"></step6>
+					</step5>
+				</step4>
+				<step4 name="인천공항" site="">
+					<step5 name="No QC">
+						<step6 name="PPI" site="BRI"></step6>
+						<step6 name="CAPPI" site="BRI"></step6>
+					</step5>
+					<step5 name="QRPG QC">
+						<step6 name="PPI" site="BRI"></step6>
+						<step6 name="CAPPI" site="BRI"></step6>
+					</step5>
+				</step4>
+			</step3>
+			 -->
+		</step2>
+	</step1>
+	<!-- step1 name="낙뢰">
+		<step2 name="시간순"></step2>
+		<step2 name="강도순"></step2>
+		<step2 name="센서갯수별"></step2>
+		<step2 name="통합표출"></step2>
+	</step1 -->
+	</step0>
+</root>
