@@ -47,10 +47,14 @@ public class XPathTest {
 			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 			factory.setIgnoringElementContentWhitespace(true);
 			DocumentBuilder builder = factory.newDocumentBuilder();
-			Document doc = builder.parse("d:/data_tree.xml");
+			Document doc = builder.parse("/data_tree.xml");
 			
 			XPath xpath = XPathFactory.newInstance().newXPath();
-		
+			
+			/*
+			 * 단일 노드를 검색하려면 XPathConstants.NODE 노드 집합을 검색하려면 XPathConstants.NODESET을 설정
+			 * 만일 NodeList를 검색하는데 XPathConstants.NODE로 설정을 하면 데이터가 추출되지 않는다 주의할것
+			 */
 			NodeList nList = (NodeList)xpath.evaluate("//@name", doc, XPathConstants.NODESET);
 			
 			System.out.println(nList.getLength());
