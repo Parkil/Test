@@ -1,4 +1,4 @@
-package test.excel;
+package test.poi.excel;
 
 import java.io.FileWriter;
 import java.io.IOException;

@@ -15,7 +15,7 @@
    limitations under the License.
 ==================================================================== */
 
-package test.excel;
+package test.poi.excel;
 
 import java.io.File;
 import java.io.FileInputStream;
