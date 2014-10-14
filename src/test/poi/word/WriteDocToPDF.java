@@ -42,6 +42,7 @@ public class WriteDocToPDF {
 				para.setTabSettings(new TabSettings(50f)); //PDF 탭 크기 지정
 				
 				for(XWPFRun r : p.getRuns()) {
+					System.out.println(r.getText(0));
 					String text = r.getText(0);
 					if(text == null) {
 						text = "";
@@ -58,12 +59,12 @@ public class WriteDocToPDF {
 					 * 
 					 * 2.<w:lastRenderedPageBreak/>
 					 * 페이지변경후 첫번째로 쓰이는 paragraph에 표시가 된다 Ctrl+Enter를 해서 페이지가 변경된경우, 글자를 많이 써서 페이지가변경된
-					 * 경우 모두 표시가 되기때문에 이게 쓰기가 적합하다.
+					 * 경우 모두 표시가 되기때문에 이게 쓰기가 적합하나 페이지 첫라인에 문자가 있을경우에만 표시가된다.
 					 * 
 					 * 현재는 xml을 문자열로 반환후 indexOf를 이용하여 반환을 하고 있으나 더 나은 방법이 있을지도 모름
 					 */
 					String chkstr = r.getCTR().toString();
-					if(chkstr.indexOf("lastRenderedPageBreak") != -1) {
+					if(chkstr.indexOf("w:type") != -1) {
 						document.newPage();
 					}
 
@@ -75,7 +76,12 @@ public class WriteDocToPDF {
 						for(XWPFPicture pic : pictureList) {
 							byte[] imgbyte = pic.getPictureData().getData();
 							Image img = Image.getInstance(imgbyte);
-							img.scaleToFit(500, 500); //이미지 크기지정
+							
+							//pdf 이미지 한계값(width : 510 height : 600)
+							float width = (img.getWidth() > 510.0f) ? 510.0f : img.getWidth();
+							float height = (img.getHeight() > 600.0f) ? 600.0f : img.getHeight();
+							
+							img.scaleToFit(width, height); //이미지 크기지정
 							img.setAlignment(Image.MIDDLE); //이미지 horizontal align
 							para.add(Chunk.NEWLINE); //이부분을 빼면 Image와 문자가 겹치는 경우가 생긴다.
 							para.add(img);
@@ -94,7 +100,7 @@ public class WriteDocToPDF {
 	 * @param args
 	 */
 	public static void main(String[] args) throws Exception {
-		XWPFDocument doc = new XWPFDocument(OPCPackage.open("d:/addimg.docx"));
+		XWPFDocument doc = new XWPFDocument(OPCPackage.open("d:/낙뢰연보2013.docx"));
 		saveDocAsPDF(doc,"d:/a.pdf");
 	}
 }

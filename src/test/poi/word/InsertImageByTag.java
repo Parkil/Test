@@ -1,4 +1,5 @@
 package test.poi.word;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -6,6 +7,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import javax.imageio.ImageIO;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.openxml4j.opc.OPCPackage;
@@ -56,15 +59,24 @@ public class InsertImageByTag {
 	 * @param doc CustomXWPFDocument 객체
 	 * @param para 이미지를 입력할 paragraph
 	 */
+	public static int z = 1;
 	private static void insertImage(CustomXWPFDocument doc, XWPFParagraph para) {
 		System.out.println("insert Image");
 		para.setAlignment(ParagraphAlignment.CENTER);
 		String blipId;
 		
 		try {
+			//일반적인 word파일(새로만들기한 상태)의 크기 한도는 width가 600 height 가 900임
+			BufferedImage bi = ImageIO.read(new File("d:/2.jpg"));
+			int width = (bi.getWidth() > 600) ? 600 : bi.getWidth();
+			int height = (bi.getHeight() > 900) ? 900 : bi.getHeight();
+			
 			blipId = para.getDocument().addPictureData(new FileInputStream(new File("d:/2.jpg")), Document.PICTURE_TYPE_JPEG);
-			doc.createPicture(blipId, 1, 500, 500, para);
+			doc.createPicture(blipId, z++, width, height, para);
 		} catch (InvalidFormatException | FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
