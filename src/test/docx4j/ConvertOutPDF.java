@@ -70,6 +70,8 @@ import org.docx4j.openpackaging.packages.WordprocessingMLPackage;
  * fop.jar
  * avalon-framework-4.1.4.jar
  * batik-all-1.7.jar
+ * commons-lang-2.6.jar
+ * 
  */
 public class ConvertOutPDF extends AbstractSample {
 	
