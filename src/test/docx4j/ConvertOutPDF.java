@@ -100,8 +100,8 @@ public class ConvertOutPDF extends AbstractSample {
     	//inputfilepath = System.getProperty("user.dir") + "/sample-docs/word/sample-docx.docx";
 		
 		//inputfilepath = "d:/test.docx";
-		inputfilepath = "d:/낙뢰연보2013.docx";
-    	saveFO = true;
+		inputfilepath = "d:/test.docx";
+    	saveFO = false;
 	}
 	
 	
@@ -165,6 +165,7 @@ public class ConvertOutPDF extends AbstractSample {
 		 * fontMapper.put("굴림", font);
 		 * 
 		 * 위와 같이 지정할 경우 docx에 굴림체 문자가 있으면 바탕체로 표시가 된다.
+		 * 주의할점은 PhysicalFont에 지정할때는 영문으로 fontMapper로 지정할때는 한글로 입력해야 정상작동함
 		 * 
 		 * 한글 폰트명의 경우 영문으로 작성해야 인식함
 		 * 바탕 : Batang / BatangChe

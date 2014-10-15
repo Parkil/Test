@@ -73,13 +73,16 @@ public class InsertImageByTag {
 			
 			blipId = para.getDocument().addPictureData(new FileInputStream(new File("d:/2.jpg")), Document.PICTURE_TYPE_JPEG);
 			doc.createPicture(blipId, z++, width, height, para);
-		} catch (InvalidFormatException | FileNotFoundException e) {
+		} catch (InvalidFormatException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		} 
 	}
 
 	/**
