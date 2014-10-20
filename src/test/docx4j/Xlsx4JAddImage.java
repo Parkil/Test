@@ -45,10 +45,9 @@ import org.docx4j.relationships.Relationship;
 public class Xlsx4JAddImage {
 
 	public static void main(String[] args) throws Exception {
-
-		String outputfilepath = "d:/OUT_Xlsx4JAddImage.xlsx";
-		String imagefilePath = "d:/jquery-chart1.png";
-		String imagefilePath2 = "d:/dice.png";
+		String outputfilepath	= "d:/OUT_Xlsx4JAddImage.xlsx";
+		String imagefilePath	= "d:/jquery-chart1.png";
+		String imagefilePath2	= "d:/dice.png";
 
 
 		SpreadsheetMLPackage pkg = SpreadsheetMLPackage.createPackage();
@@ -67,32 +66,17 @@ public class Xlsx4JAddImage {
 		BinaryPartAbstractImage imagePart = BinaryPartAbstractImage.createImagePart(pkg, drawingPart,
 				FileUtils.readFileToByteArray(new File(imagefilePath)));
 		String imageRelID = imagePart.getSourceRelationship().getId();
-
-		// Create and set drawing part content
-		// Take your pick ..
-		// .. build it using code
-		drawingPart.setJaxbElement(buildDrawingPartContentUsingCode(imageRelID));
-		
-		System.out.println(worksheet.getXML());
-		
-		//=====================================================================================
-		
-		worksheet = pkg.createWorksheetPart(new PartName("/xl/worksheets/sheet1.xml"), "Sheet1", 1);
-		
-		Drawing drawingPart2 = new Drawing();
-		Relationship drawingRel2 = worksheet.addTargetPart(drawingPart2);
-		
-		/*
 		
 		BinaryPartAbstractImage imagePart2 = BinaryPartAbstractImage.createImagePart(pkg, drawingPart,
 				FileUtils.readFileToByteArray(new File(imagefilePath2)));
 		String imageRelID2 = imagePart2.getSourceRelationship().getId();
 
-		// Create and set drawing part content
-		// Take your pick ..
-		// .. build it using code
-		drawingPart.setJaxbElement(test(imageRelID, imageRelID2));
-		*/
+		//단일 이미지 업로드
+		//drawingPart.setJaxbElement(buildDrawingPartContentUsingCode(imageRelID));
+		
+		//다중 이미지 업로드
+		drawingPart.setJaxbElement(buildMultiDrawingPartContentUsingCode(imageRelID, imageRelID2));
+		
 		// Save the xlsx
 		SaveToZipFile saver = new SaveToZipFile(pkg);
 		saver.save(outputfilepath);
