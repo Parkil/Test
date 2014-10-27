@@ -10,6 +10,10 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import javax.xml.bind.JAXBElement;
+
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 import org.docx4j.dml.wordprocessingDrawing.Inline;
 import org.docx4j.jaxb.Context;
 import org.docx4j.openpackaging.exceptions.Docx4JException;
@@ -26,23 +30,68 @@ import org.docx4j.wml.Document;
  */
 public class ImageAddbyTag {
 	public static void main(String[] args) throws Exception {
+		Logger.getRootLogger().setLevel(Level.ERROR); //docx4j 수행시 나오는 log를 나오지 않게 설정
 		ImageAddbyTag t2 = new ImageAddbyTag();
-		WordprocessingMLPackage wordMLPackage = t2.loadFile("d:/test_imageadd.docx");
+		WordprocessingMLPackage wordMLPackage = t2.loadFile("d:/낙뢰연보word.docx");
 		Document d = wordMLPackage.getMainDocumentPart().getContents();
 		List<Object> list = d.getBody().getContent();
 		List<Object> runlist = t2.searchRunByTag(list);
 		
-		byte[] imgbyte = t2.getImgByte("d:/chart.png");
 		
+		/*
+		 * Paragraph에서는 [chart-1.png]로 표시가 되어도 run.getContent() 리스트에서는 {[},{chart-1.png},{]} 이런식으로 표시가 되는 경우가 있기 때문에
+		 * run.getContent()에서 loop를 돌면서 chart가 들어가 있는 리스트만 표시한다.
+		 */
 		long ratio = 1000;
 		long modifier = 1;
 		for(Object o : runlist) {
-			org.docx4j.wml.R run = (org.docx4j.wml.R)o;
-			t2.insertImage(run, wordMLPackage, imgbyte, (ratio * modifier), new String[]{"chart.png", "차트이미지"});
-			++modifier;
+			org.docx4j.wml.R run = (org.docx4j.wml.R)o;	
+			String runValue = t2.getRunValue(run);
+			
+			t2.delRunContents(run); //run안의 내용을 제거
+			
+			//run문자열이 'chart'를 포함하고 있을 경우에만 이미지를 삽입
+			if(runValue.indexOf("chart") != -1) {
+				
+				//문자열에 있을지도 모르는 [,]제거
+				runValue = runValue.replace("[", "");
+				runValue = runValue.replace("]", "");
+				
+				byte[] imgbyte = t2.getImgByte("d:/tempimg/"+runValue);
+				
+				t2.insertImage(run, wordMLPackage, imgbyte, (ratio * modifier), new String[]{runValue, "차트이미지"});
+			}
 		}
 		
-		wordMLPackage.save(new File("d:/OUT_AddImage.docx"));
+		wordMLPackage.save(new File("d:/1.docx"));
+	}
+	
+	/**Run 안의 내용을 문자열로 반환
+	 * @param run
+	 * @return
+	 */
+	private String getRunValue(org.docx4j.wml.R run) {
+		StringBuffer sb = new StringBuffer();
+		
+		for(Object ttt : run.getContent()) {
+			JAXBElement<?> jax = (JAXBElement<?>)ttt;
+			String val = ((org.docx4j.wml.Text)jax.getValue()).getValue();
+			
+			sb.append(val);
+		}
+		
+		return sb.toString();
+	}
+	
+	/**Run 안의 내용을 삭제
+	 * @param run
+	 */
+	private void delRunContents(org.docx4j.wml.R run) {
+		List<Object> obj = run.getContent();
+		
+		for(int i = 0 ; i<obj.size() ; i++) {
+			obj.remove(0);
+		}
 	}
 	
 	/*
@@ -62,7 +111,8 @@ public class ImageAddbyTag {
 			//inline = imagePart.createImageInline(fileInfo[0], fileInfo[1], 0, 1, ratio, false);
 			inline = imagePart.createImageInline(fileInfo[0], fileInfo[1], 0, 1, false);
 			
-			run.getContent().remove(0);
+			//run.getContent().remove(0);
+			
 			org.docx4j.wml.Drawing drawing = factory.createDrawing();
 			run.getContent().add(drawing);
 			
@@ -84,12 +134,14 @@ public class ImageAddbyTag {
 		for(Object o : bodylist) {
 			if(o instanceof org.docx4j.wml.P) {
 				String con = o.toString();
+				//System.out.println(con);
+				//System.out.println("================");
 				org.docx4j.wml.P para = (org.docx4j.wml.P)o;
 				
 				Matcher m = p.matcher(con);
 				if(m.find()) {
 					
-					System.out.println(m.group());
+					//System.out.println(m.group());
 					
 					List<Object> runList = para.getContent();
 					int size = runList.size();
