@@ -10,7 +10,6 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import javax.xml.bind.JAXBElement;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -29,6 +28,7 @@ import org.docx4j.wml.Document;
  * Body > Paragraph > Run > Table or SdtBlock/SdtRun/CTSdtRow/CTSdtCell
  */
 public class ImageAddbyTag {
+	@SuppressWarnings("deprecation")
 	public static void main(String[] args) throws Exception {
 		Logger.getRootLogger().setLevel(Level.ERROR); //docx4j 수행시 나오는 log를 나오지 않게 설정
 		ImageAddbyTag t2 = new ImageAddbyTag();
@@ -40,81 +40,61 @@ public class ImageAddbyTag {
 		
 		/*
 		 * Paragraph에서는 [chart-1.png]로 표시가 되어도 run.getContent() 리스트에서는 {[},{chart-1.png},{]} 이런식으로 표시가 되는 경우가 있기 때문에
-		 * run.getContent()에서 loop를 돌면서 chart가 들어가 있는 리스트만 표시한다.
+		 * 기존 run기준으로 돌아가던 것을 Paragraph기준으로 변경
 		 */
-		long ratio = 1000;
-		long modifier = 1;
+		long ratio = 5000;
+		String fileName = "";
+		
+		Pattern p_tag = Pattern.compile("\\[([0-9]{1,4})\\-(chart-[0-9]{1,4})\\]");
 		for(Object o : runlist) {
-			org.docx4j.wml.R run = (org.docx4j.wml.R)o;	
-			String runValue = t2.getRunValue(run);
+			org.docx4j.wml.P para = (org.docx4j.wml.P)o;
+			String para_con = para.toString(); //Paragraph에서 문자열을 가져오기 위해 부득이 폐기된 메소드 사용
 			
-			t2.delRunContents(run); //run안의 내용을 제거
+			Matcher m_tag = p_tag.matcher(para_con);
+			t2.delParaContents(para);
 			
-			//run문자열이 'chart'를 포함하고 있을 경우에만 이미지를 삽입
-			if(runValue.indexOf("chart") != -1) {
+			while(m_tag.find()) {
+				ratio = Long.parseLong(m_tag.group(1));
+				fileName = m_tag.group(2);
 				
-				//문자열에 있을지도 모르는 [,]제거
-				runValue = runValue.replace("[", "");
-				runValue = runValue.replace("]", "");
+				byte[] imgbyte = t2.getImgByte("d:/tempimg/"+fileName+".png");
 				
-				byte[] imgbyte = t2.getImgByte("d:/tempimg/"+runValue);
-				
-				t2.insertImage(run, wordMLPackage, imgbyte, (ratio * modifier), new String[]{runValue, "차트이미지"});
+				t2.insertImage(para, wordMLPackage, imgbyte, ratio, new String[]{fileName, "차트이미지"});
 			}
 		}
 		
 		wordMLPackage.save(new File("d:/1.docx"));
 	}
 	
-	/**Run 안의 내용을 문자열로 반환
-	 * @param run
-	 * @return
-	 */
-	private String getRunValue(org.docx4j.wml.R run) {
-		StringBuffer sb = new StringBuffer();
-		
-		for(Object ttt : run.getContent()) {
-			JAXBElement<?> jax = (JAXBElement<?>)ttt;
-			String val = ((org.docx4j.wml.Text)jax.getValue()).getValue();
-			
-			sb.append(val);
-		}
-		
-		return sb.toString();
-	}
-	
-	/**Run 안의 내용을 삭제
+	/**Paragraph 안의 내용을 삭제
 	 * @param run
 	 */
-	private void delRunContents(org.docx4j.wml.R run) {
-		List<Object> obj = run.getContent();
-		
-		for(int i = 0 ; i<obj.size() ; i++) {
-			obj.remove(0);
+	private void delParaContents(org.docx4j.wml.P para) {
+		int size = 10; //초기 임의 값
+		while(size != 0) {
+			para.getContent().remove(0);
+			size = para.getContent().size();
 		}
 	}
 	
 	/*
-	 * run에 이미지를 입력
-	 * 기존 run에 있던 내용을 삭제하고 그자리에 새로 이미지파일을 입력한다.
+	 * paragraph에 이미지를 입력
 	 * 
 	 * ratio : 이미지 비율 크게 지정할수록 크게 표시된다.
 	 * fileInfo : 파일 정보([0] : 파일명 [1] : 파일 툴팁명)
 	 */
-	public void insertImage(org.docx4j.wml.R run, WordprocessingMLPackage wordMLPackage, byte[] imgbyte, long ratio, String[] fileInfo) {
+	public void insertImage(org.docx4j.wml.P para, WordprocessingMLPackage wordMLPackage, byte[] imgbyte, long ratio, String[] fileInfo) {
 		org.docx4j.wml.ObjectFactory factory = Context.getWmlObjectFactory();
 		
 		BinaryPartAbstractImage imagePart = null;
 		Inline inline = null;
 		try {
 			imagePart = BinaryPartAbstractImage.createImagePart(wordMLPackage, imgbyte);
-			//inline = imagePart.createImageInline(fileInfo[0], fileInfo[1], 0, 1, ratio, false);
-			inline = imagePart.createImageInline(fileInfo[0], fileInfo[1], 0, 1, false);
-			
-			//run.getContent().remove(0);
+			inline = imagePart.createImageInline(fileInfo[0], fileInfo[1], 0, 1, ratio, false);
+			//inline = imagePart.createImageInline(fileInfo[0], fileInfo[1], 0, 1, false);
 			
 			org.docx4j.wml.Drawing drawing = factory.createDrawing();
-			run.getContent().add(drawing);
+			para.getContent().add(drawing);
 			
 			drawing.getAnchorOrInline().add(inline);
 		} catch (Exception e) {
@@ -134,21 +114,11 @@ public class ImageAddbyTag {
 		for(Object o : bodylist) {
 			if(o instanceof org.docx4j.wml.P) {
 				String con = o.toString();
-				//System.out.println(con);
-				//System.out.println("================");
 				org.docx4j.wml.P para = (org.docx4j.wml.P)o;
 				
 				Matcher m = p.matcher(con);
 				if(m.find()) {
-					
-					//System.out.println(m.group());
-					
-					List<Object> runList = para.getContent();
-					int size = runList.size();
-					
-					for(int i = 0 ; i<size ; i++) {
-						runlist.add(runList.get(i));
-					}
+					runlist.add(para);
 				}
 			}
 		}
