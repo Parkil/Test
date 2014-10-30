@@ -28,7 +28,6 @@ import org.docx4j.wml.Document;
  * Body > Paragraph > Run > Table or SdtBlock/SdtRun/CTSdtRow/CTSdtCell
  */
 public class ImageAddbyTag {
-	@SuppressWarnings("deprecation")
 	public static void main(String[] args) throws Exception {
 		Logger.getRootLogger().setLevel(Level.ERROR); //docx4j 수행시 나오는 log를 나오지 않게 설정
 		ImageAddbyTag t2 = new ImageAddbyTag();
@@ -48,7 +47,7 @@ public class ImageAddbyTag {
 		Pattern p_tag = Pattern.compile("\\[([0-9]{1,4})\\-(chart-[0-9]{1,4})\\]");
 		for(Object o : runlist) {
 			org.docx4j.wml.P para = (org.docx4j.wml.P)o;
-			String para_con = para.toString(); //Paragraph에서 문자열을 가져오기 위해 부득이 폐기된 메소드 사용
+			String para_con = o.toString();
 			
 			Matcher m_tag = p_tag.matcher(para_con);
 			t2.delParaContents(para);
@@ -93,9 +92,21 @@ public class ImageAddbyTag {
 			inline = imagePart.createImageInline(fileInfo[0], fileInfo[1], 0, 1, ratio, false);
 			//inline = imagePart.createImageInline(fileInfo[0], fileInfo[1], 0, 1, false);
 			
+			/*
+			 * 임의의 run을 생성하여 Paragraph에 입력하고 run안에 이미지를 삽입하는 방식
+			 * 이방식으로 이미지를 삽입해야 word를 pdf로 변환시 이미지가 pdf에 삽입된다.
+			 */
+			org.docx4j.wml.Drawing drawing = factory.createDrawing();
+			org.docx4j.wml.R run = factory.createR();
+			para.getContent().add(run);
+			run.getContent().add(drawing);
+			
+			/*
+			 * 아래방식처럼 Paragraph에 이미지를 삽입하면 word자체에서는 정상적으로 표시가 되지만 word를 pdf로 변환을 하게 되면 
+			 * 이방식으로 삽입한 이미지는 pdf에 삽입되지 않는 문제가 발생한다.
 			org.docx4j.wml.Drawing drawing = factory.createDrawing();
 			para.getContent().add(drawing);
-			
+			*/
 			drawing.getAnchorOrInline().add(inline);
 		} catch (Exception e) {
 			e.printStackTrace();
