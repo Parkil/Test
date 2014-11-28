@@ -53,6 +53,32 @@ import org.w3c.dom.NodeList;
  * //step1/step2[price > 35]/step3 이런식으로도 사용가능
  * 
  * 노드값이 특정문자열을 포함하는 노드만 검색 : //*[contains(@path,'RDR')] (path에 RDR이란 값이 포함되는 노드만 검색)
+ * 
+ * 선택한 노드의 형제노드 검색
+ * /AAA/BBB/following-sibling::*
+ * 
+ * 아래 예제에서 /AAA/BBB/following-sibling::*을 실행할경우 BBB와 동일한 레벨에 있는 노드인 XXX,CCC노드가 검색된다.
+ * ex)
+ *	<AAA> 
+		<BBB> 
+			<CCC/> 
+			<DDD/> 
+		</BBB> 
+		<XXX> 
+			<DDD> 
+				<EEE/> 
+			<DDD/> 
+			<CCC/> 
+			<FFF/> 
+			<FFF> 
+				<GGG/> 
+			</FFF> 
+			</DDD> 
+		</XXX> 
+		<CCC> 
+			<DDD/> 
+		</CCC> 
+	</AAA>
  */
 public class XPathTest {
 	/*
