@@ -1,0 +1,98 @@
+1.
+## 기상청 ##
+No QC
+	강릉	: /DATA/INPUT/UFV/%Y%m/%d/RDR_GNG_%Y%m%d%H%M.uf		GNG
+	고산	: /DATA/INPUT/UFV/%Y%m/%d/RDR_GSN_%Y%m%d%H%M.uf		GSN
+	관악산	: /DATA/INPUT/UFV/%Y%m/%d/RDR_KWK_%Y%m%d%H%M.uf 	KWK
+	광덕산	: /DATA/INPUT/UFV/%Y%m/%d/RDR_GDK_%Y%m%d%H%M.uf		GDK
+	구덕산	: /DATA/INPUT/UFV/%Y%m/%d/RDR_PSN_%Y%m%d%H%M.uf		PSN
+	면봉산	: /DATA/INPUT/UFV/%Y%m/%d/RDR_MYN_%Y%m%d%H%M.uf		MYN
+	백령도	: /DATA/INPUT/UFV/%Y%m/%d/RDR_BRI_%Y%m%d%H%M.uf		BRI
+	성산	: /DATA/INPUT/UFV/%Y%m/%d/RDR_SSP_%Y%m%d%H%M.uf		SSP
+	오성산	: /DATA/INPUT/UFV/%Y%m/%d/RDR_KSN_%Y%m%d%H%M.uf		KSN
+	인천공항: /DATA/INPUT/UFV/%Y%m/%d/RDR_IIA_%Y%m%d%H%M.uf		IIA
+	진도	: /DATA/INPUT/UFV/%Y%m/%d/RDR_JNI_%Y%m%d%H%M.uf		JNI
+
+##  국토교통부  ##
+NO QC
+	비슬산	: /DATA/INPUT/UFV/%Y%m/%d/RDR_BSL_%Y%m%d%H%M.uf
+	소백산	: /DATA/INPUT/UFV/%Y%m/%d/RDR_SBS_%Y%m%d%H%M.uf
+	임진강	: /DATA/INPUT/UFV/%Y%m/%d/RDR_IMJ_%Y%m%d%H%M.uf
+
+##  공군  ##
+NO QC
+	강릉A	: /DATA/INPUT/UFV/%Y%m/%d/RDR_KAN_%Y%m%d%H%M.uf
+	광주	: /DATA/INPUT/UFV/%Y%m/%d/RDR_KWJ_%Y%m%d%H%M.uf
+	대구	: /DATA/INPUT/UFV/%Y%m/%d/RDR_TAG_%Y%m%d%H%M.uf
+	사천	: /DATA/INPUT/UFV/%Y%m/%d/RDR_SCN_%Y%m%d%H%M.uf
+	서산	: /DATA/INPUT/UFV/%Y%m/%d/RDR_SAN_%Y%m%d%H%M.uf
+	수원	: /DATA/INPUT/UFV/%Y%m/%d/RDR_SWN_%Y%m%d%H%M.uf
+	예천	: /DATA/INPUT/UFV/%Y%m/%d/RDR_YCN_%Y%m%d%H%M.uf
+	원주	: /DATA/INPUT/UFV/%Y%m/%d/RDR_WNJ_%Y%m%d%H%M.uf
+	중원	: /DATA/INPUT/UFV/%Y%m/%d/RDR_JWN_%Y%m%d%H%M.uf
+
+
+2.
+
+## 기상청 ##
+F QC
+	강릉	: /DATA/INPUT/UFF2/%Y%m/%d/RDR_GNG_FQC_%Y%m%d%H%M.uf
+	고산	: /DATA/INPUT/UFF2/%Y%m/%d/RDR_GSN_FQC_%Y%m%d%H%M.uf
+	관악산	: /DATA/INPUT/UFF2/%Y%m/%d/RDR_KWK_FQC_%Y%m%d%H%M.uf
+	광덕산	: /DATA/INPUT/UFF2/%Y%m/%d/RDR_GDK_FQC_%Y%m%d%H%M.uf
+	구덕산	: /DATA/INPUT/UFF2/%Y%m/%d/RDR_PSN_FQC_%Y%m%d%H%M.uf
+	면봉산	: /DATA/INPUT/UFF2/%Y%m/%d/RDR_MYN_FQC_%Y%m%d%H%M.uf
+	백령도	: /DATA/INPUT/UFF2/%Y%m/%d/RDR_BRI_FQC_%Y%m%d%H%M.uf
+	성산	: /DATA/INPUT/UFF2/%Y%m/%d/RDR_SSP_FQC_%Y%m%d%H%M.uf
+	오성산	: /DATA/INPUT/UFF2/%Y%m/%d/RDR_KSN_FQC_%Y%m%d%H%M.uf
+	인천공항: /DATA/INPUT/UFF2/%Y%m/%d/RDR_IIA_FQC_%Y%m%d%H%M.uf
+	진도	: /DATA/INPUT/UFF2/%Y%m/%d/RDR_JNI_FQC_%Y%m%d%H%M.uf
+
+ORPG QC
+	강릉	: /DATA/INPUT/UFQ/%Y%m/%d/RDR_GNG_QCD_%Y%m%d%H%M.uf
+	고산	: /DATA/INPUT/UFQ/%Y%m/%d/RDR_GSN_QCD_%Y%m%d%H%M.uf
+	관악산	: /DATA/INPUT/UFQ/%Y%m/%d/RDR_KWK_QCD_%Y%m%d%H%M.uf
+	광덕산	: /DATA/INPUT/UFQ/%Y%m/%d/RDR_GDK_QCD_%Y%m%d%H%M.uf
+	구덕산	: /DATA/INPUT/UFQ/%Y%m/%d/RDR_PSN_QCD_%Y%m%d%H%M.uf
+	면봉산	: /DATA/INPUT/UFQ/%Y%m/%d/RDR_MYN_QCD_%Y%m%d%H%M.uf
+	백령도	: /DATA/INPUT/UFQ/%Y%m/%d/RDR_BRI_QCD_%Y%m%d%H%M.uf
+	성산	: /DATA/INPUT/UFQ/%Y%m/%d/RDR_SSP_QCD_%Y%m%d%H%M.uf
+	오성산	: /DATA/INPUT/UFQ/%Y%m/%d/RDR_KSN_QCD_%Y%m%d%H%M.uf
+	인천공항: /DATA/INPUT/UFQ/%Y%m/%d/RDR_IIA_QCD_%Y%m%d%H%M.uf
+	진도	: /DATA/INPUT/UFQ/%Y%m/%d/RDR_JNI_QCD_%Y%m%d%H%M.uf
+
+
+##  국토교통부  ##
+
+
+
+F QC
+	비슬산	: /DATA/INPUT/UFF2/%Y%m/%d/RDR_BSL_FQC_%Y%m%d%H%M.uf
+	소백산	: /DATA/INPUT/UFF2/%Y%m/%d/RDR_SBS_FQC_%Y%m%d%H%M.uf
+	임진강	: /DATA/INPUT/UFF2/%Y%m/%d/RDR_IMJ_FQC_%Y%m%d%H%M.uf
+
+
+##  공군  ##
+F QC
+	강릉A	: /DATA/INPUT/UFF2/%Y%m/%d/RDR_KAN_FQC_%Y%m%d%H%M.uf
+	광주	: /DATA/INPUT/UFF2/%Y%m/%d/RDR_KWJ_FQC_%Y%m%d%H%M.uf
+	대구	: /DATA/INPUT/UFF2/%Y%m/%d/RDR_TAG_FQC_%Y%m%d%H%M.uf
+	사천	: /DATA/INPUT/UFF2/%Y%m/%d/RDR_SCN_FQC_%Y%m%d%H%M.uf
+	서산	: /DATA/INPUT/UFF2/%Y%m/%d/RDR_SAN_FQC_%Y%m%d%H%M.uf
+	수원	: /DATA/INPUT/UFF2/%Y%m/%d/RDR_SWN_FQC_%Y%m%d%H%M.uf
+	예천	: /DATA/INPUT/UFF2/%Y%m/%d/RDR_YCN_FQC_%Y%m%d%H%M.uf 
+	원주	: /DATA/INPUT/UFF2/%Y%m/%d/RDR_WNJ_FQC_%Y%m%d%H%M.uf
+	중원	: /DATA/INPUT/UFF2/%Y%m/%d/RDR_JWN_FQC_%Y%m%d%H%M.uf
+
+
+3.합성
+	NOQC	: /DATA/OUTPUT/BIN/ZNQC/%Y%m/%d/RDR_CNQCZ_CP15M_%Y%m%d%H%M.bin.gz
+	FQC	: /DATA/OUTPUT/BIN/ZFQC/%Y%m/%d/RDR_CFQCZ_CP15M_%Y%m%d%H%M.bin.gz
+	ORPGQC	: /DATA/OUTPUT/BIN/ZOQC/%Y%m/%d/RDR_COQCZ_CP15M_%Y%m%d%H%M.bin.gz
+	
+
+
+
+
+
+
