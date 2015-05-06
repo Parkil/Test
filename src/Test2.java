@@ -9,37 +9,49 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class Test2 {
 	
+	/*
+	 * UFV,UFF2,UFQ
+	 * ZNQC,ZFQC,ZOQC
+	 */
 	private static void patternMatcher(String val) throws Exception{ 
+		String kma_site_str		= "GNG,GSN,KWK,GDK,PSN,MYN,BRI,SSP,KSN,IIA,JNI";
+		String mltm_site_str	= "BSL,SBS,IMJ";
+		String rokff_site_str	= "KAN,KWJ,TAG,SCN,SAN,SWN,YCN,WNJ,JWN";
+		
 		String regex = "RDR_([A-Z]{1,4})_([0-9]{8})([0-9]{3})([0-9]{1}).uf";
 		Pattern p = Pattern.compile(regex);
 		Matcher m = p.matcher(val);
 		
-		ArrayList<String> list = new ArrayList<String>();
+		//ÏÇ¨Ïù¥Ìä∏ ÏûêÎ£åÏàòÏã†
+		ArrayList<String> site_kma_list = new ArrayList<String>();
+		ArrayList<String> site_mltm_list = new ArrayList<String>();
+		ArrayList<String> site_rokff_list = new ArrayList<String>();
  		
+		//ÌíàÏßàÍ¥ÄÎ¶¨ ÌÜµÍ≥Ñ
+		
+		
+		//
 		while(m.find()) {
+			String site = m.group(1);
 			//System.out.printf("%s --- %s -- %s --%s\n", m.group(1), m.group(2), m.group(3), m.group(4));
-			list.add(m.group(1)+"/"+m.group(3)+"0");
+			
+			if(kma_site_str.indexOf(site) != -1) {
+				site_kma_list.add(site+"/"+m.group(3)+"0");
+			}else if(mltm_site_str.indexOf(site) != -1) {
+				site_mltm_list.add(site+"/"+m.group(3)+"0");
+			}else if(rokff_site_str.indexOf(site) != -1) {
+				site_rokff_list.add(site+"/"+m.group(3)+"0");
+			}
 		}
 		
 		ObjectMapper om = new ObjectMapper();
-		System.out.println(om.writeValueAsString(list));
+		System.out.println(om.writeValueAsString(site_kma_list));
+		System.out.println(om.writeValueAsString(site_mltm_list));
+		System.out.println(om.writeValueAsString(site_rokff_list));
 	}
 	
-	/*
-	 * ∏¥œ≈Õ∏µ º≥∞Ë
-	 * [properties º≥∞Ë]
-	 * 1.main path : /DATA/~
-	 * 2.sub path  : /INPUT/UFV/~
-	 * 3.∞¢ µ•¿Ã≈Õ∫∞ ¡§±‘Ωƒ 
-	 * 
-	 * 1,2,3π¯¿ª ∞¸∏Æ«œ¥¬ properties∞° µ˚∑Œ ¿÷æÓæﬂ «‘
-	 * ∞¢ ¥Î∏ﬁ¥∫∫∞ ªÁ¿Ã∆Æ ¡§∫∏µµ properties∑Œ ±∏º∫«ÿæﬂ «‘
-	 */
-	public static void main(String[] args) throws Exception{
-		String root_path = "D:/DATA";
-		String sub_path	 = String.format("/INPUT/UFV/%1$s/%2$s","201406","10");
-		
-		File root = new File(root_path +  sub_path);
+	private static void getFileListStr(String path,String file_regex) throws Exception{
+		File root = new File(path);
 		
 		String[] sss =  root.list();
 		StringBuffer sb = new StringBuffer();
@@ -47,27 +59,26 @@ public class Test2 {
 			sb.append(val);
 		}
 		
-		String a = "201406100000";
-		String aa = "201406100010";
-		String b = "201406102350";
-		
-		
-
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmm");
-		//DAsdf.parse(a);
-		Date end   = sdf.parse(aa);
-		
-		
-		
-		
-		/*
-		for(; aa<=bb ; aa+=10) {
-			System.out.println(aa);
-		}
-		
-		System.out.println(aa);
-		System.out.println(bb);
-		*/
 		patternMatcher(sb.toString());
+	}
+	
+	public static void main(String[] args) throws Exception{
+		String root_path	= "D:/DATA";
+		String sub_path		= String.format("/INPUT/UFV/%1$s/%2$s","201406","10"); //1Î≤à
+		String sub_path2	= String.format("/INPUT/UFF2/%1$s/%2$s","201406","10"); //2Î≤à fqc
+		String sub_path2_1	= String.format("/INPUT/UFQ/%1$s/%2$s","201406","10"); //2Î≤à orpg qc
+		String sub_path3	= String.format("/OUTPUT/BIN/ZNQC/%1$s/%2$s","201406","10"); //3_1Î≤à
+		String sub_path3_2	= String.format("/OUTPUT/BIN/ZFQC/%1$s/%2$s","201406","10"); //3_2Î≤à
+		String sub_path3_3	= String.format("/OUTPUT/BIN/ZOQC/%1$s/%2$s","201406","10"); //3_3Î≤à
+		
+		String file_regex 		= "RDR_([A-Z]{1,4})_([0-9]{8})([0-9]{3})([0-9]{1}).uf"; //1Î≤à
+		String file_regex2		= "RDR_([A-Z]{1,4})_FQC_([0-9]{8})([0-9]{3})([0-9]{1}).uf"; //2Î≤à fqc
+		String file_regex2_1	= "RDR_([A-Z]{1,4})_QCD_([0-9]{8})([0-9]{3})([0-9]{1}).uf"; //2Î≤à orpg qc
+		String file_regex3_1	= "RDR_CNQCZ_CP15M_([0-9]{8})([0-9]{3})([0-9]{1}).uf"; //3Î≤à noqc
+		String file_regex3_2	= "RDR_CFQCZ_CP15M_([0-9]{8})([0-9]{3})([0-9]{1}).uf"; //3Î≤à fqc
+		String file_regex3_3	= "RDR_COQCZ_CP15M_([0-9]{8})([0-9]{3})([0-9]{1}).uf"; //3Î≤à orpg qc
+		
+		//getFileListStr(root_path+sub_path, file_regex);
+		getFileListStr(root_path+sub_path2, file_regex2);
 	}
 }
