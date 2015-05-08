@@ -80,11 +80,13 @@ public class Test3 {
 	public static void main(String[] args) throws Exception{
 		String path_qlt = "d:/Dev/eclipse/workspace/Test/src/YIT_STAT_QLT_201504030300.dat";
 		String path_qtt = "d:/Dev/eclipse/workspace/Test/src/YIT_STAT_QTT_201504030300.dat";
+		String path_1ne = "d:/적용/BRI_STAT_NE_201408022300.dat";
 		
 		String regex_qlt = "([0-9]{1,2}hr)\\s{1,}(ACC)\\s{1,}/\\s{1,}(BIAS)\\s{1,}/\\s{1,}(POD)\\s{1,}/\\s{1,}(FAR)\\s{1,}/\\s{1,}(CSI)";
 		String regex_qtt = "([0-9]{1,2}hr)\\s{1,}(Num)\\s{1,}/\\s{1,}(Total Num)\\s{1,}/\\s{1,}(Gauge Ave.)\\s{1,}/\\s{1,}(Radar Ave.)\\s{1,}/\\s{1,}(1-NE)\\s{1,}/\\s{1,}(ME)\\s{1,}/\\s{1,}(BS)\\s{1,}/\\s{1,}(MAE)\\s{1,}/\\s{1,}(RMSE)\\s{1,}/\\s{1,}(CC)";
+		String regex_1ne = "([0-9]{1,2}hr)\\s{1,}(1-NE)";
 		
-		String result = getValueStr(path_qlt,regex_qlt);
+		String result = getValueStr(path_1ne,regex_1ne);
 		System.out.println(result);
 	}
 }
