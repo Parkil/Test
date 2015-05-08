@@ -7,7 +7,19 @@ import java.util.regex.Pattern;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class Test2 {
-
+	
+	/*
+	 * 특정 디렉토리의 파일을 읽어서 파일 유무를 조사하는 예제
+	 * 이 예제의 파일 형식 RDR_BRI_FQC_201505050110.uf (확장자 앞에 날자,시간,분이 파일이름에 들어감)
+	 * 
+	 * [로직]
+	 * 1.지정된 파일경로에 있는 모든파일명을 문자열배열로 받아오고 배열을 1개의 문자열로 통합. - file.list() 메소드 사용
+	 * 2.문자열을 정규식으로 검사하여 정규식에 해당되는 문자열 추출
+	 * 3.파일의 시간을 표시하는 char배열을 생성하고 
+	 *	char[] time_arr = {'-','-','-','-','-','-'}; (0분,10분,20분,30분,40분,50분)
+	 *	정규식 group에서 시간에 해당하는 부분을 1로 수정하고 HashMap에 저장
+	 * 4.ObjectMapper를 이용하여 HashMap을 Json 문자열로 변경
+	 */
 	private static String[] patternMatcher(String val, String regex) throws Exception{ 
 		
 		Pattern p = Pattern.compile(regex);
@@ -32,6 +44,10 @@ public class Test2 {
 			char[] temp_time_arr = time_map.get(m.group(1)+"/"+m.group(3));
 			int min_per10 = Integer.parseInt(m.group(4));
 			
+			/*
+			 * HashMap의 Key값은 사이트명/시간(0~23시) 이며
+			 * Key값에 해당하는 char배열(10분)이 없을경우 새로 작성하여 HashMap에 입력한다.
+			 */
 			if(temp_time_arr == null) {
 				temp_time_arr = time_arr.clone();
 				time_map.put(m.group(1)+"/"+m.group(3), temp_time_arr);
@@ -51,13 +67,7 @@ public class Test2 {
 		File root = new File(path);
 		
 		String[] file_list =  root.list();
-		Arrays.sort(file_list);
-		StringBuffer sb = new StringBuffer();
-		for(String file_name : file_list) {
-			sb.append(file_name);
-		}
-		
-		return patternMatcher(sb.toString(), file_regex);
+		return patternMatcher(Arrays.toString(file_list), file_regex);
 	}
 	
 	public static void main(String[] args) throws Exception{
@@ -76,11 +86,11 @@ public class Test2 {
 		String file_regex3_2	= "RDR_(CFQCZ)_CP15M_([0-9]{8})([0-9]{2})([0-9]{1})([0-9]{1}).bin.gz"; //3번 fqc
 		String file_regex3_3	= "RDR_(COQCZ)_CP15M_([0-9]{8})([0-9]{2})([0-9]{1})([0-9]{1}).bin.gz"; //3번 orpg qc
 		
-		//getFileListStr(root_path+sub_path, file_regex);
+		getFileListStr(root_path+sub_path, file_regex);
 		//getFileListStr(root_path+sub_path2, file_regex2);
 		//getFileListStr(root_path+sub_path2_1, file_regex2_1);
 		//getFileListStr(root_path+sub_path3, file_regex3_1);
 		//getFileListStr(root_path+sub_path3_2, file_regex3_2);
-		getFileListStr(root_path+sub_path3_3, file_regex3_3);
+		//getFileListStr(root_path+sub_path3_3, file_regex3_3);
 	}
 }
