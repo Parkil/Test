@@ -14,9 +14,8 @@ import test.util.ByteBufferUtil;
 
 
 public class Test3 {
-	public static void main(String[] args) throws Exception{
-		//File f = new File("C:/Dev/eclipse/workspace/Test/src/YIT_STAT_QLT_201504030300.dat"); //QLT
-		File f = new File("C:/Dev/eclipse/workspace/Test/src/YIT_STAT_QTT_201504030300.dat");
+	private static String getValueStr(String path, String regex) throws Exception{
+		File f = new File(path);
 		FileInputStream fis = new FileInputStream(f);
 		FileChannel fc = fis.getChannel();
 		
@@ -28,13 +27,11 @@ public class Test3 {
 		
 		ArrayList<HashMap<String,String>> list = new ArrayList<HashMap<String,String>>();
 		
-		//Pattern p = Pattern.compile("([0-9]{1,2}hr)\\s{1,}(ACC)\\s{1,}/\\s{1,}(BIAS)\\s{1,}/\\s{1,}(POD)\\s{1,}/\\s{1,}(FAR)\\s{1,}/\\s{1,}(CSI)"); //QLT
-		Pattern p = Pattern.compile("([0-9]{1,2}hr)\\s{1,}(Num)\\s{1,}/\\s{1,}(Total Num)\\s{1,}/\\s{1,}(Gauge Ave.)\\s{1,}/\\s{1,}(Radar Ave.)\\s{1,}/\\s{1,}(1-NE)\\s{1,}/\\s{1,}(ME)\\s{1,}/\\s{1,}(BS)\\s{1,}/\\s{1,}(MAE)\\s{1,}/\\s{1,}(RMSE)\\s{1,}/\\s{1,}(CC)"); //QTT
-	
-		/**/
+		Pattern p = Pattern.compile(regex);
+		
 		HashMap<String,String> temp = null;
-		//String[] col_name = new String[5];  //QLT
-		String[] col_name = new String[10]; //QTT
+		ArrayList<String> temp_list = new ArrayList<String>();
+		
 		String hr = null;
 		
 		for(String line : lines) {
@@ -45,30 +42,51 @@ public class Test3 {
 			Matcher m = p.matcher(line.trim());
 			
 			if(m.find()) {
+				temp_list.clear();
 				temp = new HashMap<String,String>();
 				list.add(temp);
 				
 				hr = m.group(1);
+				
+				
 				for(int i = 2 ; i<=m.groupCount() ; i++) {
-					col_name[i-2] = m.group(i);
+					temp_list.add(m.group(i));
 				}
 				
 				continue;
-			}else {
-				System.out.println(line.trim());
 			}
 			
 			String[] values = line.trim().split("\\s{1,}");
-			
+			String key = null;
+			String temp_value = null;
 			for(int i = 0 ; i<values.length ; i++) {
-				temp.put(hr+"-"+col_name[i], values[i]);
+				key = hr+"=="+temp_list.get(i);
+				temp_value = temp.get(key);
+				temp_value = (temp_value == null) ? "" : temp_value;
+				temp_value += values[i]+"<br>";
+				
+				temp.put(key , temp_value);
 			}
 		}
 		
+		fis.close();
+		fc.close();
+		
 		ObjectMapper om = new ObjectMapper();
 		String result = om.writeValueAsString(list);
-		System.out.println(result);
+		return result;
+	}
+	
+	public static void main(String[] args) throws Exception{
+		String path_qlt = "d:/Dev/eclipse/workspace/Test/src/YIT_STAT_QLT_201504030300.dat";
+		String path_qtt = "d:/Dev/eclipse/workspace/Test/src/YIT_STAT_QTT_201504030300.dat";
+		String path_1ne = "d:/적용/BRI_STAT_NE_201408022300.dat";
 		
-		fis.close();
+		String regex_qlt = "([0-9]{1,2}hr)\\s{1,}(ACC)\\s{1,}/\\s{1,}(BIAS)\\s{1,}/\\s{1,}(POD)\\s{1,}/\\s{1,}(FAR)\\s{1,}/\\s{1,}(CSI)";
+		String regex_qtt = "([0-9]{1,2}hr)\\s{1,}(Num)\\s{1,}/\\s{1,}(Total Num)\\s{1,}/\\s{1,}(Gauge Ave.)\\s{1,}/\\s{1,}(Radar Ave.)\\s{1,}/\\s{1,}(1-NE)\\s{1,}/\\s{1,}(ME)\\s{1,}/\\s{1,}(BS)\\s{1,}/\\s{1,}(MAE)\\s{1,}/\\s{1,}(RMSE)\\s{1,}/\\s{1,}(CC)";
+		String regex_1ne = "([0-9]{1,2}hr)\\s{1,}(1-NE)";
+		
+		String result = getValueStr(path_1ne,regex_1ne);
+		System.out.println(result);
 	}
 }
