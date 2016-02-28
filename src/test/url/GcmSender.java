@@ -9,25 +9,17 @@ import org.apache.commons.io.IOUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/*
- * url형식을 이용하여 Google GCM Push 메시지를 보내는 예제
- * 
- * url호출시 JSON형식으로 파라메터를 넘기는 부분과 url호출시 header를 지정하는 부분은 나중에 다른 형식의 url호출시 참고할만하다
- * JSON형식으로 데이터를 넘기는 부분은 java-json.jar api를 이용하였음
- */
+
 public class GcmSender {
-	
-	private final static String API_KEY = "AIzaSyAEW_VJlk9jQFycqkF5tDC0O8ui1r405sE";
-	private final static String REG_ID	= "dCQTFaJWw84:APA91bFn2mks_Qd0XX4YFeP3Q4qugj9d9gRPw5_R7LN4T4w7xIChtgDmCSipHMedfk6NsJM1E5bj5UZdrlF0kYcjrPNG50BryQgwxDzxHrwBweeZ3wwm6NOqxJD0H0r8tzmU6up75QrI";
+	private final static String API_KEY = "AIzaSyDdR1z63qJEa8gc6LRD6fEoTbMjEaAQjHU";
+	private final static String REG_ID	= "fUhJRJEvfjg:APA91bESlwsX5fMHnCkqHgI5OWPGAAC2M7B1PWmigjB9mTpkZQOpj63CNlB0k3VRhmwInsCclFgTpP4VJm3_dYZfqcuzjKeyNka4GlCVeaEaEDY46lbLRNLD_vZU0q1bkYpb1lMBMgz9";
 	
 	
 	private JSONObject getJsonParam(String reg_id, String title, String contents) throws JSONException {
 		JSONObject param = new JSONObject();
 		
-		//IOS 관련 JSON파라메터
 		JSONObject notification		= new JSONObject();
 		
-		//안드로이드 관련 JSON파라메터
 		JSONObject data		= new JSONObject();
 		
 		param.put("to", reg_id);
@@ -47,21 +39,20 @@ public class GcmSender {
 	}
 	
 	public static void main(String[] args) throws Exception{
-		JSONObject param = new GcmSender().getJsonParam(REG_ID, "제목", "내용");
+		System.out.println(System.getProperty("file.encoding"));
+		JSONObject param = new GcmSender().getJsonParam(REG_ID, "Infomation", "개성공단테스트 관련으로 인한 push 테스트");
+		System.out.println(param.toString());
 		
 		URL url = new URL("https://android.googleapis.com/gcm/send");
 		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-		//url호출시 header 지정
 		conn.setRequestProperty("Authorization", "key=" + API_KEY);
 		conn.setRequestProperty("Content-Type", "application/json");
 		conn.setRequestMethod("POST");
 		conn.setDoOutput(true);
 		
-		//GCM 메시지 전송
 		OutputStream os = conn.getOutputStream();
 		os.write(param.toString().getBytes());
 		
-		//메시지 전송결과 수신
 		InputStream is = conn.getInputStream();
 		String resp = IOUtils.toString(is);
 		System.out.println(resp);

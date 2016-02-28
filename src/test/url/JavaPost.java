@@ -126,7 +126,17 @@ public class JavaPost {
 	}
 
 	public static void main(String[] args) {
+		Hashtable<String,String> param = new Hashtable<String,String>();
+		param.put("key", "AIzaSyAEW_VJlk9jQFycqkF5tDC0O8ui1r405sE");
+		param.put("to", "kLw3oLkH_lA:APA91bEZDV9WRVwv306m9Y-ieRPCmPkYzlfS2lx42Txu9qySrS0B4LI--BGmY6OsGLV-Rwq5---cO70OBtglP3ZZugj6ZHzjVZon0hASo1hoqlDbLRPMf9JA5Y7yUNXQyYbIxR5XFqgs");
+		param.put("content_available", "true");
+		param.put("priority", "high");
+		param.put("pwd", "oks123$%^");
+		param.put("fromNumber", "01021243262");
+		param.put("sendType", "3");
+		/*
 		ByteBufferUtil.setEncoding("utf-8");
 		JavaPost.getPostNio("http://t.datapoint.co.kr/tower/lookup/lookup.info?uid=kotra&apikey=ZeZsc1NYCPJvw%2FnCE9HHGw%3D%3D&pkg=G08001&business=1248100998&cid=admin");
+		*/
 	}
 }

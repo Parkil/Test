@@ -1,10 +1,10 @@
 package test.apple_push;
-import java.util.Date;
-import java.util.Map;
 
-import com.notnoop.apns.APNS;
-import com.notnoop.apns.ApnsService;
-import com.notnoop.apns.PayloadBuilder;
+import java.io.InputStream;
+
+import javapns.Push;
+import javapns.notification.PushNotificationPayload;
+import javapns.notification.transmission.PushQueue;
 
 /*
  * JavaPNS를 이용한 IOS Push 전송
@@ -24,21 +24,29 @@ import com.notnoop.apns.PayloadBuilder;
  * 
  * 3) 1),2)번에서 작성한 key,인증서 pem을 기반으로 p12인증서 작성
  * openssl pkcs12 -export -in PushChatCert.pem -inkey PushChatKey.pem -out bundle.p12
+ * 
+ * 해당 api를 사용하기 위해서는 bouncy castle 암호화 provider가 필요함
  */
 public class SendByJavaPNS {
-	public static void main(String[] args) {
-		ApnsService service = APNS.newService().withCert("d:/bundle.p12", "aaa000").withSandboxDestination().build();
+	private static InputStream keyStore = new SendByJavaPNS().getClass().getResourceAsStream("bundle.p12");
+	
+	public static void main(String[] args) throws Exception {
+		//단순 push message 전송 (5번째 파라메터가 token)
+		//Push.alert("Hello World!", keyStore, "aaa000", false, "8bedba86c73892abdd2718f6f20ba48e9a5961b7ea087e34a872daa6ad9321f1");
 		
-		PayloadBuilder payload = APNS.newPayload().alertBody("김개똥님의 증명서가 승인되었습니다.").sound("default");
-		String json = payload.build();
 		
+		//payload 클래스를 이용하여 json으로 파라메터 구성후 전송
+		PushNotificationPayload payload = PushNotificationPayload.complex();
+		payload.addAlert("홍길동님의 출입신청이 승인되었습니다.");
+		payload.addSound("default");
+
+		System.out.println(payload.getPayload().toString());
+		//Push.payload(payload, keyStore, "aaa000", false, "02dd5fc9b4045db351067c9bbc2d31688c13ca75fc4e7032cbd7ef09c0bd4462");
 		
-		String token = "807f0c79b04d88916577936bb97ecc691c026ca6b495a053f939affd768fdf51";
-		service.push(token, json);
+		PushQueue queue = Push.queue(keyStore, "aaa000", false, 2);
 		
-		Map<String, Date> inactiveDevices = service.getInactiveDevices();
-		for (String deviceToken : inactiveDevices.keySet()) {
-			Date inactiveAsOf = inactiveDevices.get(deviceToken);
-		}
+		queue.add(payload,"8bedba86c73892abdd2718f6f20ba48e9a5961b7ea087e34a872daa6ad9321f1");
+		queue.start();
+		
 	}
 }
