@@ -23,7 +23,18 @@ public class TestExample {
 		tree.addNode("Mark", "Jane");
 
 		tree.display("Harry");
-
+		
+		for(Node node : tree.getNodeListByLevel(3)) {
+			System.out.println(node.getIdentifier());
+		}
+		
+		System.out.println();
+		System.out.println();
+		System.out.println("===========================");
+		for(Node node : tree.getNodeListToRoot("Mark")) {
+			System.out.println(node.getIdentifier());
+		}
+		/*
 		System.out.println("\n***** DEPTH-FIRST ITERATION *****");
 
 		Iterator<Node> depthIterator = tree.iterator("Harry");
@@ -40,6 +51,6 @@ public class TestExample {
 		while (breadthIterator.hasNext()) {
 			Node node = breadthIterator.next();
 			System.out.println(node.getIdentifier());
-		}
+		}*/
 	}
 }
