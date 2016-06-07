@@ -1,0 +1,134 @@
+package test.excel_structure;
+
+
+import org.apache.poi.ss.usermodel.CellStyle;
+import org.apache.poi.ss.usermodel.Font;
+import org.apache.poi.ss.usermodel.IndexedColors;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.util.CellRangeAddress;
+import org.apache.poi.ss.util.RegionUtil;
+import org.apache.poi.xssf.usermodel.XSSFFont;
+
+public class ExcelUtil {
+	
+	/** 폰트 객체 반환
+	 * @param workbook 해당 excel WorkBook 인터페이스
+	 * @param fontName 폰트명
+	 * @param font_size 폰트크기
+	 * @param is_italic 해당 폰트를 이텔릭체로 표시할것인지 여부
+	 * @param is_bold 해당 폰트를 볼드체로 표시할것인지 여부
+	 * @return
+	 */
+	public static Font getFont(Workbook workbook, String fontName, short font_size, boolean is_italic, boolean is_bold) {
+		Font font = workbook.createFont();
+		XSSFFont xssFont = (XSSFFont) font;
+		xssFont.setFontName(fontName);
+		xssFont.setFontHeightInPoints(font_size); //폰트 크기 기정
+		xssFont.setColor(IndexedColors.BLACK.getIndex());
+		xssFont.setItalic(is_italic); //이탤릭체
+		xssFont.setBold(is_bold); //볼드 지정
+		
+		return font;
+	}
+	
+	/** 표준 폰트 반환(이텔릭,볼드 적용안함)
+	 * @param workbook workbook 해당 excel WorkBook 인터페이스
+	 * @param fontName 폰트명
+	 * @param font_size 폰트크기
+	 * @return
+	 */
+	public static Font getDefaultFont(Workbook workbook, String fontName, short font_size) {
+		Font font = workbook.createFont();
+		XSSFFont xssFont = (XSSFFont) font;
+		xssFont.setFontName(fontName);
+		xssFont.setFontHeightInPoints(font_size); //폰트 크기 기정
+		xssFont.setColor(IndexedColors.BLACK.getIndex());
+		xssFont.setItalic(false); //이탤릭체
+		xssFont.setBold(false); //볼드 지정
+		
+		return font;
+	}
+	
+	/**병합된 셀에 Line 처리 (4개면 모두 동일하게 처리)
+	 * @param cra 병합된 셀의 범위
+	 * @param sheet excel sheet객체 
+	 * @param line_type 라인종류 CellStyle.BORDER~ 변수 입력
+	 */
+	public static void mergeCellAllSameLine(CellRangeAddress cra, Sheet sheet, short line_type) {
+		RegionUtil.setBorderTop(line_type, cra, sheet, sheet.getWorkbook());
+		RegionUtil.setBorderBottom(line_type, cra, sheet, sheet.getWorkbook());
+		RegionUtil.setBorderLeft(line_type, cra, sheet, sheet.getWorkbook());
+		RegionUtil.setBorderRight(line_type, cra, sheet, sheet.getWorkbook());
+	}
+	
+	/**병합된 셀에 Line처리(4개면을 다르게 처리)
+	 * @param cra 병합된 셀의 범위
+	 * @param sheet excel sheet객체 
+	 * @param top_line_type 상단라인종류 CellStyle.BORDER~ 변수 입력
+	 * @param bottom_line_type 하단라인종류 CellStyle.BORDER~ 변수 입력
+	 * @param left_line_type 좌측라인종류 CellStyle.BORDER~ 변수 입력
+	 * @param right_line_type 우측라인종류 CellStyle.BORDER~ 변수 입력
+	 */
+	public static void mergeCellDiffLine(CellRangeAddress cra, Sheet sheet, short top_line_type, short bottom_line_type, short left_line_type, short right_line_type) {
+		RegionUtil.setBorderTop(top_line_type, cra, sheet, sheet.getWorkbook());
+		RegionUtil.setBorderBottom(bottom_line_type, cra, sheet, sheet.getWorkbook());
+		RegionUtil.setBorderLeft(left_line_type, cra, sheet, sheet.getWorkbook());
+		RegionUtil.setBorderRight(right_line_type, cra, sheet, sheet.getWorkbook());
+	}
+	
+	/**단일 셀 라인처리  (4개면 모두 동일하게 처리)
+	 * @param style cell style객체
+	 * @param line_type 라인종류 CellStyle.BORDER~ 변수 입력
+	 */
+	public static void cellAllSameLine(CellStyle style, short line_type) {
+		style.setBorderBottom(line_type);
+		style.setBorderTop(line_type);
+		style.setBorderRight(line_type);
+		style.setBorderLeft(line_type);
+	}
+	
+	/**단일 셀 라인처리(4개면을 다르게 처리)
+	 * @param style cell style객체
+	 * @param top_line_type 상단라인종류 CellStyle.BORDER~ 변수 입력
+	 * @param bottom_line_type 하단라인종류 CellStyle.BORDER~ 변수 입력
+	 * @param left_line_type 좌측라인종류 CellStyle.BORDER~ 변수 입력
+	 * @param right_line_type 우측라인종류 CellStyle.BORDER~ 변수 입력
+	 */
+	public static void cellDiffLine(CellStyle style, short top_line_type, short bottom_line_type, short left_line_type, short right_line_type) {
+		style.setBorderTop(top_line_type);
+		style.setBorderBottom(bottom_line_type);
+		style.setBorderLeft(left_line_type);
+		style.setBorderRight(right_line_type);
+	}
+	
+	/**숫자를 excel의 컬럼 인덱스( A,B,AA....)로 변환
+	 * @param index 컬럼 인덱스 숫자
+	 * @return 컬럼인덱스문자열
+	 */
+	public static String getColIndexStr(int index) {
+		String ret_str = "";
+		if(index <= 26) {
+			ret_str = String.valueOf((char)(64+index));
+		}else {
+			StringBuffer sb = new StringBuffer();
+			
+			int divider = 0; //제수
+			int reserve = 0; //나머지
+			
+			do {
+				divider = index / 26;
+				reserve = index % 26;
+				index = divider;
+				
+				sb.append(String.valueOf((char)(64+reserve)));
+			}while(divider > 26);
+			
+			sb.append(String.valueOf((char)(64+divider)));
+			
+			ret_str = sb.reverse().toString();
+		}
+		
+		return ret_str;
+	}
+}
