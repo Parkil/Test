@@ -18,8 +18,6 @@ public class RunNewTemplate2 {
 				temp.put("game_name","배구");
 			}else if(i >= 20 && i<30) {
 				temp.put("game_name","농구");
-			}else {
-				temp.put("game_name","야구");
 			}
 			
 			temp.put("facil_name","시설"+String.valueOf(i));
@@ -37,6 +35,7 @@ public class RunNewTemplate2 {
 			temp.put("num_40ager",String.valueOf(i));
 			temp.put("num_50ager",String.valueOf(i));
 			temp.put("num_60up",String.valueOf(i));
+			/*
 			temp.put("elite",String.valueOf(i));
 			temp.put("family",String.valueOf(i));
 			temp.put("sum",String.valueOf(i));
@@ -47,16 +46,20 @@ public class RunNewTemplate2 {
 			temp.put("num_pt_office",String.valueOf(i));
 			temp.put("num_vt_office",String.valueOf(i));
 			temp.put("num_manager",String.valueOf(i));
+			*/
 			ret_list.add(temp);
 		}
 		
 		return ret_list;
 	}
+	
+
 
 	public static void main(String[] args) throws Exception{
+		
 		HashMap<String,String> header_map = new HashMap<String,String>();
 		header_map.put("top_title", "00 스포츠클럽 운영 실적");
-		header_map.put("col_title_key", "game_name,facil_name,day_string,num_lectur,num_attend,num_mf,num_paid,num_free,num_m,num_f,num_19below,num_20ager,num_30ager,num_40ager,num_50ager,num_60up,elite,family,sum,num_ft_lecturer,num_pt_lecturer,num_vt_lecturer,num_ft_office,num_pt_office,num_vt_office,num_manager");
+		header_map.put("col_title_key", "game_name,facil_name,day_string,num_lectur,num_attend,num_mf,num_paid,num_free,num_m,num_f,num_19below,num_20ager,num_30ager,num_40ager,num_50ager,num_60up");
 		
 		MakeExcel me = new MakeExcel();
 		me.setTemplate(new NewTemplate2());

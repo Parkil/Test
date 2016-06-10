@@ -1,7 +1,6 @@
 package test.excel_structure;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -13,12 +12,12 @@ import org.apache.poi.ss.usermodel.IndexedColors;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.util.CellRangeAddress;
+import org.apache.poi.ss.util.CellUtil;
 import org.apache.poi.xssf.streaming.SXSSFWorkbook;
 
-//클럽 월별 실적
+//클럽 월별 실적 - 엘리트,가족회원,지도자,사무원,사무국장 부분은 나중에 구현
 public class NewTemplate2 implements ExcelTemplate {
 	private String merge_range_format_str	= "$%1$s$%2$s:$%3$s$%4$s"; //병합 문자열 포맷
-	private String sum_range_format_str		= "%1$s%2$s:%3$s%4$s"; //sum 문자열 포맷
 	
 	@Override
 	public void makeHeader(Sheet sheet, Map<String, String> header_data) {
@@ -136,11 +135,12 @@ public class NewTemplate2 implements ExcelTemplate {
 		
 		int merge_temp = 0;
 		
+		//실 데이터 입력
 		ArrayList<String> merge_data = new ArrayList<String>();
 		for(int row_num = 0,row_data_len = row_data.size() ; row_num < row_data_len ; row_num++) { //행
 			data = row_data.get(row_num);
 			
-			//종목 상단 총계 부분
+			//종목 상단 총계 부분(수식없이 칸만 입력)
 			if(prev_game_name.intern() != data.get("game_name").intern()) {
 				prev_game_name = data.get("game_name");
 				
@@ -165,11 +165,72 @@ public class NewTemplate2 implements ExcelTemplate {
 			for(int idx = 0,key_len = col_title_key_arr.length ; idx < key_len ; idx++) { 
 				cell = data_row.createCell(idx);
 				cell.setCellStyle(col_style);
-				cell.setCellValue(data.get(col_title_key_arr[idx]));
+				
+				String val = data.get(col_title_key_arr[idx]);
+				if(val.matches("^[0-9]+$")) {
+					cell.setCellType(Cell.CELL_TYPE_NUMERIC);
+					cell.setCellValue(Integer.parseInt(val));
+				}else {
+					cell.setCellValue(val);
+				}
 			}
 		}
+		
+		//종목명을 병합처리
 		merge_data.add("A-"+(merge_temp+1)+"-A-"+(sheet.getLastRowNum()+1)); //마지막 병합건
-		ExcelUtil.multiMerge(merge_data.toArray(new String[merge_data.size()]), sheet);
+		String[] merge_data_arr = merge_data.toArray(new String[merge_data.size()]);
+		ExcelUtil.multiMerge(merge_data_arr, sheet);
+		
+		int start_row[] = new int[merge_data_arr.length];
+		int start_row_idx = 0;
+		
+		//각 종목별 계행의 수식 처리
+		String sum_format = "=SUM(%1$s%2$s:%3$s%4$s)"; //수식 문자열 포맷
+		for(String val : merge_data_arr) {
+			String temp[] = val.split("-");
+			int sum_row = Integer.parseInt(temp[1])-1; //계가 표시되는 행 번호
+			int last_row = Integer.parseInt(temp[3]); //해당건의 마지막 번호 
+			
+			start_row[start_row_idx++] = sum_row+1;
+			
+			Row row = CellUtil.getRow(sum_row, sheet);
+			Cell sum_cell = CellUtil.getCell(row, 2); //운영요일 컬럼의 계 총계
+			
+			sum_cell.setCellType(Cell.CELL_TYPE_FORMULA);
+			sum_cell.setCellFormula(String.format(sum_format, "D", (sum_row+1), "P", (sum_row+1)));
+			
+			for(int i = 0 ; i<13 ; i++) {
+				String cell_idx_str = ExcelUtil.getColIndexStr((i+4));
+				
+				sum_cell = CellUtil.getCell(row, (i+3)); //지도회수 ~ 60대
+				sum_cell.setCellType(Cell.CELL_TYPE_FORMULA);
+				sum_cell.setCellFormula(String.format(sum_format, cell_idx_str, (sum_row+2), cell_idx_str, last_row));
+			}
+		}
+		
+		//소계 부분 수식처리
+		Row row = CellUtil.getRow(5, sheet);
+		Cell total_cell = null;
+		for(int i = 0 ; i<13 ; i++) {
+			String cell_idx_str = ExcelUtil.getColIndexStr((i+4));
+			StringBuffer sb = new StringBuffer();
+			
+			for(int j = 0,len = start_row.length  ; j<len ; j++) {
+				sb.append(cell_idx_str);
+				sb.append(start_row[j]);
+				if(j != len -1) {
+					sb.append(",");
+				}
+			}
+			sb.append(",");
+			sb.append(cell_idx_str);
+			sb.append(7);
+			
+
+			total_cell = CellUtil.getCell(row, (i+3)); //지도회수 ~ 60대
+			total_cell.setCellType(Cell.CELL_TYPE_FORMULA);
+			total_cell.setCellFormula("=SUM("+sb.toString()+")");
+		}
 	}
 
 	@Override

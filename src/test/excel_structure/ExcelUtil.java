@@ -1,6 +1,9 @@
 package test.excel_structure;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.Font;
 import org.apache.poi.ss.usermodel.IndexedColors;
@@ -11,6 +14,62 @@ import org.apache.poi.ss.util.RegionUtil;
 import org.apache.poi.xssf.usermodel.XSSFFont;
 
 public class ExcelUtil {
+	private static String merge_range_format_str = "$%1$s$%2$s:$%3$s$%4$s"; //병합 문자열 포맷
+	
+	/**여러건의 merge를 순차적으로 처리
+	 * @param merge_data A-1-B-1형식의 데이터
+	 * @param sheet apahce poi
+	 */
+	public static List<CellRangeAddress> multiMerge(String[] merge_data, Sheet sheet) {
+		
+		List<CellRangeAddress> list = new ArrayList<CellRangeAddress>();
+		for(String data : merge_data) {
+			String temp[] = data.split("-");
+			
+			CellRangeAddress cra = CellRangeAddress.valueOf(String.format(merge_range_format_str, temp[0], temp[1], temp[2], temp[3]));
+			sheet.addMergedRegion(cra);
+			list.add(cra);
+		}
+		
+		return list;
+	}
+	
+	
+	/**여러건의 merge를 순차적으로 처리후 테두리선을 동일하게 처리
+	 * @param merge_data A-1-B-1형식의 데이터
+	 * @param sheet
+	 * @param line_type 테두리선 유형  CellStyle.BORDER~ 변수 입력
+	 */
+	public static void multiMergeAllSameLine(String[] merge_data, Sheet sheet, short line_type) {
+		
+		for(String data : merge_data) {
+			String temp[] = data.split("-");
+			
+			CellRangeAddress cra = CellRangeAddress.valueOf(String.format(merge_range_format_str, temp[0], temp[1], temp[2], temp[3]));
+			sheet.addMergedRegion(cra);
+			mergeCellAllSameLine(cra, sheet, line_type);
+		}
+	}
+	
+	
+	/**여러건의 merge를 순차적으로 처리후 테두리선을 다르게 처리
+	 * @param merge_data A-1-B-1형식의 데이터
+	 * @param sheet
+	 * @param top_line_type 상단라인종류 CellStyle.BORDER~ 변수 입력
+	 * @param bottom_line_type 하단라인종류 CellStyle.BORDER~ 변수 입력
+	 * @param left_line_type 좌측라인종류 CellStyle.BORDER~ 변수 입력
+	 * @param right_line_type 우측라인종류 CellStyle.BORDER~ 변수 입력
+	 */
+	public static void multiMergeAllDiffLine(String[] merge_data, Sheet sheet, short top_line_type, short bottom_line_type, short left_line_type, short right_line_type) {
+		
+		for(String data : merge_data) {
+			String temp[] = data.split("-");
+			
+			CellRangeAddress cra = CellRangeAddress.valueOf(String.format(merge_range_format_str, temp[0], temp[1], temp[2], temp[3]));
+			sheet.addMergedRegion(cra);
+			mergeCellDiffLine(cra, sheet, top_line_type, bottom_line_type, left_line_type, right_line_type);
+		}
+	}
 	
 	/** 폰트 객체 반환
 	 * @param workbook 해당 excel WorkBook 인터페이스

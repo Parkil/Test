@@ -39,7 +39,7 @@ public class MakeExcel {
 		template.makeHeader(sh, header_data);
 		template.makeRowContents(sh, header_data, row_data);
 		
-		FileOutputStream out = new FileOutputStream("d:/NewTemplate.xlsx");
+		FileOutputStream out = new FileOutputStream("d:/NewTemplate2.xlsx");
 		wb.write(out);
 		out.close();
 	}
