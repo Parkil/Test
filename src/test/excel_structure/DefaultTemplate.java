@@ -91,9 +91,21 @@ public class DefaultTemplate implements ExcelTemplate {
 	}
 
 	@Override
-	public void afterHandle(Sheet sheet, Map<String, String> raw_data) {
-		for (int cellnum = 0; cellnum < 6; cellnum++) {
-			sheet.autoSizeColumn(cellnum); //한글의 경우에는 약간잘리는 문제가 있음.
-		}
+	public void makeRowContents(Sheet sheet, Map<String, String> header_data,
+			List<HashMap<String, String>>... row_data) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void afterHandle(Sheet sheet, Map<String, String> header_data, List<HashMap<String, String>> row_data) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void afterHandle(Sheet sheet, Map<String, String> header_data, List<HashMap<String, String>>... row_data) {
+		// TODO Auto-generated method stub
+		
 	}
 }

@@ -12,6 +12,7 @@ public class MakeExcel {
 	private ExcelTemplate template;
 	private Map<String,String> header_data;
 	private List<HashMap<String,String>> row_data;
+	private List<HashMap<String,String>>[] row_data_multi;
 	
 	public MakeExcel(){}
 	public MakeExcel(ExcelTemplate template, Map<String,String> header_data, List<HashMap<String,String>> row_data) {
@@ -32,14 +33,32 @@ public class MakeExcel {
 		this.row_data = row_data;
 	}
 	
+	public void setRowDataMulti(List<HashMap<String,String>>... row_data_multi) {
+		this.row_data_multi = row_data_multi;
+	}
+	
 	public void createExcel() throws Exception{
 		SXSSFWorkbook wb = new SXSSFWorkbook(1000);
 		Sheet sh = wb.createSheet();
 
 		template.makeHeader(sh, header_data);
 		template.makeRowContents(sh, header_data, row_data);
+		template.afterHandle(sh, header_data, row_data);
 		
-		FileOutputStream out = new FileOutputStream("d:/NewTemplate2.xlsx");
+		FileOutputStream out = new FileOutputStream("d:/NewTemplate3.xlsx");
+		wb.write(out);
+		out.close();
+	}
+	
+	public void createExcelByMultiData() throws Exception{
+		SXSSFWorkbook wb = new SXSSFWorkbook(1000);
+		Sheet sh = wb.createSheet();
+
+		template.makeHeader(sh, header_data);
+		template.makeRowContents(sh, header_data, row_data_multi);
+		template.afterHandle(sh, header_data, row_data_multi);
+		
+		FileOutputStream out = new FileOutputStream("d:/NewTemplate3.xlsx");
 		wb.write(out);
 		out.close();
 	}
