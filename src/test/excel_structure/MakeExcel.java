@@ -45,7 +45,7 @@ public class MakeExcel {
 		template.makeRowContents(sh, header_data, row_data);
 		template.afterHandle(sh, header_data, row_data);
 		
-		FileOutputStream out = new FileOutputStream("d:/NewTemplate3.xlsx");
+		FileOutputStream out = new FileOutputStream("d:/NewTemplate5.xlsx");
 		wb.write(out);
 		out.close();
 	}
@@ -58,7 +58,7 @@ public class MakeExcel {
 		template.makeRowContents(sh, header_data, row_data_multi);
 		template.afterHandle(sh, header_data, row_data_multi);
 		
-		FileOutputStream out = new FileOutputStream("d:/NewTemplate3.xlsx");
+		FileOutputStream out = new FileOutputStream("d:/NewTemplate4.xlsx");
 		wb.write(out);
 		out.close();
 	}

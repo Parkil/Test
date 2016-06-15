@@ -259,7 +259,7 @@ public class NewTemplate3 implements ExcelTemplate {
 	@Override
 	public void afterHandle(Sheet sheet, Map<String, String> header_data, List<HashMap<String, String>>... row_data) {
 		for (int cellnum = 0; cellnum < 8; cellnum++) {
-			sheet.autoSizeColumn(cellnum); //한글의 경우에는 약간잘리는 문제가 있음.
+			sheet.setColumnWidth(cellnum, 4800);
 		}
 	}
 }
