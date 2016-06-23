@@ -9,6 +9,7 @@ import java.util.regex.Pattern;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
+import org.apache.poi.ss.usermodel.DataFormat;
 import org.apache.poi.ss.usermodel.Font;
 import org.apache.poi.ss.usermodel.IndexedColors;
 import org.apache.poi.ss.usermodel.Row;
@@ -156,6 +157,7 @@ public class NewTemplate4 implements ExcelTemplate {
 		Pattern merge_value_pattern = Pattern.compile("^merge\\[(.*)\\]\\[(.*)\\]$");
 		Pattern merge_title_pattern = Pattern.compile("^merge\\[(.*)\\]\\<(.*)\\>$");
 		
+		DataFormat format = wb.createDataFormat();
 		HashMap<String,String> data_map = row_data.get(0);
 		Row row = null;
 		Cell cell = null;
@@ -171,6 +173,7 @@ public class NewTemplate4 implements ExcelTemplate {
 				short right_line = (j == inner_len-1) ? CellStyle.BORDER_MEDIUM : CellStyle.BORDER_THIN;
 				cell = row.createCell(j-1);
 				temp_style = wb.createCellStyle();
+				temp_style.setDataFormat(format.getFormat("#,##0")); //숫자 천단위 ,를 추가
 				
 				if(row_type.intern() == "sum".intern()) {
 					temp_style.cloneStyleFrom(sup_style);

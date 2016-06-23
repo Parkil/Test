@@ -156,13 +156,23 @@ public class NewTemplate implements ExcelTemplate {
 						String sum_str = "=SUM("+String.format(sum_range_format_str, "D", (row_num+1), "O", (row_num+1))+")";
 						cell.setCellFormula(sum_str);
 					}else { //실 데이터
-						String hash_key = key_first+(title_idx-2);
-						String value = data.get(hash_key);
-						int val = (value == null) ? 0 : Integer.parseInt(value);
+						if(key_first.equals("[sum]")) { //클럽별 소계의 경우 수동으로 수식을 집어넣도록 처리
+							int r = cell.getRow().getRowNum()+1;
+							int c = cell.getColumnIndex()+1;
+							
+							String col_idx_str = ExcelUtil.getColIndexStr(c);
+							
+							cell.setCellType(Cell.CELL_TYPE_FORMULA);
+							cell.setCellFormula("=SUM("+String.format(sum_range_format_str, col_idx_str, r+1, col_idx_str, r+5)+")");
+						}else {
+							String hash_key = key_first+(title_idx-2);
+							String value = data.get(hash_key);
+							int val = (value == null) ? 0 : Integer.parseInt(value);
+							
 						
-					
-						cell.setCellType(Cell.CELL_TYPE_NUMERIC);
-						cell.setCellValue(val);
+							cell.setCellType(Cell.CELL_TYPE_NUMERIC);
+							cell.setCellValue(val);
+						}
 					}
 				}
 			}
