@@ -1,5 +1,5 @@
 /*
- * javamail api + smpt서버를 이용하여 메일을 보내는 예제
+ * javamail api + smpt서버를 이용하여 메일을 보내는 예제(내용을 HTML로 보냄)
  */
 package test.javamail;
 
@@ -8,12 +8,14 @@ import java.net.InetAddress;
 import java.util.Properties;
 import java.util.Date;
 
+import javax.activation.DataHandler;
 import javax.mail.*;
 import javax.mail.internet.*;
+import javax.mail.util.ByteArrayDataSource;
 
 import com.sun.mail.smtp.*;
 
-public class smtpsend {
+public class smtp_html {
 	public static void main(String[] argv) {
 		String mail_from = null, mail_to = null, mail_cc = null, mail_bcc = null; //메일 발신자,메일수신자,CC(carbon copy),BCC(blind carbon copy)
 		String mailhost = null, mailhost_user = null, mailhost_pw = null; //메일 호스트, ID, PW
@@ -21,7 +23,7 @@ public class smtpsend {
 		String prot = "smtp";
 		String subject = null,contents = null; //제목, 내용
 		String file = null;
-		String mailer = "smtpsend";
+		String mailer = "sendhtml";
 		
 		int mailhost_port = -999;
 		boolean debug = false;
@@ -33,7 +35,7 @@ public class smtpsend {
 		mail_from = "admin@virtualdream.co.kr";
 		mail_to = "alkain77@gmail.com";
 		mail_bcc = "alkain77@naver.com";
-		subject = "제목5";
+		subject = "제목 - html";
 		contents = "내용5";
 		
 		mailhost = "mail.sports.or.kr";
@@ -102,10 +104,9 @@ public class smtpsend {
 			msg.setSubject(subject);
 
 			if (file != null) {
-				// Attach the specified file.
-				// We need a multipart message to hold the attachment.
-				MimeBodyPart text_part = new MimeBodyPart();
-				text_part.setText(contents);
+				MimeBodyPart html_body_part = new MimeBodyPart();
+				collect2("제목222",html_body_part);
+				
 				
 				/*
 				단순한 방법이기는 하지만 파일명이 한글일 경우 깨지는 문제가 발생한다.
@@ -113,27 +114,39 @@ public class smtpsend {
 				attach_part.attachFile(file);
 				*/
 				
-				
 				/*
 				 * 파일명이 한글인 경우 첨부파일명이 깨지는 문제를 수정하기 위해서 
 				 * 파일정보자체는 javax.activation 라이브러리를 이용하여 저장하고 
 				 * 파일명은 MimeUtility를 이용하여 저장하는 형태로 처리한다.
 				 * activation-1.1.1.redhat-4.jar 필요
+				 * 밑의 로직을 반복하면 여러개의 첨부파일을 등록하는것도 가능함
 				 */
 				MimeBodyPart attach_part = new MimeBodyPart();
 				javax.activation.DataSource source = new javax.activation.FileDataSource(file);
 				attach_part.setDataHandler(new javax.activation.DataHandler(source));
 				attach_part.setFileName(MimeUtility.encodeText("첨부파일1.txt"));
 				
+				MimeBodyPart attach_part2 = new MimeBodyPart();
+				javax.activation.DataSource source2 = new javax.activation.FileDataSource("d:/자동진행 로그.txt");
+				attach_part2.setDataHandler(new javax.activation.DataHandler(source2));
+				attach_part2.setFileName(MimeUtility.encodeText("첨부파일2.txt"));
+				
 				MimeMultipart mp = new MimeMultipart();
-				mp.addBodyPart(text_part);
+				mp.addBodyPart(html_body_part);
 				mp.addBodyPart(attach_part);
+				mp.addBodyPart(attach_part2);
+				
+				
+				
 				msg.setContent(mp);
 				
+				
+				
+				//collect(msg);
 			} else {
 				// If the desired charset is known, you can use
 				// setText(text, charset)
-				msg.setText(contents);
+				collect(msg);
 			}
 
 			msg.setHeader("X-Mailer", mailer);
@@ -261,16 +274,49 @@ public class smtpsend {
 		}
 	}
 
-	/**
-	 * Read the body of the message until EOF.
-	 */
-	public static String collect(BufferedReader in) throws IOException {
+	public static void collect(Message msg)
+			throws MessagingException, IOException {
 		String line;
+		String subject = msg.getSubject();
 		StringBuffer sb = new StringBuffer();
-		while ((line = in.readLine()) != null) {
-			sb.append(line);
-			sb.append("\n");
-		}
-		return sb.toString();
+		sb.append("<HTML>\n");
+		sb.append("<HEAD>\n");
+		sb.append("<TITLE>\n");
+		sb.append(subject + "\n");
+		sb.append("</TITLE>\n");
+		sb.append("</HEAD>\n");
+		
+		sb.append("<BODY>\n");
+		sb.append("<H1>" + subject + "</H1>" + "\n");
+		
+		sb.append("<a href='www.google.co.kr'>구글로 이동</a>");
+		
+		sb.append("</BODY>\n");
+		sb.append("</HTML>\n");
+		
+		msg.setDataHandler(new DataHandler(
+		new ByteArrayDataSource(sb.toString(), "text/html")));
+	}
+	
+	//<html>부터 작성해도 메일에는 BODY안의 내용만 표시된다.
+	public static void collect2(String subject,MimeBodyPart part)
+			throws MessagingException, IOException {
+		StringBuffer sb = new StringBuffer();
+		//sb.append("<HTML>\n");
+		//sb.append("<HEAD>\n");
+		//sb.append("<TITLE>\n");
+		//sb.append(subject + "\n");
+		//sb.append("</TITLE>\n");
+		//sb.append("</HEAD>\n");
+		
+		//sb.append("<BODY>\n");
+		sb.append("<h1>" + subject + "</h1>" + "<br></br>");
+		
+		sb.append("<a href='http://www.google.co.kr'>구글로 이동</a>");
+		
+		//sb.append("</BODY>\n");
+		//sb.append("</HTML>\n");
+		
+		part.setDataHandler(new DataHandler(new ByteArrayDataSource(sb.toString(), "text/html")));
 	}
 }
