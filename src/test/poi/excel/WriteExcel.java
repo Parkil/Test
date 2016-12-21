@@ -1,29 +1,18 @@
 package test.poi.excel;
 
 import java.io.FileOutputStream;
-import java.text.NumberFormat;
 import java.util.HashMap;
 import java.util.Map;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
-import org.apache.poi.ss.usermodel.Font;
-import org.apache.poi.ss.usermodel.IndexedColors;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.util.CellReference;
-import org.apache.poi.xssf.streaming.SXSSFCell;
 import org.apache.poi.xssf.streaming.SXSSFWorkbook;
-import org.apache.poi.xssf.usermodel.XSSFCell;
-import org.apache.poi.xssf.usermodel.XSSFFont;
-
-import com.ibm.db2.jcc.c.ce;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 /*
- * Apache POI 3.9 ∂Û¿Ã∫Í∑Ø∏Æ∏¶ ¿ÃøÎ«œø© xlsx«¸Ωƒ¿∏∑Œ ø¢ºø¿ª ¿˙¿Â«œ¥¬ øπ¡¶
- * xlsx«¸Ωƒ¿∏∑Œ ∏π¿∫ µ•¿Ã≈Õ∏¶ ¿˙¿Â«“ ∞ÊøÏ outofmemory error∞° πﬂª˝«œ¥¬ ∞ÊøÏ∞° ¿÷¿∏¥œ ¡÷¿«
- * 
- * « ø‰ ∂Û¿Ã∫Í∑Ø∏Æ
+ * ÏÇ¨Ïö© ÎùºÏù¥Î∏åÎü¨Î¶¨
  * dom4j-1.6.1.jar
  * poi-3.9-20121203.jar
  * poi-ooxml-3.9-20121203.jar
@@ -37,70 +26,56 @@ public class WriteExcel {
 
 		Map<String, String> sss = new HashMap<String, String>();
 		sss.put("KEY", "10000");
-		SXSSFWorkbook wb = new SXSSFWorkbook(1000); // keep 100 rows in memory,
+		SXSSFWorkbook wb = new SXSSFWorkbook(10000); // keep 100 rows in memory,
 													// exceeding rows will be
 													// flushed to disk
+		//XSSFWorkbook wb = new XSSFWorkbook();
 		Sheet sh = wb.createSheet();
-
 		Row title_row = sh.createRow(0);
 		for (int cellnum = 0; cellnum < 11; cellnum++) {
 			Cell cell = title_row.createCell(cellnum);
 
-			SXSSFCell test = (SXSSFCell) cell;
+			String title = (cellnum != 10) ? "Í∞í" : "Ìï©Í≥Ñ";
+			cell.setCellValue(title);
 			
-			String title = (cellnum != 10) ? "¡¶∏Ò" : "√—∞Ë";
-			
-			test.setCellValue(title);
-
-			Font defaultFont = wb.createFont();
-			XSSFFont ttt = (XSSFFont) defaultFont;
-			ttt.setFontHeightInPoints((short) 10);
-			ttt.setFontName("Arial");
-			ttt.setColor(IndexedColors.BLACK.getIndex());
-			ttt.setItalic(false);
-			ttt.setBold(true);
-			// defaultFont.setBoldweight(arg0);
-
-			CellStyle cellStyle = wb.createCellStyle();
-			cellStyle.setFont(defaultFont);
-			cellStyle.setFillForegroundColor(IndexedColors.GREY_25_PERCENT.getIndex());
-			// cellStyle.setFillBackgroundColor(IndexedColors.GREY_25_PERCENT.getIndex());
-			cellStyle.setFillPattern(CellStyle.DIAMONDS);
-			cell.setCellStyle(cellStyle);
-			
-			//≈◊Ω∫∆Æ
-			//
+			ExcelUtil.setHeaderStyleBorder(wb, cell);
 		}
 		
 		String sum_format_str = "=SUM(%1$s:%2$s)";
-		for (int rownum = 1; rownum < 10; rownum++) {
+		for (int rownum = 1; rownum <= 2500; rownum++) {
 			Row row = sh.createRow(rownum);
 			for (int cellnum = 0; cellnum < 11; cellnum++) {
+				Cell cell = row.createCell(cellnum);
 				
 				if(cellnum != 10) {
-					Cell cell = row.createCell(cellnum);
 					cell.setCellType(Cell.CELL_TYPE_NUMERIC);
 					cell.setCellValue(1);
 				}else {
-					Cell cell = row.createCell(cellnum);
 					cell.setCellType(Cell.CELL_TYPE_FORMULA);
-					
 					cell.setCellFormula( String.format(sum_format_str, "A"+(rownum+1), "J"+(rownum+1)) );
+				}
+				
+				
+				if(rownum == 1) {
+					ExcelUtil.setContentStyleFirstLineBorder(wb, cell);
+				}else {
+					ExcelUtil.setContentStyleBorder(wb, cell);
 				}
 			}
 		}
 		
 		for (int cellnum = 0; cellnum < 10; cellnum++) {
-			sh.autoSizeColumn(cellnum); //«—±€¿« ∞ÊøÏø°¥¬ æ‡∞£¿ﬂ∏Æ¥¬ πÆ¡¶∞° ¿÷¿Ω.
+			sh.autoSizeColumn(cellnum); //ÏÖÄ ÌÅ¨Í∏∞ ÏûêÎèôÏßÄÏ†ï
 		}
 		
+		wb.createSheet();
 		FileOutputStream out = new FileOutputStream("d:/sxssf.xlsx");
 		wb.write(out);
 		out.close();
 
 		// dispose of temporary files backing this workbook on disk
-		// wb.dispose();
+		wb.dispose();
 		long end = System.currentTimeMillis();
-		System.out.println("Ω««‡ Ω√∞£ : " + (end - start) / 1000.0);
+		System.out.println("ÏÜåÏöîÏãúÍ∞Ñ : " + (end - start) / 1000.0);
 	}
 }
