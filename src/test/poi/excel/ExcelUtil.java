@@ -226,102 +226,87 @@ public class ExcelUtil {
 	 * @param wb
 	 * @param cell
 	 */
-	public static void setHeaderStyleNoBorder(Workbook wb, Cell cell) {
-		CellStyle style = null;
+	//multi thread환경에서 오작동을 하기 때문에 synchronized를 선언
+	public synchronized static void setHeaderStyleNoBorder(Workbook wb, Cell cell) {
 		if(setHeaderStyleNoBorder == null) {
-			style = wb.createCellStyle();
-			style.setFont(getFont(wb, "새굴림", (short)9, false, true)); //폰트지정
-			style.setAlignment(CellStyle.ALIGN_CENTER); //중앙정렬
-			style.setVerticalAlignment(CellStyle.VERTICAL_CENTER);
-			style.setFillForegroundColor(IndexedColors.GREY_25_PERCENT.getIndex());
-			style.setFillPattern(CellStyle.SOLID_FOREGROUND);
-			setHeaderStyleNoBorder = style;
-		}else {
-			style = setHeaderStyleNoBorder;
+			setHeaderStyleNoBorder = wb.createCellStyle();
+			
+			setHeaderStyleNoBorder.setAlignment(CellStyle.ALIGN_CENTER); //중앙정렬
+			setHeaderStyleNoBorder.setVerticalAlignment(CellStyle.VERTICAL_CENTER);
+			setHeaderStyleNoBorder.setFillForegroundColor(IndexedColors.GREY_25_PERCENT.getIndex());
+			setHeaderStyleNoBorder.setFillPattern(CellStyle.SOLID_FOREGROUND);
+			setHeaderStyleNoBorder.setFont(getFont(wb, "새굴림", (short)9, false, true)); //폰트지정
 		}
 		
-		cell.setCellStyle(style);
+		cell.setCellStyle(setHeaderStyleNoBorder);
 	}
 	
 	/** Header 셀 스타일 지정(Border Line Medium)
 	 * @param wb
 	 * @param cell
 	 */
-	public static void setHeaderStyleBorder(Workbook wb, Cell cell) {
-		CellStyle style = null;
-		
+	//multi thread환경에서 오작동을 하기 때문에 synchronized를 선언
+	public synchronized static void setHeaderStyleBorder(Workbook wb, Cell cell) {
 		if(setHeaderStyleBorder == null) {
-			style = wb.createCellStyle();
-			style.setFont(getFont(wb, "새굴림", (short)9, false, true)); //폰트지정
-			style.setAlignment(CellStyle.ALIGN_CENTER); //중앙정렬
-			style.setVerticalAlignment(CellStyle.VERTICAL_CENTER);
-			style.setFillForegroundColor(IndexedColors.GREY_25_PERCENT.getIndex());
-			style.setFillPattern(CellStyle.SOLID_FOREGROUND);
-			cellAllSameLine(style, CellStyle.BORDER_MEDIUM);
-			setHeaderStyleBorder = style;
-		}else {
-			style = setHeaderStyleBorder;
+			setHeaderStyleBorder = wb.createCellStyle();
+			setHeaderStyleBorder.setAlignment(CellStyle.ALIGN_CENTER); //중앙정렬
+			setHeaderStyleBorder.setVerticalAlignment(CellStyle.VERTICAL_CENTER);
+			setHeaderStyleBorder.setFillForegroundColor(IndexedColors.GREY_25_PERCENT.getIndex());
+			setHeaderStyleBorder.setFillPattern(CellStyle.SOLID_FOREGROUND);
+			setHeaderStyleBorder.setFont(getFont(wb, "새굴림", (short)9, false, true)); //폰트지정
+			cellAllSameLine(setHeaderStyleBorder, CellStyle.BORDER_MEDIUM);
 		}
 		
-		cell.setCellStyle(style);
+		cell.setCellStyle(setHeaderStyleBorder);
 	}
 	
 	/** 내용 셀 스타일 지정(Border Line 없음)
 	 * @param wb
 	 * @param cell
 	 */
-	public static void setContentStyleNoBorder(Workbook wb, Cell cell) {
-		CellStyle style = null;
+	//multi thread환경에서 오작동을 하기 때문에 synchronized를 선언
+	public synchronized static void setContentStyleNoBorder(Workbook wb, Cell cell) {
 		if(setContentStyleNoBorder == null) {
-			style = wb.createCellStyle();
-			style.setFont(getFont(wb, "새굴림", (short)9, false, false)); //폰트지정
-			style.setAlignment(CellStyle.ALIGN_CENTER); //중앙정렬
-			style.setVerticalAlignment(CellStyle.VERTICAL_CENTER);
-			setContentStyleNoBorder = style;
-		}else {
-			style = setContentStyleNoBorder;
+			setContentStyleNoBorder = wb.createCellStyle();
+			setContentStyleNoBorder.setAlignment(CellStyle.ALIGN_CENTER); //중앙정렬
+			setContentStyleNoBorder.setVerticalAlignment(CellStyle.VERTICAL_CENTER);
+			setContentStyleNoBorder.setFont(getFont(wb, "새굴림", (short)9, false, false)); //폰트지정
 		}
 		
-		cell.setCellStyle(style);
+		cell.setCellStyle(setContentStyleNoBorder);
 	}
 	
 	/** 내용 셀 스타일 지정(Border Line 위 없음 - 제목행과 맞닿은 행에서 사용)
 	 * @param wb
 	 * @param cell
 	 */
-	public static void setContentStyleFirstLineBorder(Workbook wb, Cell cell) {
-		CellStyle style = null;
+	//multi thread환경에서 오작동을 하기 때문에 synchronized를 선언
+	public synchronized static void setContentStyleFirstLineBorder(Workbook wb, Cell cell) {
 		if(setContentStyleFirstLineBorder == null) {
-			style = wb.createCellStyle();
-			style.setFont(getFont(wb, "새굴림", (short)9, false, false)); //폰트지정
-			style.setAlignment(CellStyle.ALIGN_CENTER); //중앙정렬
-			style.setVerticalAlignment(CellStyle.VERTICAL_CENTER);
-			cellDiffLine(style, CellStyle.BORDER_NONE, CellStyle.BORDER_THIN, CellStyle.BORDER_THIN, CellStyle.BORDER_THIN);
-			setContentStyleFirstLineBorder = style;
-		}else {
-			style = setContentStyleFirstLineBorder;
+			setContentStyleFirstLineBorder = wb.createCellStyle();
+			setContentStyleFirstLineBorder.setAlignment(CellStyle.ALIGN_CENTER); //중앙정렬
+			setContentStyleFirstLineBorder.setVerticalAlignment(CellStyle.VERTICAL_CENTER);
+			setContentStyleFirstLineBorder.setFont(getFont(wb, "새굴림", (short)9, false, false)); //폰트지정
+			cellDiffLine(setContentStyleFirstLineBorder, CellStyle.BORDER_NONE, CellStyle.BORDER_THIN, CellStyle.BORDER_THIN, CellStyle.BORDER_THIN);
 		}
 		
-		cell.setCellStyle(style);
+		cell.setCellStyle(setContentStyleFirstLineBorder);
 	}
 	
 	/** 내용 셀 스타일 지정(Border Line 있음)
 	 * @param wb
 	 * @param cell
 	 */
-	public static void setContentStyleBorder(Workbook wb, Cell cell) {
-		CellStyle style = null;
+	//multi thread환경에서 오작동을 하기 때문에 synchronized를 선언
+	public synchronized static void setContentStyleBorder(Workbook wb, Cell cell) {
 		if(setContentStyleBorder == null) {
-			style = wb.createCellStyle();
-			style.setFont(getFont(wb, "새굴림", (short)9, false, false)); //폰트지정
-			style.setAlignment(CellStyle.ALIGN_CENTER); //중앙정렬
-			style.setVerticalAlignment(CellStyle.VERTICAL_CENTER);
-			cellAllSameLine(style, CellStyle.BORDER_THIN);
-			setContentStyleBorder = style;
-		}else {
-			style = setContentStyleBorder;
+			setContentStyleBorder = wb.createCellStyle();
+			setContentStyleBorder.setAlignment(CellStyle.ALIGN_CENTER); //중앙정렬
+			setContentStyleBorder.setVerticalAlignment(CellStyle.VERTICAL_CENTER);
+			setContentStyleBorder.setFont(getFont(wb, "새굴림", (short)9, false, false)); //폰트지정
+			cellAllSameLine(setContentStyleBorder, CellStyle.BORDER_THIN);
 		}
 		
-		cell.setCellStyle(style);
+		cell.setCellStyle(setContentStyleBorder);
 	}
 }
