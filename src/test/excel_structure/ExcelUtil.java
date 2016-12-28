@@ -4,6 +4,7 @@ package test.excel_structure;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.Font;
 import org.apache.poi.ss.usermodel.IndexedColors;
@@ -15,6 +16,14 @@ import org.apache.poi.xssf.usermodel.XSSFFont;
 
 public class ExcelUtil {
 	private static String merge_range_format_str = "$%1$s$%2$s:$%3$s$%4$s"; //병합 문자열 포맷
+	
+	//CellStyle을 재활용하기 위한 전역변수
+	private static CellStyle setHeaderStyleNoBorder = null;
+	private static CellStyle setHeaderStyleBorder = null;
+	private static CellStyle setContentStyleNoBorder = null;
+	private static CellStyle setContentStyleFirstLineBorder = null;
+	private static CellStyle setContentStyleBorder = null;
+	
 	
 	/**여러건의 merge를 순차적으로 처리
 	 * @param merge_data A-1-B-1형식의 데이터
@@ -161,6 +170,28 @@ public class ExcelUtil {
 		style.setBorderRight(right_line_type);
 	}
 	
+	/**셀 Border Color 지정(4개면을 동일하게 처리)
+	 * @param style
+	 * @param color
+	 */
+	public static void cellAllSameBorderColor(CellStyle style, short color) {
+		style.setTopBorderColor(color);
+		style.setBottomBorderColor(color);
+		style.setLeftBorderColor(color);
+		style.setRightBorderColor(color);
+	}
+	
+	/**셀 Border Color 지정(4개면을 다르게 처리)
+	 * @param style
+	 * @param color
+	 */
+	public static void cellDiffBorderColor(CellStyle style, short top_color, short bottom_color, short left_color, short right_color) {
+		style.setTopBorderColor(top_color);
+		style.setBottomBorderColor(bottom_color);
+		style.setLeftBorderColor(left_color);
+		style.setRightBorderColor(right_color);
+	}
+	
 	/**숫자를 excel의 컬럼 인덱스( A,B,AA....)로 변환
 	 * @param index 컬럼 인덱스 숫자
 	 * @return 컬럼인덱스문자열
@@ -189,5 +220,88 @@ public class ExcelUtil {
 		}
 		
 		return ret_str;
+	}
+	
+	/** Header 셀 스타일 지정(Border Line 없음)
+	 * @param wb
+	 * @param cell
+	 */
+	public synchronized static void setHeaderStyleNoBorder(Workbook wb, Cell cell) {
+		if(setHeaderStyleNoBorder == null) {
+			setHeaderStyleNoBorder = wb.createCellStyle();
+			
+			setHeaderStyleNoBorder.setAlignment(CellStyle.ALIGN_CENTER); //중앙정렬
+			setHeaderStyleNoBorder.setVerticalAlignment(CellStyle.VERTICAL_CENTER);
+			setHeaderStyleNoBorder.setFillForegroundColor(IndexedColors.GREY_25_PERCENT.getIndex());
+			setHeaderStyleNoBorder.setFillPattern(CellStyle.SOLID_FOREGROUND);
+			setHeaderStyleNoBorder.setFont(getFont(wb, "새굴림", (short)9, false, true)); //폰트지정
+		}
+		
+		cell.setCellStyle(setHeaderStyleNoBorder);
+	}
+	
+	/** Header 셀 스타일 지정(Border Line Medium)
+	 * @param wb
+	 * @param cell
+	 */
+	public synchronized static void setHeaderStyleBorder(Workbook wb, Cell cell) {
+		if(setHeaderStyleBorder == null) {
+			setHeaderStyleBorder = wb.createCellStyle();
+			setHeaderStyleBorder.setAlignment(CellStyle.ALIGN_CENTER); //중앙정렬
+			setHeaderStyleBorder.setVerticalAlignment(CellStyle.VERTICAL_CENTER);
+			setHeaderStyleBorder.setFillForegroundColor(IndexedColors.GREY_25_PERCENT.getIndex());
+			setHeaderStyleBorder.setFillPattern(CellStyle.SOLID_FOREGROUND);
+			setHeaderStyleBorder.setFont(getFont(wb, "새굴림", (short)9, false, true)); //폰트지정
+			cellAllSameLine(setHeaderStyleBorder, CellStyle.BORDER_MEDIUM);
+		}
+		
+		cell.setCellStyle(setHeaderStyleBorder);
+	}
+	
+	/** 내용 셀 스타일 지정(Border Line 없음)
+	 * @param wb
+	 * @param cell
+	 */
+	public synchronized static void setContentStyleNoBorder(Workbook wb, Cell cell) {
+		if(setContentStyleNoBorder == null) {
+			setContentStyleNoBorder = wb.createCellStyle();
+			setContentStyleNoBorder.setAlignment(CellStyle.ALIGN_CENTER); //중앙정렬
+			setContentStyleNoBorder.setVerticalAlignment(CellStyle.VERTICAL_CENTER);
+			setContentStyleNoBorder.setFont(getFont(wb, "새굴림", (short)9, false, false)); //폰트지정
+		}
+		
+		cell.setCellStyle(setContentStyleNoBorder);
+	}
+	
+	/** 내용 셀 스타일 지정(Border Line 위 없음 - 제목행과 맞닿은 행에서 사용)
+	 * @param wb
+	 * @param cell
+	 */
+	public synchronized static void setContentStyleFirstLineBorder(Workbook wb, Cell cell) {
+		if(setContentStyleFirstLineBorder == null) {
+			setContentStyleFirstLineBorder = wb.createCellStyle();
+			setContentStyleFirstLineBorder.setAlignment(CellStyle.ALIGN_CENTER); //중앙정렬
+			setContentStyleFirstLineBorder.setVerticalAlignment(CellStyle.VERTICAL_CENTER);
+			setContentStyleFirstLineBorder.setFont(getFont(wb, "새굴림", (short)9, false, false)); //폰트지정
+			cellDiffLine(setContentStyleFirstLineBorder, CellStyle.BORDER_NONE, CellStyle.BORDER_THIN, CellStyle.BORDER_THIN, CellStyle.BORDER_THIN);
+		}
+		
+		cell.setCellStyle(setContentStyleFirstLineBorder);
+	}
+	
+	/** 내용 셀 스타일 지정(Border Line 있음)
+	 * @param wb
+	 * @param cell
+	 */
+	public synchronized static void setContentStyleBorder(Workbook wb, Cell cell) {
+		if(setContentStyleBorder == null) {
+			setContentStyleBorder = wb.createCellStyle();
+			setContentStyleBorder.setAlignment(CellStyle.ALIGN_CENTER); //중앙정렬
+			setContentStyleBorder.setVerticalAlignment(CellStyle.VERTICAL_CENTER);
+			setContentStyleBorder.setFont(getFont(wb, "새굴림", (short)9, false, false)); //폰트지정
+			cellAllSameLine(setContentStyleBorder, CellStyle.BORDER_THIN);
+		}
+		
+		cell.setCellStyle(setContentStyleBorder);
 	}
 }
