@@ -309,4 +309,15 @@ public class ExcelUtil {
 		
 		cell.setCellStyle(setContentStyleBorder);
 	}
+	
+	/*
+	 * static변수를 초기화하지 않으면 1번 엑셀다운로드를 진행후 다시 진행시 오류가 발생하기때문에 엑셀다운로드 진행후 static변수를 초기화처리
+	 */
+	public synchronized static void clearStaticVariable() {
+		setHeaderStyleNoBorder = null;
+		setHeaderStyleBorder = null;
+		setContentStyleNoBorder = null;
+		setContentStyleFirstLineBorder = null;
+		setContentStyleBorder = null;
+	}
 }
