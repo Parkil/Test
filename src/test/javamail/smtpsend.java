@@ -36,15 +36,21 @@ public class smtpsend {
 		subject = "제목5";
 		contents = "내용5";
 		
+		/*
 		mailhost = "mail.sports.or.kr";
 		mailhost_user = "rjob@sports.or.kr";
 		mailhost_pw = "wkqdkf135!";
 		auth = true;
 		mailhost_port = 465;
 		//mailhost_port = 6000; //잘못된 Port
+		*/
+		mailhost = "mail.vmsolution.co.kr";
+		mailhost_user = "contact@vmsolution.co.kr";
+		mailhost_pw = "vmfort12!@";
+		auth = true;
+		mailhost_port = 587;
 		
-		//file = "d:/popup.jpg"; //첨부파일경로 지정 첨부파일명이 한글인경우 구글에서 파일명이 없이 나오는 문제가 있음.
-		file = "d:/스티커 메모 백업.txt";
+		file = null;
 		
 		try {
 			/*
@@ -154,8 +160,8 @@ public class smtpsend {
 			}else {
 				
 			}
-			//SMTPTransport t = (SMTPTransport) session.getTransport(prot); //그냥 SMTP서버 접속
-			SMTPSSLTransport t = new SMTPSSLTransport(session, null); //SMTP서버에 SSL로 접속
+			SMTPTransport t = (SMTPTransport) session.getTransport(prot); //그냥 SMTP서버 접속
+			//SMTPSSLTransport t = new SMTPSSLTransport(session, null); //SMTP서버에 SSL로 접속
 			
 			try {
 				if (auth) {

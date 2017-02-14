@@ -26,27 +26,35 @@ public class smtp_html {
 		String mailer = "sendhtml";
 		
 		int mailhost_port = -999;
-		boolean debug = false;
+		boolean debug = true;
 		boolean verbose = true;
 		boolean auth = false;
 		boolean isSSL = false; //SMTP접속시 SSL접속여부
 		
 		//값 설정
-		mail_from = "admin@virtualdream.co.kr";
+		//mail_from = "alkain77@admin.com";
+		mail_from = "admin@naver.com";
 		mail_to = "alkain77@gmail.com";
 		mail_bcc = "alkain77@naver.com";
-		subject = "제목 - html";
-		contents = "내용5";
+		subject = "11";
+		contents = "<h1>제목</h1>";
 		
+		/*
 		mailhost = "mail.sports.or.kr";
 		mailhost_user = "rjob@sports.or.kr";
 		mailhost_pw = "wkqdkf135!";
 		auth = true;
 		mailhost_port = 465;
 		//mailhost_port = 6000; //잘못된 Port
+		*/
+		mailhost = "mail.vmsolution.co.kr";
+		mailhost_user = "contact@vmsolution.co.kr";
+		mailhost_pw = "vmfort12!@";
+		auth = true;
+		mailhost_port = 587;
 		
 		//file = "d:/popup.jpg"; //첨부파일경로 지정 첨부파일명이 한글인경우 구글에서 파일명이 없이 나오는 문제가 있음.
-		file = "d:/스티커 메모 백업.txt";
+		//file = "d:/스티커 메모 백업.txt";
 		
 		try {
 			/*
@@ -54,12 +62,17 @@ public class smtp_html {
 			 */
 			Properties props = System.getProperties();
 			if (mailhost != null) {
+				System.out.println("mail." + prot + ".host");
 				props.put("mail." + prot + ".host", mailhost);
 			}
 				
 			if (auth) {
+				System.out.println("mail." + prot + ".auth");
 				props.put("mail." + prot + ".auth", "true");
 			}
+			
+			//props.put("mail.smtp.connectiontimeout", "3000");
+			//props.put("mail.smtp.timeout", "3000");
 
 			/*
 			 * Create a Provider representing our extended SMTP transport and
@@ -85,23 +98,31 @@ public class smtp_html {
 			/*
 			 * Construct the message and send it.
 			 */
-			Message msg = new MimeMessage(session);
+			MimeMessage msg = new MimeMessage(session);
 			if (mail_from != null) {
 				msg.setFrom(new InternetAddress(mail_from));
 			}else {
 				msg.setFrom();
 			}
 
-			msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(mail_to, false));
+			
+			
+			msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse("alkain77@naver.com", false));
+			msg.setRecipients(Message.RecipientType.BCC, InternetAddress.parse("alkain77@gmail.com,alkain777@daum.net", false));
+			//msg.setRecipients(Message.RecipientType.CC, InternetAddress.parse("alkain77@naver.com,alkain777@daum.net", false));
+			//msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse("alkain77@naver.com", false));
+			
+			/*
 			if (mail_cc != null) {
 				msg.setRecipients(Message.RecipientType.CC, InternetAddress.parse(mail_cc, false));
 			}
 				
 			if (mail_bcc != null) {
 				msg.setRecipients(Message.RecipientType.BCC, InternetAddress.parse(mail_bcc, false));
-			}
-
-			msg.setSubject(subject);
+			}*/
+			
+			msg.setSubject(subject,"utf-8");
+			//msg.setSubject(subject);
 
 			if (file != null) {
 				MimeBodyPart html_body_part = new MimeBodyPart();
@@ -167,8 +188,8 @@ public class smtp_html {
 			}else {
 				
 			}
-			//SMTPTransport t = (SMTPTransport) session.getTransport(prot); //그냥 SMTP서버 접속
-			SMTPSSLTransport t = new SMTPSSLTransport(session, null); //SMTP서버에 SSL로 접속
+			SMTPTransport t = (SMTPTransport) session.getTransport(prot); //그냥 SMTP서버 접속
+			//SMTPSSLTransport t = new SMTPSSLTransport(session, null); //SMTP서버에 SSL로 접속
 			
 			try {
 				if (auth) {
@@ -179,6 +200,8 @@ public class smtp_html {
 				t.sendMessage(msg, msg.getAllRecipients());
 			} finally {
 				if (verbose) {
+					System.out.println(t.getLastReturnCode());
+					System.out.println(t.getLastServerResponse());
 					System.out.println("Response: " + t.getLastServerResponse());
 				}
 				t.close();
@@ -276,26 +299,13 @@ public class smtp_html {
 
 	public static void collect(Message msg)
 			throws MessagingException, IOException {
-		String line;
-		String subject = msg.getSubject();
 		StringBuffer sb = new StringBuffer();
-		sb.append("<HTML>\n");
-		sb.append("<HEAD>\n");
-		sb.append("<TITLE>\n");
-		sb.append(subject + "\n");
-		sb.append("</TITLE>\n");
-		sb.append("</HEAD>\n");
-		
-		sb.append("<BODY>\n");
-		sb.append("<H1>" + subject + "</H1>" + "\n");
-		
-		sb.append("<a href='www.google.co.kr'>구글로 이동</a>");
-		
-		sb.append("</BODY>\n");
-		sb.append("</HTML>\n");
+		sb.append("<style type=\"text/css\">.contents .board01_write table {width:100%;}</style>");
+		sb.append("<h1>" + "테스트1111" + "</h1>" + "<br></br>");
+		sb.append("<a href='http://www.google.co.kr'>구글로 이동</a>");
 		
 		msg.setDataHandler(new DataHandler(
-		new ByteArrayDataSource(sb.toString(), "text/html")));
+		new ByteArrayDataSource(sb.toString(), "text/html; charset=utf-8")));
 	}
 	
 	//<html>부터 작성해도 메일에는 BODY안의 내용만 표시된다.
@@ -310,13 +320,13 @@ public class smtp_html {
 		//sb.append("</HEAD>\n");
 		
 		//sb.append("<BODY>\n");
+		sb.append("<style type=\"text/css\">11111</style>");
 		sb.append("<h1>" + subject + "</h1>" + "<br></br>");
-		
 		sb.append("<a href='http://www.google.co.kr'>구글로 이동</a>");
 		
 		//sb.append("</BODY>\n");
 		//sb.append("</HTML>\n");
 		
-		part.setDataHandler(new DataHandler(new ByteArrayDataSource(sb.toString(), "text/html")));
+		part.setDataHandler(new DataHandler(new ByteArrayDataSource(sb.toString(), "text/html; charset=utf-8")));
 	}
 }
