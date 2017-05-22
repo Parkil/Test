@@ -1,4 +1,4 @@
-package temp;
+package test.sso;
 
 /**
  * 암호화에서 블럭 사이즈를 맞추기 위해 사용되는 Padding을 추상화 한 Interface
