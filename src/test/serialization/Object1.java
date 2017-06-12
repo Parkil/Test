@@ -17,16 +17,16 @@ public class Object1 implements Serializable {
 	public int test		= 0;
 	public int test2	= 0;
 	
-	//Á÷·ÄÈ­µµÁß Data¿¡ ¼öÁ¤À» °¡ÇØ¾ß ÇÒ¶§ ÀçÁ¤ÀÇÇÏ´Â ¸Ş¼Òµå
+	//ì§ë ¬í™”ë„ì¤‘ Dataì— ìˆ˜ì •ì„ ê°€í•´ì•¼ í• ë•Œ ì¬ì •ì˜í•˜ëŠ” ë©”ì†Œë“œ
 	private void writeObject(ObjectOutputStream oos) throws IOException, IllegalBlockSizeException{
-		System.out.println("Á÷·ÄÈ­µµÁß Áß°£Ã³¸®");
+		System.out.println("ì§ë ¬í™”ë„ì¤‘ ì¤‘ê°„ì²˜ë¦¬");
 		test *= 100;
 		oos.defaultWriteObject();
 	}
 	
-	//¿ªÁ÷·ÄÈ­µµÁß Data¿¡ ¼öÁ¤À» °¡ÇØ¾ß ÇÒ¶§ ÀçÁ¤ÀÇÇÏ´Â ¸Ş¼Òµå
+	//ì—­ì§ë ¬í™”ë„ì¤‘ Dataì— ìˆ˜ì •ì„ ê°€í•´ì•¼ í• ë•Œ ì¬ì •ì˜í•˜ëŠ” ë©”ì†Œë“œ
 	private void readObject(ObjectInputStream ois) throws IOException,ClassNotFoundException{
-		System.out.println("¿ªÁ÷·ÄÈ­µµÁß Áß°£Ã³¸®");
+		System.out.println("ì—­ì§ë ¬í™”ë„ì¤‘ ì¤‘ê°„ì²˜ë¦¬");
 		ois.defaultReadObject();
 		test /= 100;
 	}
