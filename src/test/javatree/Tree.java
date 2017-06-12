@@ -1,12 +1,15 @@
 package test.javatree;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map.Entry;
 
-public class Tree {
+public class Tree implements Serializable{
+
+	private static final long serialVersionUID = 8488344715716646215L;
 
 	private final static int ROOT = 0;
 
@@ -47,7 +50,7 @@ public class Tree {
 		
 		int level = 0; //node level
 
-		if (parent != null) { //parent°¡ nullÀÎ°æ¿ì´Â root ³ëµåÀÏ°æ¿ìÀÓ
+		if (parent != null) { //parentï¿½ï¿½ nullï¿½Î°ï¿½ï¿½ï¿½ root ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ï¿½ï¿½ï¿½
 			level = nodes.get(parent).getLevel()+1;
 			nodes.get(parent).addChild(identifier);
 		}
@@ -89,7 +92,7 @@ public class Tree {
 				: new DepthFirstTreeIterator(nodes, identifier);
 	}
 	
-	/** ÀÔ·ÂÇÑ Level¿¡ ÇØ´çÇÏ´Â Node¸®½ºÆ®¸¦ ¹ÝÈ¯ÇÑ´Ù.
+	/** ï¿½Ô·ï¿½ï¿½ï¿½ Levelï¿½ï¿½ ï¿½Ø´ï¿½ï¿½Ï´ï¿½ Nodeï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½È¯ï¿½Ñ´ï¿½.
 	 * @param level
 	 * @return
 	 */
@@ -105,7 +108,7 @@ public class Tree {
 		return ret_list;
 	}
 	
-	/** Æ¯Á¤ Node·Î ºÎÅÍ Root±îÁöÀÇ °æ·Î¿¡ ÇØ´çÇÏ´Â Node¸¦ ¹ÝÈ¯ÇÑ´Ù.
+	/** Æ¯ï¿½ï¿½ Nodeï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Rootï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Î¿ï¿½ ï¿½Ø´ï¿½ï¿½Ï´ï¿½ Nodeï¿½ï¿½ ï¿½ï¿½È¯ï¿½Ñ´ï¿½.
 	 * @param identifier
 	 * @return
 	 */
