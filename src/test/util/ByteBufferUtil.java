@@ -12,7 +12,7 @@ public class ByteBufferUtil {
 //	private static CharsetEncoder encoder = charset.newEncoder();
 //	private static CharsetDecoder decoder = charset.newDecoder();
 
-	/**ChasetÀÇ Character SetÀ» ÁöÁ¤
+	/**Chasetì˜ Character Setì„ ì§€ì •
 	 * @param chrset Character Set(euc-kr,utf-8.....)
 	 */
 	public static void setEncoding(String chrset) {
@@ -26,9 +26,9 @@ public class ByteBufferUtil {
 
 	}
 
-	/** ByteBuffer¸¦ ¹®ÀÚ¿­·Î ÀüÈ¯
+	/** ByteBufferë¥¼ ë¬¸ìì—´ë¡œ ì „í™˜
 	 * @param buffer ByteBuffer
-	 * @return º¯È¯µÈ ¹®ÀÚ¿­
+	 * @return ë³€í™˜ëœ ë¬¸ìì—´
 	 */
 	public static String bb_to_str(ByteBuffer buffer){
 		String data = "";
@@ -45,9 +45,9 @@ public class ByteBufferUtil {
 		return data;
 	}
 
-	/** ¹®ÀÚ¿­À» ByteBuffer·Î ÀüÈ¯
-	 * @param msg ¹®ÀÚ¿­
-	 * @return ¹®ÀÚ¿­À» º¯È¯ÇÑ ByteBuffer
+	/** ë¬¸ìì—´ì„ ByteBufferë¡œ ì „í™˜
+	 * @param msg ë¬¸ìì—´
+	 * @return ë¬¸ìì—´ì„ ë³€í™˜í•œ ByteBuffer
 	 */
 	public static ByteBuffer str_to_bb(String msg){
 		try{
@@ -59,8 +59,8 @@ public class ByteBufferUtil {
 		return null;
 	}
 
-	/**ÀÎÀÚ·Î ÁÖ¾îÁø ByteBuffer¿¡¼­ Ã¹¹øÂ° \nÀÌ³ª \rÀÇ À§Ä¡¸¦ ¹İÈ¯ÇÑ´Ù.
-	 * ¹İÈ¯ÈÄ ÀÎÀÚÀÇ ByteBufferÀÇ positionÀ» 0À¸·Î º¯°æÇÑ´Ù.
+	/**ì¸ìë¡œ ì£¼ì–´ì§„ ByteBufferì—ì„œ ì²«ë²ˆì§¸ \nì´ë‚˜ \rì˜ ìœ„ì¹˜ë¥¼ ë°˜í™˜í•œë‹¤.
+	 * ë°˜í™˜í›„ ì¸ìì˜ ByteBufferì˜ positionì„ 0ìœ¼ë¡œ ë³€ê²½í•œë‹¤.
 	 * @param buffer
 	 * @return
 	 */
@@ -73,7 +73,7 @@ public class ByteBufferUtil {
 			byte check = buffer.get();
 
 			/*
-			 * ÇöÀç¹®ÀÚ°¡ 10(Line Feed)³ª 13(Carrage Return)ÀÏ °æ¿ì ÇöÀç À§Ä¡¸¦ ¹İÈ¯
+			 * í˜„ì¬ë¬¸ìê°€ 10(Line Feed)ë‚˜ 13(Carrage Return)ì¼ ê²½ìš° í˜„ì¬ ìœ„ì¹˜ë¥¼ ë°˜í™˜
 			 */
 			if(check == (byte)10 || check == (byte)13) {
 				pos = i;
@@ -84,8 +84,8 @@ public class ByteBufferUtil {
 		return pos;
 	}
 
-	/**ÀÎÀÚ·Î ÁÖ¾îÁø ByteBuffer¿¡¼­ ¸¶Áö¸· \nÀÌ³ª \rÀÇ À§Ä¡¸¦ ¹İÈ¯ÇÑ´Ù.
-	 * ¹İÈ¯ÈÄ ÀÎÀÚÀÇ ByteBufferÀÇ positionÀ» 0À¸·Î º¯°æÇÑ´Ù.
+	/**ì¸ìë¡œ ì£¼ì–´ì§„ ByteBufferì—ì„œ ë§ˆì§€ë§‰ \nì´ë‚˜ \rì˜ ìœ„ì¹˜ë¥¼ ë°˜í™˜í•œë‹¤.
+	 * ë°˜í™˜í›„ ì¸ìì˜ ByteBufferì˜ positionì„ 0ìœ¼ë¡œ ë³€ê²½í•œë‹¤.
 	 * @param buffer
 	 * @return
 	 */
@@ -96,7 +96,7 @@ public class ByteBufferUtil {
 			byte check = buffer.get();
 
 			/*
-			 * ÇöÀç¹®ÀÚ°¡ 10(Line Feed)³ª 13(Carrage Return)ÀÏ °æ¿ì ÇöÀç À§Ä¡¸¦ ¹İÈ¯
+			 * í˜„ì¬ë¬¸ìê°€ 10(Line Feed)ë‚˜ 13(Carrage Return)ì¼ ê²½ìš° í˜„ì¬ ìœ„ì¹˜ë¥¼ ë°˜í™˜
 			 */
 			if(check == (byte)10 || check == (byte)13) {
 				pos = i;
