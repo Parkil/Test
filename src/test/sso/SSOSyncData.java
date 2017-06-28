@@ -1,4 +1,4 @@
-package temp;
+package test.sso;
 
 import java.util.Date;
 import java.util.HashMap;

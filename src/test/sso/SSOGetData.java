@@ -1,4 +1,4 @@
-package temp;
+package test.sso;
 
 import com.rathontech.common.crypt.RathonCrypt;
 import java.io.IOException;

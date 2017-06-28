@@ -1,4 +1,4 @@
-package temp;
+package test.sso;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -25,7 +25,7 @@ import org.codehaus.jackson.map.ObjectMapper;
 import com.sun.org.apache.xml.internal.security.utils.Base64;
 
 import WiseAccess.SSO;
-import temp.SeedCipher;
+import test.sso.SeedCipher;
 
 public class SSOUtil {
 	/**SSO 사용자 데이터 추출
@@ -217,6 +217,8 @@ public class SSOUtil {
 			SeedCipher seed = new SeedCipher();
 			portal_id = Base64.encode(seed.encrypt(portal_id, im_seed_key.getBytes(), "EUC-KR"));
 			
+			System.out.println("portal_id : "+portal_id);
+			
 			/* POST Parameters setting start */			
 			Map<String, Object> vars = new LinkedHashMap<String, Object>();
 			vars.put("ID"			, im_id);			//필수 - 토큰ID
@@ -260,6 +262,7 @@ public class SSOUtil {
 			rd.close();
 					
 			ObjectMapper om = new ObjectMapper();
+			System.out.println(sb.toString());
 			JsonNode node = om.readValue(sb.toString().replace("`",""), JsonNode.class);
 			
 			if (node.findPath("responseCode").asText().equals("SUCCESS")) {
@@ -322,16 +325,15 @@ public class SSOUtil {
 		System.out.println(ret_map);
 		*/
 		
-		/* 포탈ID <-> 지도자 시스템 ID간 동기화 수행
+		/* 포탈ID <-> 지도자 시스템 ID간 동기화 수행*/
 		String im_server_url = "http://www.sportal.or.kr";
 		String im_id = "sports";
 		String im_token = "UaPr96C4lNP7bDTuNeGfKA==";
 		String im_seed_key = "KocosaPortal!#$^";
-		String portal_id = "aaaa0000";
-		String slims_id = "admin";
+		String portal_id = "ofvalor";
+		String slims_id = "ofvalor";
 		
-		HashMap<String,Object> ret_map = new Test().syncImData(im_server_url, im_id, im_token, im_seed_key, portal_id, slims_id);
+		HashMap<String,Object> ret_map = new SSOUtil().syncImData(im_server_url, im_id, im_token, im_seed_key, portal_id, slims_id);
 		System.out.println(ret_map);
-		*/
 	}
 }

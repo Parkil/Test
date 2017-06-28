@@ -1,15 +1,22 @@
 package test.javatree;
 
+import java.io.Serializable;
 import java.util.Iterator;
 
+import test.serialization.Object1;
+import test.serialization.SerializationTest;
+
 /*
- * Æ®¸® ½ÇÇà ¿¹Á¦
+ * Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
  */
 public class TestExample {
 	public static void main(String[] args) {
+		/*
 		Tree tree = new Tree();
 		
-		//µÎ¹øÂ° ÆÄ¶ó¸ÞÅÍ°¡ ºÎ¸ð ÆÄ¶ó¸ÞÅÍÀÓ
+		System.out.println(tree instanceof Serializable);
+		
+		//ï¿½Î¹ï¿½Â° ï¿½Ä¶ï¿½ï¿½ï¿½Í°ï¿½ ï¿½Î¸ï¿½ ï¿½Ä¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		tree.addNode("Harry");
 		tree.addNode("Jane", "Harry");
 		tree.addNode("Bill", "Harry");
@@ -24,6 +31,16 @@ public class TestExample {
 
 		tree.display("Harry");
 		
+		
+		test.save(tree);
+		*/
+		SerializationTest test = new SerializationTest();
+		Tree recover_tree = (Tree)test.load();
+		recover_tree.display("Harry");
+		//System.out.println(recover.test);
+		//System.out.println(recover.test2);
+		
+		/*
 		for(Node node : tree.getNodeListByLevel(3)) {
 			System.out.println(node.getIdentifier());
 		}
@@ -33,7 +50,7 @@ public class TestExample {
 		System.out.println("===========================");
 		for(Node node : tree.getNodeListToRoot("Mark")) {
 			System.out.println(node.getIdentifier());
-		}
+		}*/
 		/*
 		System.out.println("\n***** DEPTH-FIRST ITERATION *****");
 

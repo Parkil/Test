@@ -1,17 +1,20 @@
 package test.javatree;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /*
  * tree node
  */
-public class Node {
+public class Node implements Serializable{
 
-	private String identifier; //³ëµå½Äº°ÀÚ
-	private String parent_identifier; //ºÎ¸ğ½Äº°ÀÚ
-	private int level ; //³ëµå ·¹º§
-	private ArrayList<String> children; //ÀÚ½Ä³ëµåµé
-	private Object attach; //³ëµå¿¡ ºÙ´Â Ã·ºÎ °´Ã¼
+	private static final long serialVersionUID = -516255344884513717L;
+	
+	private String identifier; //ë…¸ë“œì‹ë³„ì
+	private String parent_identifier; //ë¶€ëª¨ì‹ë³„ì
+	private int level ; //ë…¸ë“œ ë ˆë²¨
+	private ArrayList<String> children; //ìì‹ë…¸ë“œë“¤
+	private Object attach; //ë…¸ë“œì— ë¶™ëŠ” ì²¨ë¶€ ê°ì²´
 
 	public Node(String identifier) {
 		this.identifier = identifier;
