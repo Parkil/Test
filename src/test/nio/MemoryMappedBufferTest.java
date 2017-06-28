@@ -4,26 +4,33 @@ import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
 import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
-/*
- * nio MemoryMappedBuffer Å×½ºÆ®
- */
-
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.List;
 import test.util.ByteBufferUtil;
 
+/*
+ * nio MemoryMappedBuffer ì˜ˆì œ
+ */
 public class MemoryMappedBufferTest {
 	public static void main(String[] args) throws Exception{
 		RandomAccessFile raf = new RandomAccessFile("d:/1.txt","rw");
 		FileChannel rw = raf.getChannel();
 		
-		ByteBuffer add = ByteBufferUtil.str_to_bb("»õ·Î¿î ³»¿ëÀ¸·Î µ¤¾î¾º¿ò");
+		ByteBuffer add = ByteBufferUtil.str_to_bb("í…ŒìŠ¤íŠ¸ìš©");
 		
 		MappedByteBuffer mbb = rw.map(FileChannel.MapMode.READ_WRITE, 0, 10000);
-		//System.out.println(ConvertByteBuffer.str_to_bb("Ãß°¡Áö·Õ"));
+		//System.out.println(ConvertByteBuffer.str_to_bb("å ìŒ©ê³¤ì˜™å ì™ì˜™å ì™ì˜™"));
 		mbb.limit((int) rw.size());
 		mbb.put(add);
 		mbb.flip();
 		mbb.force();
 		rw.close();
 		raf.close();
+		
+		/* íŠ¹ì •íŒŒì¼ì˜ ì „ì²´ ë¼ì¸ì„ ë°˜í™˜
+		 List<String> sss = Files.readAllLines(Paths.get("d:/ìˆ˜ì •ê³„íš ë“±ë¡ ì‹œê°„/slims3.txt") ,Charset.forName("utf-8"));
+		 */
 	}
 }
