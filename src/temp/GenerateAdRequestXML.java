@@ -111,12 +111,7 @@ public class GenerateAdRequestXML {
 	 * @param impressionUrl tracking url
 	 */
 	private void setImpression(String impressionUrl) {
-		StringBuffer sb = new StringBuffer();
-		sb.append("<![CDATA[");
-		sb.append(impressionUrl);
-		sb.append("]]>");
-		
-		Impression.appendChild(doc.createTextNode(sb.toString()));
+		Impression.appendChild(doc.createCDATASection(impressionUrl));
 	}
 	
 	
@@ -136,11 +131,6 @@ public class GenerateAdRequestXML {
 			throw new InvalidParameterException("height must numeric string");
 		}
 		
-		StringBuffer sb = new StringBuffer();
-		sb.append("<![CDATA[");
-		sb.append(mediaUrl);
-		sb.append("]]>");
-		
 		Element MediaFile = doc.createElement("MediaFile");
 		MediaFile.setAttribute("delivery", delivery);
 		MediaFile.setAttribute("type", type);
@@ -148,7 +138,7 @@ public class GenerateAdRequestXML {
 		MediaFile.setAttribute("height", height);
 		MediaFiles.appendChild(MediaFile);
 		
-		MediaFile.appendChild(doc.createTextNode(sb.toString()));
+		MediaFile.appendChild(doc.createCDATASection(mediaUrl));
 	}
 	
 	/**광고영상 클릭 데이터 입력
@@ -156,23 +146,11 @@ public class GenerateAdRequestXML {
 	 * @param ClickTrackingUrl
 	 */
 	private void setVideoClick(String ClickThroughUrl, String ClickTrackingUrl) {
-		//광고 클릭시 이동할 url
-		StringBuffer through = new StringBuffer();
-		through.append("<![CDATA[");
-		through.append(ClickThroughUrl);
-		through.append("]]>");
-		
-		//광고 클릭 tracking url
-		StringBuffer track = new StringBuffer();
-		track.append("<![CDATA[");
-		track.append(ClickTrackingUrl);
-		track.append("]]>");
-		
 		Element ClickThrough = doc.createElement("ClickThrough");
-		ClickThrough.appendChild(doc.createTextNode(through.toString()));
+		ClickThrough.appendChild(doc.createCDATASection(ClickThroughUrl));
 		
 		Element ClickTracking = doc.createElement("ClickTracking");
-		ClickTracking.appendChild(doc.createTextNode(track.toString()));
+		ClickTracking.appendChild(doc.createCDATASection(ClickTrackingUrl));
 		
 		VideoClicks.appendChild(ClickThrough);
 		VideoClicks.appendChild(ClickTracking);
@@ -194,12 +172,7 @@ public class GenerateAdRequestXML {
 				Tracking.setAttribute("offset", progress_offset);
 			}
 			
-			StringBuffer track = new StringBuffer();
-			track.append("<![CDATA[");
-			track.append(event_map.get(key));
-			track.append("]]>");
-			
-			Tracking.appendChild(doc.createTextNode(track.toString()));
+			Tracking.appendChild(doc.createCDATASection(event_map.get(key)));
 			TrackingEvents.appendChild(Tracking);
 		}
 	}
