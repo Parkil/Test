@@ -39,7 +39,7 @@ import org.w3c.dom.NodeList;
  * XML에서 name속성을 가지는 노드 검색 : //@name
  * 
  * 노드 리스트중 특정위치의 값 검색 : //step1/step2[1]
- * - 주의점 IE5,6,7,8,9에서는 첫번째 노드가 [0]이지만 W3C표준에서는 첫번째 노드가[1]임 이를 해결하기 위해서는 XPath에 SelectionLanguage를 설정
+ * - 주의점 IE5,6,7,8,9에서는 첫번째 노드가 [0]이지만 W3C표준에서는 첫번째 노드가[1]임 이를 해결하기 위해서는 XPath에 SelectionLanguage를 설정(web상 javascript에서 실행하지 않는이상은 신경쓸 필요가 없음)
  * 
  * 노드 리스트중 마지막위치 값 검색 : //step1/step2[last()]
  * 
@@ -56,6 +56,9 @@ import org.w3c.dom.NodeList;
  * 
  * 선택한 노드의 형제노드 검색
  * /AAA/BBB/following-sibling::*
+ * 
+ * 노드안의 텍스트를 가지고 검색
+ * /AAA/BBB[contains(text(),'ZZZ')]
  * 
  * 아래 예제에서 /AAA/BBB/following-sibling::*을 실행할경우 BBB와 동일한 레벨에 있는 노드인 XXX,CCC노드가 검색된다.
  * ex)
@@ -170,7 +173,8 @@ public class XPathTest {
 		try{
 			Document doc = test.getDocumnet();
 			
-			XPath xpath = XPathFactory.newInstance().newXPath();
+			XPathFactory factory = XPathFactory.newInstance();
+			XPath xpath = factory.newXPath();
 			
 			/*
 			 * 단일 노드를 검색하려면 XPathConstants.NODE 노드 집합을 검색하려면 XPathConstants.NODESET을 설정
@@ -178,11 +182,16 @@ public class XPathTest {
 			 */
 			//NodeList nList = (NodeList)xpath.evaluate("//*[@type='IMG']", doc, XPathConstants.NODESET);
 			//NodeList nList = (NodeList)xpath.evaluate("//*[contains(@path,'RDR')]", doc, XPathConstants.NODESET);
-			NodeList nList = (NodeList)xpath.evaluate("//*[@name='실황감시']/*[@name='합성']/*[@name='수정테스트']", doc, XPathConstants.NODESET);
+			//NodeList nList = (NodeList)xpath.evaluate("//*[@name='실황감시']/*[@name='합성']/*[@name='수정테스트']", doc, XPathConstants.NODESET);
+			NodeList nList = (NodeList)xpath.evaluate("//*[@name='실황감시11']/*[@name='합성']/*[@name='실시간(일기현상)']", doc, XPathConstants.NODESET);
 			
 			System.out.println(nList.getLength());
 			
+			
 			for(int i = 0 ; i<nList.getLength() ; i++) {
+				Node node = nList.item(i);
+				System.out.println(node);
+				System.out.println(node.getAttributes().getNamedItem("type").getNodeValue());
 				/*
 				HashMap<String,String> map = new HashMap<String,String>();
 				Node node = nList.item(i);
@@ -217,9 +226,9 @@ public class XPathTest {
 				//nodemap.getNamedItem("name").setTextContent("실시간(실황감시)");
 			}
 			
-			test.applyXML(doc);
+			//test.applyXML(doc);
 			
-			System.out.println(list);
+			//System.out.println(list);
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
