@@ -60,6 +60,9 @@ import org.w3c.dom.NodeList;
  * 노드안의 텍스트를 가지고 검색
  * /AAA/BBB[contains(text(),'ZZZ')]
  * 
+ * 특정 Node명만 검색 <Name>,<Name-aaa>,<Name-222>
+ * //*[contains(local-name(), 'Name')]
+ * 
  * 아래 예제에서 /AAA/BBB/following-sibling::*을 실행할경우 BBB와 동일한 레벨에 있는 노드인 XXX,CCC노드가 검색된다.
  * ex)
  *	<AAA> 
@@ -119,6 +122,7 @@ public class XPathTest {
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 		factory.setIgnoringElementContentWhitespace(true);
 		DocumentBuilder builder = factory.newDocumentBuilder();
+
 		return builder.parse("d:/data_tree.xml");
 	}
 	
