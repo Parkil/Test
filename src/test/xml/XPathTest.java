@@ -191,11 +191,29 @@ public class XPathTest {
 			
 			System.out.println(nList.getLength());
 			
+			/*
+			 if (child.getNodeType() != Node.TEXT_NODE) {
+			 */
+			
 			
 			for(int i = 0 ; i<nList.getLength() ; i++) {
 				Node node = nList.item(i);
 				System.out.println(node);
 				System.out.println(node.getAttributes().getNamedItem("type").getNodeValue());
+				
+				/*
+				하위 노드 검색
+				NodeList subList = node.getChildNodes();
+				for(int j = 0 ; i<subList.getLength() ; j++) {
+					Node subNode = subList.item(i);
+					
+					if(subNode.getNodeType() == Node.ELEMENT_NODE) { //Tag
+						
+					}else if(subNode.getNodeType() == Node.TEXT_NODE) { //단순 문자열
+						
+					}
+				}
+				*/
 				/*
 				HashMap<String,String> map = new HashMap<String,String>();
 				Node node = nList.item(i);
