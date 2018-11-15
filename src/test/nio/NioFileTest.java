@@ -50,8 +50,8 @@ public class NioFileTest {
 		}
 		
 		/*
+		//기존 IO를 이용하여 파일을 검색하는 방법 일반 드라이브 접근시에는 별 문제가 없으나 네트워트 드라이브에 접근을 하여 하위 파일이나 디렉토리를 검색하게 되면 성능이 심각하게 저하된다.
 		File file = new File("//10.184.56.143/UMG_Content");
-		//File file = new File("d:/");
 		
 		FileFilter onlyDirectoryFilter = new FileFilter() {
 			public boolean accept(File f) {
