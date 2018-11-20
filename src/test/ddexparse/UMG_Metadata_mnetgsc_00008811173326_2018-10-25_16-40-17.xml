@@ -1,0 +1,825 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ernm:NewReleaseMessage 
+MessageSchemaVersionId="ern/37" LanguageAndScriptCode="en" 
+ReleaseProfileVersionId="CommonReleaseTypes/12/AudioAlbum"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ernm="http://ddex.net/xml/ern/37" xmlns:avs="http://ddex.net/xml/avs/avs" xsi:schemaLocation="http://ddex.net/xml/ern/37 http://ddex.net/xml/ern/37/release-notification.xsd">
+<MessageHeader>
+   <MessageThreadId>f67f6151-7309-48d7-b5aa-00445002eae5</MessageThreadId>
+   <MessageId>UM57587801</MessageId>
+   <MessageSender>
+      <PartyId>PADPIDA2013042401U</PartyId>
+      <PartyName>
+         <FullName>Universal Music Group</FullName>
+      </PartyName>
+   </MessageSender>
+   <MessageRecipient>
+      <PartyId>PADPIDA2013100402D</PartyId>
+      <PartyName>
+         <FullName>Mnet</FullName>
+      </PartyName>
+   </MessageRecipient>
+   <MessageCreatedDateTime>2018-10-25T16:40:17+01:00</MessageCreatedDateTime>
+</MessageHeader>
+<ResourceList>  
+<SoundRecording>
+<SoundRecordingType>MusicalWorkSoundRecording</SoundRecordingType><SoundRecordingId>
+<ISRC>USMC19800013</ISRC></SoundRecordingId> 
+<ResourceReference>A1</ResourceReference><ReferenceTitle><TitleText>Closing Time</TitleText></ReferenceTitle><LanguageOfPerformance>en</LanguageOfPerformance><Duration>PT4M38S</Duration><CreationDate LocationDescription="Seedy Underbelly Studios, Minneapolis, MN" TerritoryCode="US">1997-06-10</CreationDate><SoundRecordingDetailsByTerritory>     
+<TerritoryCode>Worldwide</TerritoryCode><Title TitleType="FormalTitle"><TitleText>Closing Time</TitleText></Title><Title TitleType="DisplayTitle"><TitleText>Closing Time</TitleText></Title><Title LanguageAndScriptCode="ja-Jpan" TitleType="TranslatedTitle"><TitleText>Closing Time</TitleText></Title><Title LanguageAndScriptCode="ja-Hrkt" TitleType="TranslatedTitle"><TitleText>Ｃｌｏｓｉｎｇ　Ｔｉｍｅ</TitleText></Title>            <DisplayArtist SequenceNumber="1">
+<PartyName><FullName>Semisonic</FullName><KeyName>Semisonic</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Jpan"><FullName>セミソニック</FullName><KeyName>セミソニック</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Hrkt"><FullName>セミソニツク</FullName><KeyName>セミソニツク</KeyName></PartyName><ArtistRole>MainArtist</ArtistRole>          </DisplayArtist>
+            <ResourceContributor SequenceNumber="1">
+<PartyName><FullName>Nick Launay</FullName><NamesBeforeKeyName>Nick</NamesBeforeKeyName><KeyName>Launay</KeyName></PartyName><ResourceContributorRole>Producer</ResourceContributorRole><ResourceContributorRole>StudioPersonnel</ResourceContributorRole><ResourceContributorRole Namespace="DPID:PADPIDA2013042401U" UserDefinedValue="Recording Engineer">UserDefined</ResourceContributorRole>          </ResourceContributor>
+            <ResourceContributor SequenceNumber="2">
+<PartyName><FullName>Jack Joseph Puig</FullName><NamesBeforeKeyName>Jack Joseph</NamesBeforeKeyName><KeyName>Puig</KeyName></PartyName><ResourceContributorRole>StudioPersonnel</ResourceContributorRole><ResourceContributorRole Namespace="DPID:PADPIDA2013042401U" UserDefinedValue="Mixer">UserDefined</ResourceContributorRole>          </ResourceContributor>
+            <IndirectResourceContributor SequenceNumber="1">
+<PartyName><FullName>Dan Wilson</FullName><NamesBeforeKeyName>Dan</NamesBeforeKeyName><KeyName>Wilson</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Jpan"><FullName>Dan Wilson</FullName><KeyName>Dan Wilson</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Hrkt"><FullName>ダン・ウィルソン</FullName><KeyName>ダン・ウィルソン</KeyName></PartyName><IndirectResourceContributorRole>ComposerLyricist</IndirectResourceContributorRole>          </IndirectResourceContributor>
+<PLine><Year>1998</Year><PLineCompany>UMG Recordings, Inc.</PLineCompany><PLineText>℗ 1998 UMG Recordings, Inc.</PLineText></PLine><Genre>
+  <GenreText>Rock</GenreText>
+</Genre>
+<ParentalWarningType>NotExplicit</ParentalWarningType></SoundRecordingDetailsByTerritory>
+<SoundRecordingDetailsByTerritory>     
+<TerritoryCode>NZ</TerritoryCode><Genre>
+  <GenreText>Pop</GenreText>
+</Genre>
+</SoundRecordingDetailsByTerritory>
+<SoundRecordingDetailsByTerritory>     
+<TerritoryCode>GB</TerritoryCode><ParentalWarningType>Unknown</ParentalWarningType></SoundRecordingDetailsByTerritory>
+</SoundRecording>    
+<SoundRecording>
+<SoundRecordingType>MusicalWorkSoundRecording</SoundRecordingType><SoundRecordingId>
+<ISRC>USMC19857419</ISRC></SoundRecordingId> 
+<ResourceReference>A2</ResourceReference><ReferenceTitle><TitleText>Singing In My Sleep</TitleText></ReferenceTitle><LanguageOfPerformance>en</LanguageOfPerformance><Duration>PT4M35S</Duration><CreationDate LocationDescription="Seedy Underbelly Studios, Minneapolis, MN" TerritoryCode="US">1997-06-10</CreationDate><SoundRecordingDetailsByTerritory>     
+<TerritoryCode>Worldwide</TerritoryCode><Title TitleType="FormalTitle"><TitleText>Singing In My Sleep</TitleText></Title><Title TitleType="DisplayTitle"><TitleText>Singing In My Sleep</TitleText></Title>            <DisplayArtist SequenceNumber="1">
+<PartyName><FullName>Semisonic</FullName><KeyName>Semisonic</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Jpan"><FullName>セミソニック</FullName><KeyName>セミソニック</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Hrkt"><FullName>セミソニツク</FullName><KeyName>セミソニツク</KeyName></PartyName><ArtistRole>MainArtist</ArtistRole>          </DisplayArtist>
+            <ResourceContributor SequenceNumber="1">
+<PartyName><FullName>Nick Launay</FullName><NamesBeforeKeyName>Nick</NamesBeforeKeyName><KeyName>Launay</KeyName></PartyName><ResourceContributorRole>Producer</ResourceContributorRole><ResourceContributorRole>StudioPersonnel</ResourceContributorRole><ResourceContributorRole Namespace="DPID:PADPIDA2013042401U" UserDefinedValue="Recording Engineer">UserDefined</ResourceContributorRole>          </ResourceContributor>
+            <ResourceContributor SequenceNumber="2">
+<PartyName><FullName>Bob Clearmountain</FullName><NamesBeforeKeyName>Bob</NamesBeforeKeyName><KeyName>Clearmountain</KeyName></PartyName><ResourceContributorRole>StudioPersonnel</ResourceContributorRole><ResourceContributorRole Namespace="DPID:PADPIDA2013042401U" UserDefinedValue="Mixer">UserDefined</ResourceContributorRole>          </ResourceContributor>
+            <IndirectResourceContributor SequenceNumber="1">
+<PartyName><FullName>Dan Wilson</FullName><NamesBeforeKeyName>Dan</NamesBeforeKeyName><KeyName>Wilson</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Jpan"><FullName>Dan Wilson</FullName><KeyName>Dan Wilson</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Hrkt"><FullName>ダン・ウィルソン</FullName><KeyName>ダン・ウィルソン</KeyName></PartyName><IndirectResourceContributorRole>ComposerLyricist</IndirectResourceContributorRole>          </IndirectResourceContributor>
+    <PLine>
+      <Year>1998</Year>
+      <PLineCompany>Geffen Records</PLineCompany>
+      <PLineText>A Geffen Records Release; ℗ 1998 Geffen Records</PLineText>
+    </PLine>
+<Genre>
+  <GenreText>Rock</GenreText>
+</Genre>
+<ParentalWarningType>NotExplicit</ParentalWarningType></SoundRecordingDetailsByTerritory>
+<SoundRecordingDetailsByTerritory>     
+<TerritoryCode>GB</TerritoryCode><ParentalWarningType>Unknown</ParentalWarningType></SoundRecordingDetailsByTerritory>
+</SoundRecording>    
+<SoundRecording>
+<SoundRecordingType>MusicalWorkSoundRecording</SoundRecordingType><SoundRecordingId>
+<ISRC>USMC19857420</ISRC></SoundRecordingId> 
+<ResourceReference>A3</ResourceReference><ReferenceTitle><TitleText>Made To Last</TitleText></ReferenceTitle><LanguageOfPerformance>en</LanguageOfPerformance><Duration>PT5M2S</Duration><CreationDate LocationDescription="Seedy Underbelly Studios, Minneapolis, MN" TerritoryCode="US">1997-06-10</CreationDate><SoundRecordingDetailsByTerritory>     
+<TerritoryCode>Worldwide</TerritoryCode><Title TitleType="FormalTitle"><TitleText>Made To Last</TitleText></Title><Title TitleType="DisplayTitle"><TitleText>Made To Last</TitleText></Title>            <DisplayArtist SequenceNumber="1">
+<PartyName><FullName>Semisonic</FullName><KeyName>Semisonic</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Jpan"><FullName>セミソニック</FullName><KeyName>セミソニック</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Hrkt"><FullName>セミソニツク</FullName><KeyName>セミソニツク</KeyName></PartyName><ArtistRole>MainArtist</ArtistRole>          </DisplayArtist>
+            <ResourceContributor SequenceNumber="1">
+<PartyName><FullName>Nick Launay</FullName><NamesBeforeKeyName>Nick</NamesBeforeKeyName><KeyName>Launay</KeyName></PartyName><ResourceContributorRole>Producer</ResourceContributorRole><ResourceContributorRole>StudioPersonnel</ResourceContributorRole><ResourceContributorRole Namespace="DPID:PADPIDA2013042401U" UserDefinedValue="Recording Engineer">UserDefined</ResourceContributorRole>          </ResourceContributor>
+            <ResourceContributor SequenceNumber="2">
+<PartyName><FullName>Bob Clearmountain</FullName><NamesBeforeKeyName>Bob</NamesBeforeKeyName><KeyName>Clearmountain</KeyName></PartyName><ResourceContributorRole>StudioPersonnel</ResourceContributorRole><ResourceContributorRole Namespace="DPID:PADPIDA2013042401U" UserDefinedValue="Mixer">UserDefined</ResourceContributorRole>          </ResourceContributor>
+            <IndirectResourceContributor SequenceNumber="1">
+<PartyName><FullName>Dan Wilson</FullName><NamesBeforeKeyName>Dan</NamesBeforeKeyName><KeyName>Wilson</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Jpan"><FullName>Dan Wilson</FullName><KeyName>Dan Wilson</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Hrkt"><FullName>ダン・ウィルソン</FullName><KeyName>ダン・ウィルソン</KeyName></PartyName><IndirectResourceContributorRole>ComposerLyricist</IndirectResourceContributorRole>          </IndirectResourceContributor>
+    <PLine>
+      <Year>1998</Year>
+      <PLineCompany>UMG Recordings, Inc.</PLineCompany>
+      <PLineText>A Geffen Records Release; ℗ 1998 UMG Recordings, Inc.</PLineText>
+    </PLine>
+<Genre>
+  <GenreText>Rock</GenreText>
+</Genre>
+<ParentalWarningType>NotExplicit</ParentalWarningType></SoundRecordingDetailsByTerritory>
+</SoundRecording>    
+<SoundRecording>
+<SoundRecordingType>MusicalWorkSoundRecording</SoundRecordingType><SoundRecordingId>
+<ISRC>USMC19857331</ISRC></SoundRecordingId> 
+<ResourceReference>A4</ResourceReference><ReferenceTitle><TitleText>Never You Mind</TitleText></ReferenceTitle><LanguageOfPerformance>en</LanguageOfPerformance><Duration>PT4M24S</Duration><CreationDate LocationDescription="Seedy Underbelly Studios, Minneapolis, MN" TerritoryCode="US">1997-06-10</CreationDate><SoundRecordingDetailsByTerritory>     
+<TerritoryCode>Worldwide</TerritoryCode><Title TitleType="FormalTitle"><TitleText>Never You Mind</TitleText></Title><Title TitleType="DisplayTitle"><TitleText>Never You Mind</TitleText></Title>            <DisplayArtist SequenceNumber="1">
+<PartyName><FullName>Semisonic</FullName><KeyName>Semisonic</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Jpan"><FullName>セミソニック</FullName><KeyName>セミソニック</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Hrkt"><FullName>セミソニツク</FullName><KeyName>セミソニツク</KeyName></PartyName><ArtistRole>MainArtist</ArtistRole>          </DisplayArtist>
+            <ResourceContributor SequenceNumber="1">
+<PartyName><FullName>Nick Launay</FullName><NamesBeforeKeyName>Nick</NamesBeforeKeyName><KeyName>Launay</KeyName></PartyName><ResourceContributorRole>Producer</ResourceContributorRole><ResourceContributorRole>StudioPersonnel</ResourceContributorRole><ResourceContributorRole Namespace="DPID:PADPIDA2013042401U" UserDefinedValue="Recording Engineer">UserDefined</ResourceContributorRole>          </ResourceContributor>
+            <ResourceContributor SequenceNumber="2">
+<PartyName><FullName>Bob Clearmountain</FullName><NamesBeforeKeyName>Bob</NamesBeforeKeyName><KeyName>Clearmountain</KeyName></PartyName><ResourceContributorRole>StudioPersonnel</ResourceContributorRole><ResourceContributorRole Namespace="DPID:PADPIDA2013042401U" UserDefinedValue="Mixer">UserDefined</ResourceContributorRole>          </ResourceContributor>
+            <IndirectResourceContributor SequenceNumber="1">
+<PartyName><FullName>Jacob Slichter</FullName><NamesBeforeKeyName>Jacob</NamesBeforeKeyName><KeyName>Slichter</KeyName></PartyName><IndirectResourceContributorRole>Composer</IndirectResourceContributorRole>          </IndirectResourceContributor>
+            <IndirectResourceContributor SequenceNumber="2">
+<PartyName><FullName>John Munson</FullName><NamesBeforeKeyName>John</NamesBeforeKeyName><KeyName>Munson</KeyName></PartyName><IndirectResourceContributorRole>ComposerLyricist</IndirectResourceContributorRole>          </IndirectResourceContributor>
+            <IndirectResourceContributor SequenceNumber="3">
+<PartyName><FullName>Dan Wilson</FullName><NamesBeforeKeyName>Dan</NamesBeforeKeyName><KeyName>Wilson</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Jpan"><FullName>Dan Wilson</FullName><KeyName>Dan Wilson</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Hrkt"><FullName>ダン・ウィルソン</FullName><KeyName>ダン・ウィルソン</KeyName></PartyName><IndirectResourceContributorRole>ComposerLyricist</IndirectResourceContributorRole>          </IndirectResourceContributor>
+    <PLine>
+      <Year>1998</Year>
+      <PLineCompany>UMG Recordings, Inc.</PLineCompany>
+      <PLineText>A Geffen Records Release; ℗ 1998 UMG Recordings, Inc.</PLineText>
+    </PLine>
+<Genre>
+  <GenreText>Rock</GenreText>
+</Genre>
+<ParentalWarningType>NotExplicit</ParentalWarningType></SoundRecordingDetailsByTerritory>
+</SoundRecording>    
+<SoundRecording>
+<SoundRecordingType>MusicalWorkSoundRecording</SoundRecordingType><SoundRecordingId>
+<ISRC>USMC19857421</ISRC></SoundRecordingId> 
+<ResourceReference>A5</ResourceReference><ReferenceTitle><TitleText>Secret Smile</TitleText></ReferenceTitle><LanguageOfPerformance>en</LanguageOfPerformance><Duration>PT4M38S</Duration><CreationDate LocationDescription="Seedy Underbelly Studios, Minneapolis, MN" TerritoryCode="US">1997-06-10</CreationDate><SoundRecordingDetailsByTerritory>     
+<TerritoryCode>Worldwide</TerritoryCode><Title TitleType="FormalTitle"><TitleText>Secret Smile</TitleText></Title><Title TitleType="DisplayTitle"><TitleText>Secret Smile</TitleText></Title><Title LanguageAndScriptCode="ja-Jpan" TitleType="TranslatedTitle"><TitleText>シークレット・スマイル</TitleText></Title><Title LanguageAndScriptCode="ja-Hrkt" TitleType="TranslatedTitle"><TitleText>シークレット・スマイル</TitleText></Title>            <DisplayArtist SequenceNumber="1">
+<PartyName><FullName>Semisonic</FullName><KeyName>Semisonic</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Jpan"><FullName>セミソニック</FullName><KeyName>セミソニック</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Hrkt"><FullName>セミソニツク</FullName><KeyName>セミソニツク</KeyName></PartyName><ArtistRole>MainArtist</ArtistRole>          </DisplayArtist>
+            <ResourceContributor SequenceNumber="1">
+<PartyName><FullName>Nick Launay</FullName><NamesBeforeKeyName>Nick</NamesBeforeKeyName><KeyName>Launay</KeyName></PartyName><ResourceContributorRole>Producer</ResourceContributorRole><ResourceContributorRole>StudioPersonnel</ResourceContributorRole><ResourceContributorRole Namespace="DPID:PADPIDA2013042401U" UserDefinedValue="Recording Engineer">UserDefined</ResourceContributorRole>          </ResourceContributor>
+            <ResourceContributor SequenceNumber="2">
+<PartyName><FullName>Bob Clearmountain</FullName><NamesBeforeKeyName>Bob</NamesBeforeKeyName><KeyName>Clearmountain</KeyName></PartyName><ResourceContributorRole>StudioPersonnel</ResourceContributorRole><ResourceContributorRole Namespace="DPID:PADPIDA2013042401U" UserDefinedValue="Mixer">UserDefined</ResourceContributorRole>          </ResourceContributor>
+            <ResourceContributor SequenceNumber="3">
+<PartyName><FullName>John Munson</FullName><NamesBeforeKeyName>John</NamesBeforeKeyName><KeyName>Munson</KeyName></PartyName><ResourceContributorRole>AssociatedPerformer</ResourceContributorRole><ResourceContributorRole Namespace="DPID:PADPIDA2013042401U" UserDefinedValue="Bass Guitar">UserDefined</ResourceContributorRole><ResourceContributorRole Namespace="DPID:PADPIDA2013042401U" UserDefinedValue="Background Vocalist">UserDefined</ResourceContributorRole><ResourceContributorRole Namespace="DPID:PADPIDA2013042401U" UserDefinedValue="Moog Bass">UserDefined</ResourceContributorRole>          </ResourceContributor>
+            <ResourceContributor SequenceNumber="4">
+<PartyName><FullName>Jacob Slichter</FullName><NamesBeforeKeyName>Jacob</NamesBeforeKeyName><KeyName>Slichter</KeyName></PartyName><ResourceContributorRole>AssociatedPerformer</ResourceContributorRole><ResourceContributorRole Namespace="DPID:PADPIDA2013042401U" UserDefinedValue="Drums">UserDefined</ResourceContributorRole><ResourceContributorRole Namespace="DPID:PADPIDA2013042401U" UserDefinedValue="Background Vocalist">UserDefined</ResourceContributorRole>          </ResourceContributor>
+            <ResourceContributor SequenceNumber="5">
+<PartyName><FullName>Dan Wilson</FullName><NamesBeforeKeyName>Dan</NamesBeforeKeyName><KeyName>Wilson</KeyName></PartyName><ResourceContributorRole>AssociatedPerformer</ResourceContributorRole><ResourceContributorRole Namespace="DPID:PADPIDA2013042401U" UserDefinedValue="Vocals">UserDefined</ResourceContributorRole><ResourceContributorRole Namespace="DPID:PADPIDA2013042401U" UserDefinedValue="Guitar">UserDefined</ResourceContributorRole><ResourceContributorRole Namespace="DPID:PADPIDA2013042401U" UserDefinedValue="Rhodes">UserDefined</ResourceContributorRole>          </ResourceContributor>
+            <IndirectResourceContributor SequenceNumber="1">
+<PartyName><FullName>Dan Wilson</FullName><NamesBeforeKeyName>Dan</NamesBeforeKeyName><KeyName>Wilson</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Jpan"><FullName>Dan Wilson</FullName><KeyName>Dan Wilson</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Hrkt"><FullName>ダン・ウィルソン</FullName><KeyName>ダン・ウィルソン</KeyName></PartyName><IndirectResourceContributorRole>ComposerLyricist</IndirectResourceContributorRole>          </IndirectResourceContributor>
+    <PLine>
+      <Year>1998</Year>
+      <PLineCompany>UMG Recordings, Inc.</PLineCompany>
+      <PLineText>A Geffen Records Release; ℗ 1998 UMG Recordings, Inc.</PLineText>
+    </PLine>
+<Genre>
+  <GenreText>Rock</GenreText>
+</Genre>
+<ParentalWarningType>NotExplicit</ParentalWarningType></SoundRecordingDetailsByTerritory>
+<SoundRecordingDetailsByTerritory>     
+<TerritoryCode>BR</TerritoryCode><TerritoryCode>IN</TerritoryCode><TerritoryCode>MX</TerritoryCode><Genre>
+  <GenreText>Pop</GenreText>
+</Genre>
+</SoundRecordingDetailsByTerritory>
+<SoundRecordingDetailsByTerritory>     
+<TerritoryCode>DE</TerritoryCode><PLine><Year>1998</Year><PLineCompany>UMG Recordings, Inc.</PLineCompany><PLineText>℗ 1998 UMG Recordings, Inc., Mit freundlicher Genehmigung: Universal Music International Division, a division of Universal Music GmbH</PLineText></PLine></SoundRecordingDetailsByTerritory>
+</SoundRecording>    
+<SoundRecording>
+<SoundRecordingType>MusicalWorkSoundRecording</SoundRecordingType><SoundRecordingId>
+<ISRC>USMC19857422</ISRC></SoundRecordingId> 
+<ResourceReference>A6</ResourceReference><ReferenceTitle><TitleText>DND</TitleText></ReferenceTitle><LanguageOfPerformance>en</LanguageOfPerformance><Duration>PT4M13S</Duration><CreationDate LocationDescription="Seedy Underbelly Studios, Minneapolis, MN" TerritoryCode="US">1997-06-10</CreationDate><SoundRecordingDetailsByTerritory>     
+<TerritoryCode>Worldwide</TerritoryCode><Title TitleType="FormalTitle"><TitleText>DND</TitleText></Title><Title TitleType="DisplayTitle"><TitleText>DND</TitleText></Title>            <DisplayArtist SequenceNumber="1">
+<PartyName><FullName>Semisonic</FullName><KeyName>Semisonic</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Jpan"><FullName>セミソニック</FullName><KeyName>セミソニック</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Hrkt"><FullName>セミソニツク</FullName><KeyName>セミソニツク</KeyName></PartyName><ArtistRole>MainArtist</ArtistRole>          </DisplayArtist>
+            <ResourceContributor SequenceNumber="1">
+<PartyName><FullName>Nick Launay</FullName><NamesBeforeKeyName>Nick</NamesBeforeKeyName><KeyName>Launay</KeyName></PartyName><ResourceContributorRole>Producer</ResourceContributorRole><ResourceContributorRole>StudioPersonnel</ResourceContributorRole><ResourceContributorRole Namespace="DPID:PADPIDA2013042401U" UserDefinedValue="Recording Engineer">UserDefined</ResourceContributorRole>          </ResourceContributor>
+            <ResourceContributor SequenceNumber="2">
+<PartyName><FullName>Bob Clearmountain</FullName><NamesBeforeKeyName>Bob</NamesBeforeKeyName><KeyName>Clearmountain</KeyName></PartyName><ResourceContributorRole>StudioPersonnel</ResourceContributorRole><ResourceContributorRole Namespace="DPID:PADPIDA2013042401U" UserDefinedValue="Mixer">UserDefined</ResourceContributorRole>          </ResourceContributor>
+            <IndirectResourceContributor SequenceNumber="1">
+<PartyName><FullName>Dan Wilson</FullName><NamesBeforeKeyName>Dan</NamesBeforeKeyName><KeyName>Wilson</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Jpan"><FullName>Dan Wilson</FullName><KeyName>Dan Wilson</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Hrkt"><FullName>ダン・ウィルソン</FullName><KeyName>ダン・ウィルソン</KeyName></PartyName><IndirectResourceContributorRole>ComposerLyricist</IndirectResourceContributorRole>          </IndirectResourceContributor>
+    <PLine>
+      <Year>1998</Year>
+      <PLineCompany>UMG Recordings, Inc.</PLineCompany>
+      <PLineText>A Geffen Records Release; ℗ 1998 UMG Recordings, Inc.</PLineText>
+    </PLine>
+<Genre>
+  <GenreText>Rock</GenreText>
+</Genre>
+<ParentalWarningType>NotExplicit</ParentalWarningType></SoundRecordingDetailsByTerritory>
+</SoundRecording>    
+<SoundRecording>
+<SoundRecordingType>MusicalWorkSoundRecording</SoundRecordingType><SoundRecordingId>
+<ISRC>USMC19857423</ISRC></SoundRecordingId> 
+<ResourceReference>A7</ResourceReference><ReferenceTitle><TitleText>Completely Pleased</TitleText></ReferenceTitle><LanguageOfPerformance>en</LanguageOfPerformance><Duration>PT3M17S</Duration><CreationDate LocationDescription="Seedy Underbelly Studios, Minneapolis, MN" TerritoryCode="US">1997-06-10</CreationDate><SoundRecordingDetailsByTerritory>     
+<TerritoryCode>Worldwide</TerritoryCode><Title TitleType="FormalTitle"><TitleText>Completely Pleased</TitleText></Title><Title TitleType="DisplayTitle"><TitleText>Completely Pleased</TitleText></Title>            <DisplayArtist SequenceNumber="1">
+<PartyName><FullName>Semisonic</FullName><KeyName>Semisonic</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Jpan"><FullName>セミソニック</FullName><KeyName>セミソニック</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Hrkt"><FullName>セミソニツク</FullName><KeyName>セミソニツク</KeyName></PartyName><ArtistRole>MainArtist</ArtistRole>          </DisplayArtist>
+            <ResourceContributor SequenceNumber="1">
+<PartyName><FullName>Nick Launay</FullName><NamesBeforeKeyName>Nick</NamesBeforeKeyName><KeyName>Launay</KeyName></PartyName><ResourceContributorRole>Producer</ResourceContributorRole><ResourceContributorRole>StudioPersonnel</ResourceContributorRole><ResourceContributorRole Namespace="DPID:PADPIDA2013042401U" UserDefinedValue="Recording Engineer">UserDefined</ResourceContributorRole>          </ResourceContributor>
+            <ResourceContributor SequenceNumber="2">
+<PartyName><FullName>Bob Clearmountain</FullName><NamesBeforeKeyName>Bob</NamesBeforeKeyName><KeyName>Clearmountain</KeyName></PartyName><ResourceContributorRole>StudioPersonnel</ResourceContributorRole><ResourceContributorRole Namespace="DPID:PADPIDA2013042401U" UserDefinedValue="Mixer">UserDefined</ResourceContributorRole>          </ResourceContributor>
+            <IndirectResourceContributor SequenceNumber="1">
+<PartyName><FullName>Dan Wilson</FullName><NamesBeforeKeyName>Dan</NamesBeforeKeyName><KeyName>Wilson</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Jpan"><FullName>Dan Wilson</FullName><KeyName>Dan Wilson</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Hrkt"><FullName>ダン・ウィルソン</FullName><KeyName>ダン・ウィルソン</KeyName></PartyName><IndirectResourceContributorRole>ComposerLyricist</IndirectResourceContributorRole>          </IndirectResourceContributor>
+    <PLine>
+      <Year>1998</Year>
+      <PLineCompany>UMG Recordings, Inc.</PLineCompany>
+      <PLineText>A Geffen Records Release; ℗ 1998 UMG Recordings, Inc.</PLineText>
+    </PLine>
+<Genre>
+  <GenreText>Rock</GenreText>
+</Genre>
+<ParentalWarningType>NotExplicit</ParentalWarningType></SoundRecordingDetailsByTerritory>
+</SoundRecording>    
+<SoundRecording>
+<SoundRecordingType>MusicalWorkSoundRecording</SoundRecordingType><SoundRecordingId>
+<ISRC>USMC19857424</ISRC></SoundRecordingId> 
+<ResourceReference>A8</ResourceReference><ReferenceTitle><TitleText>This Will Be My Year</TitleText></ReferenceTitle><LanguageOfPerformance>en</LanguageOfPerformance><Duration>PT4M34S</Duration><CreationDate LocationDescription="Seedy Underbelly Studios, Minneapolis, MN" TerritoryCode="US">1997-06-10</CreationDate><SoundRecordingDetailsByTerritory>     
+<TerritoryCode>Worldwide</TerritoryCode><Title TitleType="FormalTitle"><TitleText>This Will Be My Year</TitleText></Title><Title TitleType="DisplayTitle"><TitleText>This Will Be My Year</TitleText></Title>            <DisplayArtist SequenceNumber="1">
+<PartyName><FullName>Semisonic</FullName><KeyName>Semisonic</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Jpan"><FullName>セミソニック</FullName><KeyName>セミソニック</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Hrkt"><FullName>セミソニツク</FullName><KeyName>セミソニツク</KeyName></PartyName><ArtistRole>MainArtist</ArtistRole>          </DisplayArtist>
+            <ResourceContributor SequenceNumber="1">
+<PartyName><FullName>Nick Launay</FullName><NamesBeforeKeyName>Nick</NamesBeforeKeyName><KeyName>Launay</KeyName></PartyName><ResourceContributorRole>Producer</ResourceContributorRole><ResourceContributorRole>StudioPersonnel</ResourceContributorRole><ResourceContributorRole Namespace="DPID:PADPIDA2013042401U" UserDefinedValue="Recording Engineer">UserDefined</ResourceContributorRole>          </ResourceContributor>
+            <ResourceContributor SequenceNumber="2">
+<PartyName><FullName>Bob Clearmountain</FullName><NamesBeforeKeyName>Bob</NamesBeforeKeyName><KeyName>Clearmountain</KeyName></PartyName><ResourceContributorRole>StudioPersonnel</ResourceContributorRole><ResourceContributorRole Namespace="DPID:PADPIDA2013042401U" UserDefinedValue="Mixer">UserDefined</ResourceContributorRole>          </ResourceContributor>
+            <IndirectResourceContributor SequenceNumber="1">
+<PartyName><FullName>Jake Slichter</FullName><NamesBeforeKeyName>Jake</NamesBeforeKeyName><KeyName>Slichter</KeyName></PartyName><IndirectResourceContributorRole>ComposerLyricist</IndirectResourceContributorRole>          </IndirectResourceContributor>
+            <IndirectResourceContributor SequenceNumber="2">
+<PartyName><FullName>Jacob Slichter</FullName><NamesBeforeKeyName>Jacob</NamesBeforeKeyName><KeyName>Slichter</KeyName></PartyName><IndirectResourceContributorRole>ComposerLyricist</IndirectResourceContributorRole>          </IndirectResourceContributor>
+    <PLine>
+      <Year>1998</Year>
+      <PLineCompany>UMG Recordings, Inc.</PLineCompany>
+      <PLineText>A Geffen Records Release; ℗ 1998 UMG Recordings, Inc.</PLineText>
+    </PLine>
+<Genre>
+  <GenreText>Rock</GenreText>
+</Genre>
+<ParentalWarningType>NotExplicit</ParentalWarningType></SoundRecordingDetailsByTerritory>
+</SoundRecording>    
+<SoundRecording>
+<SoundRecordingType>MusicalWorkSoundRecording</SoundRecordingType><SoundRecordingId>
+<ISRC>USMC19857425</ISRC></SoundRecordingId> 
+<ResourceReference>A9</ResourceReference><ReferenceTitle><TitleText>All Worked Out</TitleText></ReferenceTitle><LanguageOfPerformance>en</LanguageOfPerformance><Duration>PT2M52S</Duration><CreationDate LocationDescription="Seedy Underbelly Studios, Minneapolis, MN" TerritoryCode="US">1997-06-10</CreationDate><SoundRecordingDetailsByTerritory>     
+<TerritoryCode>Worldwide</TerritoryCode><Title TitleType="FormalTitle"><TitleText>All Worked Out</TitleText></Title><Title TitleType="DisplayTitle"><TitleText>All Worked Out</TitleText></Title>            <DisplayArtist SequenceNumber="1">
+<PartyName><FullName>Semisonic</FullName><KeyName>Semisonic</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Jpan"><FullName>セミソニック</FullName><KeyName>セミソニック</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Hrkt"><FullName>セミソニツク</FullName><KeyName>セミソニツク</KeyName></PartyName><ArtistRole>MainArtist</ArtistRole>          </DisplayArtist>
+            <ResourceContributor SequenceNumber="1">
+<PartyName><FullName>Nick Launay</FullName><NamesBeforeKeyName>Nick</NamesBeforeKeyName><KeyName>Launay</KeyName></PartyName><ResourceContributorRole>Producer</ResourceContributorRole><ResourceContributorRole>StudioPersonnel</ResourceContributorRole><ResourceContributorRole Namespace="DPID:PADPIDA2013042401U" UserDefinedValue="Recording Engineer">UserDefined</ResourceContributorRole>          </ResourceContributor>
+            <ResourceContributor SequenceNumber="2">
+<PartyName><FullName>Bob Clearmountain</FullName><NamesBeforeKeyName>Bob</NamesBeforeKeyName><KeyName>Clearmountain</KeyName></PartyName><ResourceContributorRole>StudioPersonnel</ResourceContributorRole><ResourceContributorRole Namespace="DPID:PADPIDA2013042401U" UserDefinedValue="Mixer">UserDefined</ResourceContributorRole>          </ResourceContributor>
+            <IndirectResourceContributor SequenceNumber="1">
+<PartyName><FullName>Dan Wilson</FullName><NamesBeforeKeyName>Dan</NamesBeforeKeyName><KeyName>Wilson</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Jpan"><FullName>Dan Wilson</FullName><KeyName>Dan Wilson</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Hrkt"><FullName>ダン・ウィルソン</FullName><KeyName>ダン・ウィルソン</KeyName></PartyName><IndirectResourceContributorRole>ComposerLyricist</IndirectResourceContributorRole>          </IndirectResourceContributor>
+    <PLine>
+      <Year>1998</Year>
+      <PLineCompany>UMG Recordings, Inc.</PLineCompany>
+      <PLineText>A Geffen Records Release; ℗ 1998 UMG Recordings, Inc.</PLineText>
+    </PLine>
+<Genre>
+  <GenreText>Rock</GenreText>
+</Genre>
+<ParentalWarningType>NotExplicit</ParentalWarningType></SoundRecordingDetailsByTerritory>
+</SoundRecording>    
+<SoundRecording>
+<SoundRecordingType>MusicalWorkSoundRecording</SoundRecordingType><SoundRecordingId>
+<ISRC>USMC19857426</ISRC></SoundRecordingId> 
+<ResourceReference>A10</ResourceReference><ReferenceTitle><TitleText>California</TitleText></ReferenceTitle><LanguageOfPerformance>en</LanguageOfPerformance><Duration>PT5M26S</Duration><CreationDate LocationDescription="Seedy Underbelly Studios, Minneapolis, MN" TerritoryCode="US">1997-06-10</CreationDate><SoundRecordingDetailsByTerritory>     
+<TerritoryCode>Worldwide</TerritoryCode><Title TitleType="FormalTitle"><TitleText>California</TitleText></Title><Title TitleType="DisplayTitle"><TitleText>California</TitleText></Title>            <DisplayArtist SequenceNumber="1">
+<PartyName><FullName>Semisonic</FullName><KeyName>Semisonic</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Jpan"><FullName>セミソニック</FullName><KeyName>セミソニック</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Hrkt"><FullName>セミソニツク</FullName><KeyName>セミソニツク</KeyName></PartyName><ArtistRole>MainArtist</ArtistRole>          </DisplayArtist>
+            <ResourceContributor SequenceNumber="1">
+<PartyName><FullName>Nick Launay</FullName><NamesBeforeKeyName>Nick</NamesBeforeKeyName><KeyName>Launay</KeyName></PartyName><ResourceContributorRole>Producer</ResourceContributorRole><ResourceContributorRole>StudioPersonnel</ResourceContributorRole><ResourceContributorRole Namespace="DPID:PADPIDA2013042401U" UserDefinedValue="Recording Engineer">UserDefined</ResourceContributorRole>          </ResourceContributor>
+            <ResourceContributor SequenceNumber="2">
+<PartyName><FullName>Bob Clearmountain</FullName><NamesBeforeKeyName>Bob</NamesBeforeKeyName><KeyName>Clearmountain</KeyName></PartyName><ResourceContributorRole>StudioPersonnel</ResourceContributorRole><ResourceContributorRole Namespace="DPID:PADPIDA2013042401U" UserDefinedValue="Mixer">UserDefined</ResourceContributorRole>          </ResourceContributor>
+            <IndirectResourceContributor SequenceNumber="1">
+<PartyName><FullName>Dan Wilson</FullName><NamesBeforeKeyName>Dan</NamesBeforeKeyName><KeyName>Wilson</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Jpan"><FullName>Dan Wilson</FullName><KeyName>Dan Wilson</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Hrkt"><FullName>ダン・ウィルソン</FullName><KeyName>ダン・ウィルソン</KeyName></PartyName><IndirectResourceContributorRole>ComposerLyricist</IndirectResourceContributorRole>          </IndirectResourceContributor>
+    <PLine>
+      <Year>1998</Year>
+      <PLineCompany>UMG Recordings, Inc.</PLineCompany>
+      <PLineText>A Geffen Records Release; ℗ 1998 UMG Recordings, Inc.</PLineText>
+    </PLine>
+<Genre>
+  <GenreText>Rock</GenreText>
+</Genre>
+<ParentalWarningType>NotExplicit</ParentalWarningType></SoundRecordingDetailsByTerritory>
+</SoundRecording>    
+<SoundRecording>
+<SoundRecordingType>MusicalWorkSoundRecording</SoundRecordingType><SoundRecordingId>
+<ISRC>USMC19857427</ISRC></SoundRecordingId> 
+<ResourceReference>A11</ResourceReference><ReferenceTitle><TitleText>She Spreads Her Wings</TitleText></ReferenceTitle><LanguageOfPerformance>en</LanguageOfPerformance><Duration>PT3M9S</Duration><CreationDate LocationDescription="Seedy Underbelly Studios, Minneapolis, MN" TerritoryCode="US">1997-06-10</CreationDate><SoundRecordingDetailsByTerritory>     
+<TerritoryCode>Worldwide</TerritoryCode><Title TitleType="FormalTitle"><TitleText>She Spreads Her Wings</TitleText></Title><Title TitleType="DisplayTitle"><TitleText>She Spreads Her Wings</TitleText></Title>            <DisplayArtist SequenceNumber="1">
+<PartyName><FullName>Semisonic</FullName><KeyName>Semisonic</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Jpan"><FullName>セミソニック</FullName><KeyName>セミソニック</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Hrkt"><FullName>セミソニツク</FullName><KeyName>セミソニツク</KeyName></PartyName><ArtistRole>MainArtist</ArtistRole>          </DisplayArtist>
+            <ResourceContributor SequenceNumber="1">
+<PartyName><FullName>Nick Launay</FullName><NamesBeforeKeyName>Nick</NamesBeforeKeyName><KeyName>Launay</KeyName></PartyName><ResourceContributorRole>Producer</ResourceContributorRole><ResourceContributorRole>StudioPersonnel</ResourceContributorRole><ResourceContributorRole Namespace="DPID:PADPIDA2013042401U" UserDefinedValue="Recording Engineer">UserDefined</ResourceContributorRole>          </ResourceContributor>
+            <ResourceContributor SequenceNumber="2">
+<PartyName><FullName>Bob Clearmountain</FullName><NamesBeforeKeyName>Bob</NamesBeforeKeyName><KeyName>Clearmountain</KeyName></PartyName><ResourceContributorRole>StudioPersonnel</ResourceContributorRole><ResourceContributorRole Namespace="DPID:PADPIDA2013042401U" UserDefinedValue="Mixer">UserDefined</ResourceContributorRole>          </ResourceContributor>
+            <IndirectResourceContributor SequenceNumber="1">
+<PartyName><FullName>John Munson</FullName><NamesBeforeKeyName>John</NamesBeforeKeyName><KeyName>Munson</KeyName></PartyName><IndirectResourceContributorRole>ComposerLyricist</IndirectResourceContributorRole>          </IndirectResourceContributor>
+    <PLine>
+      <Year>1998</Year>
+      <PLineCompany>UMG Recordings, Inc.</PLineCompany>
+      <PLineText>A Geffen Records Release; ℗ 1998 UMG Recordings, Inc.</PLineText>
+    </PLine>
+<Genre>
+  <GenreText>Rock</GenreText>
+</Genre>
+<ParentalWarningType>NotExplicit</ParentalWarningType></SoundRecordingDetailsByTerritory>
+</SoundRecording>    
+<SoundRecording>
+<SoundRecordingType>MusicalWorkSoundRecording</SoundRecordingType><SoundRecordingId>
+<ISRC>USMC19857428</ISRC></SoundRecordingId> 
+<ResourceReference>A12</ResourceReference><ReferenceTitle><TitleText>Gone To The Movies</TitleText></ReferenceTitle><LanguageOfPerformance>en</LanguageOfPerformance><Duration>PT3M52S</Duration><CreationDate LocationDescription="Seedy Underbelly Studios, Minneapolis, MN" TerritoryCode="US">1997-06-10</CreationDate><SoundRecordingDetailsByTerritory>     
+<TerritoryCode>Worldwide</TerritoryCode><Title TitleType="FormalTitle"><TitleText>Gone To The Movies</TitleText></Title><Title TitleType="DisplayTitle"><TitleText>Gone To The Movies</TitleText></Title>            <DisplayArtist SequenceNumber="1">
+<PartyName><FullName>Semisonic</FullName><KeyName>Semisonic</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Jpan"><FullName>セミソニック</FullName><KeyName>セミソニック</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Hrkt"><FullName>セミソニツク</FullName><KeyName>セミソニツク</KeyName></PartyName><ArtistRole>MainArtist</ArtistRole>          </DisplayArtist>
+            <ResourceContributor SequenceNumber="1">
+<PartyName><FullName>Nick Launay</FullName><NamesBeforeKeyName>Nick</NamesBeforeKeyName><KeyName>Launay</KeyName></PartyName><ResourceContributorRole>Producer</ResourceContributorRole>          </ResourceContributor>
+            <ResourceContributor SequenceNumber="2">
+<PartyName><FullName>Bob Clearmountain</FullName><NamesBeforeKeyName>Bob</NamesBeforeKeyName><KeyName>Clearmountain</KeyName></PartyName><ResourceContributorRole>StudioPersonnel</ResourceContributorRole><ResourceContributorRole Namespace="DPID:PADPIDA2013042401U" UserDefinedValue="Mixer">UserDefined</ResourceContributorRole>          </ResourceContributor>
+            <ResourceContributor SequenceNumber="3">
+<PartyName><FullName>Brad Kern</FullName><NamesBeforeKeyName>Brad</NamesBeforeKeyName><KeyName>Kern</KeyName></PartyName><ResourceContributorRole>StudioPersonnel</ResourceContributorRole><ResourceContributorRole Namespace="DPID:PADPIDA2013042401U" UserDefinedValue="Recording Engineer">UserDefined</ResourceContributorRole>          </ResourceContributor>
+            <IndirectResourceContributor SequenceNumber="1">
+<PartyName><FullName>Dan Wilson</FullName><NamesBeforeKeyName>Dan</NamesBeforeKeyName><KeyName>Wilson</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Jpan"><FullName>Dan Wilson</FullName><KeyName>Dan Wilson</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Hrkt"><FullName>ダン・ウィルソン</FullName><KeyName>ダン・ウィルソン</KeyName></PartyName><IndirectResourceContributorRole>ComposerLyricist</IndirectResourceContributorRole>          </IndirectResourceContributor>
+    <PLine>
+      <Year>1998</Year>
+      <PLineCompany>UMG Recordings, Inc.</PLineCompany>
+      <PLineText>A Geffen Records Release; ℗ 1998 UMG Recordings, Inc.</PLineText>
+    </PLine>
+<Genre>
+  <GenreText>Rock</GenreText>
+</Genre>
+<ParentalWarningType>NotExplicit</ParentalWarningType></SoundRecordingDetailsByTerritory>
+</SoundRecording>    
+  <Image>
+<ImageType>FrontCoverImage</ImageType>          <ImageId> 
+<ProprietaryId Namespace="DPID:PADPIDA2013042401U">06UMGIM04114</ProprietaryId>          </ImageId>
+<ResourceReference>A13</ResourceReference>    <ImageDetailsByTerritory>      
+<TerritoryCode>Worldwide</TerritoryCode><Title TitleType="FormalTitle"><TitleText>Feeling Strangely Fine</TitleText></Title><Title TitleType="DisplayTitle"><TitleText>Feeling Strangely Fine</TitleText></Title>            <ResourceContributor SequenceNumber="1">
+<PartyName><FullName>Semisonic</FullName><KeyName>Semisonic</KeyName></PartyName><ResourceContributorRole>MainArtist</ResourceContributorRole>          </ResourceContributor>
+<CLine><Year>1998</Year><CLineCompany>Geffen Records</CLineCompany><CLineText>© 1998 Geffen Records</CLineText></CLine><ParentalWarningType>NotExplicit</ParentalWarningType>    </ImageDetailsByTerritory>
+    </Image>    
+</ResourceList>
+<ReleaseList>  
+  <Release IsMainRelease="true">
+  <ReleaseId>
+<ICPN IsEan="false">00008811173326</ICPN>  </ReleaseId>
+<ReleaseReference>R0</ReleaseReference><ReferenceTitle><TitleText>Feeling Strangely Fine</TitleText></ReferenceTitle>  <ReleaseResourceReferenceList>
+<ReleaseResourceReference ReleaseResourceType="PrimaryResource">A1</ReleaseResourceReference><ReleaseResourceReference ReleaseResourceType="PrimaryResource">A2</ReleaseResourceReference><ReleaseResourceReference ReleaseResourceType="PrimaryResource">A3</ReleaseResourceReference><ReleaseResourceReference ReleaseResourceType="PrimaryResource">A4</ReleaseResourceReference><ReleaseResourceReference ReleaseResourceType="PrimaryResource">A5</ReleaseResourceReference><ReleaseResourceReference ReleaseResourceType="PrimaryResource">A6</ReleaseResourceReference><ReleaseResourceReference ReleaseResourceType="PrimaryResource">A7</ReleaseResourceReference><ReleaseResourceReference ReleaseResourceType="PrimaryResource">A8</ReleaseResourceReference><ReleaseResourceReference ReleaseResourceType="PrimaryResource">A9</ReleaseResourceReference><ReleaseResourceReference ReleaseResourceType="PrimaryResource">A10</ReleaseResourceReference><ReleaseResourceReference ReleaseResourceType="PrimaryResource">A11</ReleaseResourceReference><ReleaseResourceReference ReleaseResourceType="PrimaryResource">A12</ReleaseResourceReference><ReleaseResourceReference ReleaseResourceType="SecondaryResource">A13</ReleaseResourceReference>  </ReleaseResourceReferenceList>    
+<ReleaseType>Album</ReleaseType>  <ReleaseDetailsByTerritory>
+<TerritoryCode>Worldwide</TerritoryCode><LabelName>Geffen*</LabelName><Title TitleType="FormalTitle"><TitleText>Feeling Strangely Fine</TitleText></Title><Title TitleType="DisplayTitle"><TitleText>Feeling Strangely Fine</TitleText></Title><Title LanguageAndScriptCode="ja-Jpan" TitleType="TranslatedTitle"><TitleText>Feeling Strangely Fine</TitleText></Title>          <DisplayArtist SequenceNumber="1">
+<PartyName><FullName>Semisonic</FullName><KeyName>Semisonic</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Jpan"><FullName>セミソニック</FullName><KeyName>セミソニック</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Hrkt"><FullName>セミソニツク</FullName><KeyName>セミソニツク</KeyName></PartyName><ArtistRole>MainArtist</ArtistRole>        </DisplayArtist>
+<IsMultiArtistCompilation>false</IsMultiArtistCompilation><ParentalWarningType>NotExplicit</ParentalWarningType>    <ResourceGroup>
+        <ResourceGroup>
+<SequenceNumber>1</SequenceNumber>    <ResourceGroupContentItem>
+<SequenceNumber>1</SequenceNumber><ResourceType>SoundRecording</ResourceType><ReleaseResourceReference ReleaseResourceType="PrimaryResource">A1</ReleaseResourceReference><ResourceGroupContentItemReleaseReference>R1</ResourceGroupContentItemReleaseReference>    </ResourceGroupContentItem>
+    <ResourceGroupContentItem>
+<SequenceNumber>2</SequenceNumber><ResourceType>SoundRecording</ResourceType><ReleaseResourceReference ReleaseResourceType="PrimaryResource">A2</ReleaseResourceReference><ResourceGroupContentItemReleaseReference>R2</ResourceGroupContentItemReleaseReference>    </ResourceGroupContentItem>
+    <ResourceGroupContentItem>
+<SequenceNumber>3</SequenceNumber><ResourceType>SoundRecording</ResourceType><ReleaseResourceReference ReleaseResourceType="PrimaryResource">A3</ReleaseResourceReference><ResourceGroupContentItemReleaseReference>R3</ResourceGroupContentItemReleaseReference>    </ResourceGroupContentItem>
+    <ResourceGroupContentItem>
+<SequenceNumber>4</SequenceNumber><ResourceType>SoundRecording</ResourceType><ReleaseResourceReference ReleaseResourceType="PrimaryResource">A4</ReleaseResourceReference><ResourceGroupContentItemReleaseReference>R4</ResourceGroupContentItemReleaseReference>    </ResourceGroupContentItem>
+    <ResourceGroupContentItem>
+<SequenceNumber>5</SequenceNumber><ResourceType>SoundRecording</ResourceType><ReleaseResourceReference ReleaseResourceType="PrimaryResource">A5</ReleaseResourceReference><ResourceGroupContentItemReleaseReference>R5</ResourceGroupContentItemReleaseReference>    </ResourceGroupContentItem>
+    <ResourceGroupContentItem>
+<SequenceNumber>6</SequenceNumber><ResourceType>SoundRecording</ResourceType><ReleaseResourceReference ReleaseResourceType="PrimaryResource">A6</ReleaseResourceReference><ResourceGroupContentItemReleaseReference>R6</ResourceGroupContentItemReleaseReference>    </ResourceGroupContentItem>
+    <ResourceGroupContentItem>
+<SequenceNumber>7</SequenceNumber><ResourceType>SoundRecording</ResourceType><ReleaseResourceReference ReleaseResourceType="PrimaryResource">A7</ReleaseResourceReference><ResourceGroupContentItemReleaseReference>R7</ResourceGroupContentItemReleaseReference>    </ResourceGroupContentItem>
+    <ResourceGroupContentItem>
+<SequenceNumber>8</SequenceNumber><ResourceType>SoundRecording</ResourceType><ReleaseResourceReference ReleaseResourceType="PrimaryResource">A8</ReleaseResourceReference><ResourceGroupContentItemReleaseReference>R8</ResourceGroupContentItemReleaseReference>    </ResourceGroupContentItem>
+    <ResourceGroupContentItem>
+<SequenceNumber>9</SequenceNumber><ResourceType>SoundRecording</ResourceType><ReleaseResourceReference ReleaseResourceType="PrimaryResource">A9</ReleaseResourceReference><ResourceGroupContentItemReleaseReference>R9</ResourceGroupContentItemReleaseReference>    </ResourceGroupContentItem>
+    <ResourceGroupContentItem>
+<SequenceNumber>10</SequenceNumber><ResourceType>SoundRecording</ResourceType><ReleaseResourceReference ReleaseResourceType="PrimaryResource">A10</ReleaseResourceReference><ResourceGroupContentItemReleaseReference>R10</ResourceGroupContentItemReleaseReference>    </ResourceGroupContentItem>
+    <ResourceGroupContentItem>
+<SequenceNumber>11</SequenceNumber><ResourceType>SoundRecording</ResourceType><ReleaseResourceReference ReleaseResourceType="PrimaryResource">A11</ReleaseResourceReference><ResourceGroupContentItemReleaseReference>R11</ResourceGroupContentItemReleaseReference>    </ResourceGroupContentItem>
+    <ResourceGroupContentItem>
+<SequenceNumber>12</SequenceNumber><ResourceType>SoundRecording</ResourceType><ReleaseResourceReference ReleaseResourceType="PrimaryResource">A12</ReleaseResourceReference><ResourceGroupContentItemReleaseReference>R12</ResourceGroupContentItemReleaseReference>    </ResourceGroupContentItem>
+        </ResourceGroup>
+        <ResourceGroupContentItem>
+<ResourceType>Image</ResourceType><ReleaseResourceReference ReleaseResourceType="SecondaryResource">A13</ReleaseResourceReference>        </ResourceGroupContentItem>
+    </ResourceGroup>
+<Genre>
+  <GenreText>Rock</GenreText>
+</Genre>
+<PLine><Year>1998</Year><PLineCompany>Geffen Records</PLineCompany><PLineText>℗ 1998 Geffen Records</PLineText></PLine><CLine><Year>1998</Year><CLineCompany>Geffen Records</CLineCompany><CLineText>© 1998 Geffen Records</CLineText></CLine><OriginalReleaseDate>1998-01-01</OriginalReleaseDate>  </ReleaseDetailsByTerritory>
+<Duration>PT50M26S</Duration><GlobalReleaseDate>1998-06-30</GlobalReleaseDate></Release>    
+  <Release>
+  <ReleaseId>
+<ProprietaryId Namespace="DPID:PADPIDA2013042401U">00008811173326_USMC19800013_R1</ProprietaryId>  </ReleaseId>
+<ReleaseReference>R1</ReleaseReference><ReferenceTitle><TitleText>Closing Time</TitleText></ReferenceTitle>  <ReleaseResourceReferenceList>
+<ReleaseResourceReference ReleaseResourceType="PrimaryResource">A1</ReleaseResourceReference>  </ReleaseResourceReferenceList>    
+<ReleaseType>TrackRelease</ReleaseType>  <ReleaseDetailsByTerritory>
+<TerritoryCode>Worldwide</TerritoryCode><Title TitleType="FormalTitle"><TitleText>Closing Time</TitleText></Title><Title TitleType="DisplayTitle"><TitleText>Closing Time</TitleText></Title><Title LanguageAndScriptCode="ja-Jpan" TitleType="TranslatedTitle"><TitleText>Closing Time</TitleText></Title><Title LanguageAndScriptCode="ja-Hrkt" TitleType="TranslatedTitle"><TitleText>Ｃｌｏｓｉｎｇ　Ｔｉｍｅ</TitleText></Title>          <DisplayArtist SequenceNumber="1">
+<PartyName><FullName>Semisonic</FullName><KeyName>Semisonic</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Jpan"><FullName>セミソニック</FullName><KeyName>セミソニック</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Hrkt"><FullName>セミソニツク</FullName><KeyName>セミソニツク</KeyName></PartyName><ArtistRole>MainArtist</ArtistRole>        </DisplayArtist>
+<ParentalWarningType>NotExplicit</ParentalWarningType>    <ResourceGroup>
+        <ResourceGroupContentItem>
+<ResourceType>SoundRecording</ResourceType><ReleaseResourceReference ReleaseResourceType="PrimaryResource">A1</ReleaseResourceReference>        </ResourceGroupContentItem>
+    </ResourceGroup>
+<Genre>
+  <GenreText>Rock</GenreText>
+</Genre>
+<PLine><Year>1998</Year><PLineCompany>UMG Recordings, Inc.</PLineCompany><PLineText>℗ 1998 UMG Recordings, Inc.</PLineText></PLine>  </ReleaseDetailsByTerritory>
+  <ReleaseDetailsByTerritory>
+<TerritoryCode>NZ</TerritoryCode><Genre>
+  <GenreText>Pop</GenreText>
+</Genre>
+<PLine><Year>1998</Year><PLineCompany>UMG Recordings, Inc.</PLineCompany><PLineText>℗ 1998 UMG Recordings, Inc.</PLineText></PLine>  </ReleaseDetailsByTerritory>
+  <ReleaseDetailsByTerritory>
+<TerritoryCode>GB</TerritoryCode><ParentalWarningType>Unknown</ParentalWarningType><PLine><Year>1998</Year><PLineCompany>UMG Recordings, Inc.</PLineCompany><PLineText>℗ 1998 UMG Recordings, Inc.</PLineText></PLine>  </ReleaseDetailsByTerritory>
+<Duration>PT4M34S</Duration></Release>    
+  <Release>
+  <ReleaseId>
+<ProprietaryId Namespace="DPID:PADPIDA2013042401U">00008811173326_USMC19857419_R2</ProprietaryId>  </ReleaseId>
+<ReleaseReference>R2</ReleaseReference><ReferenceTitle><TitleText>Singing In My Sleep</TitleText></ReferenceTitle>  <ReleaseResourceReferenceList>
+<ReleaseResourceReference ReleaseResourceType="PrimaryResource">A2</ReleaseResourceReference>  </ReleaseResourceReferenceList>    
+<ReleaseType>TrackRelease</ReleaseType>  <ReleaseDetailsByTerritory>
+<TerritoryCode>Worldwide</TerritoryCode><Title TitleType="FormalTitle"><TitleText>Singing In My Sleep</TitleText></Title><Title TitleType="DisplayTitle"><TitleText>Singing In My Sleep</TitleText></Title>          <DisplayArtist SequenceNumber="1">
+<PartyName><FullName>Semisonic</FullName><KeyName>Semisonic</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Jpan"><FullName>セミソニック</FullName><KeyName>セミソニック</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Hrkt"><FullName>セミソニツク</FullName><KeyName>セミソニツク</KeyName></PartyName><ArtistRole>MainArtist</ArtistRole>        </DisplayArtist>
+<ParentalWarningType>NotExplicit</ParentalWarningType>    <ResourceGroup>
+        <ResourceGroupContentItem>
+<ResourceType>SoundRecording</ResourceType><ReleaseResourceReference ReleaseResourceType="PrimaryResource">A2</ReleaseResourceReference>        </ResourceGroupContentItem>
+    </ResourceGroup>
+<Genre>
+  <GenreText>Rock</GenreText>
+</Genre>
+    <PLine>
+      <Year>1998</Year>
+      <PLineCompany>Geffen Records</PLineCompany>
+      <PLineText>A Geffen Records Release; ℗ 1998 Geffen Records</PLineText>
+    </PLine>
+  </ReleaseDetailsByTerritory>
+  <ReleaseDetailsByTerritory>
+<TerritoryCode>GB</TerritoryCode><ParentalWarningType>Unknown</ParentalWarningType><PLine><Year>1998</Year><PLineCompany>Geffen Records</PLineCompany><PLineText>℗ 1998 Geffen Records</PLineText></PLine>  </ReleaseDetailsByTerritory>
+<Duration>PT4M30S</Duration></Release>    
+  <Release>
+  <ReleaseId>
+<ProprietaryId Namespace="DPID:PADPIDA2013042401U">00008811173326_USMC19857420_R3</ProprietaryId>  </ReleaseId>
+<ReleaseReference>R3</ReleaseReference><ReferenceTitle><TitleText>Made To Last</TitleText></ReferenceTitle>  <ReleaseResourceReferenceList>
+<ReleaseResourceReference ReleaseResourceType="PrimaryResource">A3</ReleaseResourceReference>  </ReleaseResourceReferenceList>    
+<ReleaseType>TrackRelease</ReleaseType>  <ReleaseDetailsByTerritory>
+<TerritoryCode>Worldwide</TerritoryCode><Title TitleType="FormalTitle"><TitleText>Made To Last</TitleText></Title><Title TitleType="DisplayTitle"><TitleText>Made To Last</TitleText></Title>          <DisplayArtist SequenceNumber="1">
+<PartyName><FullName>Semisonic</FullName><KeyName>Semisonic</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Jpan"><FullName>セミソニック</FullName><KeyName>セミソニック</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Hrkt"><FullName>セミソニツク</FullName><KeyName>セミソニツク</KeyName></PartyName><ArtistRole>MainArtist</ArtistRole>        </DisplayArtist>
+<ParentalWarningType>NotExplicit</ParentalWarningType>    <ResourceGroup>
+        <ResourceGroupContentItem>
+<ResourceType>SoundRecording</ResourceType><ReleaseResourceReference ReleaseResourceType="PrimaryResource">A3</ReleaseResourceReference>        </ResourceGroupContentItem>
+    </ResourceGroup>
+<Genre>
+  <GenreText>Rock</GenreText>
+</Genre>
+    <PLine>
+      <Year>1998</Year>
+      <PLineCompany>UMG Recordings, Inc.</PLineCompany>
+      <PLineText>A Geffen Records Release; ℗ 1998 UMG Recordings, Inc.</PLineText>
+    </PLine>
+  </ReleaseDetailsByTerritory>
+<Duration>PT5M2S</Duration></Release>    
+  <Release>
+  <ReleaseId>
+<ProprietaryId Namespace="DPID:PADPIDA2013042401U">00008811173326_USMC19857331_R4</ProprietaryId>  </ReleaseId>
+<ReleaseReference>R4</ReleaseReference><ReferenceTitle><TitleText>Never You Mind</TitleText></ReferenceTitle>  <ReleaseResourceReferenceList>
+<ReleaseResourceReference ReleaseResourceType="PrimaryResource">A4</ReleaseResourceReference>  </ReleaseResourceReferenceList>    
+<ReleaseType>TrackRelease</ReleaseType>  <ReleaseDetailsByTerritory>
+<TerritoryCode>Worldwide</TerritoryCode><Title TitleType="FormalTitle"><TitleText>Never You Mind</TitleText></Title><Title TitleType="DisplayTitle"><TitleText>Never You Mind</TitleText></Title>          <DisplayArtist SequenceNumber="1">
+<PartyName><FullName>Semisonic</FullName><KeyName>Semisonic</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Jpan"><FullName>セミソニック</FullName><KeyName>セミソニック</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Hrkt"><FullName>セミソニツク</FullName><KeyName>セミソニツク</KeyName></PartyName><ArtistRole>MainArtist</ArtistRole>        </DisplayArtist>
+<ParentalWarningType>NotExplicit</ParentalWarningType>    <ResourceGroup>
+        <ResourceGroupContentItem>
+<ResourceType>SoundRecording</ResourceType><ReleaseResourceReference ReleaseResourceType="PrimaryResource">A4</ReleaseResourceReference>        </ResourceGroupContentItem>
+    </ResourceGroup>
+<Genre>
+  <GenreText>Rock</GenreText>
+</Genre>
+    <PLine>
+      <Year>1998</Year>
+      <PLineCompany>UMG Recordings, Inc.</PLineCompany>
+      <PLineText>A Geffen Records Release; ℗ 1998 UMG Recordings, Inc.</PLineText>
+    </PLine>
+  </ReleaseDetailsByTerritory>
+<Duration>PT4M24S</Duration></Release>    
+  <Release>
+  <ReleaseId>
+<ProprietaryId Namespace="DPID:PADPIDA2013042401U">00008811173326_USMC19857421_R5</ProprietaryId>  </ReleaseId>
+<ReleaseReference>R5</ReleaseReference><ReferenceTitle><TitleText>Secret Smile</TitleText></ReferenceTitle>  <ReleaseResourceReferenceList>
+<ReleaseResourceReference ReleaseResourceType="PrimaryResource">A5</ReleaseResourceReference>  </ReleaseResourceReferenceList>    
+<ReleaseType>TrackRelease</ReleaseType>  <ReleaseDetailsByTerritory>
+<TerritoryCode>Worldwide</TerritoryCode><Title TitleType="FormalTitle"><TitleText>Secret Smile</TitleText></Title><Title TitleType="DisplayTitle"><TitleText>Secret Smile</TitleText></Title><Title LanguageAndScriptCode="ja-Jpan" TitleType="TranslatedTitle"><TitleText>シークレット・スマイル</TitleText></Title><Title LanguageAndScriptCode="ja-Hrkt" TitleType="TranslatedTitle"><TitleText>シークレット・スマイル</TitleText></Title>          <DisplayArtist SequenceNumber="1">
+<PartyName><FullName>Semisonic</FullName><KeyName>Semisonic</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Jpan"><FullName>セミソニック</FullName><KeyName>セミソニック</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Hrkt"><FullName>セミソニツク</FullName><KeyName>セミソニツク</KeyName></PartyName><ArtistRole>MainArtist</ArtistRole>        </DisplayArtist>
+<ParentalWarningType>NotExplicit</ParentalWarningType>    <ResourceGroup>
+        <ResourceGroupContentItem>
+<ResourceType>SoundRecording</ResourceType><ReleaseResourceReference ReleaseResourceType="PrimaryResource">A5</ReleaseResourceReference>        </ResourceGroupContentItem>
+    </ResourceGroup>
+<Genre>
+  <GenreText>Rock</GenreText>
+</Genre>
+    <PLine>
+      <Year>1998</Year>
+      <PLineCompany>UMG Recordings, Inc.</PLineCompany>
+      <PLineText>A Geffen Records Release; ℗ 1998 UMG Recordings, Inc.</PLineText>
+    </PLine>
+  </ReleaseDetailsByTerritory>
+  <ReleaseDetailsByTerritory>
+<TerritoryCode>BR</TerritoryCode><TerritoryCode>IN</TerritoryCode><TerritoryCode>MX</TerritoryCode><Genre>
+  <GenreText>Pop</GenreText>
+</Genre>
+<PLine><Year>1998</Year><PLineCompany>UMG Recordings, Inc.</PLineCompany><PLineText>℗ 1998 UMG Recordings, Inc.</PLineText></PLine>  </ReleaseDetailsByTerritory>
+  <ReleaseDetailsByTerritory>
+<TerritoryCode>DE</TerritoryCode><PLine><Year>1998</Year><PLineCompany>UMG Recordings, Inc.</PLineCompany><PLineText>℗ 1998 UMG Recordings, Inc., Mit freundlicher Genehmigung: Universal Music International Division, a division of Universal Music GmbH</PLineText></PLine>  </ReleaseDetailsByTerritory>
+<Duration>PT4M38S</Duration></Release>    
+  <Release>
+  <ReleaseId>
+<ProprietaryId Namespace="DPID:PADPIDA2013042401U">00008811173326_USMC19857422_R6</ProprietaryId>  </ReleaseId>
+<ReleaseReference>R6</ReleaseReference><ReferenceTitle><TitleText>DND</TitleText></ReferenceTitle>  <ReleaseResourceReferenceList>
+<ReleaseResourceReference ReleaseResourceType="PrimaryResource">A6</ReleaseResourceReference>  </ReleaseResourceReferenceList>    
+<ReleaseType>TrackRelease</ReleaseType>  <ReleaseDetailsByTerritory>
+<TerritoryCode>Worldwide</TerritoryCode><Title TitleType="FormalTitle"><TitleText>DND</TitleText></Title><Title TitleType="DisplayTitle"><TitleText>DND</TitleText></Title>          <DisplayArtist SequenceNumber="1">
+<PartyName><FullName>Semisonic</FullName><KeyName>Semisonic</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Jpan"><FullName>セミソニック</FullName><KeyName>セミソニック</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Hrkt"><FullName>セミソニツク</FullName><KeyName>セミソニツク</KeyName></PartyName><ArtistRole>MainArtist</ArtistRole>        </DisplayArtist>
+<ParentalWarningType>NotExplicit</ParentalWarningType>    <ResourceGroup>
+        <ResourceGroupContentItem>
+<ResourceType>SoundRecording</ResourceType><ReleaseResourceReference ReleaseResourceType="PrimaryResource">A6</ReleaseResourceReference>        </ResourceGroupContentItem>
+    </ResourceGroup>
+<Genre>
+  <GenreText>Rock</GenreText>
+</Genre>
+    <PLine>
+      <Year>1998</Year>
+      <PLineCompany>UMG Recordings, Inc.</PLineCompany>
+      <PLineText>A Geffen Records Release; ℗ 1998 UMG Recordings, Inc.</PLineText>
+    </PLine>
+  </ReleaseDetailsByTerritory>
+<Duration>PT4M12S</Duration></Release>    
+  <Release>
+  <ReleaseId>
+<ProprietaryId Namespace="DPID:PADPIDA2013042401U">00008811173326_USMC19857423_R7</ProprietaryId>  </ReleaseId>
+<ReleaseReference>R7</ReleaseReference><ReferenceTitle><TitleText>Completely Pleased</TitleText></ReferenceTitle>  <ReleaseResourceReferenceList>
+<ReleaseResourceReference ReleaseResourceType="PrimaryResource">A7</ReleaseResourceReference>  </ReleaseResourceReferenceList>    
+<ReleaseType>TrackRelease</ReleaseType>  <ReleaseDetailsByTerritory>
+<TerritoryCode>Worldwide</TerritoryCode><Title TitleType="FormalTitle"><TitleText>Completely Pleased</TitleText></Title><Title TitleType="DisplayTitle"><TitleText>Completely Pleased</TitleText></Title>          <DisplayArtist SequenceNumber="1">
+<PartyName><FullName>Semisonic</FullName><KeyName>Semisonic</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Jpan"><FullName>セミソニック</FullName><KeyName>セミソニック</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Hrkt"><FullName>セミソニツク</FullName><KeyName>セミソニツク</KeyName></PartyName><ArtistRole>MainArtist</ArtistRole>        </DisplayArtist>
+<ParentalWarningType>NotExplicit</ParentalWarningType>    <ResourceGroup>
+        <ResourceGroupContentItem>
+<ResourceType>SoundRecording</ResourceType><ReleaseResourceReference ReleaseResourceType="PrimaryResource">A7</ReleaseResourceReference>        </ResourceGroupContentItem>
+    </ResourceGroup>
+<Genre>
+  <GenreText>Rock</GenreText>
+</Genre>
+    <PLine>
+      <Year>1998</Year>
+      <PLineCompany>UMG Recordings, Inc.</PLineCompany>
+      <PLineText>A Geffen Records Release; ℗ 1998 UMG Recordings, Inc.</PLineText>
+    </PLine>
+  </ReleaseDetailsByTerritory>
+<Duration>PT3M18S</Duration></Release>    
+  <Release>
+  <ReleaseId>
+<ProprietaryId Namespace="DPID:PADPIDA2013042401U">00008811173326_USMC19857424_R8</ProprietaryId>  </ReleaseId>
+<ReleaseReference>R8</ReleaseReference><ReferenceTitle><TitleText>This Will Be My Year</TitleText></ReferenceTitle>  <ReleaseResourceReferenceList>
+<ReleaseResourceReference ReleaseResourceType="PrimaryResource">A8</ReleaseResourceReference>  </ReleaseResourceReferenceList>    
+<ReleaseType>TrackRelease</ReleaseType>  <ReleaseDetailsByTerritory>
+<TerritoryCode>Worldwide</TerritoryCode><Title TitleType="FormalTitle"><TitleText>This Will Be My Year</TitleText></Title><Title TitleType="DisplayTitle"><TitleText>This Will Be My Year</TitleText></Title>          <DisplayArtist SequenceNumber="1">
+<PartyName><FullName>Semisonic</FullName><KeyName>Semisonic</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Jpan"><FullName>セミソニック</FullName><KeyName>セミソニック</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Hrkt"><FullName>セミソニツク</FullName><KeyName>セミソニツク</KeyName></PartyName><ArtistRole>MainArtist</ArtistRole>        </DisplayArtist>
+<ParentalWarningType>NotExplicit</ParentalWarningType>    <ResourceGroup>
+        <ResourceGroupContentItem>
+<ResourceType>SoundRecording</ResourceType><ReleaseResourceReference ReleaseResourceType="PrimaryResource">A8</ReleaseResourceReference>        </ResourceGroupContentItem>
+    </ResourceGroup>
+<Genre>
+  <GenreText>Rock</GenreText>
+</Genre>
+    <PLine>
+      <Year>1998</Year>
+      <PLineCompany>UMG Recordings, Inc.</PLineCompany>
+      <PLineText>A Geffen Records Release; ℗ 1998 UMG Recordings, Inc.</PLineText>
+    </PLine>
+  </ReleaseDetailsByTerritory>
+<Duration>PT4M32S</Duration></Release>    
+  <Release>
+  <ReleaseId>
+<ProprietaryId Namespace="DPID:PADPIDA2013042401U">00008811173326_USMC19857425_R9</ProprietaryId>  </ReleaseId>
+<ReleaseReference>R9</ReleaseReference><ReferenceTitle><TitleText>All Worked Out</TitleText></ReferenceTitle>  <ReleaseResourceReferenceList>
+<ReleaseResourceReference ReleaseResourceType="PrimaryResource">A9</ReleaseResourceReference>  </ReleaseResourceReferenceList>    
+<ReleaseType>TrackRelease</ReleaseType>  <ReleaseDetailsByTerritory>
+<TerritoryCode>Worldwide</TerritoryCode><Title TitleType="FormalTitle"><TitleText>All Worked Out</TitleText></Title><Title TitleType="DisplayTitle"><TitleText>All Worked Out</TitleText></Title>          <DisplayArtist SequenceNumber="1">
+<PartyName><FullName>Semisonic</FullName><KeyName>Semisonic</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Jpan"><FullName>セミソニック</FullName><KeyName>セミソニック</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Hrkt"><FullName>セミソニツク</FullName><KeyName>セミソニツク</KeyName></PartyName><ArtistRole>MainArtist</ArtistRole>        </DisplayArtist>
+<ParentalWarningType>NotExplicit</ParentalWarningType>    <ResourceGroup>
+        <ResourceGroupContentItem>
+<ResourceType>SoundRecording</ResourceType><ReleaseResourceReference ReleaseResourceType="PrimaryResource">A9</ReleaseResourceReference>        </ResourceGroupContentItem>
+    </ResourceGroup>
+<Genre>
+  <GenreText>Rock</GenreText>
+</Genre>
+    <PLine>
+      <Year>1998</Year>
+      <PLineCompany>UMG Recordings, Inc.</PLineCompany>
+      <PLineText>A Geffen Records Release; ℗ 1998 UMG Recordings, Inc.</PLineText>
+    </PLine>
+  </ReleaseDetailsByTerritory>
+<Duration>PT2M51S</Duration></Release>    
+  <Release>
+  <ReleaseId>
+<ProprietaryId Namespace="DPID:PADPIDA2013042401U">00008811173326_USMC19857426_R10</ProprietaryId>  </ReleaseId>
+<ReleaseReference>R10</ReleaseReference><ReferenceTitle><TitleText>California</TitleText></ReferenceTitle>  <ReleaseResourceReferenceList>
+<ReleaseResourceReference ReleaseResourceType="PrimaryResource">A10</ReleaseResourceReference>  </ReleaseResourceReferenceList>    
+<ReleaseType>TrackRelease</ReleaseType>  <ReleaseDetailsByTerritory>
+<TerritoryCode>Worldwide</TerritoryCode><Title TitleType="FormalTitle"><TitleText>California</TitleText></Title><Title TitleType="DisplayTitle"><TitleText>California</TitleText></Title>          <DisplayArtist SequenceNumber="1">
+<PartyName><FullName>Semisonic</FullName><KeyName>Semisonic</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Jpan"><FullName>セミソニック</FullName><KeyName>セミソニック</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Hrkt"><FullName>セミソニツク</FullName><KeyName>セミソニツク</KeyName></PartyName><ArtistRole>MainArtist</ArtistRole>        </DisplayArtist>
+<ParentalWarningType>NotExplicit</ParentalWarningType>    <ResourceGroup>
+        <ResourceGroupContentItem>
+<ResourceType>SoundRecording</ResourceType><ReleaseResourceReference ReleaseResourceType="PrimaryResource">A10</ReleaseResourceReference>        </ResourceGroupContentItem>
+    </ResourceGroup>
+<Genre>
+  <GenreText>Rock</GenreText>
+</Genre>
+    <PLine>
+      <Year>1998</Year>
+      <PLineCompany>UMG Recordings, Inc.</PLineCompany>
+      <PLineText>A Geffen Records Release; ℗ 1998 UMG Recordings, Inc.</PLineText>
+    </PLine>
+  </ReleaseDetailsByTerritory>
+<Duration>PT5M26S</Duration></Release>    
+  <Release>
+  <ReleaseId>
+<ProprietaryId Namespace="DPID:PADPIDA2013042401U">00008811173326_USMC19857427_R11</ProprietaryId>  </ReleaseId>
+<ReleaseReference>R11</ReleaseReference><ReferenceTitle><TitleText>She Spreads Her Wings</TitleText></ReferenceTitle>  <ReleaseResourceReferenceList>
+<ReleaseResourceReference ReleaseResourceType="PrimaryResource">A11</ReleaseResourceReference>  </ReleaseResourceReferenceList>    
+<ReleaseType>TrackRelease</ReleaseType>  <ReleaseDetailsByTerritory>
+<TerritoryCode>Worldwide</TerritoryCode><Title TitleType="FormalTitle"><TitleText>She Spreads Her Wings</TitleText></Title><Title TitleType="DisplayTitle"><TitleText>She Spreads Her Wings</TitleText></Title>          <DisplayArtist SequenceNumber="1">
+<PartyName><FullName>Semisonic</FullName><KeyName>Semisonic</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Jpan"><FullName>セミソニック</FullName><KeyName>セミソニック</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Hrkt"><FullName>セミソニツク</FullName><KeyName>セミソニツク</KeyName></PartyName><ArtistRole>MainArtist</ArtistRole>        </DisplayArtist>
+<ParentalWarningType>NotExplicit</ParentalWarningType>    <ResourceGroup>
+        <ResourceGroupContentItem>
+<ResourceType>SoundRecording</ResourceType><ReleaseResourceReference ReleaseResourceType="PrimaryResource">A11</ReleaseResourceReference>        </ResourceGroupContentItem>
+    </ResourceGroup>
+<Genre>
+  <GenreText>Rock</GenreText>
+</Genre>
+    <PLine>
+      <Year>1998</Year>
+      <PLineCompany>UMG Recordings, Inc.</PLineCompany>
+      <PLineText>A Geffen Records Release; ℗ 1998 UMG Recordings, Inc.</PLineText>
+    </PLine>
+  </ReleaseDetailsByTerritory>
+<Duration>PT3M7S</Duration></Release>    
+  <Release>
+  <ReleaseId>
+<ProprietaryId Namespace="DPID:PADPIDA2013042401U">00008811173326_USMC19857428_R12</ProprietaryId>  </ReleaseId>
+<ReleaseReference>R12</ReleaseReference><ReferenceTitle><TitleText>Gone To The Movies</TitleText></ReferenceTitle>  <ReleaseResourceReferenceList>
+<ReleaseResourceReference ReleaseResourceType="PrimaryResource">A12</ReleaseResourceReference>  </ReleaseResourceReferenceList>    
+<ReleaseType>TrackRelease</ReleaseType>  <ReleaseDetailsByTerritory>
+<TerritoryCode>Worldwide</TerritoryCode><Title TitleType="FormalTitle"><TitleText>Gone To The Movies</TitleText></Title><Title TitleType="DisplayTitle"><TitleText>Gone To The Movies</TitleText></Title>          <DisplayArtist SequenceNumber="1">
+<PartyName><FullName>Semisonic</FullName><KeyName>Semisonic</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Jpan"><FullName>セミソニック</FullName><KeyName>セミソニック</KeyName></PartyName><PartyName LanguageAndScriptCode="ja-Hrkt"><FullName>セミソニツク</FullName><KeyName>セミソニツク</KeyName></PartyName><ArtistRole>MainArtist</ArtistRole>        </DisplayArtist>
+<ParentalWarningType>NotExplicit</ParentalWarningType>    <ResourceGroup>
+        <ResourceGroupContentItem>
+<ResourceType>SoundRecording</ResourceType><ReleaseResourceReference ReleaseResourceType="PrimaryResource">A12</ReleaseResourceReference>        </ResourceGroupContentItem>
+    </ResourceGroup>
+<Genre>
+  <GenreText>Rock</GenreText>
+</Genre>
+    <PLine>
+      <Year>1998</Year>
+      <PLineCompany>UMG Recordings, Inc.</PLineCompany>
+      <PLineText>A Geffen Records Release; ℗ 1998 UMG Recordings, Inc.</PLineText>
+    </PLine>
+  </ReleaseDetailsByTerritory>
+<Duration>PT3M52S</Duration></Release>    
+</ReleaseList>
+<DealList><ReleaseDeal>
+<DealReleaseReference>R0</DealReleaseReference>
+<Deal>
+<DealTerms>
+<CommercialModelType>PayAsYouGoModel</CommercialModelType>
+<Usage>
+<UseType>ConditionalDownload</UseType>
+<UseType>PermanentDownload</UseType>
+</Usage>
+<TerritoryCode>KR</TerritoryCode>
+<PriceInformation>
+<PriceType Namespace="DPID:PADPIDA2013042401U">TP</PriceType>
+</PriceInformation>
+<ValidityPeriod>
+<StartDate>2010-02-03</StartDate>
+<EndDate>2018-10-25</EndDate>
+</ValidityPeriod>
+<ReleaseDisplayStartDate>1999-09-28</ReleaseDisplayStartDate>
+<TrackListingPreviewStartDate>1999-09-28</TrackListingPreviewStartDate>
+<CoverArtPreviewStartDate>1999-09-28</CoverArtPreviewStartDate>
+<ClipPreviewStartDate>1999-09-28</ClipPreviewStartDate>
+</DealTerms>
+</Deal>
+<Deal>
+<DealTerms>
+<CommercialModelType>SubscriptionModel</CommercialModelType>
+<Usage>
+<UseType>ConditionalDownload</UseType>
+<UseType>PermanentDownload</UseType>
+</Usage>
+<TerritoryCode>KR</TerritoryCode>
+<ValidityPeriod>
+<StartDate>1999-09-28</StartDate>
+<EndDate>2018-10-25</EndDate>
+</ValidityPeriod>
+<ReleaseDisplayStartDate>1999-09-28</ReleaseDisplayStartDate>
+<TrackListingPreviewStartDate>1999-09-28</TrackListingPreviewStartDate>
+<CoverArtPreviewStartDate>1999-09-28</CoverArtPreviewStartDate>
+<ClipPreviewStartDate>1999-09-28</ClipPreviewStartDate>
+</DealTerms>
+</Deal>
+</ReleaseDeal>
+<ReleaseDeal>
+<DealReleaseReference>R10</DealReleaseReference>
+<DealReleaseReference>R11</DealReleaseReference>
+<DealReleaseReference>R12</DealReleaseReference>
+<DealReleaseReference>R2</DealReleaseReference>
+<DealReleaseReference>R3</DealReleaseReference>
+<DealReleaseReference>R4</DealReleaseReference>
+<DealReleaseReference>R6</DealReleaseReference>
+<DealReleaseReference>R7</DealReleaseReference>
+<DealReleaseReference>R8</DealReleaseReference>
+<DealReleaseReference>R9</DealReleaseReference>
+<Deal>
+<DealTerms>
+<CommercialModelType>PayAsYouGoModel</CommercialModelType>
+<Usage>
+<UseType>ConditionalDownload</UseType>
+<UseType>PermanentDownload</UseType>
+<UseType>Stream</UseType>
+</Usage>
+<TerritoryCode>KR</TerritoryCode>
+<PriceInformation>
+<PriceType Namespace="DPID:PADPIDA2013042401U">TAP</PriceType>
+</PriceInformation>
+<ValidityPeriod>
+<StartDate>2010-02-03</StartDate>
+<EndDate>2018-10-25</EndDate>
+</ValidityPeriod>
+<ReleaseDisplayStartDate>1999-09-28</ReleaseDisplayStartDate>
+<TrackListingPreviewStartDate>1999-09-28</TrackListingPreviewStartDate>
+<CoverArtPreviewStartDate>1999-09-28</CoverArtPreviewStartDate>
+<ClipPreviewStartDate>1999-09-28</ClipPreviewStartDate>
+</DealTerms>
+</Deal>
+<Deal>
+<DealTerms>
+<CommercialModelType>SubscriptionModel</CommercialModelType>
+<Usage>
+<UseType>ConditionalDownload</UseType>
+<UseType>PermanentDownload</UseType>
+<UseType>Stream</UseType>
+</Usage>
+<TerritoryCode>KR</TerritoryCode>
+<ValidityPeriod>
+<StartDate>1999-09-28</StartDate>
+<EndDate>2018-10-25</EndDate>
+</ValidityPeriod>
+<ReleaseDisplayStartDate>1999-09-28</ReleaseDisplayStartDate>
+<TrackListingPreviewStartDate>1999-09-28</TrackListingPreviewStartDate>
+<CoverArtPreviewStartDate>1999-09-28</CoverArtPreviewStartDate>
+<ClipPreviewStartDate>1999-09-28</ClipPreviewStartDate>
+</DealTerms>
+</Deal>
+</ReleaseDeal>
+<ReleaseDeal>
+<DealReleaseReference>R1</DealReleaseReference>
+<Deal>
+<DealTerms>
+<CommercialModelType>PayAsYouGoModel</CommercialModelType>
+<Usage>
+<UseType>ConditionalDownload</UseType>
+<UseType>PermanentDownload</UseType>
+<UseType>Stream</UseType>
+</Usage>
+<TerritoryCode>KR</TerritoryCode>
+<PriceInformation>
+<PriceType Namespace="DPID:PADPIDA2013042401U">TAP</PriceType>
+</PriceInformation>
+<ValidityPeriod>
+<StartDate>2012-06-13</StartDate>
+<EndDate>2018-10-25</EndDate>
+</ValidityPeriod>
+<ReleaseDisplayStartDate>1999-09-28</ReleaseDisplayStartDate>
+<TrackListingPreviewStartDate>1999-09-28</TrackListingPreviewStartDate>
+<CoverArtPreviewStartDate>1999-09-28</CoverArtPreviewStartDate>
+<ClipPreviewStartDate>1999-09-28</ClipPreviewStartDate>
+</DealTerms>
+</Deal>
+<Deal>
+<DealTerms>
+<CommercialModelType>SubscriptionModel</CommercialModelType>
+<Usage>
+<UseType>ConditionalDownload</UseType>
+<UseType>PermanentDownload</UseType>
+<UseType>Stream</UseType>
+</Usage>
+<TerritoryCode>KR</TerritoryCode>
+<ValidityPeriod>
+<StartDate>1999-09-28</StartDate>
+<EndDate>2018-10-25</EndDate>
+</ValidityPeriod>
+<ReleaseDisplayStartDate>1999-09-28</ReleaseDisplayStartDate>
+<TrackListingPreviewStartDate>1999-09-28</TrackListingPreviewStartDate>
+<CoverArtPreviewStartDate>1999-09-28</CoverArtPreviewStartDate>
+<ClipPreviewStartDate>1999-09-28</ClipPreviewStartDate>
+</DealTerms>
+</Deal>
+</ReleaseDeal>
+<ReleaseDeal>
+<DealReleaseReference>R5</DealReleaseReference>
+<Deal>
+<DealTerms>
+<CommercialModelType>PayAsYouGoModel</CommercialModelType>
+<Usage>
+<UseType>ConditionalDownload</UseType>
+<UseType>PermanentDownload</UseType>
+<UseType>Stream</UseType>
+</Usage>
+<TerritoryCode>KR</TerritoryCode>
+<PriceInformation>
+<PriceType Namespace="DPID:PADPIDA2013042401U">TAP</PriceType>
+</PriceInformation>
+<ValidityPeriod>
+<StartDate>2012-07-13</StartDate>
+<EndDate>2018-10-25</EndDate>
+</ValidityPeriod>
+<ReleaseDisplayStartDate>1999-09-28</ReleaseDisplayStartDate>
+<TrackListingPreviewStartDate>1999-09-28</TrackListingPreviewStartDate>
+<CoverArtPreviewStartDate>1999-09-28</CoverArtPreviewStartDate>
+<ClipPreviewStartDate>1999-09-28</ClipPreviewStartDate>
+</DealTerms>
+</Deal>
+<Deal>
+<DealTerms>
+<CommercialModelType>SubscriptionModel</CommercialModelType>
+<Usage>
+<UseType>ConditionalDownload</UseType>
+<UseType>PermanentDownload</UseType>
+<UseType>Stream</UseType>
+</Usage>
+<TerritoryCode>KR</TerritoryCode>
+<ValidityPeriod>
+<StartDate>1999-09-28</StartDate>
+<EndDate>2018-10-25</EndDate>
+</ValidityPeriod>
+<ReleaseDisplayStartDate>1999-09-28</ReleaseDisplayStartDate>
+<TrackListingPreviewStartDate>1999-09-28</TrackListingPreviewStartDate>
+<CoverArtPreviewStartDate>1999-09-28</CoverArtPreviewStartDate>
+<ClipPreviewStartDate>1999-09-28</ClipPreviewStartDate>
+</DealTerms>
+</Deal>
+</ReleaseDeal>
+</DealList></ernm:NewReleaseMessage>
