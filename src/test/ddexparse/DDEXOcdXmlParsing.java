@@ -294,7 +294,7 @@ public class DDEXOcdXmlParsing {
 		XPath xpath = XPathFactory.newInstance().newXPath();
 		
 		//지역코드 설정
-		Node territoryChkNode = (Node)xpath.evaluate("//Release[@IsMainRelease='true']/ReleaseDetailsByTerritory/TerritoryCode[text() = 'KR']", doc, XPathConstants.NODE);
+		Node territoryChkNode = (Node)xpath.evaluate("//Release[@IsMainRelease='true']/ReleaseDetailsByTerritory/TerritoryCode[text() = 'KR']/following-sibling::Title", doc, XPathConstants.NODE);
 		String territoryCode = "KR";
 		
 		if(territoryChkNode == null) {

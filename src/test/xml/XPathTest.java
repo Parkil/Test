@@ -63,6 +63,18 @@ import org.w3c.dom.NodeList;
  * 특정 Node명만 검색 <Name>,<Name-aaa>,<Name-222>
  * //*[contains(local-name(), 'Name')]
  * 
+ * 이미 검색된 Node아래에서 검색하고자 할때 
+ *  NodeList prmtList = (NodeList)xpath.evaluate("//ReleaseDeal/DealReleaseReference[text() = 'R0']/following-sibling::Deal/DealTerms", doc, XPathConstants.NODESET);
+	ArrayList<String> tempList = new ArrayList<String>();
+		
+	for(int i = 0 ; i<prmtList.getLength() ; i++) {
+		Node test = (Node)xpath.evaluate(".//CommercialModelType", prmtList.item(i), XPathConstants.NODE); 
+		System.out.println("test : "+test.getTextContent());
+	}
+	
+	//CommercialModelType - document root 아래의 모든 CommercialModelType 노드를 검색
+	.//CommercialModelType - 현재 검색된 Node아래 에서 모든 CommercialModelType 노드를 검색
+ * 
  * 아래 예제에서 /AAA/BBB/following-sibling::*을 실행할경우 BBB와 동일한 레벨에 있는 노드인 XXX,CCC노드가 검색된다.
  * ex)
  *	<AAA> 

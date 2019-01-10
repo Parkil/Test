@@ -259,11 +259,11 @@ public class DDEXUniXmlParsing {
 	
 	@SuppressWarnings("unchecked")
 	public static void main(String[] args) throws Exception{
-		Document doc = new DDEXUniXmlParsing().getDocumnet("d:/UMG_Metadata_mnetgsc_00008811173326_2018-10-25_16-40-17.xml");
+		Document doc = new DDEXUniXmlParsing().getDocumnet("d:/UMG_Metadata_mnetgsc_00670211041163_2018-11-19_19-02-00.xml");
 		XPath xpath = XPathFactory.newInstance().newXPath();
 		
 		//지역코드 설정
-		Node territoryChkNode = (Node)xpath.evaluate("//Release[@IsMainRelease='true']/ReleaseDetailsByTerritory/TerritoryCode[text() = 'KR']", doc, XPathConstants.NODE);
+		Node territoryChkNode = (Node)xpath.evaluate("//Release[@IsMainRelease='true']/ReleaseDetailsByTerritory/TerritoryCode[text() = 'KR']/following-sibling::Title", doc, XPathConstants.NODE);
 		String territoryCode = "KR";
 		
 		if(territoryChkNode == null) {

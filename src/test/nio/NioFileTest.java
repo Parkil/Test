@@ -13,8 +13,6 @@ import java.util.List;
 
 import org.apache.commons.collections4.IteratorUtils;
 
-import jcifs.smb.NtlmPasswordAuthentication;
-import jcifs.smb.SmbFile;
 
 /*
  * NIO를 이용한 파일 시스템 접근 예제

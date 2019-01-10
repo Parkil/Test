@@ -1,9 +1,11 @@
 package test.nio;
 
 import java.io.IOException;
+import java.nio.file.DirectoryStream;
 import java.nio.file.FileSystems;
 import java.nio.file.FileVisitResult;
 import java.nio.file.Files;
+import java.nio.file.LinkOption;
 import java.nio.file.Path;
 import java.nio.file.PathMatcher;
 import java.nio.file.Paths;
@@ -15,6 +17,18 @@ import java.nio.file.attribute.BasicFileAttributes;
  * 아래 소스는 다음 사이트에서 가져 왔음 https://javapapers.com/java/search-file-using-nio/
  */
 public class NioFileSearch {
+	//디렉토리 안에 있는 파일+디렉토리를 삭제
+	void deleteDirectoryRecursion(Path path) throws IOException {
+		if (Files.isDirectory(path, LinkOption.NOFOLLOW_LINKS)) {
+			try (DirectoryStream<Path> entries = Files.newDirectoryStream(path)) {
+				for (Path entry : entries) {
+					deleteDirectoryRecursion(entry);
+				}
+			}
+		}
+		Files.deleteIfExists(path);
+	}
+		
 	public static class SearchFileVisitor extends SimpleFileVisitor<Path> {
 
 		private final PathMatcher pathMatcher;
@@ -62,7 +76,7 @@ public class NioFileSearch {
 
 	public static void main(String[] args) throws IOException {
 
-		Path rootPath = Paths.get("d:\\기술사 합격전략\\");
+		Path rootPath = Paths.get("//10.184.56.143/UMG_Content_BACK");
 		String globPattern = "*.pdf";
 
 		SearchFileVisitor searchFileVisitor = new SearchFileVisitor(globPattern);

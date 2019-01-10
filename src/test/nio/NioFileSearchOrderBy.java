@@ -35,7 +35,6 @@ public class NioFileSearchOrderBy {
 				try {
 					compare =  Long.compare(Files.getLastModifiedTime(f1).toMillis(), Files.getLastModifiedTime(f2).toMillis());
 				} catch (IOException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 				return compare;
