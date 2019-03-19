@@ -2,9 +2,11 @@ package test.collectionstream;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -45,7 +47,17 @@ public class CollecitonStreamTest {
 		Stream<Map<String,Object>> mapFilterStream = mapList.stream().filter(map -> map.containsValue("val1"));
 		//System.out.println("map filter result count : "+mapFilterStream.count());
 		//System.out.println("map filter result : "+mapFilterStream.map(result-> result.get("0a")).collect(Collectors.toList()));
-		System.out.println("map filter result : "+mapFilterStream.collect(Collectors.toList()));
+		//System.out.println("map filter result : "+mapFilterStream.collect(Collectors.toSet()));
+		List<Map<String, Object>> map = mapFilterStream.collect(Collectors.toList());
+		System.out.println(map);
 		
+		/*
+		 * List에 들어있는 중첩리스트 구조를 제거하고 중첩리스트의 요소를 1개의 리스트로 통합
+		 * 람다식
+		 * 
+		 */
+		List<List<String>> list = Arrays.asList(Arrays.asList("a"), Arrays.asList("b"));
+		List<String> newList = list.stream().flatMap(Collection::stream).collect(Collectors.toList());
+		System.out.println(newList);
 	}
 }
