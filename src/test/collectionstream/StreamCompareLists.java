@@ -1,7 +1,11 @@
 package test.collectionstream;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class StreamCompareLists {
@@ -41,7 +45,7 @@ public class StreamCompareLists {
 		
 		Stream<String> comA = compareA.stream();
 		
-		boolean chkResult = comA.allMatch(t -> targetA.contains(t));
+		boolean chkResult = comA.allMatch(t -> targetA.contains(t) && targetA.size() == 5);
 		System.out.println("chkResult : "+chkResult);
 		
 		/*
@@ -49,5 +53,19 @@ public class StreamCompareLists {
 		System.out.println(targetA);
 		System.out.println(targetA.stream().sorted().collect(Collectors.toList()));
 		*/
+		
+		Map<String,List<String>> listMap = new HashMap<String,List<String>>();
+		listMap.put("a", Arrays.asList("1","2","3","4","5"));
+		listMap.put("b", Arrays.asList("a","b","c","d","e"));
+		
+		List<Map<String,List<String>>> testList = new ArrayList<Map<String,List<String>>>();
+		testList.add(listMap);
+		
+		Test matchFunc = (Map<String, List<String>> orgMap, List<String> clickableElList, List<String> inputableElList) -> {
+			return orgMap.size() == 0;
+		};
+		
+		Stream<Map<String, List<String>>> testStream = testList.stream();
+		testStream.allMatch(a -> a.size() == 0);
 	}
 }
