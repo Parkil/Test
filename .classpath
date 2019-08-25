@@ -17,7 +17,6 @@
 	<classpathentry kind="lib" path="C:/Dev/workspace/Test/lib/mail.jar"/>
 	<classpathentry kind="lib" path="C:/Dev/workspace/Test/lib/mailapi.jar"/>
 	<classpathentry kind="lib" path="C:/Dev/workspace/Test/lib/mybatis-3.1.1.jar"/>
-	<classpathentry kind="lib" path="C:/Dev/workspace/Test/lib/ojdbc14.jar"/>
 	<classpathentry kind="lib" path="C:/Dev/workspace/Test/lib/poi-3.9-20121203.jar"/>
 	<classpathentry kind="lib" path="C:/Dev/workspace/Test/lib/poi-excelant-3.9-20121203.jar"/>
 	<classpathentry kind="lib" path="C:/Dev/workspace/Test/lib/poi-ooxml-3.9-20121203.jar"/>
@@ -81,5 +80,9 @@
 	<classpathentry kind="lib" path="lib/xml-apis.jar"/>
 	<classpathentry kind="lib" path="lib/xmlgraphics-commons-1.5.jar"/>
 	<classpathentry kind="lib" path="lib/guava-20.0.jar"/>
+	<classpathentry kind="lib" path="lib/ojdbc7.jar"/>
+	<classpathentry kind="lib" path="lib/jfreechart-1.0.16.jar"/>
+	<classpathentry kind="lib" path="lib/ flyway-core-5.2.4.jar"/>
+	<classpathentry kind="lib" path="lib/httpmime-4.5.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
